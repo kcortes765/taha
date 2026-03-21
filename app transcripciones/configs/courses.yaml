@@ -1,0 +1,36 @@
+courses:
+  - course_id: sismo
+    name: Sismo
+    folder_name: Sismo
+    semester: 2026-2
+    professor: TBD
+    aliases: ["sismo", "sis", "ingenieria sismica"]
+    language: es
+  - course_id: coi
+    name: COI
+    folder_name: COI
+    semester: 2026-2
+    professor: TBD
+    aliases: ["coi"]
+    language: es
+  - course_id: investigacion_aplicada
+    name: Investigación Aplicada
+    folder_name: Investigacion Aplicada
+    semester: 2026-2
+    professor: TBD
+    aliases: ["investigación aplicada", "investigacion aplicada", "investigación", "investigacion", "inv aplicada", "ia"]
+    language: es
+  - course_id: programacion_gestion_obras
+    name: Programación y gestión de obras
+    folder_name: Programacion y gestion de obras
+    semester: 2026-2
+    professor: TBD
+    aliases: ["programación y gestión de obras", "programacion y gestion de obras", "gestión de obras", "gestion de obras", "pgo", "programacion obras"]
+    language: es
+  - course_id: mecanica_rocas
+    name: Mec. de rocas
+    folder_name: Mec. de rocas
+    semester: 2026-2
+    professor: TBD
+    aliases: ["mec. de rocas", "mec de rocas", "mecanica de rocas", "rocas"]
+    language: es

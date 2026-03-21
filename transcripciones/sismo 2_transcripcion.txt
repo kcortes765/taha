@@ -1,0 +1,1245 @@
+[148.64-154.62] Recuerden que a la tarde tienen clase de sismología, digamos, los dos bloques, con el profesor Patricio Tapia.
+[155.04-172.57] Entonces, como dije ayer, todo lo que tiene que ver con la determinación de la matriz de rigidez
+[172.57-177.29] es una materia que se da por pasada, digamos, que está en los cursos anteriores,
+[177.41-180.73] por lo tanto, esa parte los apunta a la historia de la mujer.
+[180.73-195.95] Entonces, ¿qué es un edificio y cuáles son los conceptos fundamentales que están asociados a un edificio?
+[198.60-204.00] Los edificios, digamos, en términos generales, uno los puede...
+[209.10-215.88] edificios que tienen por finalidad ser usados como edificios habitacionales,
+[215.88-220.58] es decir, donde vivimos al respecto, que son una parte importante,
+[220.58-224.12] los edificios que hay en Antofagasta, o en nuestro país,
+[225.20-229.90] y después también están los edificios que tienen otro tipo de uso,
+[230.56-236.26] por ejemplo, los edificios asociados a ministerios,
+[237.76-246.50] edificios asociados, ¿no es cierto?, como hospitales o cuerpos de bomberos, etc.
+[246.50-250.50] Bueno, todos esos tipos de edificios son más...
+[250.58-254.82] son parte de los edificios que vamos a ver en el curso.
+[257.14-263.69] Concretamente, ¿no es cierto?, se da cuenta que en el taller edificio 1
+[263.69-269.75] es un edificio típico de oficinas, en cambio, el edificio 2
+[269.75-277.63] es un edificio típico, ¿no es cierto?, bueno, puede ser, digamos, de uso público.
+[280.18-285.55] En un edificio, ¿cuántos viven en el departamento,
+[285.55-288.13] todos los que están acá, delante de la mano, ¿quiénes viven en el departamento?
+[289.33-292.53] A poquitos viven en el departamento, otros viven en casa o con la pensión.
+[295.45-300.29] Entonces, lo que ustedes se dan cuenta es que en un departamento,
+[300.73-309.03] en un departamento, es frecuente, si uno analiza los elementos que hay en un departamento,
+[309.03-315.93] se va a encontrar que hay algunos elementos que son de hormigón armado,
+[316.61-317.71] verticales, ¿no es cierto?
+[317.79-324.90] Y hay otros elementos que son de madera, otras víctimas.
+[325.20-329.72] Todos los elementos que son de hormigón armado, ¿y cómo uno los reconoce?
+[330.20-337.63] Mire cómo al pegarle acá, pasa lo siguiente, ¿no es cierto?,
+[337.63-343.45] es el típico hormigón armado, cuando esta víctima, ¿qué ocurre esto?
+[345.82-349.58] Ahí, en el departamento, si alguno puede, entonces, ¿qué quiero decir con eso?
+[350.36-355.50] Que si uno en un departamento, ¿no es cierto?, se le ocurre, no sé,
+[355.92-360.62] al patrimonio, al que vive en el departamento, a la pareja, lo que sea, digamos, en ese sentido.
+[361.26-365.30] Dice, oye, ¿qué modificaciones puedo hacer en el departamento?
+[366.88-372.50] Bueno, yo le puedo decir, todos aquellos elementos verticales
+[372.50-376.90] que no son de hormigón armado, podría ser lo que queráis conocer.
+[377.72-380.24] Póntalo, llévalo para donde queráis, lo que queráis, da lo mismo.
+[380.86-384.32] Eso es tan simplemente como un elemento divisorio.
+[385.92-390.80] Porque no tiene, no resiste ninguna fuerza sísmica, nada.
+[391.92-395.98] Por lo tanto, podrían perfectamente uno sacarlo y no pasa nada.
+[396.90-401.92] En cambio, todos los elementos que son de hormigón armado, uno no los puede eliminar,
+[403.30-406.58] porque tienen la finalidad de resistir fuerza sísmica.
+[407.96-413.82] Entonces, se ha dado mucho hoy día, y hay mucho también que dentro de los departamentos,
+[414.42-415.84] ¿se han dado cuenta?
+[415.92-420.20] Que con respecto a los edificios antiguos, casi todos eran muros de hormigón armado.
+[420.36-423.18] En cambio, ahora hay mucho tabique, digamos, al respecto.
+[423.66-426.60] Bueno, eso es para economizar, digamos, el muro de tabique,
+[426.96-429.60] vale mucho menos que el muro de hormigón armado.
+[429.88-432.30] Pero todos los edificios igual van a resistir.
+[432.76-442.49] Entonces, ya, esos, cuando uno tiene, por ejemplo, el que es muy usual, digamos, e incómodo.
+[443.81-447.33] Obviamente que si yo tengo un dormitorio, y al lado tengo,
+[447.49-450.49] otro dormitorio, no puedo separarlo con un tabique,
+[450.83-456.44] porque se pierde la privacidad de un dormitorio respecto al otro, ¿se da cuenta?
+[456.76-461.90] Entonces, yo al menos cuando he comprado departamento, lo primero que me fijo es eso.
+[462.90-473.14] Empiezo yo, cuando, en Santiago, digamos, allá, entonces, cuando fui a ver qué compraba,
+[473.88-478.16] yo le dije a mi esposa, mira, tú ves si te gusta la distribución, todo eso,
+[478.22-480.84] y yo voy a preocuparme de la parte estructural.
+[480.84-485.88] Y la parte estructural me convence, compraba el punto de vista estructural, ¿ya?
+[485.92-490.18] Entonces, que tiene que cumplirse, que cumpla la parte estructural, de acuerdo a mi criterio,
+[490.58-494.22] y que cumpla la parte estética de acuerdo a lo que a ti te gusta.
+[494.34-497.92] A lo mejor te gusta que la cocina sea más grande, que el lío, no sé qué diario,
+[498.00-501.18] que se separaba el comedor, qué sé yo, un montón de cosas.
+[501.72-508.94] Pero entonces, lo importante es que hay que, hay, en un edificio hay elementos estructurales,
+[509.68-510.64] por ejemplo.
+[510.84-514.30] En esta sala, todos los elementos son estructurales.
+[516.89-523.07] En cambio, por ejemplo, la separación entre mi oficina y la de Jorge Homero,
+[523.15-525.85] y que está al lado, eso es un tabique.
+[527.45-531.37] Eso quiere decir que podríamos botarlo y tener una sola oficina, los dos, por ejemplo.
+[532.39-537.19] El punto, y no pasa nada en el edificio, no pasó, no pasaría absolutamente nada.
+[538.57-542.19] Entonces, los elementos que no son estructurales,
+[542.73-548.91] son elementos, ¿no es cierto?, que no están para resistir fuerzas sísmicas,
+[549.75-552.51] y que por lo tanto, digamos, ¿no es cierto?,
+[552.51-558.75] su diseño o las condiciones que tiene que cumplir son distintas a las de un elemento estructural.
+[560.41-566.49] Entonces, como ingeniero, a nosotros nos interesan los elementos estructurales.
+[566.73-577.39] En un edificio, ¿qué podemos hacer?
+[577.49-581.07] A ver, voy a calcular un edificio de cuatro pisos.
+[581.07-581.35] ¿Qué es un edificio?
+[583.44-584.64] Entonces, la primera...
+[584.64-588.80] La primera cosa que tenemos que decidir es de qué material lo hacemos.
+[590.20-595.18] Y cuando es de cuatro pisos, con eso quiero decir un edificio bajo,
+[597.10-598.98] las alternativas son varias, no hay una.
+[600.22-601.50] Voy a poner un ejemplo.
+[602.00-607.26] Podría ser el edificio de albañería, ya sea de bloque o de ladrillo.
+[608.40-610.26] O podría ser de hormigón armado.
+[611.06-612.62] O podría ser de madera.
+[612.62-617.44] Ahora, cualquiera de los tres sistemas puedo elegirlo.
+[618.28-621.48] Y soy yo como ingeniero, finalmente, el que elijo.
+[622.30-629.12] En cambio, cuando estamos en edificio en altura, ya no pueden ser de albañería.
+[630.26-631.80] No pueden ser de madera.
+[632.60-633.00] ¿Por qué?
+[633.16-635.42] Porque no son capaces de resistir esas fuerzas.
+[636.36-638.80] Entonces, aparecen ahí dos alternativas.
+[638.80-642.60] O lo hacemos de hormigón armado.
+[642.62-645.70] O lo hacemos de acero.
+[646.14-658.94] Más o menos, esto no lo tomes como una cosa, no es cierto, que no puede haber excepción a la regla.
+[659.54-666.66] Pero como regla, yo diría que todo edificio mayor de cinco pisos, hormigón armado, puede ser.
+[668.50-669.88] Al menos, eso es lo que yo hago.
+[672.08-676.48] Insisto, no es algo, no es cierto, que no puede haber excepción a la regla.
+[676.48-678.48] Sino que es...
+[679.66-684.82] Es importante.
+[684.82-690.82] Existen elementos en un edificio, fundamentalmente, dos tipos de elementos.
+[691.82-694.82] Los que son horizontales y los que son verticales.
+[696.26-700.20] Por ejemplo, la loza que está acá arriba es un elemento horizontal.
+[700.90-706.82] En cambio, estos muros, estos marcos que hay acá, son elementos verticales.
+[706.82-712.82] Y los elementos horizontales se le llaman diafragmas.
+[713.82-726.82] Y ahí dice, elemento estructural a nivel de piso, que distribuye fuerzas horizontales a los elementos verticales resistentes.
+[727.88-734.20] Eso está diciendo que la loza del edificio tiene dos funciones.
+[735.48-740.30] Primero, resistir las cargas gravitacionales que están actuando sobre ella.
+[740.30-743.80] Es decir, si se para alguien ahí, la loza tiene que resistir.
+[743.82-753.27] Pero el segundo, importante en nuestro país, es que cuando vengan fuerzas sísmicas,
+[753.99-758.41] las fuerzas sísmicas actúan sobre el diafragma.
+[759.05-760.75] ¿Y qué es lo que hace el diafragma?
+[761.41-767.09] Se mueve y al moverse hace trabajar a los elementos verticales.
+[768.03-774.55] Por ejemplo, si esta loza se moviera en esta dirección, este marco se iría.
+[774.55-776.74] Por ejemplo, si se moviera en esta dirección, este marco se iría.
+[776.74-778.04] Por lo tanto, ¿qué generaría?
+[778.50-783.46] Que en esa esquina de allá habría tracción y en la esquina de allá habría compresión.
+[785.08-791.62] Pero como el sisma actúa para allá y para acá, entonces a medida que va ocurriendo el sismo,
+[792.22-798.18] de repente está en compresión, de repente está en tracción, vuelve a estar en compresión, vuelve a estar en tracción, etc.
+[798.18-804.85] Entonces los elementos horizontales, que son los diafragmas,
+[805.63-808.41] desde el punto de vista sísmico, distribuyen las fuerzas.
+[808.47-813.95] Y los diafragmas pueden ser de dos tipos.
+[815.80-817.04] Los diafragmas rigidos.
+[818.02-821.21] ¿Qué es un diafragma rigido?
+[823.94-831.74] Es un diafragma que en el plano del diafragma, en el plano, no perpendicular al plano,
+[832.16-837.42] sino que en el plano no se deforma.
+[838.08-839.24] ¿Qué significa eso?
+[839.24-844.00] Que la distancia entre dos puntos permanece siempre constante,
+[844.00-848.54] antes la fuerza sísmica y después la fuerza, o sea, se mueve como cuerpo rigido.
+[848.78-854.00] Es decir, la losa se puede mover así, pero no se deforma, así es rigido.
+[854.88-855.36] En este plano.
+[857.06-864.90] Y un diafragma no rigido o flexible es aquel, ¿no es cierto?, que se deforma también en el plano.
+[867.02-875.00] Entonces, yo como ingeniero, y por eso hay habla de diafragma rigido, ¿no es cierto?,
+[875.00-876.96] y también después abajo.
+[877.20-880.94] Habla de diafragma semirrigido o flexible también.
+[882.06-893.22] Los diafragmas, yo tengo que decidir si voy a utilizar en el edificio diafragma rígido, semirrigido o flexible.
+[893.22-902.30] Y tengo que, por lo tanto, si voy a decir que va a ser diafragma rígido,
+[903.22-905.94] tengo que hacerlo para que actúe como rígido.
+[906.68-907.18] Por ejemplo.
+[907.20-911.54] Por ejemplo, un diafragma rígido requiere que la losa sea de mayor espesor si es flexible.
+[913.78-913.96] ¿Ok?
+[914.54-916.78] ¿Por qué? Porque eso le da mayor rigidez.
+[918.04-921.18] A mayor espesor, mayor rigidez, porque la rigidez depende de la inercia.
+[924.19-929.13] Desde ese punto de vista, cuando el diafragma es rígido,
+[931.27-937.61] ocurre que la fuerza horizontal sísmica que actúa sobre el diafragma
+[938.75-940.61] se va a los elementos.
+[940.97-947.51] Se van a los elementos verticales según su rigidez.
+[947.51-955.73] Eso significa, por ejemplo, en este edificio, si la fuerza sísmica actúa en esta dirección,
+[955.73-961.13] los elementos resistentes son los que están en esa dirección fundamentalmente.
+[961.13-965.65] Sería ese muro de allá y sería eso de atrás.
+[965.65-971.57] Y todos podemos ver intuitivamente que este elemento de acá tiene más rigidez que ese de allá.
+[971.57-972.35] ¿Por qué allá? Porque hay ventajas.
+[972.35-972.45] ¿Por qué? Porque hay ventajas. ¿Por qué? Porque hay ventajas.
+[972.45-979.88] Allá hay menos inercia que acá, y por lo tanto hay menos rigidez.
+[980.36-984.18] Eso quiere decir que frente a un sismo en esta dirección,
+[986.02-988.74] ese muro va a tomar más corte que ese de allá.
+[989.10-993.12] ¿Cuánto más? En función de la rigidez.
+[993.42-999.88] O sea, yo pesco la rigidez de ese muro y le digo con la rigidez de los dos muros que están resistiendo
+[999.88-1001.70] y me da cuánto toma ese muro.
+[1001.70-1008.35] Entonces, estos conceptos fundamentales que estamos viendo son claves,
+[1008.85-1017.03] uno, para hacer bien el taller y dos, para entender los conceptos que influyen en un análisis sísmico.
+[1017.03-1022.99] En cambio, cuando el diafragma es flexible,
+[1022.99-1030.06] la fuerza sísmica no se distribuye en función de la rigidez.
+[1030.06-1040.74] Eso quiere decir que si aquí hubiera un diafragma flexible y vuelva a aplicar la misma fuerza en la misma dirección,
+[1040.74-1041.50] Eso quiere decir que si aquí hubiera un diafragma flexible y vuelva a aplicar la misma fuerza en la misma dirección,
+[1041.50-1046.94] dado que hay dos elementos resistentes, se varía el 50% a cada.
+[1046.94-1057.35] Cuando es rígido, más este y menos ese.
+[1057.35-1062.07] Cuando es flexible, los dos toman igual.
+[1062.07-1073.19] Es decir, la cantidad de fuerza sísmica que toma cada elemento depende, primero, de qué tipo de diafragma tengo.
+[1074.07-1077.85] Y si es rígido, en función de la rigidez lo que toma.
+[1077.85-1079.79] Si es flexible, en función de área de distancia.
+[1079.79-1079.83] Si es flexible, en función de la rigidez lo que toma. Si es flexible, en función de área de distancia.
+[1079.83-1086.37] Si es flexible, en función de área de distancia.
+[1086.37-1094.33] Por ejemplo, ahí estoy mostrando la diferencia entre un diafragma rígido y un diafragma flexible.
+[1094.33-1095.77] ¿Qué quiere decir?
+[1095.77-1100.65] Aquí estaba el edificio antes de aplicar la fuerza sísmica.
+[1100.65-1106.77] Le aplico esta fuerza sísmica y lo que ocurre es que se mueve como cuerpo rígido.
+[1106.77-1109.73] Todos estos puntos vuelven a estar en una línea.
+[1109.73-1111.33] Todos estos puntos vuelven a estar...
+[1111.33-1115.37] Por lo tanto, la distancia entre este punto y este sigue siendo la misma.
+[1115.37-1117.37] La distancia entre dos puntos se mantiene constante.
+[1117.37-1121.37] La distancia entre dos puntos se mantiene constante.
+[1121.37-1123.37] Esto es un diafragma rígido.
+[1123.37-1137.37] Esto es un diafragma rígido.
+[1137.37-1144.37] Pero lo que quiero decir es que no sólo la existencia de una losa lo hace que sea rígido.
+[1144.37-1148.37] Podría haber un edificio que teniendo losa no sea rígido.
+[1148.37-1150.37] Eso es lo que quiero hacer más claro.
+[1150.37-1152.37] Algunos dicen que teniendo losa ya es rígido.
+[1152.37-1154.37] No, es mentira.
+[1154.37-1159.41] Es rígido, flexible, aunque haya losa.
+[1159.41-1160.41] No, es mentira.
+[1160.41-1162.41] Es rígido, flexible, aunque haya losa.
+[1162.41-1164.41] Entonces, ¿qué pasa acá?
+[1164.41-1170.41] Que el mismo edificio con diafragma flexible le aplica una fuerza y ¿qué ocurrió?
+[1170.41-1173.41] Que ese punto, ¿no es cierto?, se desplazó menos que ese.
+[1173.41-1176.41] Por lo tanto, se deformó menos que el punto que está acá.
+[1176.41-1186.86] Entonces, esa es la diferencia entre un diafragma rígido y un diafragma flexible.
+[1186.86-1190.86] Nosotros en el curso vamos a aprender a calcular tanto si el edificio tiene diafragma rígido,
+[1190.86-1191.86] Nosotros en el curso vamos a aprender a calcular tanto si el edificio tiene diafragma rígido,
+[1191.86-1194.86] o tiene diafragma flexible.
+[1194.86-1206.98] Pero , en el taller, vamos a aplicar el concepto de diafragma rígido,
+[1206.98-1209.98] y también de semirrigido.
+[1209.98-1218.67] Es el concepto de diafragma flexible, semirrigido y rígido.
+[1218.67-1243.49] Fíjense, ahí tengo un edificio para explicar más,
+[1243.49-1250.63] Explicar más claramente el efecto del diafragma rígido y el diafragma flexivo.
+[1251.27-1252.97] ¿Qué está mostrando esto de acá?
+[1253.93-1262.47] Está mostrando que este es el edificio, que acá hay un muro, un muro, un muro, muro y muro.
+[1263.59-1265.87] Acá es el mismo edificio.
+[1265.87-1272.97] Ambos le aplicamos la misma carga sísmica, esta.
+[1272.97-1277.75] O sea, 90 kN por metro, 90 kN por metro.
+[1280.02-1286.44] Y la pregunta que queremos responder, si al edificio lo hago con diafragma rígido,
+[1287.60-1291.36] ¿qué esfuerzo toma este muro, este y este?
+[1291.36-1299.74] Y si lo hago con diafragma flexible, ¿qué esfuerzo toma este muro, este y este?
+[1301.85-1305.31] Y entonces, ¿cómo resolvemos ese problema?
+[1306.73-1307.31] Fíjense.
+[1307.31-1308.13] Fíjense lo siguiente.
+[1309.09-1311.21] Cuando hay diafragma rígido, ¿qué dijimos?
+[1311.91-1315.57] Dijimos que las fuerzas sísmicas, ¿cuáles son las fuerzas sísmicas?
+[1315.89-1319.31] 90 kN por metro multiplicado por total.
+[1319.31-1326.62] ¿Cuánto de esa fuerza toma este muro?
+[1329.20-1333.28] Sería en función de la rigidez.
+[1334.86-1342.57] Pero la rigidez de esos tres depende de la inercia.
+[1345.17-1346.11] Y los tres muros...
+[1346.11-1348.07] Tienen la misma inercia.
+[1350.28-1351.92] Entonces, ¿hasta ahí qué concluiríamos?
+[1352.84-1354.54] ¿Qué cuánto tomaría cada muro?
+[1354.88-1355.34] Lo mismo.
+[1356.06-1357.60] Y por lo tanto, ¿tomaría un tercio?
+[1358.72-1359.88] Oye, no, no tomó un tercio.
+[1363.41-1364.75] ¿Por qué no tomó un tercio?
+[1365.99-1366.81] Fíjense la importancia.
+[1367.11-1368.21] El resultado es este, ¿eh?
+[1369.33-1370.41] ¿Se acuerdan que no tomó un tercio?
+[1371.09-1375.23] Pero hasta el razonamiento que llevábamos, era para responder un tercio.
+[1375.59-1378.97] Por eso, con todo lo que dijo, ¿por qué no llegué a la conclusión que era un tercio?
+[1378.97-1379.01] ¿Por qué no tomó un tercio?
+[1379.41-1382.86] ¿Por qué no tomó un tercio?
+[1382.86-1382.92] ¿Por qué no tomó un tercio?
+[1382.92-1382.96] ¿Por qué no tomó un tercio?
+[1382.96-1384.62] Ocurre que no es un tercio.
+[1385.84-1390.32] ¿Y cuál es el concepto que hace que no sea un tercio?
+[1391.26-1395.48] Que el edificio, cuando viene la fuerza sísmica,
+[1396.00-1401.49] la traslación también rota.
+[1404.76-1409.04] Es decir, si el edificio solo se trasladara,
+[1409.50-1413.40] solo se trasladara, sería un tercio.
+[1414.80-1415.68] Uy, no hay corregir.
+[1415.68-1420.04] Pero el edificio le pasa a todo edificio.
+[1420.32-1423.46] Que aparte de trasladarse, gira.
+[1424.68-1426.44] ¿Y por qué gira?
+[1426.76-1428.30] Es el punto importante.
+[1430.96-1432.22] Gira, digamos, ¿no es cierto?
+[1432.44-1434.32] Por la siguiente situación.
+[1447.86-1451.48] El centro de masa, si considerábamos como centro de masa,
+[1451.94-1455.62] el centro de gravedad de la losa, estaría en la mitad.
+[1456.34-1457.78] Estaría ahí en la mitad.
+[1458.42-1459.54] Ahí estaría el centro de masa.
+[1459.54-1466.65] Y el edificio, dijimos ayer, el concepto de centro de rigidez.
+[1466.99-1474.71] Y dijimos que el centro de rigidez es la distancia, es el punto, ¿no es cierto?
+[1475.37-1480.15] El centro de rigidez se determina como el centro de gravedad de la rigidez.
+[1481.45-1485.79] Entonces, ¿dónde está el centro de rigidez en este edificio?
+[1488.14-1493.59] Resulta que acá tiene la misma rigidez.
+[1493.93-1496.65] Por lo tanto, está en la mitad de esta dirección.
+[1500.72-1501.78] ¿Pero a dónde está?
+[1501.78-1502.96] Ahí, ahí.
+[1503.36-1503.68] Allá.
+[1504.50-1505.72] Depende de la rigidez.
+[1506.62-1511.18] Depende, ¿no es cierto?, de estas, ¿no es cierto?, de la distancia, de estas rigideces.
+[1511.64-1517.90] Y resulta que del centro para acá hay más rigidez que del centro para allá.
+[1518.40-1524.32] Por lo tanto, el centro de rigidez está corrido hacia acá.
+[1524.32-1532.56] La conclusión, hay una distancia entre el centro de masa y el centro de rigidez.
+[1533.48-1535.00] La primera gran conclusión.
+[1535.92-1537.40] Tenemos aquí el edificio.
+[1537.42-1541.64] Ahí está el edificio.
+[1545.47-1546.87] El centro de masa.
+[1547.83-1552.07] Y por acá está el centro de rigidez.
+[1555.93-1561.11] Y para esta parte, quiero terminar esta parte, para que vean cómo se calcula eso de allá.
+[1563.74-1573.64] Cuando el centro de masa no coincide con el centro de rigidez, se produce un momento de torsión en planta.
+[1573.64-1585.18] Recuerden ustedes que las fuerzas sísmicas, ¿quién fue la fuerza?
+[1585.24-1586.98] Las fuerzas sísmicas, en el centro de masa.
+[1587.94-1589.30] Ahí actúa la fuerza.
+[1589.64-1596.26] El edificio resiste en el centro de rigidez.
+[1599.02-1601.38] Esa fuerza también es F.
+[1602.96-1609.40] Pero esta fuerza, por esta distancia, la membra es A.
+[1610.14-1616.74] Esa fuerza, por esa distancia, produce un momento respecto a este punto, que vale F por A.
+[1616.74-1620.24] Un momento en este sentido.
+[1620.88-1622.38] Ya era los punteros del redondo.
+[1623.58-1633.50] Por lo tanto, el edificio reacciona con un momento igual y contrario, que sería este momento, que sería F por A.
+[1636.53-1638.75] Y entonces, ¿qué le pasa al edificio?
+[1639.81-1648.91] Le pasa que debido a esta fuerza, este muro se desplaza y este se desplaza en la misma cantidad.
+[1649.91-1653.19] Pero debido al momento, este.
+[1653.31-1655.17] Se mueve más que este de acá.
+[1655.39-1655.67] ¿Por qué?
+[1655.75-1657.73] Porque este retrocede y este avanza.
+[1658.15-1664.40] La conclusión es el desplazamiento total de una esquina y otra.
+[1664.64-1669.87] Esa fuerza que se toma es función del desplazamiento.
+[1672.34-1673.12] Gran conclusión.
+[1675.80-1683.52] El edificio, todo edificio tiene un centro de masa y un centro de rigidez en cada uno de los pisos.
+[1684.86-1688.34] Las fuerzas sísmicas actúan en el centro de masa.
+[1689.22-1692.70] Pero el edificio no resiste en el centro de rigidez.
+[1693.04-1700.38] Y el edificio gira respecto al centro de rigidez, no respecto al centro de masa.
+[1707.10-1713.86] ¿Cómo determinamos las fuerzas que toma cuando el diafragma es flexible?
+[1714.40-1718.25] Entonces, ¿qué tenemos al respecto?
+[1718.43-1719.91] ¿Cómo determinamos eso?
+[1720.95-1723.25] En este caso decimos, ¿no es cierto?
+[1723.77-1729.09] Que la fuerza que toma es función del área de influencia.
+[1729.95-1731.09] Entonces, veamos.
+[1733.33-1739.37] Este muro, aquí en esta dirección, así que este muro, este y este.
+[1740.73-1743.45] ¿Cuál es el área de influencia sobre este muro?
+[1743.97-1748.78] La mitad de distancia entre este muro y este muro.
+[1749.30-1752.82] Toda esta área tributa a ese muro.
+[1753.44-1754.94] Esta tributa a ese muro.
+[1755.48-1761.38] Entonces, la fuerza que toma este muro sería, ¿no es cierto?
+[1761.82-1764.24] Los 90 kilodewton por metro.
+[1764.88-1769.44] Por tres cuarenta dividido por dos, el área de influencia.
+[1770.84-1774.32] Tres cuarenta dividido por dos, ciento cincuenta y tres, tres cincuenta.
+[1774.48-1782.42] ¿Cuánto es el área de influencia de este muro?
+[1782.74-1785.02] La mitad para acá y la mitad para allá.
+[1786.04-1792.58] Entonces, por eso es 90 por tres cuarenta medios más seis coma seis medios, cuatro cincuenta.
+[1793.44-1795.08] Y el de acá, ¿no es cierto?
+[1795.08-1798.86] Sería 90 por seis sesenta medios.
+[1799.18-1800.24] ¿No es cierto?
+[1800.48-1804.98] Gran conclusión.
+[1806.14-1814.50] El mismo edificio, la misma fuerza sísmica, la misma cantidad de elementos estructurales,
+[1815.26-1822.04] la fuerza que actúa sobre cada elemento estructural y produce un corte en el muro,
+[1823.18-1827.12] es diferente si el diafragma es rígido o si es flexible.
+[1827.12-1829.82] Y ahí está.
+[1830.28-1841.36] Vamos a ver.
+[1842.56-1845.26] Imagínense que yo digo en un edificio.
+[1846.00-1850.10] Voy a poner losas y quiero que sea diafragma rígido.
+[1850.94-1853.64] ¿Cómo verifico si es diafragma rígido?
+[1854.68-1856.54] Entonces la norma dice lo siguiente.
+[1857.98-1860.32] Aquí está explicado lo que dice la norma.
+[1861.18-1873.32] Dice, mire, aplique las fuerzas sísmicas y vea cuánto se deforma en total el edificio.
+[1873.32-1876.04] Miren, aquí se deformó, llegó de ahí a ahí.
+[1876.46-1877.50] Aquí de ahí a ahí.
+[1877.86-1878.12] Aquí.
+[1878.24-1880.52] Y de ahí a ahí, calcule esto.
+[1880.92-1881.90] Y haga lo siguiente.
+[1882.96-1890.22] Vea la relación que hay entre este desplazamiento y el menor desplazamiento.
+[1890.76-1893.44] Voy a explicarlo con una expresión de calcular el desplazamiento.
+[1894.84-1902.44] Dice, calcule, D, E, B, B, desplazamiento máximo del diafragma.
+[1903.70-1907.44] D, E, B, desplazamiento promedio de los elementos verticales.
+[1907.44-1910.22] Es decir, U, T, E, B.
+[1910.44-1917.34] ¿Cuál es el desplazamiento máximo y cuál es el desplazamiento promedio de todos sus puntos?
+[1918.64-1920.26] El máximo y el promedio.
+[1921.20-1923.22] Y me hace ese cuociente.
+[1925.23-1933.35] Entonces hace usted el cuociente y determina lo que se llama el índice de flexibilidad.
+[1933.35-1941.73] ¿Qué es el desplazamiento máximo que había respecto al desplazamiento promedio?
+[1942.01-1950.56] Ese cuociente es menor o igual que 2, el diafragma es rígido.
+[1953.10-1959.02] Eso es lo que dice la norma americana, ACCE 7 del año 16.
+[1961.64-1964.32] ¿La norma chilena pone esos valores?
+[1964.54-1966.94] No, dice usted al criterio suyo.
+[1968.26-1970.50] Entonces lo usual es que uno aplique la norma americana.
+[1971.46-1972.02] ¿Ok?
+[1975.20-1980.60] Entonces, lo primero que es por eso que en el taller 1, como le explicaba,
+[1980.62-1985.02] ayer, este semestre es distinto al taller del semestre pasado.
+[1986.22-1986.40] ¿Por qué?
+[1986.52-1993.68] Porque le vamos a poner al edificio diafragma rígido y le vamos a poner semirrígido.
+[1994.08-1997.94] ¿Qué quiere decir un diafragma semirrígido?
+[1999.22-2000.06] Fíjense en el día.
+[2001.08-2004.40] Diafragma rígido, no hay deformación en el plano.
+[2005.62-2009.88] Diafragma flexible, la deformación, digamos, en ese plano, ¿no es cierto?
+[2009.88-2010.60] Existe.
+[2010.62-2018.72] Díafragma semirrígido, va a haber deformación y lo voy a calcular.
+[2019.02-2024.06] Y en función de esa verdadera deformación, voy a calcular cuánto toma cada elemento.
+[2024.38-2036.96] Los ingenieros que siempre consideran a los diafragmas semirrígidos.
+[2038.32-2039.16] ¿Por qué dicen ello?
+[2039.34-2044.14] No, pues así el programa me calcula la verdadera rigidez que hay en el plano.
+[2044.54-2045.94] Y no que yo digo que es infinita.
+[2047.10-2048.18] En cambio, otro.
+[2048.20-2051.36] Otro oficiero dice, no, yo siempre considero diafragmas rígidos a nivel de piso.
+[2051.98-2061.52] La norma que viene dice, usted tiene que definir si es rígido o semirrígido o flexible.
+[2062.90-2066.86] Dice un artículo claramente, ese es un problema que usted tiene que decidir.
+[2067.20-2068.88] Pero tiene que aplicarlo bien.
+[2068.88-2093.32] Lo que voy a decir ahora, ¿no es cierto?
+[2094.00-2095.90] Vale, ¿no es cierto?
+[2096.12-2098.02] Para un diafragma rígido.
+[2100.28-2104.98] Entonces, ¿qué es lo que, no es cierto, estoy mostrando acá?
+[2106.40-2109.04] Estoy mostrando este edificio.
+[2114.84-2117.76] Estoy diciendo, mire, ahí está el centro de masa.
+[2119.92-2124.30] Se dan cuenta que el centro de masa no lo ubiqué en el centro.
+[2124.80-2125.18] ¿Por qué?
+[2125.32-2127.38] Porque acá hay más masa que allá.
+[2127.86-2131.24] Porque este muro es más largo que ese.
+[2131.24-2138.54] Entonces, vamos a suponer que ahí está el centro de masa y el centro de rigidez.
+[2139.06-2139.32] ¿Cómo?
+[2139.32-2142.10] Porque esto tiene más rigidez que esto.
+[2142.94-2144.86] Fíjense que yo le agregué este cachito.
+[2146.88-2151.22] Respecto al apunte de semestre pasado, porque semestre pasado no tenía este cachito.
+[2151.36-2155.24] Entonces, esto aparecía igual a esto y el centro de rigidez estaba cubierto para acá.
+[2155.30-2155.84] No puede ser.
+[2160.82-2165.00] Entonces, quiere decir que ahí está el centro de rigidez.
+[2165.98-2166.66] Es como esto.
+[2167.16-2170.26] Aquí está el centro de masa, el centro de rigidez.
+[2170.26-2175.44] Y vamos a llamar E la distancia.
+[2175.52-2178.54] La distancia que hay entre el centro de masa y el centro de rigidez.
+[2178.72-2185.11] La fuerza sísmica siempre actúa en el centro de masa.
+[2185.19-2191.68] La fuerza sísmica actúa en el centro de masa.
+[2192.64-2196.56] El edificio lo resiste en el centro de rigidez.
+[2197.10-2203.96] La discusión, entonces, aquí tenemos las siguientes cosas importantes.
+[2206.25-2206.33] ¿Sí?
+[2206.33-2217.81] Y es lo que se llama distancia que hay entre el centro de masa y el centro de rigidez.
+[2218.23-2227.43] Al multiplicarlo por la fuerza sísmica que está actuando, se genera lo que se llama la torsión natural.
+[2229.89-2235.37] Y fíjense que la torsión natural que tenga un edificio, lo defino yo como ingeniero.
+[2237.09-2246.35] Pero, porque si yo erróneamente pusiera aquí un muro desde aquí allá y aquí un muro chiquitito desde ahí ahí,
+[2246.81-2248.47] el centro de rigidez ahí estará acabo.
+[2248.47-2252.42] Conclusión.
+[2253.30-2260.12] Una mala estructuración hace que el centro de masa esté muy alejado del centro de rigidez.
+[2260.74-2267.60] Y lo que he hecho como ingeniero, yo le hice que los elementos tomaran más fuerza sísmica que lo que corresponde.
+[2269.84-2275.66] O sea, que actúen fuerzas mayores que las que debieron haber actuado, porque yo hice una mala estructuración.
+[2276.94-2277.50] Conclusión.
+[2279.04-2282.36] Un programa de computación no sirve para nada.
+[2283.18-2283.78] ¿Sí?
+[2283.78-2284.26] ¿Sí?
+[2284.26-2284.32] Si yo no hice una mala estructuración, no sirve para nada.
+[2284.32-2284.58] Si yo no hice una mala estructuración, no sirve para nada.
+[2284.58-2285.72] Es una buena estructuración.
+[2286.36-2287.38] Y esa es la primera mensaje.
+[2288.68-2293.34] Si yo como ingeniero no sé estructurar un edificio, no use nunca un programa de computación.
+[2295.16-2298.62] Porque lo que le entregue el programa de computación es pura basura.
+[2299.76-2301.12] Porque usted lo estructura mal.
+[2304.74-2311.36] Entonces, lo primero que uno tiene que analizar en un edificio es cómo lo estructura.
+[2312.38-2316.00] Y tres conceptos tienen que uno tomar en cuenta.
+[2316.00-2321.05] La fuerza sísmica puede actuar en cualquier dirección.
+[2321.39-2326.25] Eso quiere decir que la fuerza sísmica en este edificio podría venir así, diagonal.
+[2330.20-2331.86] Pero como es una fuerza, es un vector.
+[2333.34-2338.32] Entonces, un vector en esta dirección lo puede componer en esta y en esta otra.
+[2339.70-2340.30] Conclusión.
+[2341.38-2348.34] Al edificio tengo que darle rigidez en dos direcciones mutuamente perpendiculares.
+[2349.14-2349.84] ¿Qué lo significa?
+[2350.56-2354.26] Tienen que haber muros en esta dirección y tienen que haber muros en esta.
+[2354.26-2355.06] En esta otra dirección.
+[2355.58-2363.38] Por eso que este edificio tiene elementos resistentes ahí, acá, allá y acá.
+[2363.80-2368.36] Tiene en X había dos, en Y también hay dos.
+[2369.90-2373.86] Entonces, hay que darle rigidez en X y en Y.
+[2374.28-2376.16] Por ejemplo, en Y, en X y en Y.
+[2377.14-2378.84] Segunda cosa importante.
+[2378.84-2387.17] Unificar los elementos estructurales lo más alejados.
+[2387.59-2389.01] Los elementos del centro de rigidez.
+[2393.10-2393.68] Dale, dime.
+[2395.00-2395.80] Bien, bien, bien.
+[2396.28-2401.31] Sí, claro.
+[2402.31-2403.05] Sí, no hay problema.
+[2403.23-2403.71] No hay problema.
+[2405.92-2407.30] A las 5 o 2 sería listo.
+[2407.42-2408.02] Poca, ya.
+[2408.56-2408.92] Listo.
+[2409.14-2409.50] No hay problema.
+[2410.06-2422.62] Entonces, la primera condición es que hay que darle rigidez al edificio en dos direcciones mutuamente perpendiculares.
+[2423.26-2426.74] Esta rigidez se llama rigidez traslacional.
+[2427.34-2428.04] Eso quiere decir.
+[2428.04-2428.14] ¿Qué quiere decir?
+[2428.74-2430.04] Tienen que haber elementos resistentes.
+[2430.42-2433.86] Cuando el edificio se traslade en esta dirección.
+[2434.56-2436.80] Y cuando se traslade en esta otra dirección.
+[2437.34-2438.74] Rigidez traslacional.
+[2440.30-2447.50] Pero además, al edificio hay que darle rigidez para que no gire tanto.
+[2453.62-2462.88] Y el edificio a mayor, mientras los elementos resistentes estén más alejados del centro de rigidez.
+[2462.88-2464.72] No del centro de masa.
+[2464.82-2465.52] Del centro.
+[2465.54-2468.72] Yo estoy dándole más rigidez torsional.
+[2469.24-2475.34] Porque la rigidez torsional es la rigidez del elemento por la distancia del centro de rigidez al cuadrado.
+[2478.34-2482.72] Hay que darle rigidez traslacional en dos direcciones mutuamente perpendiculares.
+[2483.30-2485.72] Hay que dar rigidez torsional.
+[2487.40-2489.56] Y segundo, o tercero.
+[2491.60-2497.74] Ojalá que la distribución de masa en altura no sea muy variable.
+[2497.74-2500.28] ¿Por qué?
+[2500.72-2501.22] Eso.
+[2502.22-2504.84] Porque las fuerzas sísmicas dependen de la masa.
+[2506.00-2514.26] Entonces, imaginemos que yo en el piso último pongo la piscina.
+[2514.74-2520.47] La piscina, qué señor, no sé, por 10 pesos, un tanto.
+[2521.31-2524.39] Resulta que el agua pesa una tonelada al metro cúbico.
+[2525.55-2528.69] Y una piscina chiquitita son 20 metros cúbicos.
+[2529.17-2533.01] Ahora, le puse al tiro 20 toneladas.
+[2533.25-2534.25] ¿Qué es eso?
+[2534.25-2538.41] O sea, yo como ingeniero incrementé las fuerzas sísmicas.
+[2538.41-2541.41] Yo, como culpable, soy yo como ingeniero, nadie más.
+[2541.41-2552.02] Estoy tratando de decir que nosotros como ingenieros definimos la calidad del edificio
+[2552.02-2553.02] en la estructuración.
+[2553.02-2558.10] Y eso es lo que quiero que quede.
+[2558.10-2564.20] O sea, no sacamos nada de ese necrolama de computación y cosas por el estilo.
+[2564.20-2570.56] Si yo no sé estructurar, ese es el punto más importante.
+[2570.56-2573.06] Profesor, ¿una consulta?
+[2573.06-2573.56] Sí.
+[2574.62-2577.62] En este caso, el muro de abajo tiene más masa que el de arriba, ¿cierto?
+[2577.62-2579.12] Más masa y más rigidez.
+[2579.12-2583.62] Y con respecto a los laterales, ¿el de la izquierda tiene mayor o menor masa?
+[2583.62-2587.12] Yo lo dibujé para que tenga mayor rigidez este que este de acá.
+[2587.12-2589.12] ¿Y en términos de masa, los laterales?
+[2589.12-2597.12] Ah, bueno, sí. Como la masa no es nada más que el volumen, si no es cierto, como el tiene más largo, este tiene más masa que el de allá.
+[2597.12-2599.62] ¿Y a qué se debe que el centro de masa esté más a la derecha?
+[2599.62-2604.60] Ya, ya, ok. A ver.
+[2604.60-2607.60] Bueno, sería más dibujo.
+[2607.60-2609.60] Ah, ok. Ok, ya.
+[2609.60-2610.60] Más dibujo, ¿vale?
+[2610.60-2611.60] La pieza, ¿ok?
+[2611.60-2612.60] Ya.
+[2612.60-2623.48] Insisto, digamos, el centro de masa es el centro de gravedad, digamos, de las masas, y el centro de rigidez es el centro de gravedad de la rigidez.
+[2623.48-2625.48] De acuerdo a ti, esto debería estar más acá.
+[2625.48-2631.48] Ah, ya. Pero el centro de masa siempre también depende de los elementos verticales, no sólo los... siempre toma los verticales.
+[2631.48-2632.48] Claro, pero, a ver.
+[2632.48-2635.48] Cuando calculamos las cosas a mano...
+[2635.48-2641.48] Nosotros consideramos el centro de masa que está ubicado en el centro de gravedad de la losa.
+[2641.48-2644.48] Pero los programas de computación no lo calculan así.
+[2644.48-2648.48] Toman en consideración la masa de los elementos verticales.
+[2648.48-2651.48] Eso quiere decir lo siguiente.
+[2651.48-2660.13] Este, este suponte representa el edificio.
+[2660.13-2662.13] Ahí están los distintos pisos.
+[2662.13-2668.13] Entonces, supongamos que este es el piso 1, 2, 3, 4 y 5.
+[2668.13-2678.44] ¿Cómo calcula el programa el peso asociado a cada piso?
+[2678.44-2686.82] Como la mitad de la altura del piso.
+[2686.82-2693.82] Y todo eso es el peso del piso 5.
+[2693.82-2696.82] La mitad de la altura para arriba, la mitad para abajo.
+[2696.82-2703.39] Entonces, eso significa, calcula el peso de la losa y el peso hacia el muro.
+[2703.39-2705.39] La mitad del peso del muro lo pone como peso de la piso.
+[2706.39-2708.39] Y calcula el centro de gravedad.
+[2708.39-2713.39] O sea, el centro de masa como centro de gravedad de la masa.
+[2713.39-2714.39] ¿Está bien?
+[2714.39-2718.39] Después, en el piso de masa abajo, ¿qué es lo que hace?
+[2718.39-2719.39] Toman la mitad.
+[2719.39-2726.92] Toda esta es el peso del piso.
+[2726.92-2735.21] Así va haciendo, calculando el centro de masa, el programa de computación.
+[2735.21-2737.21] ¿Ok?
+[2737.21-2739.21] Así lo va calculando.
+[2739.21-2740.21] Entiendo.
+[2740.21-2747.61] Entonces...
+[2748.61-2753.61] Hay dos conceptos que define la normativa.
+[2753.61-2766.36] Lo que se llama torsión natural y lo que se llama torsión accidental.
+[2766.36-2776.36] Y para eso, entonces, define lo que es la excentricidad natural y la excentricidad accidental.
+[2776.36-2778.36] ¿Qué significa eso?
+[2778.36-2781.36] La excentricidad natural es la distancia...
+[2782.36-2786.36] ...que hay entre el centro de masa y el centro de rigidez.
+[2786.36-2792.36] Entonces ustedes comprenderán que hay una excentricidad en X y una excentricidad en Y.
+[2792.36-2794.36] Les cuento por qué.
+[2794.36-2798.36] Por ejemplo, si aquí está como el ejemplo que teníamos anteriormente.
+[2798.36-2805.95] Eta sería la excentricidad cuando fue la fuerza así.
+[2805.95-2809.95] Pero cuando fue la fuerza así, la excentricidad sería de ahí hasta ahí.
+[2809.95-2814.77] Entonces la excentricidad natural, ¿no es cierto?
+[2814.77-2820.77] Teníamos excentricidad en la dirección X y excentricidad en la dirección Y.
+[2820.77-2823.77] Esa es la excentricidad natural.
+[2823.77-2828.77] El valor de eso depende de la estructuración que hice.
+[2828.77-2832.77] ¿Y cuál es el edificio óptimo en que esa distancia sea cero?
+[2832.77-2845.27] Entonces, yo como ingeniero, sabiendo que el óptimo es cero, si estructuro mal, lo hago grande.
+[2845.27-2846.27] ¿Y eso qué quiere decir?
+[2846.27-2848.27] Que el edificio va a tener tremendas torsiones.
+[2848.27-2852.27] Imaginar más el edificio porque yo lo estructuré mal.
+[2852.27-2862.49] Entonces esa es la torsión entre la excentricidad natural y por lo tanto...
+[2862.49-2866.49] ¿Y qué es lo que es la excentricidad accidental?
+[2866.49-2870.70] La norma dice lo siguiente.
+[2870.70-2879.29] A ver, la posición del centro de masa puede variar en un edificio.
+[2879.29-2881.29] ¿Por qué?
+[2881.29-2884.29] Imagínense que en el piso de arriba,
+[2884.29-2887.29] para calcular el centro de masa del piso de arriba,
+[2887.29-2893.29] en un momento estamos todos arriba concentrados en la esquina de allá.
+[2893.29-2896.29] El centro de masa se corrió para allá.
+[2896.29-2898.29] Más rapidito nos vamos todos para el otro lado.
+[2898.29-2901.29] El centro de masa se corrió un poquito para el otro lado.
+[2901.29-2906.29] Entonces se dice, ah, mire, el centro de masa no es que siempre esté aquí.
+[2906.29-2910.29] De repente puede estar aquí, de repente un poquito más acá, de repente un poquito más allá.
+[2910.29-2913.29] Puede haber variación del centro de masa.
+[2914.29-2919.29] Ah, y tengo que considerar esa variación del centro de masa.
+[2919.29-2923.29] Segundo motivo por el cual se puede producir eso.
+[2923.29-2926.29] Porque cuando yo construyo ese muro,
+[2926.29-2930.29] como ingeniero digo, ese muro va a ser de 30.
+[2930.29-2934.29] Y por algún motivo que yo lo construyo de 29 centímetros.
+[2934.29-2940.16] Cambió la masa.
+[2940.16-2946.16] Esa variación de la masa, esa variación de la masa,
+[2946.16-2947.16] ¿cierto?
+[2947.16-2952.16] O variación de la rigidez producto de fallas constructivas
+[2952.16-2959.16] hace que aparece lo que se llama una torsión accidental.
+[2959.16-2964.16] Que se agrega a la torsión natural.
+[2964.16-2969.16] Por lo tanto, la torsión total que va a tener un edificio
+[2969.16-2976.60] sería la torsión natural más o menos la accidental.
+[2976.60-2978.60] A ver, ¿por qué más o menos?
+[2979.60-2981.60] Fíjense, aquí la voy a dibujar.
+[2981.60-2982.60] Aquí la tengo mostrada.
+[2982.60-2990.60] Fíjense acá.
+[2990.60-2999.76] Está el centro de masa y ahí está el centro de rigidez.
+[2999.76-3004.76] Por lo tanto, esto de ahí sería la eccentricidad natural.
+[3004.76-3006.76] ¿Están de acuerdo?
+[3006.76-3011.65] Ahora vamos a explicar el concepto de torsión accidental.
+[3011.65-3019.03] El centro de masa, dice la norma, puede moverse.
+[3019.03-3021.03] ¿Cuánto moverse?
+[3021.03-3023.03] La expresión de la norma para calcular cuánto se mueve.
+[3023.03-3029.03] Pero dice, usted tiene que considerar que se puede mover hacia allá
+[3029.03-3031.03] o también se puede mover hacia acá.
+[3031.03-3035.01] Tiene que considerar esos dos casos.
+[3035.01-3039.01] Que se mueva para allá o que se mueva para acá.
+[3039.01-3042.01] Por lo tanto, fíjense la importancia de eso.
+[3042.01-3046.01] Eso significa entonces, mirando el mundo para abajo,
+[3046.01-3057.72] que cuando se mueve para allá, esto es la eccentricidad accidental.
+[3057.72-3059.72] La eccentricidad accidental.
+[3059.72-3063.72] Es la distancia entre el centro de masa.
+[3063.72-3064.72] ¿No es cierto?
+[3064.72-3068.72] Es la distancia entre el centro de masa.
+[3068.72-3071.72] Es decir, ahora está ahí respecto al eje.
+[3071.72-3075.41] Ahí tienes la eccentricidad.
+[3075.41-3080.92] Ahí tienes la eccentricidad, digamos, ¿no es cierto?
+[3080.92-3083.92] Por ahí corrió el centro de masa.
+[3083.92-3086.92] Entonces, fíjense lo siguiente.
+[3086.92-3090.92] La eccentricidad accidental se calcula.
+[3090.92-3091.92] La eccentricidad se calcula.
+[3091.92-3097.92] La distancia donde muevo el centro de masa
+[3097.92-3100.92] respecto a donde estaba el centro de masa.
+[3100.92-3105.92] Es decir, esto pasa a ser para la norma la eccentricidad accidental
+[3105.92-3107.92] cuando lo corro para allá.
+[3107.92-3112.92] Cuando lo corro de aquí para acá, esta sería la eccentricidad accidental.
+[3112.92-3123.79] Y hay que considerar el más menos al analizar el beneficio.
+[3123.79-3126.16] Fíjense lo siguiente.
+[3126.16-3142.68] Cuando yo lo corro para allá, ¿en qué muro de estos dos se producen mayores esfuerzos?
+[3142.68-3143.68] De la derecha.
+[3143.68-3144.68] De la derecha.
+[3144.68-3146.68] Fíjense.
+[3146.68-3152.68] Como lo moví para allá, quiere decir que la fuerza va a actuar ahí
+[3152.68-3156.68] y respecto a este punto va a producir un momento en este sentido,
+[3156.68-3158.68] que sería la fuerza por esta distancia.
+[3158.68-3164.68] Y la torsión natural también produce momentos en ese sentido.
+[3164.68-3166.68] Entonces, los dos momentos se suman.
+[3166.68-3169.68] Y por lo tanto, esto se desplaza.
+[3169.68-3175.12] ¿Por qué?
+[3175.12-3183.12] Porque cuando analizo este, la torsión natural sigue siendo la misma,
+[3183.12-3188.12] pero la accidental, digamos, ¿no es cierto?, se origina en este sentido contrario.
+[3188.12-3192.12] Entonces, producto de la natural baja para acá,
+[3192.12-3195.12] pero el producto de la accidental va para allá en el muro.
+[3195.12-3196.12] Entonces, ¿por qué?
+[3196.12-3207.63] Para los que están haciendo por primera vez el curso,
+[3207.63-3209.63] por primera vez el curso conmigo,
+[3209.63-3214.63] las pruebas creo yo que un elemento que yo casi mantengo constante en las pruebas
+[3214.63-3220.63] es que si bien son problemas, requieren manejo conceptual previo para poderlo resolver.
+[3220.63-3226.32] Entonces, un problema típico de la prueba sería,
+[3226.32-3229.32] para el caso mostrado en la figura,
+[3229.32-3235.32] ¿cuál es el muro que toma mayor esfuerzo y calcule qué esfuerzo toma?
+[3235.32-3238.76] Un testículo de la prueba.
+[3238.76-3239.76] Típica de la prueba.
+[3240.76-3243.76] Entonces, ¿dónde está el problema?
+[3243.76-3247.76] Que en vez de empezar a razonar, empezamos a preguntar,
+[3247.76-3249.76] ¿qué fórmula aplico?
+[3249.76-3251.76] Échale el rostro.
+[3251.76-3257.76] La cosa es primero ver cuál es la situación más desfavorable.
+[3257.76-3261.76] Ah, por ejemplo, para este muro, cuando muevo eso para allá.
+[3261.76-3265.76] Y ahora veo cómo calculo la mediazada y todo,
+[3265.76-3269.76] pero primero razono, razono de ese sentido las cosas.
+[3270.76-3274.76] Eso es muy importante al día de hoy, ¿no es cierto?
+[3274.76-3279.76] En lo que yo considero que es lo que debe quedar de un curso.
+[3279.76-3283.76] En el curso no debe quedar la fórmula, debe quedar los conceptos.
+[3283.76-3286.17] Profesor, disculpe.
+[3286.17-3287.17] Sí.
+[3287.17-3290.17] ¿Podría repetir lo último de qué muro es más desfavorable?
+[3290.17-3291.17] Claro.
+[3291.17-3344.72] Tengo ese edificio, voy a suponer que este es igual a ese.
+[3344.72-3349.00] Y este tiene más rigidez que ese.
+[3349.00-3351.67] ¿Concusión de eso?
+[3351.67-3354.67] ¿Dónde está el centro de rigidez?
+[3354.67-3356.67] Está tirado para acá.
+[3356.67-3366.20] Voy a cambiar los muros para que te dé el mismo caso anterior
+[3366.20-3368.20] para que no te vayas a confundir.
+[3368.20-3371.20] Voy a hacer este más grande para que te acuerdes de lo que expliqué.
+[3371.20-3373.20] Es el mismo que este quiere decir.
+[3373.20-3375.20] Esto va a ser así.
+[3375.20-3388.22] El centro de rigidez estaría acá.
+[3388.22-3395.68] Y esta sería la excentricidad natural.
+[3395.68-3396.68] ¿Estamos de acuerdo?
+[3396.68-3399.44] Sí.
+[3399.44-3400.44] Ahora quiero saber.
+[3401.44-3410.73] ¿Cuál muro y a qué situación este muro toma más esfuerzo?
+[3410.73-3415.62] Le pongo entonces en lo siguiente.
+[3415.62-3435.64] Producto de la fuerza sísmica que actúa acá.
+[3435.64-3442.64] Respecto de este punto se produce un momento que es esto por ahí.
+[3442.64-3444.64] En este sentido.
+[3444.64-3448.64] Por lo tanto, el edificio reacciona con un momento así.
+[3448.64-3450.64] Este es el momento.
+[3450.64-3453.64] De torsión natural.
+[3453.64-3455.64] Que vale.
+[3455.64-3459.64] F por E suelta.
+[3459.64-3461.64] ¿Estamos de acuerdo?
+[3461.64-3462.64] Sí.
+[3462.64-3467.64] Y además, producto de esta fuerza se genera aquí una fuerza igual.
+[3467.64-3469.64] De sentido contrario que sería.
+[3469.64-3481.16] Pero no, es de la torsión accidental.
+[3481.16-3484.16] ¿Qué esfuerzo toma ese muro?
+[3484.16-3487.16] Toma debido a esta fuerza.
+[3488.16-3490.16] Toma un esfuerzo.
+[3490.16-3494.59] Se le genera un esfuerzo para acá.
+[3494.59-3500.48] Y le pido a ese momento también para acá.
+[3500.48-3506.48] Es decir, la traslación más la rotación hace que el elemento se desplace en el mismo sentido.
+[3506.48-3509.85] Por lo tanto, se genera más esfuerzo.
+[3509.85-3515.85] Pero aquí está faltando considerar la torsión accidental.
+[3515.85-3519.85] Entonces, aplico el concepto de torsión accidental.
+[3519.85-3521.85] Entonces, digo.
+[3521.85-3524.85] El centro de masa.
+[3524.85-3526.85] Hay que moverlo.
+[3526.85-3530.85] Entonces, vamos a moverlo a este punto.
+[3530.85-3535.85] Centro de masa 1.
+[3535.85-3537.85] Y esto sería.
+[3537.85-3544.71] La excentricidad accidental.
+[3544.71-3553.55] El momento debido a la torsión accidental.
+[3553.55-3557.55] Dado que el centro de masa lo corrí para acá.
+[3557.55-3560.55] Entonces, la fuerza actúa acá.
+[3560.55-3566.55] Y por lo tanto, la torsión accidental sería la fuerza por esta distancia.
+[3566.55-3574.87] Y genera un momento en ese sentido.
+[3574.87-3579.50] La reacción se produce así.
+[3579.50-3586.50] Ese sería el momento de torsión accidental debido al caso 1.
+[3586.50-3589.50] Y debido al caso 1, entonces.
+[3589.50-3592.50] Hace que esto también venga para acá.
+[3592.50-3598.53] Este es el caso 1.
+[3598.53-3600.53] Falta analizar el caso 2.
+[3600.53-3603.53] Entonces, el caso 2 significa mover esto para acá.
+[3603.53-3608.84] Y aquí sería el centro de masa 2.
+[3608.84-3612.16] La fuerza va acá.
+[3612.16-3616.16] Entonces, respecto a este punto, me genera un momento en ese sentido.
+[3616.16-3620.16] Y tiene que reaccionar en este otro.
+[3620.16-3625.16] Entonces, este es el momento de torsión accidental debido al caso 2.
+[3625.16-3628.16] Y debido al caso 2, esto produce para allá.
+[3628.16-3635.76] En conclusión, ¿cuál es el caso que produce los mayores esfuerzos de ese muro?
+[3635.76-3640.76] Es considerar la torsión accidental hacia acá.
+[3640.76-3644.20] Y no hacia allá.
+[3644.20-3645.20] ¿Por qué?
+[3645.20-3648.20] Porque al considerarla hacia acá.
+[3648.20-3649.20] ¿No es cierto?
+[3649.20-3653.20] Aumenta la distancia entre este punto y el centro de origen.
+[3653.20-3656.20] En cambio, cuando lo mueve para allá, se reduce la distancia.
+[3656.20-3667.00] Entre el centro de masa y el centro de origen.
+[3667.00-3668.00] Vaya sin entender.
+[3668.00-3671.91] O sea, no dejen...
+[3671.91-3672.91] No, ¿lo entendí más o menos?
+[3672.91-3673.91] No, no, no.
+[3673.91-3676.91] ¿Lo entendiste completo o no entendiste nada?
+[3676.91-3679.91] Porque no hay entenderlo para un más o menos.
+[3679.91-3682.91] Y este es el concepto fundamental que sigue todo el curso.
+[3682.91-3689.48] Todo lo que viene a continuación se centra en el concepto que acabo de explicar.
+[3689.48-3691.48] Por eso traté de hacer un dibujo.
+[3691.48-3692.48] ¿No es cierto?
+[3692.48-3695.48] No, este es muy buena vista porque yo de aquí no veo nada.
+[3695.48-3697.48] No, pero se entendió.
+[3697.48-3699.48] Yo de acá no veo nada.
+[3699.48-3700.48] No, pero...
+[3700.48-3701.48] ¿Ustedes ven?
+[3701.48-3702.48] Se entendió.
+[3702.48-3703.48] Eso es.
+[3703.48-3704.48] Más adelante entonces.
+[3704.48-3709.48] Profe, entonces lo occidental siempre es con respecto al centro de masa nuevo con respecto
+[3709.48-3710.48] al anterior.
+[3710.48-3711.48] Claro.
+[3711.48-3712.48] Eso es lo que se usa.
+[3712.48-3713.48] Ah, ya.
+[3713.48-3714.48] Perfecto.
+[3714.48-3715.48] Ya.
+[3715.48-3716.48] Gracias.
+[3716.48-3717.48] Es muy importante eso.
+[3717.48-3721.68] Conclusión entonces.
+[3721.68-3722.68] Fíjense.
+[3722.68-3730.68] El efecto de un sismo, finalmente, ¿cuáles son los esfuerzos mayores que se van a generar
+[3730.68-3735.95] en los elementos verticales?
+[3735.95-3736.95] Va a depender.
+[3736.95-3739.95] ¿De qué estado de carga estoy considerando?
+[3739.95-3742.95] Y va a depender, ¿no es cierto?
+[3742.95-3750.90] Si el caso que manda es mover el centro de masa para un lado o mover para otro lado.
+[3750.90-3753.90] Entonces, en las pruebas, ¿qué es lo que hago yo?
+[3753.90-3764.80] Digo, encuentre el caso más desfavorable para tal muro.
+[3764.80-3767.80] Encuentre el esfuerzo en el muro uno.
+[3767.80-3770.80] No, el más desfavorable de todos los muros.
+[3770.80-3772.80] Lo más desfavorable de todos los muros.
+[3772.80-3773.80] Entonces, ¿qué es lo que se va a generar?
+[3773.80-3774.80] ¿Cómo se va a generar el caso más desfavorable?
+[3774.80-3775.80] A ver, ¿qué es lo que se va a generar?
+[3775.80-3790.15] ¿Cómo se va a generar?
+[3790.15-3794.25] ¿Cómo se va a generar el caso más desfavorable?
+[3794.25-3795.25] Para que exista este razonamiento.
+[3795.25-3796.25] Para que exista este razonamiento.
+[3796.25-3797.25] Fíjense en este dibujo.
+[3797.25-3798.25] Estoy haciendo lo mismo que expliqué recién.
+[3798.25-3799.25] Pero para todos los muros.
+[3799.25-3811.87] Vamos a mostrar primero considerando una torsión accidental cero.
+[3811.87-3812.87] Para ir a poquito metiendo la cosa.
+[3812.87-3813.87] O sea, no hay torsión accidental.
+[3813.87-3814.87] Cuando olvidamos la torsión accidental, solamente hay torsión natural.
+[3814.87-3815.87] Y está actuando una fuerza cíclica.
+[3815.87-3816.67] Pero está en cero.
+[3817.95-3819.35] Para ir a poquito metiendo la cosa.
+[3819.75-3821.15] No hay torsión accidental.
+[3822.17-3823.75] No olvidamos la torsión accidental.
+[3824.01-3826.05] Solamente hay torsión natural.
+[3827.05-3828.67] Y está actuando una fuerza símbica.
+[3829.41-3830.69] ¿Qué esfuerzo toma cada uno?
+[3830.89-3838.42] Ahí está el centro de masa.
+[3839.98-3841.32] Entonces, ¿qué es lo que tengo?
+[3842.00-3844.30] La fuerza símbica B actúa ahí.
+[3844.30-3848.81] Como acá está el centro de rigidez,
+[3850.11-3853.21] entonces quiere decir que esta es la acción
+[3853.21-3855.61] y esta sería la reacción.
+[3855.87-3857.59] Entonces, esta tiene que ser igual a esta.
+[3859.01-3862.13] Y como esta produce un momento para allá
+[3862.13-3864.45] que vale B por esta distancia,
+[3865.47-3868.51] tiene un momento contrario a los contrarreloj.
+[3869.49-3872.85] Entonces, la reacción es a favor de los contrarreloj.
+[3872.85-3877.21] Dicho ese relacionamiento,
+[3877.97-3880.17] ahora analizo todo con esto de fuerza.
+[3880.87-3884.47] Porque esa es la reacción del elemento.
+[3888.25-3889.99] Pero el curva dice, no, no me di para allá.
+[3889.99-3890.85] Me di para allá para allá.
+[3891.77-3892.25] Reacción.
+[3894.21-3897.27] Entonces, ¿qué pasa en este muro?
+[3898.65-3900.37] Debido a esa fuerza,
+[3901.51-3903.81] se genera un corte para acá.
+[3904.13-3907.80] Debido a esto, esto se mueve para allá.
+[3908.02-3909.26] Entonces, se genera un corte para allá.
+[3909.74-3911.58] Es decir, aquí resta.
+[3914.86-3916.52] En cambio, allá, ¿qué pasa?
+[3917.20-3921.30] Este genera S y este hace la misma suma.
+[3921.30-3923.40] Es decir, acá,
+[3924.02-3928.24] la traslación, el efecto de la traslación más la rotación se suma,
+[3928.24-3929.24] acá se resta.
+[3932.75-3935.45] Debido a esta fuerza, eso no tiene rigidez.
+[3935.45-3936.73] Entonces, no produce nada.
+[3936.73-3944.14] Debido al momento, esto hace girar y ir para allá.
+[3944.14-3945.34] Entonces, se genera el corte.
+[3945.34-3948.20] En cambio, acá, va para acá.
+[3948.20-3955.04] Ahí está el esfuerzo que tenemos.
+[3955.04-3956.04] Tarea para la casa.
+[3956.04-3960.12] Coloquemos la torsión aquí dentro.
+[3960.12-3964.58] Es decir, coloquemos que el centro de masa que está ahí,
+[3964.58-3965.58] hagamos el dibujo.
+[3966.50-3968.92] Y coloquemos al lado de acá que hagamos el dibujo.
+[3968.92-3969.78] ¿Quién lo quiere? ¿Quién lo quiere? ¿Quién lo quiere?
+[3969.78-3975.04] ¿Quién lo quiere? ¿Quién lo quiere?
+[3975.04-3996.54] Ahí dice, dice, F, N, fuerza de corte debido a la torsión.
+[3996.54-3999.88] Y F, no sé qué, la P y la N, hay dos.
+[3999.88-4000.78] Hay dos.
+[4000.78-4005.38] Uno, digamos, aquí en el fondo, acá es esta.
+[4005.38-4011.18] Esta es la de corte y esta es la de torsión.
+[4011.18-4012.88] Debido a esta fuerza, es esta.
+[4012.88-4014.62] Debido a este momento, es esta.
+[4014.62-4039.26] Importante lo que acaba de reflexionar su compañero.
+[4039.26-4041.36] Los momentos de torsión.
+[4041.48-4053.22] La emoción, ya sea natural o accidental, son tomados por todos los elementos estructurales.
+[4053.28-4059.52] La fuerza es tomada fundamentalmente por los muros que hay en esa dirección.
+[4059.76-4060.10] ¿Por qué?
+[4061.90-4069.76] Porque cuando esta fuerza actúa en esta dirección, ¿cuál es la inercia de ese muro?
+[4069.76-4080.40] La inercia de ese muro, como el muro está así, entonces yo tomo inercia respecto de ese punto.
+[4080.40-4095.12] Entonces la inercia vale 1.2 de B en el cubo, que es menso porque él es grande.
+[4097.04-4104.23] En cambio, entonces cuando viene el sismo así, esta es la inercia.
+[4105.87-4119.51] Pero cuando, y por lo tanto, cuando viene el sismo así, cuando viene el sismo así,
+[4119.51-4121.81] la inercia respecto de este eje.
+[4124.65-4125.11] Entonces.
+[4125.25-4133.85] Entonces, para este caso, la inercia es 1.2 de L en el cubo, y este es chiquitito.
+[4136.00-4137.78] En cambio acá, esto es grande.
+[4138.28-4141.50] Entonces esta inercia es mucho mayor que esa.
+[4145.09-4148.13] Despreciamos entonces el corte que toma en esta dirección.
+[4149.99-4151.85] El programa de computación lo calcula.
+[4154.52-4160.58] El ETAP va a decir, no, no, no, para este caso, no es cierto, ya.
+[4161.40-4162.72] Debido a esto, también.
+[4162.74-4167.56] Si bien hay un corte así, en ese momento, aunque sea chiquitito, lo considera.
+[4168.02-4169.24] Nosotros, hermanos, lo despreciamos.
+[4170.42-4170.78] ¿Por qué?
+[4171.38-4174.12] Porque esa inercia de ahí es muy chiquitita respecto al otro.
+[4176.11-4179.01] Entonces el programa de ETAP no hace simplificaciones.
+[4179.89-4181.75] Nosotros, hermanitos, hacemos simplificaciones.
+[4183.83-4187.67] Entonces no se extrañen que un muro que está en esta dirección,
+[4188.17-4191.13] le aparezca que toma corte así, y también así, pues, en el ETAP.
+[4192.29-4195.31] Pero como proceso, usted toma acá, no, no, que aquí también,
+[4195.71-4198.57] se tomó un poquitito, aunque es chiquitito, lo pone igual.
+[4200.62-4201.80] Eso es lo que hace el programa.
+[4207.84-4212.42] Fíjense, el programa tiene una cosa súper interesante que la descubrí el otro día.
+[4213.36-4213.52] ¿Ya?
+[4213.78-4216.74] Y ahora se la voy a mostrar cuando estemos con el...
+[4216.74-4221.31] Que tiene una parte que dice,
+[4222.43-4229.11] ¿Quiere usted saber cuáles son los elementos más solicitados que están en el edificio?
+[4230.11-4232.57] Y te pone con colores los que están más solicitados.
+[4236.41-4237.63] Interesante, o sea, entonces, ¿ves?
+[4237.93-4238.59] ¿Ves lo cierto?
+[4239.09-4241.37] Y entonces uno como ingeniero dice,
+[4241.57-4245.63] chupaya, mira, este se lleva cualquier cantidad más y lo ofrece poco.
+[4245.63-4250.85] No estoy mal, estoy dejando toda la responsabilidad en uno solo.
+[4253.42-4256.68] Don Tomás Giendema, que es un ingeniero revisor,
+[4257.26-4258.92] tal vez el más famoso en nuestro país,
+[4260.48-4262.50] dice una máxima, digamos, lo siguiente.
+[4264.32-4268.50] No pueden haber menos de tres ejes resistentes en cada dirección.
+[4270.49-4271.77] ¿Qué significa eso?
+[4274.53-4277.83] Aquí, ¿cuántos ejes resistentes tendríamos en la dirección?
+[4277.91-4281.87] Esta, uno, esta de acá, uno, dos.
+[4285.99-4288.87] Entonces, no es lo mismo, fíjense en lo siguiente.
+[4289.63-4291.45] Imagínense que yo les preguntara,
+[4292.03-4293.53] pusiera un edificio así,
+[4294.79-4297.19] y pusiera un muro así,
+[4303.20-4304.52] y pusiera otro edificio,
+[4307.33-4311.02] y pusiera así,
+[4314.51-4317.69] de tal manera que la suma de estos tres sea igual a esa.
+[4317.69-4323.39] Yo les diría, ¿qué edificio elegiría?
+[4326.32-4327.86] Desde el punto de vista de la rigidez,
+[4327.86-4332.55] el edificio internacional son iguales,
+[4332.55-4335.55] solamente que aquí se va a llevar todo el corte,
+[4335.55-4337.55] y aquí se va a llevar un porcentaje,
+[4337.55-4340.55] y tendrá que la suma va a ser 100% igual que acá.
+[4340.55-4347.20] El edificio, si falla ese muro, hasta luego.
+[4348.20-4350.20] En cambio aquí, si falla esto,
+[4350.20-4353.20] por ahí después vos podés ayudar a tomar lo que falta.
+[4353.20-4357.28] Es como esa propaganda,
+[4357.28-4359.28] no ponga todos los huevos a la canasta,
+[4359.28-4360.28] acá es lo mismo.
+[4360.28-4365.48] Hay un edificio acá de alto pagaste que se llama Inmigrante,
+[4365.48-4368.56] en la vía Brasil,
+[4368.56-4370.56] que se construyó mucho tiempo,
+[4370.56-4372.56] lo calculó don Jorge Scholl,
+[4372.56-4374.56] un gran ingeniero alto pagastino,
+[4374.56-4377.56] y yo fui cuando se estaba construyendo.
+[4377.56-4379.56] Yo era jovencito en ese tiempo,
+[4379.56-4380.56] no sé,
+[4380.56-4384.04] estoy hablando de 20 años o algo así,
+[4384.04-4386.04] que fui a verlo, digamos, ahí todo,
+[4386.04-4388.04] y de repente llegó una parte,
+[4388.04-4393.59] estudiando todo, entonces,
+[4393.59-4395.59] digo yo, ¿y por qué?
+[4395.59-4402.93] Y me quedé siempre con la duda,
+[4402.93-4403.93] ¿por qué estaba cortado?
+[4403.93-4405.93] Me fui de la obra,
+[4405.93-4407.93] sin responderme la pregunta,
+[4407.93-4408.93] ¿por qué estaba cortado?
+[4408.93-4409.93] ¿Qué quiero decir con eso?
+[4409.93-4411.93] Al decir cortado,
+[4411.93-4413.93] que este muro,
+[4413.93-4414.93] que era así,
+[4414.93-4427.08] ¿por qué hizo esto?
+[4427.08-4428.08] Yo me quedé dando vueltas,
+[4428.08-4429.08] siempre me preguntaba,
+[4429.08-4430.08] ¿qué diablo?
+[4430.08-4431.08] ¿Qué diablo?
+[4431.08-4435.44] ¿Qué quiso hacer?
+[4435.44-4437.44] Fíjense ustedes lo siguiente,
+[4437.44-4439.44] de alguna manera,
+[4439.44-4442.85] en vez de dejar la responsabilidad
+[4442.85-4443.85] todo en un muro,
+[4443.85-4445.85] se la dejó en dos.
+[4445.85-4447.85] Van a tomar lo mismo,
+[4447.85-4449.85] porque el largo es exactamente igual,
+[4449.85-4451.85] pero la dejó responsabilidad en dos.
+[4451.85-4454.23] Lo que quiero decir,
+[4454.23-4456.23] no hay que dejar la responsabilidad
+[4456.23-4457.23] en pocos elementos,
+[4457.23-4460.60] que si falla uno,
+[4460.60-4461.60] que hay otros dos
+[4461.60-4463.60] que pueden ayudar todavía.
+[4463.60-4464.60] En cambio, si hay,
+[4464.60-4465.60] el elemento falló
+[4465.60-4475.12] y hasta luego el edificio.
+[4475.12-4480.61] Esto es lo que queda
+[4480.61-4485.24] de estudio para ustedes.
+[4485.24-4487.24] Lo que consideran acá,
+[4487.24-4489.24] es cómo se determina
+[4489.24-4491.24] la matriz de rigidez
+[4491.24-4493.24] de un edificio con diafragma
+[4493.24-4495.24] rígido a nivel de piso.
+[4495.24-4497.24] Todo eso el profesor Barnett
+[4497.24-4498.24] me dijo, Juan,
+[4498.24-4500.24] olvídate de eso,
+[4500.24-4501.24] yo pasé todo eso,
+[4501.24-4502.24] así que no volváis a insistir
+[4502.24-4503.24] con la cuestión,
+[4503.24-4504.24] no pierdas tiempo en eso,
+[4504.24-4506.24] ándate a profundizar
+[4506.24-4508.24] más la norma, digamos,
+[4508.24-4509.24] las cosas nuevas,
+[4509.24-4510.24] la norma que viene,
+[4510.24-4511.24] en todo,
+[4511.24-4512.24] porque esto ya los estudiantes
+[4512.24-4514.24] conmigo lo han aprendido en todo.
+[4514.24-4516.52] Como creó el profesor Barnett,
+[4516.52-4517.52] digamos, no es cierto,
+[4517.52-4519.52] ya se da por pasado.
+[4519.52-4521.96] De hecho, he pasado,
+[4521.96-4523.96] pasaba esta materia.
+[4523.96-4524.96] Pero ahora entonces,
+[4524.96-4526.96] no se pasa, pero queda.
+[4526.96-4528.96] Aquí, en los anteontes,
+[4528.96-4530.96] se plantea el método de equilibrio
+[4530.96-4531.96] y lo directo
+[4531.96-4533.96] y el método de rigidez directa.
+[4533.96-4535.96] Y se explica con bien sencillo,
+[4535.96-4537.96] ustedes ya lo saben esto,
+[4537.96-4541.20] y lo importante nomás
+[4541.20-4543.20] que quiero indicar
+[4543.20-4545.20] para recordar
+[4545.20-4546.20] la buena lectura,
+[4546.20-4547.20] entonces no apunte,
+[4547.20-4549.20] es lo siguiente.
+[4549.20-4551.20] Cuanto hay diafragma rígido
+[4551.20-4554.80] a nivel de piso,
+[4554.80-4558.80] como se comporta como cuerpo rígido,
+[4558.80-4560.80] yo sabiendo,
+[4560.80-4562.80] en un punto,
+[4562.80-4564.80] cuánto valen los desplazamientos
+[4564.80-4565.80] y el giro,
+[4565.80-4567.80] sé el valor que hay en cualquier otro.
+[4567.80-4571.14] ¿Por qué?
+[4571.14-4573.14] Porque la distancia no cambió.
+[4573.14-4575.14] Entonces, yo acá sé el desplazamiento,
+[4575.14-4577.14] sé el desplazamiento y sé el giro.
+[4577.14-4579.14] Bueno, ¿cuánto se desplazó en la esquina?
+[4579.14-4580.14] Bueno, lo que pasó aquí
+[4580.14-4582.14] ha multiplicado por las distancias.
+[4582.14-4583.14] Punto.
+[4583.14-4587.00] Porque las distancias no cambiaron.
+[4587.00-4588.00] Entonces, por eso,
+[4588.00-4590.00] cuando hay diafragma rígido,
+[4590.00-4593.00] elegimos 3 grados de libertad por piso.
+[4593.00-4595.00] Ahí está.
+[4595.00-4596.00] 1,
+[4596.00-4597.00] 2,
+[4597.00-4599.76] 3,
+[4599.76-4600.76] 4,
+[4600.76-4601.76] 5,
+[4601.76-4602.76] 6,
+[4602.76-4606.44] 7,
+[4606.44-4607.44] 8,
+[4607.44-4608.44] 9,
+[4608.44-4609.44] 10,
+[4609.44-4610.44] 11,
+[4610.44-4611.44] 12,
+[4611.44-4612.44] 13,
+[4612.44-4613.44] 14,
+[4613.44-4614.44] 15,
+[4614.44-4615.44] 16,
+[4615.44-4616.44] 17,
+[4616.44-4617.44] 18,
+[4617.44-4618.44] 19,
+[4618.44-4619.44] 20,
+[4619.44-4620.44] 21,
+[4620.44-4621.44] 22,
+[4621.44-4622.44] 23,
+[4622.44-4623.44] 24,
+[4623.44-4624.44] 25,
+[4624.44-4625.44] 26,
+[4625.44-4626.44] 27,
+[4626.44-4627.44] 28,
+[4627.44-4628.44] 29,
+[4628.44-4629.44] 30,
+[4629.44-4630.44] 31,
+[4630.44-4634.23] 32,
+[4634.23-4635.23] 33,
+[4635.23-4636.23] 34,
+[4636.23-4637.23] 35,
+[4637.23-4638.23] 36,
+[4638.23-4639.23] 37,
+[4639.23-4640.23] 38,
+[4640.23-4641.23] 39,
+[4641.23-4642.23] 40,
+[4642.23-4643.23] 41,
+[4643.23-4645.57] 42,
+[4645.57-4650.41] 43,
+[4650.41-4651.41] 44,
+[4651.41-4652.41] 45,
+[4652.41-4653.41] 46,
+[4653.41-4654.41] 47,
+[4654.41-4655.41] 48,
+[4655.41-4656.41] 49,
+[4656.41-4657.41] 50,
+[4657.41-4658.41] 51,
+[4658.41-4659.41] 52,
+[4659.41-4660.41] 53,
+[4660.41-4661.41] 54,
+[4661.41-4662.41] 55,
+[4662.41-4663.41] 56,
+[4663.41-4664.41] 57,
+[4664.41-4665.41] 58,
+[4665.41-4666.41] 59,
+[4666.41-4667.41] 60,
+[4667.41-4671.93] 51,
+[4671.93-4677.32] 52,
+[4677.32-4678.32] 53,
+[4678.32-4679.32] 54,
+[4679.32-4680.32] 55,
+[4680.32-4681.32] 56,
+[4681.32-4682.32] 57,
+[4682.32-4683.32] 58,
+[4683.32-4684.32] 59,
+[4684.32-4685.32] 60,
+[4685.32-4686.32] 61,
+[4686.32-4687.32] 62,
+[4687.32-4688.32] 63,
+[4688.32-4689.32] 64,
+[4689.32-4690.32] 65,
+[4690.32-4691.32] 67,
+[4691.32-4692.32] 68,
+[4692.32-4693.32] 69,
+[4693.32-4696.65] 70,
+[4696.65-4697.65] 71,
+[4697.65-4698.65] 72,
+[4698.65-4703.91] 73,
+[4703.91-4704.91] 74,
+[4704.91-4705.91] 75,
+[4705.91-4706.91] 76,
+[4706.91-4707.91] 77,
+[4707.91-4708.91] 78,
+[4708.91-4709.91] 79,
+[4709.91-4710.91] 80,
+[4710.91-4711.91] 81,
+[4711.91-4712.91] 82,
+[4712.91-4713.91] 83,
+[4713.91-4714.91] 84,
+[4714.91-4715.91] 85,
+[4715.91-4716.91] 86,
+[4716.91-4719.92] 87,
+[4719.92-4720.92] 88,
+[4720.92-4721.92] 89,
+[4721.92-4722.92] 90,
+[4722.92-4723.92] 91,
+[4723.92-4724.92] 92,
+[4724.92-4725.92] 92,
+[4725.92-4726.92] 93,
+[4726.92-4727.92] 94,
+[4727.92-4728.92] 95,
+[4728.92-4731.68] 96,
+[4731.68-4732.68] 97,
+[4732.68-4733.68] 98,
+[4733.68-4734.68] 99,
+[4734.68-4735.68] 100,
+[4735.68-4740.08] 100,
+[4740.08-4741.08] 100,
+[4741.08-4742.08] 100,
+[4742.08-4743.08] 100,
+[4743.08-4744.08] 100,
+[4744.08-4745.08] 100,
+[4745.08-4746.08] 100,
+[4746.08-4747.08] 100,
+[4747.08-4748.08] 100,
+[4748.08-4749.08] 100,
+[4749.08-4750.08] 100,
+[4750.08-4751.08] 100,
+[4751.08-4752.08] 100,
+[4752.08-4753.08] 100,
+[4753.08-4754.08] 100,
+[4754.08-4755.08] 100,
+[4755.08-4756.08] 100,
+[4756.08-4757.08] 100,
+[4757.08-4758.08] 100,
+[4758.08-4759.08] 100,
+[4759.08-4760.08] 100,
+[4760.08-4761.08] 100,
+[4761.08-4762.08] 100,
+[4762.08-4764.68] 100,
+[4764.68-4765.68] 100,
+[4765.68-4766.68] 100,
+[4766.68-4767.68] 100,
+[4767.68-4768.68] 100,
+[4768.68-4769.68] 100,
+[4769.68-4770.68] 100,
+[4770.68-4771.68] 100,
+[4771.68-4772.68] 100,
+[4772.68-4775.40] 100,
+[4775.40-4776.40] 100,
+[4776.40-4777.40] 100,
+[4777.40-4778.40] 100,
+[4778.40-4779.40] 100,
+[4779.40-4780.40] 100,
+[4780.40-4782.86] No conocerlo, dominarlo.
+[4784.76-4786.30] El tema no es conocerlo, no, no.
+[4786.54-4789.10] Para el curso lo utilizamos, dominarlo, que es distinto.
+[4789.32-4792.26] Una cosa es estudiar, la otra es dominarlo.
+[4793.34-4795.16] ¿Cómo se determina la matriz de masa?
+[4795.68-4798.00] ¿Cómo se determina la matriz de masa?
+[4800.64-4806.04] Necesitamos saber cómo se determina la matriz de masa respecto a cualquier punto.
+[4807.04-4808.78] Lo pregunté en la prueba del semestre pasado.
+[4810.69-4812.55] ¿Qué pregunté el semestre pasado en la prueba?
+[4815.65-4817.13] Dice la siguiente pregunta.
+[4822.67-4828.35] ¿Di la matriz de masa respecto al centro de masa verdadero?
+[4828.35-4837.85] Dije, mire, esa matriz de masa era M, M, M y J.
+[4841.96-4846.96] Encuéntreme la matriz de masa respecto de ese punto y de ese punto.
+[4849.28-4850.60] Eso también tiene que ser.
+[4850.92-4860.59] Conclusión entonces, el curso de dinámica requiere que ustedes sepan determinar,
+[4860.85-4867.39] no saber cómo se determina la matriz de masa respecto a cualquier punto.
+[4869.54-4873.26] ¿Cómo se determina la matriz de rigidez respecto a cualquier punto?
+[4877.50-4879.98] Porque ustedes aprendieron la siguiente cosa.
+[4881.06-4887.98] Cuando el punto elijo para nombrar los grados de libertad es el centro de masa,
+[4888.74-4891.52] la matriz de masa da diagonal.
+[4891.52-4895.52] Y la matriz de rigidez, ¿no es cierto?
+[4895.52-4900.32] Si bien es simétrica, puede tener términos fuera de la diagonal.
+[4900.74-4909.53] La pregunta es, si le pido a usted encontrar la matriz de masa y de rigidez
+[4909.53-4914.91] respecto al centro de rigidez, ¿cómo es la matriz de masa y cómo es la matriz de rigidez?
+[4921.72-4922.78] Y voy a dar la respuesta.
+[4923.86-4929.48] Cuando determino la matriz de masa respecto del centro de rigidez,
+[4929.48-4933.16] la matriz de masa no es diagonal.
+[4934.48-4935.48] Y la matriz...
+[4935.54-4937.64] La matriz de rigidez es diagonal.
+[4940.70-4942.00] ¿Con respecto al centro de rigidez?
+[4944.30-4948.20] Entonces, tienen que demostrarme la siguiente aceleración.
+[4949.82-4950.62] Esto anótelo.
+[4954.40-4960.54] Determinar la matriz de masa y matriz de rigidez respecto del centro de masa.
+[4961.68-4964.00] Es un edificio de un piso, nada más de un piso.
+[4966.59-4967.31] Resultado.
+[4968.49-4970.53] Matriz de masa diagonal.
+[4970.53-4970.79] Matriz de rigidez.
+[4971.65-4973.13] Matriz de rigidez.
+[4973.57-4974.77] No necesariamente diagonal.
+[4978.50-4984.52] Determinación de la matriz de masa y matriz de rigidez respecto del centro de rigidez.
+[4985.98-4988.16] Matriz de masa no diagonal.
+[4989.94-4991.54] Matriz de rigidez diagonal.
+[4996.60-5001.46] Y decirme qué representa cada término en este caso de la diagonal.
+[5003.92-5005.04] ¿Qué representa para ti?
+[5005.20-5006.26] ¿Te acuerdas tú algo, no?
+[5006.66-5007.40] Tu nombre, perdón.
+[5007.74-5008.14] Jesús.
+[5008.40-5009.86] Jesús, dime Jesús.
+[5009.86-5010.72] ¿Te acordáis?
+[5010.72-5016.92] Cuando determina la matriz de rigidez respecto del centro de rigidez, ¿qué representa cada término?
+[5017.20-5023.65] Lo único que le puedo decir es que el tercer término representa la rigidez torsional.
+[5027.74-5027.94] ¿Ok?
+[5028.90-5029.50] Conclusión.
+[5029.96-5033.54] Hemos dejado una tarea importante para ustedes.
+[5034.44-5035.50] Pero importantísima.
+[5036.70-5040.00] Todo eso se pregunta en la prueba 1 y en la prueba 2.
+[5042.80-5046.92] Lo que acabo de decir es el requisito primero para que me haya bien en el curso.
+[5046.92-5049.28] Si yo no domino lo que acabo de decir.
+[5049.30-5052.30] No tengo ninguna posibilidad para el curso.
+[5052.30-5052.80] Ninguna.
+[5052.80-5053.30] Cierto.
+[5053.30-5053.80] Se usa todo.
+[5053.80-5056.82] Absolutamente todo.
+[5056.82-5057.32] Todo eso.
+[5057.32-5066.82] Lo primero, tengo que determinar la matriz de masa, tengo que determinar la matriz de rigidez, tengo que determinar los valores y vectores propios, digamos, etcétera, etcétera, etcétera, etcétera.
+[5066.82-5075.82] Entonces eso, ahora que tienen tiempo, digamos, no es cierto, pónganse al diálogo que está un poquito débil en esa parte para que estemos en igualdad de condiciones.
+[5075.82-5078.82] Es decir, que todos partamos a la carrera del curso en el mismo punto.
+[5078.82-5079.82] No se pongan a pedachar que no saben.
+[5079.82-5080.82] Todo esto es un ejercicio.
+[5080.82-5081.32] No se pongan a pedachar que no saben.
+[5081.32-5086.53] Todo esto es un ejercicio.
+[5086.53-5087.03] No se pongan a pedachar que no saben.
+[5087.03-5087.53] No se pongan a pedachar que no saben.
+[5087.53-5088.03] No se pongan a pedachar que no saben.
+[5088.03-5088.53] No se pongan a pedachar que no saben.
+[5088.53-5089.03] No se pongan a pedachar que no saben.
+[5089.03-5089.53] No se pongan a pedachar que no saben.
+[5089.53-5090.03] No se pongan a pedachar que no saben.
+[5090.03-5090.53] No se pongan a pedachar que no saben.
+[5090.53-5091.03] No se pongan a pedachar que no saben.
+[5091.03-5091.53] No se pongan a pedachar que no saben.
+[5091.53-5092.03] No se pongan a pedachar que no saben.
+[5092.03-5092.53] No se pongan a pedachar que no saben.
+[5092.53-5093.03] No se pongan a pedachar que no saben.
+[5093.03-5093.53] No se pongan a pedachar que no saben.
+[5093.53-5094.03] No se pongan a pedachar que no saben.
+[5094.03-5096.71] ¿Se alcanzan a poner en el mismo punto? ¿Se alcanzan a llegar?
+[5097.33-5098.91] Porque hay un tiempo que necesitan para llegar.
+[5101.34-5102.60] Bueno, quedamos hasta acá.
+[5103.26-5107.00] A la tarde tienen clase entonces con el profesor Patricio Capia
+[5107.00-5109.40] y lo que es la filosofía.
+[5110.08-5112.00] Firmen la lista, por favor, jóvenes.
+[5112.40-5113.42] Lo siento y me lo entrego.
+[5114.88-5129.11] Aquí me dice Patricio, hay clase a la tarde en los dos bloques.

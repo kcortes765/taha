@@ -1,0 +1,2 @@
+"""Course-wide knowledge indexes."""
+

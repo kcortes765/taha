@@ -1,0 +1,3 @@
+default_rule: session_gated
+default_enabled_from_session: 1
+

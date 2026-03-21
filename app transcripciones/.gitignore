@@ -1,0 +1,14 @@
+.pytest_cache/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.mypy_cache/
+.ruff_cache/
+.streamlit/
+Academico/
+dist/
+build/
+

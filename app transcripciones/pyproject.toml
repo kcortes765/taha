@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cis"
+version = "0.1.0"
+description = "Course Intelligence System"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "PyYAML>=6.0",
+  "pydantic>=2.5,<3.0",
+  "faster-whisper>=1.1.1",
+  "pdfplumber>=0.11.0",
+  "Pillow>=10.0.0",
+  "streamlit>=1.40.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+cis = "cis.cli.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+

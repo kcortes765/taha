@@ -1,0 +1,261 @@
+{
+  "project": "ADSE 1S-2026 — Material de Estudio + Correcciones",
+  "created": "2026-03-21",
+  "features": [
+    {
+      "id": "FIX01",
+      "name": "Corregir discrepancias criticas en scripts API",
+      "description": "Leer autonomo/research/validacion_cruzada.md para las 14 discrepancias encontradas. Aplicar las correcciones criticas y moderadas en los scripts de autonomo/scripts/:\n\n1. En config.py: cambiar nombres de casos sismicos de 'SX'/'SY' a 'SDX'/'SDY' en el dict COMBINATIONS\n2. En config.py: agregar TERT a las combinaciones donde corresponda\n3. En config.py: corregir factor SCP en C3 de 0.5 a 1.0\n4. En 08_seismic.py: verificar que TERT esta incluido en Mass Source con SF=1.0\n5. En 02_materials_sections.py: verificar Shell type de muros (Shell-Thick vs Shell-Thin, decidir y documentar)\n6. En config.py: unificar AutoMesh a 1.0m o documentar por que 0.4m\n7. Verificar que todos los cambios son coherentes entre si\n\nLeer tambien autonomo/research/informe_final.md para las 5 observaciones residuales.",
+      "steps": [
+        "Leer autonomo/research/validacion_cruzada.md completo",
+        "Leer autonomo/research/informe_final.md seccion observaciones",
+        "Editar autonomo/scripts/config.py con correcciones",
+        "Editar autonomo/scripts/08_seismic.py si falta TERT en Mass Source",
+        "Verificar coherencia entre todos los scripts corregidos"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "FIX02",
+      "name": "Corregir errores en guia ETABS",
+      "description": "Leer autonomo/research/validacion_cruzada.md y autonomo/research/informe_final.md. Corregir los siguientes errores en docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md:\n\n1. Es del acero rebar: cambiar 2,039,000 a 20,387,400 tonf/m2 (error de un orden de magnitud)\n2. fy del acero: cambiar 42,000 a 42,814 tonf/m2 (conversion exacta 420 MPa x 101.937)\n3. fu del acero: cambiar 63,000 a 64,220 tonf/m2 (conversion exacta 630 MPa x 101.937)\n4. Nombre seccion viga: unificar a VI20x60G30 (con x, como lo acepta ETABS)\n5. En FASE 9 (combinaciones): agregar TERT donde corresponda en los combos expandidos\n6. Verificar que no se rompio nada mas en la guia",
+      "steps": [
+        "Leer autonomo/research/validacion_cruzada.md",
+        "Leer autonomo/research/informe_final.md",
+        "Abrir docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md",
+        "Buscar y corregir Es, fy, fu del acero",
+        "Buscar y corregir nombre viga",
+        "Buscar y corregir combos en FASE 9",
+        "Verificar coherencia interna de la guia"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "PERF01",
+      "name": "Perfeccionar 01-Aspectos-Conceptuales.md",
+      "description": "Reescribir docs/estudio/01-Aspectos-Conceptuales.md leyendo el PDF original docs/apuntes/01-Aspectos-Conceptuales.pdf (47 paginas).\n\nEste capitulo cubre: diafragmas (rigido/flexible/semirigido, CM/CR, torsion, IF), matrices de rigidez (1 piso 3GDL, N pisos 3N GDL, equilibrio directo vs rigidez directa, transformacion), clasificacion edificios (Tipo I-V), y procedimiento analisis modal espectral (9 etapas + CQC + torsion accidental).\n\nInstrucciones:\n1. Leer docs/apuntes/INDICE.md seccion Capitulo 1 para el mapa de contenido\n2. Leer el PDF completo (47 pags, usar pages='1-10', '11-20', etc.)\n3. Reescribir el .md existente manteniendo la estructura pero mejorando:\n   - Eliminar relleno y texto innecesario\n   - Mejorar diagramas ASCII para que sean mas claros y precisos\n   - Agregar formulas faltantes del PDF\n   - Verificar que CADA concepto del PDF esta cubierto\n   - Agregar 5-8 preguntas tipo control al final de cada seccion principal\n   - Las preguntas deben ser nivel IX semestre ingenieria civil\n4. Leer CONTEXT.md para convenciones de estilo\n5. NO inventar contenido que no este en el PDF",
+      "steps": [
+        "Leer docs/apuntes/INDICE.md seccion Cap 1",
+        "Leer PDF 01-Aspectos-Conceptuales.pdf completo (47 pags en bloques)",
+        "Leer el .md existente para ver que mejorar",
+        "Reescribir con calidad enfermiza",
+        "Agregar preguntas tipo control por seccion",
+        "Verificar que todo el PDF esta cubierto"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "PERF02",
+      "name": "Perfeccionar 02a-Conceptos-Fundamentales.md",
+      "description": "Reescribir docs/estudio/02a-Conceptos-Fundamentales.md leyendo el PDF original docs/apuntes/02a-Conceptos-Fundamentales.pdf (11 paginas).\n\nEste capitulo cubre: Riesgo=Peligro x Vulnerabilidad, fuentes de vulnerabilidad (4), rigidez (concepto y grafico), energia absorbida/disipada (lazo histeretico), ductilidad (definicion), diseno convencional vs aisladores vs disipadores (ecuacion movimiento), etapas proyecto edificio (roles, documentos, flujo).\n\nInstrucciones:\n1. Leer docs/apuntes/INDICE.md seccion 2a\n2. Leer PDF completo (11 pags)\n3. Reescribir mejorando:\n   - Claridad conceptual (menos texto, mas precision)\n   - Diagramas ASCII mejorados\n   - Conexiones con el resto del curso\n   - 5-8 preguntas tipo control por seccion\n4. NO agregar relleno",
+      "steps": [
+        "Leer INDICE.md seccion 2a",
+        "Leer PDF 02a completo (11 pags)",
+        "Leer .md existente",
+        "Reescribir con precision y claridad",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU01",
+      "name": "Crear 02b-Normativa-NCh433-DS61.md",
+      "description": "Crear docs/estudio/02b-Normativa-NCh433-DS61.md leyendo el PDF docs/apuntes/02b-Normativa-NCh433-DS61.pdf (25 paginas).\n\nContenido a cubrir (ver INDICE.md seccion 2b):\n- Normas sismicas vigentes Chile (NCh433, DS61, NCh2369, NCh2745)\n- Principios NCh433 (sin dano/limitar/no colapso)\n- Filosofia implicita (sismo moderado/fuerte/severo)\n- Zonificacion sismica (Zonas 1-3, Ao, mapa)\n- Tipos de suelo DS61 (tabla A-F, parametros S, To, T', n, p)\n- Clasificacion suelos NCh433:2026 (nueva norma)\n- Metodos geofisicos para Vs30: Cross Hole, Down Hole, SASW, MASW, ReMi\n- Procedimiento MASW (figuras, geófonos, sismogramas)\n- Ejemplo determinacion Vs30 y clasificacion suelo\n\nEstructura: mapa conceptual + contenido por seccion + diagramas ASCII + preguntas tipo control (5-8 por seccion). Leer CONTEXT.md para convenciones.",
+      "steps": [
+        "Leer INDICE.md seccion 2b",
+        "Leer PDF 02b completo (25 pags en bloques de 10)",
+        "Crear .md con mapa conceptual",
+        "Escribir contenido seccion por seccion",
+        "Agregar diagramas ASCII de figuras clave",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU02",
+      "name": "Crear 02c-Analisis-Estatico.md",
+      "description": "Crear docs/estudio/02c-Analisis-Estatico.md leyendo docs/apuntes/02c-Analisis-Estatico.pdf (16 paginas).\n\nContenido (INDICE.md seccion 2c):\n- Clasificacion edificio segun importancia (I): Tipo I-IV\n- Factor R y Ro (tabla)\n- Estados de carga NCh3171:2017 (C1-C7 con factores)\n- Metodos analisis: estatico vs dinamico\n- Corte basal: Qo = C x I x P\n- Coeficiente sismico C = (2.75*S*Ao)/(g*R) * (T'/T*)^n\n- Limites: Ao*S/(6g) <= C <= Cmax\n- Peso sismico P\n- Parametros suelo (S, n, T') - tabla completa\n- Cuando se puede usar analisis estatico\n- Fuerzas a nivel de piso (formulas 6.4, 6.5)\n- Torsion accidental metodo estatico\n- Diafragma rigido vs flexible\n- Verificacion deformaciones\n\nINCLUIR ejemplo numerico con datos del taller Ed.1 (Zona 3, Suelo C, muros HA).\nPreguntas tipo control al final.",
+      "steps": [
+        "Leer INDICE.md seccion 2c",
+        "Leer PDF 02c completo (16 pags)",
+        "Crear .md con estructura completa",
+        "Incluir ejemplo numerico con datos taller",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU03",
+      "name": "Crear 02d-Analisis-Dinamico-Modal-Espectral.md",
+      "description": "Crear docs/estudio/02d-Analisis-Dinamico-Modal-Espectral.md leyendo docs/apuntes/02d-Analisis-Dinamico-Modal-Espectral.pdf (15 paginas).\n\nContenido (INDICE.md seccion 2d):\n- Espectro diseno: Sa = (S*Ao*alpha)/(R*/I)\n- alpha(T) = [1+4.5*(T/To)^p] / [1+(T/To)^3]\n- R* = factor reduccion espectral\n- Modos: acumular >= 90% masa\n- Superposicion CQC (formula, diferencia con SRSS)\n- Torsion accidental metodo dinamico (2 formas: caso a, caso b F1 y F2)\n- Condicion 1 drift: CM <= 0.002\n- Condicion 2 drift: cualquier punto <= 0.001\n- Espectro desplazamiento elastico\n- Comentario sobre Ro (sobreresistencia)\n\nINCLUIR ejemplo numerico con datos taller (calcular alpha para T=1.0s, 1.5s, 2.0s con Suelo C).\nPreguntas tipo control.",
+      "steps": [
+        "Leer INDICE.md seccion 2d",
+        "Leer PDF 02d completo (15 pags)",
+        "Crear .md con estructura completa",
+        "Calcular ejemplo numerico con Suelo C",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU04",
+      "name": "Crear 02e-Diseno-Edificios-R-Pushover.md",
+      "description": "Crear docs/estudio/02e-Diseno-Edificios-R-Pushover.md leyendo docs/apuntes/02e-Diseno-Edificios-R-Pushover.pdf (25 paginas).\n\nContenido (INDICE.md seccion 2e):\n- 5 preguntas fundamentales del diseno sismico\n- Condiciones: resistencia, rigidez, durabilidad, ductilidad\n- Matriz rigidez edificio (resumen, casos especiales)\n- Edificios con 1 eje de simetria / 2 ejes\n- Comportamiento durante sismo\n- Analisis Pushover: definicion, curva V-Delta_techo\n- Curva: Qe, Qnl, Q1era rotula, Qdiseno\n- Composicion R* = FSRE x FIRNL x FDED (con definiciones)\n- mu = ductilidad global\n- Ejemplo 15+1 pisos Antofagasta (tabla completa)\n- Columna fuerte-viga debil (concepto)\n- Vision integral diseno edificio\n\nPreguntas tipo control.",
+      "steps": [
+        "Leer INDICE.md seccion 2e",
+        "Leer PDF 02e completo (25 pags en bloques)",
+        "Crear .md con estructura completa",
+        "Cubrir ejemplo 15+1 pisos",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU05",
+      "name": "Crear 02f-Perfil-Biosismico.md",
+      "description": "Crear docs/estudio/02f-Perfil-Biosismico.md leyendo docs/apuntes/02f-Perfil-Biosismico.pdf (27 paginas).\n\nContenido (INDICE.md seccion 2f):\n- 13 indicadores del perfil bio-sismico (CADA UNO con formula, criterio, que mide)\n- Indicadores 1-5: periodo, P-Delta, desplazamiento, drift CM, drift extremo\n- Indicadores 6-11: acoplamiento rotacional/traslacional, masas, cortes\n- Indicador 12: elementos resistentes\n- Indicador 13: R efectivo\n- Articulo Soto & Music (8 edificios Antofagasta)\n- Puntos debiles del edificio\n- Analisis complementarios\n- Diseno basado en desempeno (VISION 2000)\n\nPreguntas tipo control.",
+      "steps": [
+        "Leer INDICE.md seccion 2f",
+        "Leer PDF 02f completo (27 pags en bloques)",
+        "Crear .md con los 13 indicadores detallados",
+        "Cubrir articulo Soto & Music",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU06",
+      "name": "Crear 03a-Muros-Normativa-y-Fallas.md",
+      "description": "Crear docs/estudio/03a-Muros-Normativa-y-Fallas.md leyendo docs/apuntes/03a-Muros-Normativa-y-Fallas.pdf (13 paginas).\n\nContenido (INDICE.md seccion 3a):\n- Evolucion normativa sismica Chile para muros (NCh433 -> DS60/DS61)\n- Modos de falla en muros HA (corte, flexion, deslizamiento) con figuras\n- Efecto del confinamiento (respuesta fragil vs ductil)\n- Danos terremoto 27F-2010 (fotos, descripcion fallas)\n- Diferencias diseno muros antes/despues 27F\n- Etiquetado muros ETABS (Pier)\n\nPreguntas tipo control.",
+      "steps": [
+        "Leer INDICE.md seccion 3a",
+        "Leer PDF 03a completo (13 pags)",
+        "Crear .md con estructura completa",
+        "Describir fallas 27F con contexto",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU07",
+      "name": "Crear 03b-Muros-Diseno.md (EL MAS IMPORTANTE PARA C3)",
+      "description": "Crear docs/estudio/03b-Muros-Diseno-Corte-Flexion-Confinamiento.md leyendo docs/apuntes/03b-Muros-Diseno-Corte-Flexion-Confinamiento.pdf (56 paginas). ESTE ES EL CAPITULO MAS LARGO Y CRITICO DEL CURSO.\n\nContenido (INDICE.md seccion 3b):\n- Tipos muros: especiales (R=7) y ordinarios\n- Estados de carga NCh3171 para muros\n- a) Verificacion esbeltez: t > lu/16\n- b) Carga max compresion: Pu <= 0.35*f'c*Ag\n- c) DISENO AL CORTE: Vn, Vc, Vs, alpha_c, diagrama de flujo completo, armadura min/max\n- d) DISENO A FLEXION COMPUESTA: diagrama interaccion, secciones T/L/C, ancho efectivo ala, 4 subcombinaciones signos, ejemplo chequeo\n- e1) VERIFICACION CURVATURA: phi_u=0.008/c, ecuaciones 21-7a y 21-7b, delta_u, espectro desplazamiento\n- e2) VERIFICACION ELEMENTOS DE BORDE: c >= clim, cc=c-clim, espesor>=30cm, altura confinar\n- Armadura confinamiento: Ash = 0.09*s*bc*f'c/fyt\n- Detallamiento armaduras (5 paginas de resumen)\n- Traslapos\n\nINCLUIR ejemplos numericos paso a paso. Preguntas tipo control por cada subseccion.",
+      "steps": [
+        "Leer INDICE.md seccion 3b completa",
+        "Leer PDF 03b en bloques de 10 pags (56 pags total)",
+        "Crear .md con estructura exhaustiva",
+        "Cubrir diagrama de flujo corte con ASCII",
+        "Cubrir diagrama interaccion con ASCII",
+        "Incluir ejemplos numericos",
+        "Agregar preguntas tipo control por subseccion"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU08",
+      "name": "Crear 03c-Muros-Predimensionamiento.md",
+      "description": "Crear docs/estudio/03c-Muros-Predimensionamiento.md leyendo docs/apuntes/03c-Muros-Predimensionamiento-y-Ejemplos.pdf (12 paginas).\n\nContenido:\n- Fotos muros reales (describir)\n- Predimensionamiento espesores por corte: Vs <= 0.66*sqrt(f'c)*bw*d, tau_lim\n- Criterio: Vs <= Vc (recomendado) o Vs <= 2Vc (limite)\n- Ejemplo edificio 16 pisos + subterraneo: cubicacion peso, Qmin, Qmax, areas muros\n- Otras disposiciones DS60: espesor>=hwi/16, ancho ala, carga axial, espesor>=30cm\n\nPreguntas tipo control.",
+      "steps": [
+        "Leer INDICE.md seccion 3c",
+        "Leer PDF 03c completo (12 pags)",
+        "Crear .md con ejemplo completo",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU09",
+      "name": "Crear 04-Marcos-Especiales-HA.md",
+      "description": "Crear docs/estudio/04-Marcos-Especiales-HA.md leyendo docs/apuntes/04-Marcos-Especiales-HA.pdf (32 paginas).\n\nContenido (INDICE.md seccion 4):\n4.1 Vigas:\n- Condiciones geometricas (bw>=25cm, Pu<Ag*f'c/10)\n- Armadura longitudinal (M-, M+, min/max, detallamiento)\n- Armadura transversal: corte por capacidad Ve=(Mpr1+Mpr2)/ln, zona rotula s1=2h, espaciamientos, ganchos sismicos\n\n4.2 Columnas:\n- Geometricas (b>=300mm, b/h>=0.4)\n- Longitudinal (rho 0.01-0.06, traslapes)\n- Transversal: zona critica l0, confinamiento Ash, corte Ve=(Mpr1+Mpr2)/lu, espaciamientos\n\n4.3 Columna fuerte-viga debil: sum(Mnc)>=1.2*sum(Mnb)\n4.4 Nudo: Vn confinado 4/3/otros caras, phi=0.85\n\nINCLUIR diagramas ASCII de detallamiento. Preguntas tipo control.",
+      "steps": [
+        "Leer INDICE.md seccion 4",
+        "Leer PDF 04 completo (32 pags en bloques)",
+        "Crear .md con vigas, columnas, nudo",
+        "Agregar diagramas ASCII detallamiento",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "STU10",
+      "name": "Crear 05a-Analisis-Estructural-ACI318.md",
+      "description": "Crear docs/estudio/05a-Analisis-Estructural-ACI318.md leyendo docs/apuntes/05a-Analisis-Estructural-ACI318.pdf (16 paginas).\n\nContenido:\n- ACI318-2019 Cap 6: analisis estructural\n- Diagrama flujo esbeltez columnas\n- Analisis lineal elastico 1er orden (magnificacion momentos)\n- Analisis lineal elastico 2do orden (P-Delta)\n- Analisis inelastico (1er y 2do orden)\n- Analisis elementos finitos\n\nPreguntas tipo control.",
+      "steps": [
+        "Leer INDICE.md seccion 5a",
+        "Leer PDF 05a completo (16 pags)",
+        "Crear .md con estructura completa",
+        "Cubrir diagrama flujo esbeltez",
+        "Agregar preguntas tipo control"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "AID01",
+      "name": "Resolver problemas propuestos 05b",
+      "description": "Leer docs/apuntes/05b-Problemas-Propuestos.pdf (24 paginas) y resolver paso a paso los problemas principales tipo control.\n\nProblemas a resolver:\n- Prob 1: Edificio 1 piso, marcos HA, diafragma rigido: rigidez rotacional, matriz rigidez, corte basal max\n- Prob 2: Edificio con ala nueva: asimetria, CM/CR, torsion, corte en muros\n- Prob 3: Edificio 5 pisos, marcos HA, Antofagasta: Vs30, tipo suelo, metodo estatico, fuerzas por piso\n- Al menos 3-5 problemas mas si los hay\n\nCada problema: enunciado, procedimiento paso a paso, calculos numericos completos, respuesta final.\nEscribir en docs/estudio/05b-Problemas-Resueltos.md",
+      "steps": [
+        "Leer PDF 05b completo (24 pags)",
+        "Resolver Prob 1 paso a paso",
+        "Resolver Prob 2 paso a paso",
+        "Resolver Prob 3 paso a paso",
+        "Resolver problemas adicionales",
+        "Escribir en docs/estudio/05b-Problemas-Resueltos.md"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "AID02",
+      "name": "Crear guia rapida de formulas para C1",
+      "description": "Crear docs/estudio/FORMULAS-RAPIDAS-C1.md con TODAS las formulas relevantes para el Control 1 (sismologia, semanas 1-3).\n\nOrganizar por tema:\n1. Diafragmas: IF, CM, CR, torsion\n2. Matrices rigidez: [K] 3x3, transformacion, ensamble\n3. Zonificacion y suelos: Ao, S, To, T', n, p\n4. Metodo estatico: Qo, C, Cmin, Cmax, Fk\n5. Metodo dinamico: Sa, alpha, R*, CQC, drift\n6. Pushover: R*=FSRE*FIRNL*FDED\n7. Perfil biosismico: 13 indicadores\n8. Estados de carga NCh3171\n\nFormato: solo formulas con variables definidas, sin explicacion extensa. Maximo 3-4 paginas. Formato de hoja de referencia rapida para llevar al control.",
+      "steps": [
+        "Compilar formulas de caps 1, 2a-2f",
+        "Organizar por tema",
+        "Formato conciso de referencia rapida",
+        "Verificar contra apuntes originales"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "AID03",
+      "name": "Actualizar RESUMEN-ADSE-COMPLETO.md",
+      "description": "Actualizar docs/estudio/RESUMEN-ADSE-COMPLETO.md integrando todo el material nuevo generado.\n\nVerificar:\n- Que las formulas coincidan con los apuntes perfeccionados\n- Que no falte ningun tema importante\n- Que los datos del taller esten actualizados\n- Coherencia con todos los .md de estudio\n\nNO expandir excesivamente — mantener como resumen conciso.",
+      "steps": [
+        "Leer todos los .md de estudio generados",
+        "Comparar con RESUMEN actual",
+        "Agregar temas faltantes",
+        "Corregir formulas si hay discrepancias",
+        "Mantener conciso"
+      ],
+      "passes": false,
+      "dependencies": []
+    },
+    {
+      "id": "CLOSE01",
+      "name": "Actualizar RETOMAR.md y estado final",
+      "description": "Actualizar RETOMAR.md con el estado final del proyecto:\n- Material de estudio completado (listar todos los .md)\n- Scripts API corregidos\n- Guia ETABS corregida\n- Proximos pasos (modelar en lab, estudiar para C1)\n- Fechas (C1: 5 mayo)\n\nTambien actualizar .apos/STATUS.md y .apos/HANDOFF.md si existen.",
+      "steps": [
+        "Leer estado actual de todos los entregables",
+        "Actualizar RETOMAR.md",
+        "Actualizar .apos/ si existe"
+      ],
+      "passes": false,
+      "dependencies": []
+    }
+  ]
+}

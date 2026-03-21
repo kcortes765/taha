@@ -1,0 +1,1921 @@
+[0.00-8.28]  En el sentido de cómo está y recuerda dos cosas importantes.
+[8.58-14.50]  Uno es la materia de dinámica de estructura.
+[14.50-27.72]  ¿Por qué es importante?
+[27.72-40.88]  Porque en este curso se da por conocido que ustedes saben determinar la matriz de rigidez de una estructura.
+[42.52-44.48]  Independiente de qué método utilicen.
+[44.50-56.44]  Pero en este curso se requiere, para toda la materia del curso, digamos, no es cierto, especialmente para el control 2,
+[57.82-63.76]  que ustedes sepan determinar, porque lo primero que hay que hacer es determinar la matriz de rigidez de la estructura.
+[64.70-68.62]  Entonces, ese es un requisito importante.
+[68.62-73.44]  Y el segundo, que también será por conocido.
+[73.44-82.70]  Que ustedes saben, porque se enseña en el curso de dinámica de estructura, cómo se hace el análisis modal espectral.
+[83.90-89.36]  Entonces, esos dos temas, ¿no es cierto?, son clave en el curso.
+[90.24-100.88]  Por lo tanto, yo les pido que cada uno de ustedes haga una autoevaluación de aquellos que se encuentran débiles en esa materia.
+[100.88-103.40]  Que la vuelvan a recordar.
+[103.44-105.06]  Porque realmente se requiere.
+[105.90-115.90]  El gran problema del curso es, estos requisitos están teniendo un problema importante.
+[118.24-126.74]  Desgraciadamente, el semestre pasado fue el semestre del más mal rendimiento del curso desde que dictó el curso.
+[128.46-130.78]  De ocho alumnos, repitieron siete.
+[133.44-142.40]  Y si yo tuviera que dar mi juicio, que fue no coincidir con el juicio de los jóvenes, digamos, ¿no es cierto?
+[143.34-145.96]  Es la poca dedicación al curso.
+[147.96-152.86]  Tal y así que, nadie, los alumnos se sacaron rojos las tres pruebas.
+[154.58-159.02]  Nunca había pasado que sacaran rojos las tres pruebas, algunos alumnos.
+[159.02-163.42]  Y en el taller, además rojo, que es para el taller, digamos, que se trabaja.
+[163.44-164.00]  Que se trabaja en grupo.
+[165.38-167.90]  O sea, eso no había ocurrido nunca, nunca, nunca.
+[170.06-175.98]  Yo confié en los padres de los jóvenes, y varios de ellos me reconocieron que no habían dedicado tiempo.
+[176.14-176.52]  ¿Por qué?
+[176.86-180.50]  Porque habían tomado custom project, entonces se dedicaron a custom project.
+[181.28-184.02]  Bueno, dedicarse a custom project no es esto, significa repetir el curso.
+[184.18-186.52]  No hay ninguna alternativa.
+[187.00-189.34]  Y por eso es importante compatibilizar.
+[189.34-193.18]  Uno de los ramos que está tomando, tiene que dedicarle tiempo.
+[193.44-194.44]  Y no correr tiempo.
+[197.74-203.68]  Entonces, y fíjense lo siguiente, que el custom project no se puede tomar si no se hace este curso.
+[205.02-207.98]  Entonces, yo le decía a los alumnos, ¿cómo se puede tomar el custom project si no se puede tomarlo?
+[209.06-211.26]  Porque la materia para el custom project es esta.
+[212.46-215.48]  Entonces, ocurrió algo especial el semestre pasado.
+[215.66-223.18]  El semestre pasado, y yo no tengo una explicación, digamos, en el sentido, por qué tenía alumnos que no tenían tanto tiempo.
+[223.18-228.14]  Estaban tomando ramos que no correspondían, no, bueno, eso no lo entendimos.
+[229.32-234.22]  Lo segundo, este curso tiene cinco créditos.
+[235.58-239.80]  ¿Y qué significa y cómo se distribuyen esos cinco créditos?
+[239.96-241.22]  Es de la siguiente forma.
+[241.22-248.22]  En la universidad, un crédito es 1,6 horas de dedicación del alumno.
+[249.96-252.22]  Eso significa entonces que si uno...
+[253.18-257.28]  Si un curso tiene cinco créditos,
+[262.20-269.40]  esto lo multiplico por 1,6 y me da ocho horas.
+[271.36-272.12]  ¿Verdad?
+[273.36-275.98]  ¿Qué significa ese número?
+[276.98-280.78]  Que el alumno tiene que dedicarle al curso ocho horas a la semana.
+[283.18-286.16]  ¿Y cuál es el problema que empieza a ocurrir?
+[287.04-296.48]  Que no es lo mismo dedicar ocho horas cada semana que dedicar la suma de todas ellas las últimas semanas para el control.
+[297.50-298.52]  No es lo mismo.
+[298.68-300.32]  O sea, no es lo mismo.
+[300.56-302.46]  O sea, eso quiero dejarlo claro.
+[302.86-308.32]  O sea, el que dice, no, pero hay que dedicar, voy a decir cualquier cosa, 20 horas para el control todo.
+[308.88-312.00]  Bueno, yo en las últimas tres días le dediqué las 20 horas.
+[312.00-312.08]  ¿No?
+[312.54-312.94]  No.
+[313.18-314.00]  Y no era así, pues.
+[314.44-317.54]  Ahí hay que dedicarle las 20, pero a través de cada semana.
+[318.20-318.52]  ¿Por qué?
+[318.60-325.22]  Porque si no, no se dominan los conceptos que hay que valorarlo y cosas por el día.
+[325.78-331.34]  Entonces, esas ocho horas, ¿cómo se distribuyen en este curso?
+[333.16-337.18]  Primero, hay tres horas de cátedra.
+[338.16-342.30]  Eso significa, profesor, digamos, no sé, está con hostelia.
+[343.18-343.66]  ¿Ok?
+[344.86-349.10]  Y el curso tiene tres horas de taller.
+[351.20-352.70]  ¿Qué significa eso?
+[353.48-358.88]  Que en las clases de taller, usted en clase desarrolla el taller.
+[360.48-361.62]  No en la casa.
+[362.48-363.10]  No, aquí.
+[364.68-368.68]  Entonces, para eso, se forman grupos de dos estudiantes.
+[369.66-372.68]  Entonces, yo creo que ahora, o sea, no hoy día, pero que...
+[373.18-374.16]  Vaya.
+[375.28-382.18]  Mañana o a máximo la próxima semana, me digan quiénes forman el grupo de dos.
+[385.30-389.28]  En el taller, ¿qué pasó el semestre pasado?
+[389.36-391.36]  Porque creo que puedo contar la experiencia.
+[393.26-398.58]  El taller, se desarrolla el taller y después ustedes tienen que exponerme, ¿no?
+[398.58-400.06]  Y yo hago preguntas.
+[403.18-407.28]  Resulta que cubrieron rojo porque no sabían lo que hicieron.
+[408.12-409.20]  Sabían el comando.
+[409.38-411.60]  Mira, apreté el botón de agua, el botón de eso.
+[411.92-414.00]  Pero, ¿qué significa lo que estoy haciendo?
+[415.66-417.24]  Y por eso, cubrieron rojo.
+[418.78-419.08]  ¿Ok?
+[419.60-422.36]  Por lo tanto, el taller, ¿no es cierto?
+[422.54-425.80]  No es tú así, una parte y yo hago otra parte.
+[425.92-427.78]  No, los dos hacen todo.
+[428.44-433.16]  Porque se le preguntan, no, me dicen, no, yo hago el edificio uno, los otros compañeros hacen el edificio dos.
+[433.32-436.42]  No, porque los dos tienen que saber los dos edificios.
+[437.24-440.56]  Por lo tanto, digamos, distribuirse el trabajo no es la política.
+[441.14-442.74]  La política es hacerlo juntos.
+[443.48-447.30]  Es decir, para conversar, para cambiar opiniones y todo lo demás.
+[448.96-453.54]  Y por lo tanto, tres más tres llevamos a seis y son ocho.
+[454.12-457.80]  Luego hay dos horas a la semana de estudio personal.
+[459.06-461.00]  Y así, ¿no es cierto?
+[461.10-463.10]  Es el tiempo que hay que dedicar.
+[463.16-464.56]  Y así, digamos, al curso.
+[466.24-468.44]  Ese es el punto de vista, ¿no es cierto?
+[468.68-472.74]  De el tiempo que hay que dedicarle al curso.
+[475.14-479.06]  Este curso, ¿qué es lo que busca?
+[481.92-488.40]  O sea, para aprobar el curso, hay que conseguir cinco resultados de aprendizaje.
+[489.60-491.64]  Seis, perdón, seis, que están numerados.
+[491.64-493.00]  ¿Qué es eso?
+[493.16-504.52]  El primer cosa es dominar los conceptos de sismología aplicado a la ingeniería.
+[505.84-511.50]  Toda la materia de sismología la dicta el profesor Patricio Tapia.
+[512.70-513.00]  ¿Ok?
+[514.14-516.00]  Y, ¿no es cierto?
+[516.56-520.66]  Como al inicio no tenemos nada todavía para hacer el taller,
+[520.66-522.72]  entonces, ¿cómo va a ser?
+[523.16-531.58]  Todo el mes de marzo, lunes y martes en la mañana, conmigo,
+[532.84-536.18]  martes en la tarde, en la hora de taller, sismología.
+[537.32-542.22]  Entonces, mañana tienen las clases de sismología en el bloque, ¿no es cierto?
+[542.36-546.30]  Que comienza a las cuatro de la tarde, ¿no es cierto que es?
+[546.58-547.62]  A las cuatro de la tarde.
+[548.34-549.88]  Ya, dos bloques seguidos.
+[550.20-553.08]  Entonces, mañana tienen dos bloques seguidos de sismología.
+[553.16-560.24]  Y así toda la semana, digamos, en el mes de marzo y en la mañana, conmigo, digamos, el lunes y martes.
+[560.88-561.06]  ¿Ok?
+[561.30-562.04]  Eso es la primera.
+[564.58-570.08]  El otro cambio importante para los alumnos que ya hicieron, habían, tuvieron en el curso,
+[570.94-574.32]  es que el control uno ahora va a ser de pura sismología.
+[576.88-578.24]  Es un cambio importante.
+[579.32-579.42]  ¿Ya?
+[580.02-581.54]  ¿Por qué ese cambio?
+[581.54-581.58]  ¿Por qué ese cambio?
+[582.04-582.44]  ¿Por qué?
+[582.44-583.66]  Justificar ese cambio.
+[587.28-591.72]  Está a punto de salir la nueva norma sísmica de Chile.
+[593.92-599.62]  Yo participé, digamos, en la redacción de la norma y se terminó la norma.
+[600.36-605.38]  Eso quiere decir que probablemente en el mes de marzo o abril,
+[606.34-609.46]  el Instituto Nacional de Normalización dice,
+[609.46-617.38]  ahora la nueva norma NSH 433, esta se reemplaza por esta otra.
+[619.34-622.96]  Y hay cambios en algunos aspectos importantes.
+[624.96-631.46]  Y el cambio, no voy a decir el más importante, pero sí que hace un énfasis muy diferente
+[632.10-637.52]  entre la norma vigente y la actual, es la parte de simbología.
+[639.46-643.62]  Y por lo tanto, digamos, yo le he pedido a Patricio Tapia
+[643.62-650.74]  que incorpore la materia de sismología, aspecto que viene de la nueva norma.
+[652.74-654.98]  Fortalecer, creo que el espectro de Fourier,
+[655.88-659.22]  cómo se clasifica el suelo según el reto de Nakamura,
+[660.68-666.50]  cosas que no están en la norma actual, pero que ya vienen en la próxima norma.
+[667.26-669.34]  Y por lo tanto, ¿qué vamos a hacer este semestre?
+[669.46-675.64]  Para que no ocurra que ustedes hicieron el curso, lo aprobaron,
+[675.64-678.02]  y entre la nueva norma y quedaron obsoletos, ¿no?
+[679.42-681.96]  ¿Qué vamos a hacer? Yo voy.
+[682.50-687.44]  Si bien voy a evaluar la norma vigente,
+[688.46-692.78]  también voy a pasar los aspectos nuevos que vienen de la nueva norma.
+[693.32-695.58]  Para que no queden, digamos, obsoletos.
+[696.50-697.90]  ¿Por qué no evaluarlos?
+[697.90-698.90]  No, porque como...
+[699.46-703.06]  El programa no considera la nueva norma, considera que se debe pasar.
+[703.36-703.66]  ¿Por qué?
+[704.54-707.34]  ¿Cuándo se va a aprobar esta norma que estoy hablando?
+[708.06-712.26]  Puede ser en cualquier fecha, pero no va a ser en forma inmediata.
+[713.02-714.98]  Entonces yo tengo que respetar el programa.
+[715.86-719.24]  El programa dice, usted tiene que pasar la norma vigente.
+[719.62-724.76]  Y la vigente es la 433 del año 96, modificada en 2009.
+[725.48-727.30]  Y la otra cuando aparezca.
+[727.62-729.30]  Y fue impulsado.
+[729.46-731.46]  Y va a demorarse siete meses en aparecer.
+[731.46-740.72]  Entonces, lo que quiero decir es que, Patricio, en la parte de sismología,
+[741.88-744.76]  la materia no va a ser la misma de la semana pasada.
+[746.20-753.34]  Va a tener que incorporar, por supuesto, igual, va a ver cómo se producen los sismos,
+[753.88-758.00]  ¿no es cierto?, cómo son los principales parámetros de un sismo,
+[758.34-759.10]  las escalas.
+[759.46-762.52]  Las escalas que hay, digamos, para determinar, ¿no es cierto?,
+[762.52-767.22]  magnitud, intensidad, el tipo de onda sísmica, ¿no es cierto?,
+[767.22-768.84]  las formas de animación.
+[769.34-772.86]  Va a haber también todo lo relacionado, ¿no es cierto?,
+[772.86-775.50]  a estudios de riesgo sísmico.
+[775.86-777.86]  Y ahí viene el cambio importante.
+[778.74-780.48]  Y eso va a ser con mayor profundidad.
+[781.56-782.26]  ¿Por qué?
+[782.84-785.04]  Porque la norma nueva dice,
+[785.76-789.40]  usted cuando calcule un edificio cualquiera,
+[789.46-794.16]  el espectro de la norma que le da es éste.
+[795.44-800.56]  Pero, si usted hace un estudio de riesgo sísmico,
+[801.58-805.80]  puede utilizar el espectro que usted encontró.
+[806.64-813.56]  Siempre que los valores para cada periodo no sean menor que un 80% de la norma.
+[814.84-818.34]  Entonces, hace que el espectro de diseño
+[818.34-819.34]  ya no sea menor que un 80%.
+[819.46-821.46]  O sea, no solamente él que dice la norma,
+[821.46-823.46]  sino de un estudio de riesgo sísmico,
+[823.46-825.46]  yo puedo sacar mi propio espectro de diseño.
+[826.64-828.64]  Y es un cambio radical y chévere.
+[828.64-830.64]  No se había hecho nunca eso.
+[831.64-835.90]  Y eso significa dominar el estudio de riesgo sísmico
+[835.90-837.90]  al nivel que se requiere, digamos,
+[837.90-839.90]  para poder entender esa parte.
+[839.90-841.90]  Y eso, entonces, que Patricio, para eso,
+[841.90-846.90]  va a tener que fortalecer lo que enseña el estudio de riesgo sísmico.
+[846.90-849.44]  Para ir explicando, digamos, ¿no es cierto?,
+[849.44-852.44]  por qué se están haciendo esos ajustes, digamos.
+[852.44-855.44]  Y así van a tener todos los elementos, ¿no es cierto?,
+[855.44-857.44]  para poder, ¿no es cierto?,
+[857.44-859.44]  entender los elementos básicos
+[859.44-861.44]  para hacer, digamos, un estudio de riesgo sísmico
+[861.44-864.44]  de acuerdo a lo que exige la norma.
+[866.44-870.44]  Y, por lo tanto, el control uno, puro sismología.
+[870.44-872.44]  No como la del semestre pasado,
+[872.44-875.44]  que había una parte que hacía yo y otra parte Patricio, no.
+[875.44-877.44]  La prueba uno, puro Patricio.
+[877.44-878.44]  Eso, puro Patricio.
+[878.44-879.44]  Eso, puro Patricio.
+[879.44-882.44]  Yo no intervengo en la prueba uno, digamos, nada.
+[882.44-884.44]  Y esa prueba vale un veinte por ciento.
+[884.44-885.44]  Igual.
+[887.44-891.44]  Después, el segundo resultado de aprendizaje
+[891.44-895.44]  es que ustedes dominen los conceptos de qué es
+[895.44-898.44]  una buena estructuración de un edificio,
+[900.44-902.44]  una buena moderación
+[902.44-904.44]  y qué es un espectro de diseño.
+[904.44-907.44]  Ese es el segundo resultado de aprendizaje
+[907.44-909.44]  que ustedes tienen que lograr.
+[909.44-916.44]  El tercero, saber realizar un análisis sísmico
+[916.44-919.44]  de un edificio
+[919.44-923.44]  por los dos métodos que establece la norma.
+[923.44-929.44]  En ese sentido, la norma nueva y la actual,
+[929.44-933.44]  los métodos son exactamente iguales.
+[933.44-936.44]  No hay ningún cambio ahí en los métodos, digamos.
+[937.44-945.44]  Cuarto, aprendizaje es que ustedes utilicen software comerciales,
+[945.44-950.44]  pero los que realmente se utilizan en el ejercicio profesional.
+[950.44-952.44]  Y ese es el impacto.
+[952.44-954.44]  Y no otro.
+[954.44-955.44]  ¿OK?
+[955.44-958.44]  En las oficinas importantes de Chile,
+[958.44-962.44]  el programa que se usa a nivel mundial es ETAP.
+[962.44-965.44]  Entonces, por eso, no es cierto que
+[965.44-970.44]  el taller de expulso se hace con el programa ETAP.
+[972.44-975.44]  El quinto gran resultado de aprendizaje
+[975.44-978.44]  es saber diseñar,
+[978.44-981.44]  de acuerdo a la normativa vigente,
+[983.44-985.44]  muros de hormigón armado.
+[986.44-990.44]  Y ahí, entre la norma actual y la nueva,
+[990.44-992.44]  es totalmente diferente.
+[992.44-997.44]  En el sentido de que el diseño al corte,
+[997.44-1000.44]  lo cierto, de la norma nueva,
+[1000.44-1004.44]  es mayor el esfuerzo de corte que lo que se diseña actualmente.
+[1004.44-1008.44]  Y la forma de diseñarlo es totalmente diferente.
+[1008.44-1011.44]  Es lo que viene y lo que hay.
+[1011.44-1014.44]  Eso es muy importante.
+[1014.44-1017.44]  El diseño de muro es el gran cambio
+[1017.44-1020.44]  que hay, digamos, no es cierto, al respecto.
+[1020.44-1023.44]  ¿Y dónde viene ese cambio?
+[1023.44-1026.44]  Porque ustedes ven que es una norma sísmica.
+[1026.44-1029.44]  Entonces, nos viene la norma sísmica eso.
+[1029.44-1033.44]  Viene en la nueva versión de la norma de hormigón armado 430,
+[1033.44-1036.44]  que también se termina este año.
+[1036.44-1038.44]  Yo puedo hablar de que se termina entonces,
+[1038.44-1040.44]  porque yo formo parte de esos comités.
+[1040.44-1042.44]  Entonces, yo sé a dónde van todos,
+[1042.44-1045.44]  la 433 terminada, la 430,
+[1045.44-1049.44]  faltan como una seis o ocho o diez reuniones para terminarla.
+[1049.44-1052.44]  Y ahí viene el diseño del muro,
+[1052.44-1055.44]  una nueva forma de diseñar un muro.
+[1055.44-1058.44]  Eso es ahí.
+[1058.44-1061.44]  Y después, en el punto seis,
+[1061.44-1063.44]  diseño de marcos especiales,
+[1063.44-1066.44]  la norma de hormigón que viene,
+[1066.44-1069.44]  respecto al anterior, es exactamente igual.
+[1069.44-1071.44]  Ahí no hay cambio.
+[1071.44-1073.44]  No hay cambio.
+[1073.44-1075.44]  Conclusión, entonces.
+[1075.44-1077.44]  Vamos a hacer, digamos, no es cierto,
+[1077.44-1083.44]  de que ustedes puedan conocer elementos de la nueva normativa
+[1083.44-1085.44]  para que no me quede obsoleto, digamos,
+[1085.44-1090.44]  al día siguiente de hacer el curso.
+[1090.44-1095.44]  Esos son, entonces, los seis resultados de aprendizaje.
+[1095.44-1098.44]  Y para ello, para ello, entonces,
+[1098.44-1101.44]  no es cierto, se explica aquí en el programa
+[1101.44-1105.44]  qué se enseña en sismología,
+[1105.44-1111.44]  todo lo que es el diseño sismo resistente.
+[1111.44-1114.44]  Después viene la norma,
+[1114.44-1118.44]  análisis sísmico de edificio.
+[1118.44-1120.44]  Enseñamos la norma completa.
+[1120.44-1123.44]  Ahí está la norma vigente actualmente,
+[1123.44-1126.44]  NSH 433, oficial 96,
+[1126.44-1131.44]  modificada en 2009 y en decreto 61.
+[1131.44-1134.44]  Esto quiere decir, entonces, lo siguiente.
+[1135.44-1152.44]  Lo actual es aplicar decreto supremo 61 del 2011
+[1152.44-1161.44]  y NSH 433, oficial 96,
+[1161.44-1164.44]  modificada en 2009.
+[1164.44-1168.44]  Bueno.
+[1168.44-1170.44]  Lo que viene.
+[1177.44-1179.44]  Estos dos
+[1182.44-1184.44]  se juntan,
+[1184.44-1186.44]  ya no habrá el decreto,
+[1186.44-1188.44]  estas dos se juntan
+[1188.44-1193.44]  y se forma lo que es la NSH 433,
+[1194.44-1200.44]  oficial 2026.
+[1200.44-1202.44]  Eso es.
+[1202.44-1204.44]  Todo esto se junta y se cambian cosas
+[1204.44-1206.44]  y entonces después vamos a hablar
+[1206.44-1212.44]  de la norma NSH 433, oficial 2026.
+[1212.44-1215.44]  Y en el caso de hormigón,
+[1215.44-1222.44]  actualmente es el decreto supremo 60 del 2011
+[1222.44-1230.44]  y el ASI 318-2008.
+[1230.44-1234.44]  Todo esto se cambia
+[1234.44-1246.44]  y viene el NSH 430, oficial 2026.
+[1246.44-1250.44]  Entonces esto es lo que existe, o sea,
+[1250.44-1255.44]  actualmente si ustedes tuvieran que calcular un edificio,
+[1255.44-1258.44]  tienen que hacerlo con todo esto.
+[1258.44-1261.44]  Con un tiempo corto más,
+[1261.44-1264.44]  nada más tienen que hacerlo según el tema.
+[1264.44-1268.44]  Esos son los dos cambios.
+[1268.44-1272.44]  Este paréntesis va a tener que hacer cambios más enormes.
+[1272.44-1276.44]  Por ejemplo, en el curso Proyecto de Actividades Instrucciones,
+[1276.44-1278.44]  cambió el otro.
+[1278.44-1280.44]  Estamos en el momento en el país
+[1280.44-1282.44]  que se está cambiando muchas normas.
+[1282.44-1285.44]  Se acaba de sacar una nueva norma,
+[1285.44-1286.44]  ¿no es cierto?,
+[1286.44-1289.44]  para determinar, ¿no es cierto?,
+[1289.44-1291.44]  PS 30, digamos, ¿no es cierto?,
+[1291.44-1295.44]  y el periodo de suelo según la Cámara.
+[1295.44-1297.44]  Estoy participando en otro comité
+[1297.44-1299.44]  que es la norma para diseñar el elemento
+[1299.44-1300.44]  anónimo estructural,
+[1300.44-1302.44]  y también se cambia.
+[1302.44-1304.44]  Y eso va a ocurrir
+[1304.44-1307.44]  en todo el ejercicio profesional.
+[1307.44-1310.44]  Piensen ustedes que yo estuve sentado como alumno
+[1310.44-1313.44]  en la década del 70,
+[1313.44-1316.44]  y de ese tiempo hasta ahora,
+[1316.44-1319.44]  bueno, han pasado 20 modificaciones de normas
+[1319.44-1321.44]  que han tenido que cambiar de una norma a otra,
+[1321.44-1322.44]  a otra, a otra,
+[1322.44-1325.44]  y así va a ser eternamente, digamos.
+[1325.44-1328.44]  Entonces, eso es lo que hay,
+[1328.44-1331.44]  eso es lo que no hay.
+[1331.44-1334.44]  Después tenemos diseño de muros,
+[1334.44-1336.44]  y después diseño,
+[1336.44-1338.44]  después diseño de, ¿no es cierto?,
+[1338.44-1341.44]  de marcas.
+[1341.44-1343.44]  En el diseño de muros,
+[1343.44-1344.44]  también, ¿no es cierto?,
+[1344.44-1348.44]  les voy a explicar cuál es el cambio que viene,
+[1348.44-1354.44]  para que no me quede obsoleto en forma inmediata.
+[1354.44-1356.44]  Eso, ¿no es cierto?,
+[1356.44-1360.44]  es el cual va a deteriorar.
+[1360.44-1363.44]  Esta asignadura,
+[1363.44-1366.44]  ¿cómo se evalúa?
+[1366.44-1369.44]  Hay dos evaluaciones independientes,
+[1369.44-1373.44]  los controles y el taller.
+[1373.44-1377.44]  O sea, esas dos cosas hay que aprobar en forma independiente,
+[1377.44-1380.44]  o sea, para aprobar el curso yo tengo que tener
+[1380.44-1383.44]  nota de taller mayor o igual que 4,
+[1383.44-1386.44]  y nota de control mayor o igual que 4,
+[1386.44-1389.44]  y después se pondrían
+[1389.44-1392.44]  70% los controles,
+[1392.44-1394.44]  30% el taller.
+[1394.44-1395.44]  Es lo que dice acá.
+[1396.44-1398.44]  70% los controles,
+[1398.44-1401.44]  30% el taller.
+[1401.44-1404.44]  Y los controles son tres.
+[1404.44-1407.44]  El primero, el control uno,
+[1407.44-1410.44]  que vale 20% de ponderación
+[1410.44-1414.44]  y que va a ser pura simbología.
+[1414.44-1417.44]  El control dos,
+[1417.44-1419.44]  este,
+[1419.44-1422.44]  40%, es
+[1422.44-1425.44]  saber hacer el análisis sísmico o edificio.
+[1426.44-1429.44]  Con toda la normativa, todo,
+[1429.44-1432.44]  eso es lo que se pregunta en el control dos.
+[1432.44-1435.44]  Y en el control tres,
+[1435.44-1438.44]  saber diseñar muros
+[1438.44-1441.44]  y saber diseñar marcos de hormigón armado.
+[1441.44-1444.44]  Ahí están los tres controles con su materia.
+[1444.44-1446.44]  ¿Ok?
+[1446.44-1448.44]  Por lo tanto,
+[1448.44-1450.44]  dicho eso,
+[1450.44-1452.44]  se dan cuenta,
+[1452.44-1455.44]  me dirijo a los estudiantes que han dado el curso,
+[1456.44-1459.44]  todas las materias que yo pasaba
+[1459.44-1461.44]  de determinar la matriz de rigidez,
+[1461.44-1463.44]  desaparecen.
+[1463.44-1465.44]  Se da por conocido.
+[1465.44-1466.44]  Y,
+[1466.44-1468.44]  profundizo
+[1468.44-1471.44]  en el análisis sísmico o edificio.
+[1473.44-1474.44]  ¿Me entienden?
+[1474.44-1475.44]  O sea,
+[1475.44-1477.44]  para los alumnos antiguos que yo enseñaba,
+[1477.44-1478.44]  ¿no es cierto?,
+[1478.44-1480.44]  la matriz de rigidez con desplazamiento,
+[1480.44-1482.44]  todo eso,
+[1482.44-1483.44]  le dijeron,
+[1483.44-1484.44]  dijo el patrín,
+[1484.44-1485.44]  el profesor
+[1485.44-1487.44]  Wagner Fleming,
+[1487.44-1488.44]  Juan,
+[1488.44-1489.44]  no enseñé ninguna de esas cuestiones
+[1489.44-1491.44]  porque las enseñé yo ya.
+[1491.44-1492.44]  No vuelvas a repetir,
+[1492.44-1494.44]  concéntrate más en la norma.
+[1494.44-1495.44]  ¿Ok?
+[1495.44-1496.44]  No hay problema.
+[1496.44-1499.44]  Eso es lo que vamos a hacer.
+[1502.44-1504.44]  Eso es lo importante, digamos,
+[1504.44-1505.44]  en ese sentido,
+[1505.44-1506.44]  tenerlo claro,
+[1506.44-1507.44]  especialmente en esa parte
+[1507.44-1509.44]  me estoy dirigiendo a los estudiantes antiguos
+[1509.44-1511.44]  porque van a haber cambios ahí,
+[1511.44-1512.44]  se dan cuenta,
+[1512.44-1513.44]  en ese sentido.
+[1513.44-1514.44]  Entonces,
+[1514.44-1517.44]  ¿qué significa eso?
+[1517.44-1519.44]  Que por eso ustedes ven
+[1519.44-1523.44]  que el enunciado desde ayer cambió totalmente.
+[1523.44-1528.44]  Se hizo más difícil.
+[1528.44-1530.44]  Se dan cuenta que hay seis tipos de análisis
+[1530.44-1532.44]  que hay que hacer.
+[1532.44-1534.44]  El enunciado.
+[1534.44-1535.44]  ¿Por qué?
+[1535.44-1536.44]  Porque se va a aplicar
+[1536.44-1538.44]  todos los aspectos de la norma,
+[1538.44-1539.44]  ¿no es cierto?,
+[1539.44-1540.44]  dado los cambios que vienen
+[1540.44-1542.44]  y cosas por el tiempo.
+[1542.44-1543.44]  Entonces,
+[1543.44-1545.44]  ¿qué quiero decir con eso?
+[1545.44-1550.44]  Que el modelo del taller
+[1550.44-1552.44]  y cosas por estilo,
+[1552.44-1554.44]  que algunos pueden decir
+[1554.44-1555.44]  lo tengo,
+[1555.44-1557.44]  cuidado con decir lo tengo,
+[1557.44-1560.44]  revisemos que hay cambios en el taller.
+[1560.44-1562.44]  No es llegar a pescar el anterior
+[1562.44-1564.44]  porque el edificio es el mismo,
+[1564.44-1565.44]  pero alguien podría decir
+[1565.44-1566.44]  bueno,
+[1566.44-1567.44]  pesco lo que tengo
+[1567.44-1568.44]  y luego el proceso.
+[1568.44-1569.44]  No, no,
+[1569.44-1570.44]  cambiaron todas las cosas.
+[1570.44-1571.44]  Vayan mirando todo lo que cambió,
+[1571.44-1572.44]  digamos,
+[1572.44-1574.44]  para los estudiantes nuevos
+[1574.44-1575.44]  no tenemos que hacer el modelo,
+[1575.44-1576.44]  digamos,
+[1576.44-1577.44]  ¿no es cierto?,
+[1577.44-1578.44]  de acero.
+[1578.44-1579.44]  O sea,
+[1579.44-1580.44]  igual,
+[1580.44-1581.44]  todas las hacen de acero.
+[1581.44-1582.44]  Eso no es cierto.
+[1582.44-1583.44]  El ayudante,
+[1583.44-1584.44]  con millas,
+[1584.44-1585.44]  porque el curso no tiene ayudante,
+[1585.44-1586.44]  pero el que está,
+[1586.44-1587.44]  me va a ayudar,
+[1587.44-1588.44]  digamos,
+[1588.44-1589.44]  en todo lo que son
+[1589.44-1590.44]  la revisión de los talleres
+[1590.44-1591.44]  es el profesor Roberto Cortés,
+[1591.44-1592.44]  ¿ya?
+[1592.44-1593.44]  Entonces,
+[1593.44-1594.44]  él va a ser el profesor
+[1594.44-1595.44]  que va a estar conmigo
+[1595.44-1596.44]  en las clases de taller
+[1596.44-1597.44]  y él va a ser
+[1597.44-1598.44]  el profesor
+[1598.44-1599.44]  que va a estar conmigo
+[1599.44-1600.44]  en las clases de taller
+[1600.44-1601.44]  y él va a ser
+[1601.44-1602.44]  el profesor
+[1602.44-1603.44]  que va a estar conmigo
+[1603.44-1604.44]  en las clases de taller
+[1604.44-1605.44]  y él,
+[1605.44-1606.44]  ¿no es cierto?,
+[1606.44-1607.44]  que lo que me hace
+[1607.44-1608.44]  entonces,
+[1608.44-1609.44]  que me hace un día Roberto,
+[1609.44-1610.44]  o sea,
+[1610.44-1611.44]  que saca acá el resultado
+[1611.44-1612.44]  para poder revisarlo,
+[1612.44-1613.44]  el informe,
+[1613.44-1614.44]  todas las cuestiones
+[1614.44-1615.44]  y yo voy ya,
+[1615.44-1616.44]  ¿no es cierto?,
+[1616.44-1617.44]  las cosas que tiene que hacerle
+[1617.44-1618.44]  para revisarlo en el taller,
+[1618.44-1619.44]  ¿ok?
+[1619.44-1620.44]  También le he pedido
+[1620.44-1621.44]  a Roberto
+[1621.44-1622.44]  que él enseñe
+[1622.44-1623.44]  dos cosas
+[1623.44-1624.44]  que tienen
+[1624.44-1625.44]  la nueva norma
+[1625.44-1626.44]  que lo hace ahí
+[1626.44-1627.44]  en el BIMUNEL,
+[1627.44-1628.44]  en el BUMBETA,
+[1628.44-1629.44]  ese servicio
+[1629.44-1630.44]  para afuera.
+[1630.44-1631.44]  Entonces,
+[1631.44-1632.44]  yo lo que está ahí
+[1632.44-1633.44]  ya,
+[1633.44-1634.44]  ¿no es cierto?,
+[1634.44-1635.44]  él me ha enseñado
+[1635.44-1636.44]  esa parte en el curso
+[1636.44-1637.44]  para que le muestre
+[1637.44-1638.44]  cómo se hace
+[1638.44-1639.44]  en el BIMUN.
+[1639.44-1640.44]  Aquí me estoy refiriendo
+[1640.44-1641.44]  a cómo se determina
+[1641.44-1642.44]  el BS30
+[1642.44-1643.44]  y cómo se determina
+[1643.44-1644.44]  el período
+[1644.44-1645.44]  segunda cambiante,
+[1645.44-1646.44]  ¿está?
+[1646.44-1647.44]  ¿Qué razón pone?
+[1647.44-1648.44]  Conclusión,
+[1648.44-1649.44]  el curso,
+[1649.44-1650.44]  entonces,
+[1650.44-1651.44]  si bien
+[1651.44-1652.44]  en nombre
+[1652.44-1653.44]  del curso
+[1653.44-1654.44]  todo es lo mismo,
+[1654.44-1655.44]  le hemos incorporado
+[1655.44-1656.44]  este semestre
+[1656.44-1657.44]  tanto en el taller
+[1657.44-1658.44]  como
+[1658.44-1659.44]  en el curso
+[1659.44-1660.44]  en el BIMUNETA
+[1660.44-1661.44]  como
+[1661.44-1662.44]  en la materia
+[1662.44-1663.44]  elementos
+[1663.44-1664.44]  para que no me queden
+[1664.44-1665.44]  obsoletos,
+[1665.44-1666.44]  digamos,
+[1666.44-1667.44]  saliendo de la próxima norma.
+[1667.44-1668.44]  Eso es
+[1668.44-1669.44]  el fondo
+[1669.44-1670.44]  por eso
+[1670.44-1671.44]  esos énfasis,
+[1671.44-1672.44]  ¿ya?
+[1675.44-1676.44]  Eso
+[1676.44-1677.44]  no sé si
+[1677.44-1678.44]  hay alguna
+[1678.44-1680.44]  consulta
+[1680.44-1682.44]  al respecto.
+[1682.44-1683.44]  En toda la parte
+[1683.44-1685.44]  de sismología
+[1687.44-1689.44]  yo le recomiendo
+[1689.44-1690.44]  porque el semestre
+[1690.44-1691.44]  pasado,
+[1691.44-1692.44]  y perdónenme
+[1692.44-1693.44]  que me refiero
+[1693.44-1694.44]  al semestre pasado
+[1694.44-1695.44]  porque no sea
+[1695.44-1696.44]  todavía eterno,
+[1696.44-1697.44]  en la toda la sismología
+[1697.44-1698.44]  fue un casi
+[1698.44-1699.44]  puro
+[1699.44-1700.44]  Y yo digo
+[1700.44-1701.44]  lo siguiente,
+[1701.44-1702.44]  parece que nadie
+[1702.44-1703.44]  va a buscar
+[1703.44-1704.44]  este libro
+[1704.44-1705.44]  hasta todos
+[1705.44-1706.44]  los que
+[1706.44-1707.44]  preguntaban
+[1707.44-1708.44]  por el
+[1708.44-1709.44]  taller.
+[1709.44-1710.44]  Ya está con
+[1710.44-1711.44]  ejemplo.
+[1711.44-1712.44]  O sea,
+[1712.44-1713.44]  lo que le puso
+[1713.44-1714.44]  Patricio
+[1714.44-1715.44]  está que
+[1715.44-1716.44]  si hubiera
+[1716.44-1717.44]  leído ese libro
+[1717.44-1718.44]  está todo.
+[1718.44-1719.44]  O sea,
+[1719.44-1720.44]  si quiere
+[1720.44-1721.44]  que le vaya
+[1721.44-1722.44]  bien
+[1722.44-1723.44]  en la prueba
+[1723.44-1724.44]  uno,
+[1724.44-1725.44]  no puede
+[1725.44-1726.44]  no haber leído
+[1726.44-1727.44]  ese libro.
+[1727.44-1728.44]  Pero espérame
+[1728.44-1729.44]  que está
+[1729.44-1730.44]  en la biblioteca
+[1731.44-1732.44]  para el curso
+[1732.44-1733.44]  de sismología
+[1733.44-1734.44]  todo lo que
+[1734.44-1735.44]  tiene que ver
+[1735.44-1736.44]  ¿no es cierto?
+[1736.44-1737.44]  con estudios
+[1737.44-1738.44]  de riesgo
+[1738.44-1739.44]  símico
+[1739.44-1740.44]  tanto determinístico
+[1740.44-1742.44]  como probabilístico
+[1742.44-1743.44]  el libro
+[1743.44-1744.44]  donde
+[1744.44-1745.44]  Patricio
+[1745.44-1746.44]  digamos
+[1746.44-1747.44]  saca toda la materia
+[1747.44-1748.44]  digamos
+[1748.44-1749.44]  ¿no es cierto?
+[1749.44-1751.44]  es el Kramer
+[1751.44-1752.44]  ¿ya?
+[1752.44-1753.44]  y por lo tanto
+[1753.44-1754.44]  ¿no es cierto?
+[1754.44-1755.44]  tengo que
+[1755.44-1756.44]  estudiar el Kramer
+[1756.44-1757.44]  ¿cuál es el problema
+[1757.44-1758.44]  del Kramer?
+[1758.44-1759.44]  ¿está en inglés?
+[1759.44-1760.44]  sí está en inglés
+[1760.44-1761.44]  pero es
+[1761.44-1762.44]  el mejor
+[1762.44-1763.44]  libro que existe
+[1763.44-1764.44]  yo lo tengo
+[1764.44-1765.44]  en mi oficina
+[1765.44-1766.44]  compré mucho tiempo
+[1766.44-1767.44]  digamos el libro
+[1767.44-1768.44]  del Kramer
+[1768.44-1769.44]  porque es muy bueno
+[1769.44-1770.44]  ¿ya?
+[1770.44-1771.44]  ahí hay problemas
+[1771.44-1772.44]  resueltos
+[1772.44-1773.44]  todo ahí
+[1773.44-1774.44]  todo
+[1774.44-1775.44]  todo hecho
+[1775.44-1776.44]  entonces
+[1776.44-1777.44]  eso
+[1777.44-1778.44]  le recomiendo
+[1778.44-1779.44]  ¿sí?
+[1779.44-1780.44]  si
+[1780.44-1781.44]  ¿sí?
+[1781.44-1782.44]  voy a hacer una consulta
+[1782.44-1783.44]  respecto al Kramer
+[1783.44-1784.44]  me acuerdo
+[1784.44-1785.44]  bueno
+[1785.44-1786.44]  hace muchos
+[1786.44-1787.44]  que te dije
+[1787.44-1788.44]  no lo voy a volver
+[1788.44-1789.44]  pero
+[1789.44-1790.44]  me encanta
+[1790.44-1791.44]  y claro
+[1791.44-1792.44]  nosotros
+[1792.44-1793.44]  veíamos
+[1793.44-1794.44]  el año 18
+[1794.44-1795.44]  el 2008
+[1795.44-1796.44]  y
+[1796.44-1797.44]  me acuerdo
+[1797.44-1798.44]  de ese evento
+[1798.44-1799.44]  pasado
+[1799.44-1800.44]  de que
+[1800.44-1801.44]  claro
+[1801.44-1802.44]  se iban
+[1802.44-1803.44]  a rescatar
+[1803.44-1804.44]  las actualizaciones
+[1804.44-1805.44]  de
+[1805.44-1806.44]  en versiones
+[1806.44-1807.44]  distintas
+[1807.44-1808.44]  del mismo
+[1808.44-1817.80]  Esta norma va a estar basada en el CACI 2018-2019.
+[1820.80-1832.12]  O sea, pasar de aquí a acá, una cosa que significa, una, que cambió el diseño de muro.
+[1832.12-1852.28]  O sea, pasar de aquí a acá, otra, por decir que para el curso hormigón armado, fíjense, el curso hormigón armado, cuando había falla por tracción, ¿qué tenía que cumplirse en una viga para que hubiera falla por tracción?
+[1859.54-1861.28]  Fíjense que había falla.
+[1862.12-1869.12]  No es cierto, con presión, no es cierto, por falla de tracción y zona intermedia.
+[1870.24-1873.18]  ¿Cómo discriminábamos si estábamos en uno y otro?
+[1873.32-1876.64]  ¿Qué es lo que hay que evaluar?
+[1879.18-1880.32]  ¿Qué hay que evaluar?
+[1882.54-1885.86]  La deformación del fierro más traccionado.
+[1887.16-1891.48]  ¿Y qué condición tenía que cumplirse para estar en zona de tracción?
+[1892.12-1894.06]  Sobre el mayor a 0, 0, 5.
+[1894.48-1896.82]  Mayor a 0, 0, 5, ¿no es cierto?
+[1897.32-1899.64]  Ah, el nuevo código hizo, no, ahora no.
+[1901.60-1917.90]  El código va a decir ahora, dice, o sea, la norma actual dice, hormigón, que si éxito es mayor o igual a 0, 0, 0, 5, o sea, 5 por mil,
+[1917.90-1919.82]  implica, ¿no es cierto?
+[1922.12-1946.78]  Ahora va a decir, si éxito es mayor o igual que éxito y más 0, 0, 0, 3, falla.
+[1946.78-1948.36]  Gracias.
+[1952.12-1953.78]  Fíjense cuál es la diferencia.
+[1955.20-1958.52]  Si la 0 es a 6, 30, 4, 20, es lo mismo.
+[1959.10-1962.62]  ¿Por qué? ¿Cuánto vale el éxito en I? Vale 2 por mil.
+[1963.64-1965.44]  Más 3 por mil, son 5 por mil.
+[1966.20-1971.70]  Ah, pero si la 0 es a 44, 28, el éxito en I vale 1,4 por mil.
+[1972.18-1975.62]  Más 3 por mil son 4,4 y no 5, y sería falla por tracción.
+[1978.82-1979.88]  Ah, cambia.
+[1982.12-1988.94]  Entonces, se dan cuenta, hay cambio, hay menos, dando un cambio de, aparte, inicial del curso de hormigón armado.
+[1989.94-1990.38]  Inicial.
+[1991.34-1992.42]  Cambio, ahí, activado.
+[1993.38-1993.48]  ¿Ya?
+[1993.90-1996.88]  Porque el presidente se ve estremado, que es el cambio de la información.
+[1997.38-1997.78]  Claro.
+[1998.22-1999.80]  O sea, los voy a mencionar todos.
+[2000.32-2006.56]  Los voy a mencionar, insisto, yo voy a seguir evaluando con, ¿no es cierto?, con eso de ahí, digamos,
+[2006.56-2008.58]  al menos en el curso de hormigón armado, ¿ya?
+[2009.00-2011.20]  Pero, como lo que quiero indicar, eso.
+[2012.12-2020.10]  Entonces, este es el programa del curso, esa es la forma como se evalúa el curso.
+[2020.88-2022.78]  ¿Cuántos son los controles?
+[2028.34-2041.12]  Aquí está el horario del curso, es decir, aquí estamos hoy día, esa clase y esa clase, ¿no es cierto?,
+[2041.12-2041.22]  ¿no es cierto?
+[2042.12-2054.30]  Son las de cátedra, pero este marzo, esta clase de aquí, el E y el F, a partir de mañana,
+[2054.98-2059.28]  Patricio Tapia pasa, ¿no es cierto?, la parte de sismología.
+[2059.28-2065.14]  Y la fecha de los controles está de aquí.
+[2066.22-2071.72]  El control 1 es el martes 5 de mayo, ahí, ¿qué es ahora?
+[2072.12-2083.12]  El control 2, el martes 26 de mayo, y el control 3, el martes 30 de julio.
+[2085.78-2088.44]  Estas son las, aquí están las fechas de los controles.
+[2089.32-2100.82]  Entonces, pura sismología, análisis sísmico de edificio, diseño de muros y diseño de marcos de hormigón.
+[2102.12-2103.36]  Dime.
+[2103.58-2104.66]  ¿El segundo dijo 26?
+[2105.06-2105.42]  ¿Perdón?
+[2105.62-2106.48]  ¿26 es el segundo?
+[2107.36-2110.56]  El número segundo es el 26, sí, 26 de mayo.
+[2110.88-2111.24]  Eso es.
+[2111.52-2111.90]  Dime.
+[2112.16-2114.44]  ¿Todos los controles son en horario de taller?
+[2114.98-2115.34]  ¿Perdón?
+[2115.58-2118.00]  ¿Todos los controles son en horario de taller?
+[2118.00-2119.04]  Sí, aquí, ¿por qué?
+[2119.28-2120.76]  Porque así usamos dos bloques.
+[2121.10-2121.34]  Ya.
+[2122.12-2122.56]  ¿Te acuerdas?
+[2122.70-2127.94]  Partimos la rueda a las 16.15 y la determinamos a las 19.00.
+[2129.24-2130.48]  Por eso la ponemos ahí.
+[2131.48-2131.92]  ¿Bien?
+[2132.12-2134.12]  ¿Bien?
+[2136.18-2138.28]  Eso desde el punto de vista, ¿no es cierto?
+[2139.10-2146.74]  Todo, en Moodle, yo le publiqué todo el material que requiere el curso completo.
+[2146.94-2147.70]  Está todo publicado.
+[2148.32-2148.54]  Todo.
+[2148.98-2151.42]  Tal vez que todo lo que estoy mostrando aquí está ahí en Moodle.
+[2152.12-2153.42]  Me metí hoy día en Moodle.
+[2154.22-2156.60]  Son escasísimos los alumnos que han entrado en Moodle.
+[2157.20-2158.38]  Porque a mí me van indicando.
+[2158.38-2161.58]  A mí me van indicándome alumnos X.
+[2162.12-2164.60]  Los apuntes del curso no los bajo.
+[2165.38-2166.92]  Esto de acá tampoco lo bajo.
+[2167.22-2167.90]  Esto lo bajo.
+[2168.08-2170.34]  O sea, me van indicando a mí qué es lo que están haciendo ustedes.
+[2170.68-2172.56]  Y me dicen el día y la hora que les quiero.
+[2173.86-2175.26]  Yo puedo ir viendo ahí, ¿no es cierto?
+[2175.36-2177.14]  ¿Quién está interactuando con las cosas?
+[2177.46-2178.04]  Y qué es el no.
+[2178.10-2181.46]  Esa es una información que le llega el sistema al profesor.
+[2181.88-2184.36]  Para ir viendo qué está pasando con los alumnos.
+[2184.82-2185.26]  ¿Verdad?
+[2185.80-2187.26]  Esa información la tenemos.
+[2187.96-2188.32]  ¿Profe?
+[2188.56-2188.80]  Dime.
+[2189.64-2191.80]  Creo que el control no...
+[2192.12-2193.50]  Se va a tener que cambiar la fecha.
+[2193.92-2194.10]  ¿Por?
+[2194.22-2197.24]  Que si no, yo justo la semana antes nos habrá recesado.
+[2197.36-2198.26]  El 18 de febrero.
+[2199.26-2200.32]  Vamos a hablar en tres días.
+[2200.96-2202.46]  Para que no pase lo mismo del...
+[2202.46-2205.16]  Buena, buena, buena observación.
+[2206.22-2207.38]  Déjame ver la actividad.
+[2207.72-2208.68]  Buena observación.
+[2209.28-2210.24]  Y bueno que lo hiciste.
+[2212.08-2213.12]  Déjame, déjame.
+[2213.20-2214.80]  Aquí tengo la...
+[2214.80-2216.58]  Déjame, déjame.
+[2216.58-2217.68]  Tiene razón, parece.
+[2218.36-2219.14]  Déjame aquí ver.
+[2219.68-2221.18]  Tengo el calendario aquí todo.
+[2221.46-2221.98]  Porque estás hablando.
+[2222.12-2222.58]  Sí.
+[2224.88-2225.48]  Claro.
+[2227.48-2228.12]  Claro.
+[2229.44-2229.86]  La...
+[2229.86-2231.12]  El...
+[2231.12-2235.22]  El 18 es la semana de descanso.
+[2235.42-2235.54]  Sí.
+[2236.10-2238.04]  Y la siguiente, la puse la siguiente.
+[2238.16-2238.98]  Entonces la tenemos que cambiar.
+[2239.24-2239.60]  ¿Cuándo?
+[2239.82-2241.20]  Entonces la ponemos a tiro.
+[2241.40-2243.36]  Cambiamos y verdaderamente paramos.
+[2245.46-2246.06]  Claro.
+[2246.06-2247.06]  Gracias.
+[2252.12-2260.44]  Entonces la voy a cambiar, digamos.
+[2261.82-2262.36]  La voy a cambiar.
+[2262.40-2265.28]  Entonces cambia inmediatamente para el todo, digamos, ¿no es cierto?
+[2265.42-2267.62]  Porque no me di cuenta de lo que tú acabas de decir.
+[2270.00-2271.12]  Entonces ahí no...
+[2271.88-2273.58]  Ahí no tenemos ningún problema.
+[2275.12-2275.74]  Entonces...
+[2282.12-2282.64]  Una...
+[2282.64-2288.06]  La otra es adelantar una semana.
+[2293.92-2295.24]  No, porque...
+[2295.24-2298.12]  ¿Sería una semana de experiencia entre la clave de simbología y la...
+[2298.12-2299.12]  ¿Es cierto?
+[2299.70-2302.30]  ¿Ah, porque la simbología está el 5?
+[2302.60-2302.94]  Sí.
+[2303.18-2304.04]  Ah, está muy cerca.
+[2305.04-2305.96]  Claro, están justitas.
+[2306.02-2307.56]  Si se adelanta, quedaría para el 12.
+[2308.56-2310.00]  ¿Alguna semana para el 5?
+[2310.00-2310.06]  ¿Algo?
+[2310.60-2311.16]  No.
+[2311.16-2311.62]  No.
+[2311.62-2311.66]  No.
+[2311.96-2312.08]  No.
+[2312.12-2316.08]  no, pero son materias distintas
+[2316.08-2318.12]  pero bien, el ejemplo del principio
+[2318.12-2318.76]  del domino
+[2318.76-2321.98]  hay problemas en ese
+[2321.98-2323.90]  sentido, ya, es que acabo
+[2323.90-2326.04]  falto, ya, gracias
+[2326.04-2326.74]  por decirme
+[2326.74-2340.12]  ustedes saben que hay apuntes
+[2340.12-2340.72]  del curso
+[2340.72-2344.12]  en la versión que subí
+[2344.12-2345.66]  que le llamé versión
+[2345.66-2347.94]  2026, hay cambios
+[2347.94-2348.58]  en los apuntes
+[2348.58-2351.68]  si ustedes se dan cuenta, adentro
+[2351.68-2353.54]  se puso
+[2353.54-2355.76]  cómo se clasifican los
+[2355.76-2357.42]  unos de acuerdo a la nueva normativa
+[2357.42-2360.40]  por ejemplo, voy a mostrárselo
+[2360.40-2361.78]  para que se den cuenta
+[2361.78-2362.82]  de lo que estoy hablando
+[2362.82-2365.70]  más o menos será en la página
+[2365.70-2366.96]  a lo mejor como 100
+[2366.96-2369.30]  entonces
+[2369.30-2370.56]  un poquito antes
+[2370.56-2400.54]  de la presentación
+[2400.56-2402.56]  creo que esto
+[2402.56-2404.56]  va a ser
+[2404.56-2405.56]  muy interesante
+[2405.56-2406.56]  para que se diga
+[2406.56-2407.56]  que todo lo que
+[2407.56-2408.56]  está en este
+[2408.56-2409.56]  asunto
+[2409.56-2410.56]  está en este
+[2410.56-2411.56]  asunto
+[2411.56-2412.56]  desde
+[2412.56-2413.56]  el aspecto
+[2413.56-2414.56]  de que
+[2414.56-2415.56]  la gente
+[2415.56-2416.56]  no puede
+[2416.56-2417.56]  evitar
+[2417.56-2418.56]  este
+[2418.56-2419.56]  asunto
+[2419.56-2420.56]  en el
+[2420.56-2421.56]  caso
+[2421.56-2422.56]  de la
+[2422.56-2423.56]  examen
+[2423.56-2424.56]  de la
+[2424.56-2425.56]  examen
+[2425.56-2426.56]  de la
+[2426.56-2427.56]  examen
+[2427.56-2428.56]  de la
+[2428.56-2429.56]  examen
+[2429.56-2430.56]  de la
+[2430.56-2433.24]  acá
+[2433.24-2436.18]  se dan cuenta
+[2436.18-2437.86]  ahí
+[2437.86-2440.68]  eso lo agregué
+[2440.68-2443.48]  proyecto nueva norma
+[2443.48-2445.10]  es decir
+[2445.10-2446.58]  lo que está diciendo ahí
+[2446.58-2447.76]  que estoy diciendo
+[2447.76-2451.14]  miren actualmente se clasifican
+[2451.14-2452.78]  los suelos con estos parámetros
+[2452.78-2454.76]  y ahora se van a clasificar
+[2454.76-2456.28]  con estos suelos
+[2456.28-2458.96]  y hay un cambio radical
+[2458.96-2460.80]  lo único parámetro que se mantiene
+[2460.80-2462.50]  que es el PS30
+[2462.50-2464.18]  y los otros cambian
+[2464.18-2465.78]  se eliminan todos los parámetros
+[2465.78-2467.26]  que usted hacía
+[2467.26-2470.68]  había que hacer ensayo de cucharas estándar
+[2470.68-2472.52]  digamos o compresión simple
+[2472.52-2473.42]  todo eso desaparece
+[2473.42-2476.50]  y se establece la determinación
+[2476.50-2478.48]  del periodo segunda camura
+[2478.48-2480.18]  entonces
+[2480.18-2482.60]  ahí tenemos algo
+[2482.60-2483.30]  que entonces
+[2483.30-2485.68]  yo le agregué a los apuntes
+[2485.68-2488.44]  para que ustedes lo tengan
+[2488.44-2492.08]  porque yo no puedo publicar
+[2492.08-2493.52]  la nueva norma
+[2493.52-2496.02]  está prohibido
+[2496.02-2497.64]  como miembro del comité
+[2497.64-2498.84]  no es cierto
+[2498.84-2501.08]  eso no lo puedo difundir yo
+[2501.08-2502.98]  hasta que no se apruebe en el INN
+[2502.98-2504.26]  entonces no es
+[2504.26-2505.74]  lo único que yo pude hacer
+[2505.74-2506.88]  es pescar y pegar ahí
+[2506.88-2509.02]  pero no puedo
+[2509.02-2511.72]  difundir este documento
+[2511.72-2512.22]  ni nada
+[2512.22-2517.90]  eso no es cierto
+[2517.90-2520.06]  y además
+[2520.06-2522.36]  en los apuntes
+[2522.36-2523.76]  agregué al final
+[2523.76-2526.24]  más problemas para que tengan
+[2526.24-2527.34]  para ejercitarse
+[2527.34-2529.84]  por ejemplo
+[2529.84-2532.80]  dado que en la prueba
+[2532.80-2534.34]  del semestre pasado
+[2534.34-2535.70]  del control 3
+[2535.70-2538.88]  hubo malos resultados
+[2538.88-2540.52]  puse el control 3
+[2540.52-2540.82]  como
+[2540.82-2543.34]  el policial
+[2543.34-2545.98]  para que lo hagan
+[2545.98-2547.06]  ya
+[2547.06-2547.86]  es
+[2547.90-2549.34] , eso es lo que dicen
+[2549.34-2549.82]  que los apunta
+[2559.74-2560.44]  lo siguiente
+[2560.44-2562.28]  el taller
+[2562.28-2565.26]  aquí va haber cambios
+[2565.26-2569.32]  en el sentido siguiente
+[2569.32-2570.36]  no solo
+[2570.36-2571.64]  en lo que
+[2571.64-2574.10]  se está pidiendo
+[2574.10-2575.90]  si no que cómo se va a desarrollar
+[2575.90-2576.62]  ¿si la estructura está bien?
+[2576.62-2577.14]  bien, muy bien
+[2577.14-2580.46]  actualmente
+[2580.46-2582.24]  ¿cuál es el énfasis?
+[2582.92-2584.02]  que yo enseño todo
+[2584.02-2586.56]  y por lo tanto
+[2586.56-2588.68]  usted juega un rol pasivo
+[2588.68-2592.68]  vamos a hacerle a usted un rol activo
+[2592.68-2594.72]  ¿qué significa uno?
+[2594.72-2595.28]  algo
+[2595.28-2597.94]  se le va a encargar al grupo X
+[2597.94-2600.84]  la próxima clase de taller
+[2600.84-2602.72]  explique cómo se hace tal cosa
+[2603.30-2604.76]  investigue usted
+[2604.76-2607.44]  y no decir
+[2607.44-2609.94]  después yo ratifico
+[2609.94-2611.34]  si está bien hecho o no
+[2611.34-2613.98]  pero rol activo
+[2613.98-2614.72]  no pasivo
+[2614.72-2616.88]  segundo
+[2616.88-2618.50]  en clase
+[2618.50-2621.40]  tienen que estar los dos alumnos
+[2621.40-2622.76]  a la clase de taller
+[2622.76-2624.98]  asistencia 100%
+[2624.98-2625.96]  si no, no se acuerdan
+[2625.96-2628.64]  salvo que haya una enfermedad
+[2628.64-2630.42]  por supuesto y ahí se trae
+[2630.42-2631.92]  un médico, toma
+[2631.92-2634.06]  pero el taller se requiere
+[2634.06-2636.20]  100% los dos alumnos
+[2636.20-2636.84]  o sea
+[2636.84-2639.54]  si falta uno del grupo
+[2639.54-2641.60]  perjudicó al grupo completo
+[2641.60-2643.02]  no solamente al que faltó
+[2643.02-2645.58]  porque es un trabajo colaborativo
+[2645.58-2646.74]  digamos, en ese sentido
+[2646.74-2649.32]  y en las clases entonces ustedes
+[2649.32-2651.36]  en cada clase de taller
+[2651.36-2653.00]  vamos a hacer lo de la siguiente forma
+[2653.00-2656.30]  en esta clase tienen que desarrollar
+[2656.30-2657.00]  todo esto
+[2657.00-2658.84]  entonces al terminar la clase
+[2658.84-2660.82]  vamos a evaluar si terminaron o no
+[2660.82-2663.30]  la misma clase
+[2663.30-2663.78]  ¿sí?
+[2663.78-2664.04]  ¿sí?
+[2664.06-2665.62]  o sea miren, voy a decir cualquier cosa
+[2665.62-2667.84]  hay que poner todos los muros del edificio
+[2667.84-2670.22]  ya, empezar a poner los muros del edificio
+[2670.22-2671.68]  ya, terminó la clase
+[2671.68-2673.46]  ahí están todos los muros colocados
+[2673.46-2674.60]  todo, todo, todo, todo, todo
+[2674.60-2675.34]  evaluar así
+[2675.34-2677.14]  ¿para qué?
+[2677.52-2678.98]  para que no se vayan quedando atrás
+[2678.98-2681.26]  o sea, vamos a ir evaluando
+[2681.26-2683.84]  de forma inmediata y viendo que van avanzando
+[2683.84-2686.14]  digamos, como corresponde
+[2686.14-2686.92]  digamos, al resto
+[2686.92-2688.84]  estoy trabajando en los dos
+[2688.84-2691.48]  esto quiere decir que no se están haciendo
+[2691.48-2693.84]  dos modelos, está siendo un modelo
+[2694.06-2694.76]  o grupo
+[2694.76-2699.16]  el edificio
+[2699.16-2700.24]  ¿ya?
+[2700.70-2702.90]  ¿qué cambió en el edificio?
+[2703.18-2705.38]  me dirijo ahí fundamentalmente
+[2705.38-2707.14]  a los estudiantes
+[2707.14-2709.58]  que tienen el modelo hecho
+[2709.58-2711.52]  ¿qué cambió?
+[2712.62-2714.44]  más allá si lo tenían bien hecho
+[2714.44-2715.06]  el modelo no
+[2715.06-2716.62]  pero hay modelos ahí
+[2716.62-2718.82]  le cambié
+[2718.82-2721.28]  el tipo de suelo sobre el cual
+[2721.28-2722.56]  está apoyado el edificio
+[2722.56-2723.62]  ¿sí?
+[2724.06-2725.94]  si mal no recuerdo
+[2725.94-2728.66]  el semestre pasado me parece
+[2728.66-2729.96]  que el edificio 1
+[2729.96-2732.26]  estaba apoyado
+[2732.26-2733.84]  el suelo tipo P
+[2733.84-2736.34]  y ahora
+[2736.34-2739.04]  lo puse el suelo tipo C
+[2739.04-2741.46]  a ver, dígame
+[2741.46-2743.74]  un alumno del semestre pasado
+[2743.74-2745.80]  o que ya ha hecho el curso
+[2745.80-2748.10]  ¿qué significa
+[2748.10-2749.34]  ese cambio
+[2749.34-2751.28]  desde el punto de vista del edificio?
+[2752.62-2753.00]  a ver
+[2753.00-2754.04]  ¿qué significa?
+[2754.06-2755.42]  ¿quién tiene ese?
+[2755.62-2758.28]  esas son preguntas conceptuales
+[2758.28-2760.08]  el semestre pasado se dijo
+[2760.08-2762.36]  el edificio está fundado en suelo tipo B
+[2762.36-2765.08]  y ahora se dice fundado en tipo C
+[2765.08-2768.06]  si yo tengo claros los conceptos
+[2768.86-2771.52]  ¿quién tiene que cambiar radicalmente?
+[2778.42-2779.84]  el espectro
+[2779.84-2780.06]  el espectro
+[2780.06-2782.06]  el espectro
+[2782.06-2783.90]  el subespectro
+[2783.90-2784.02]  el subespectro
+[2784.02-2786.32]  por lo tanto
+[2786.32-2788.50]  todos los esfuerzos
+[2788.50-2789.64]  este semestre
+[2789.64-2792.00]  tienen que ser mayores que el semestre pasado
+[2792.00-2794.90]  todo este es mayor
+[2794.90-2795.84]  todo mayor
+[2795.84-2796.50]  todo mayor
+[2796.50-2801.02]  porque mientras el suelo es más malo
+[2801.72-2804.02]  las fuerzas sísmicas a considerar son mayores
+[2804.86-2808.22]  entonces la primera cosa
+[2808.22-2809.82]  si yo tengo claros los conceptos
+[2809.82-2812.86]  si lo voy a fundar en suelo tipo B
+[2812.86-2813.86]  como en el semestre pasado
+[2814.02-2817.40]  y en este muro había por ejilte
+[2817.40-2819.08]  un axial de tanto
+[2819.08-2820.26]  y un momento de tanto
+[2820.26-2821.18]  y un corte de tanto
+[2821.18-2824.78]  este semestre tiene que haber mayor
+[2824.78-2826.20]  corte mayor axial
+[2826.20-2827.04]  y mayor momento
+[2827.04-2830.64]  esa es la primera cosa
+[2830.64-2832.54]  que se deduce
+[2832.54-2834.70]  digamos nada más que en el enunciado
+[2834.70-2838.60]  segunda cosa
+[2838.60-2840.78]  que hice
+[2840.78-2841.60]  en el
+[2841.60-2843.38]  en el
+[2843.38-2843.72]  en el
+[2843.72-2845.02]  en el edificio uno
+[2845.02-2849.46]  el espesor de los muros
+[2849.46-2851.40]  todo es exactamente igual
+[2851.40-2852.88]  ahí no hay ningún cambio
+[2852.88-2855.54]  ningún cambio
+[2855.54-2857.00]  todas las cosas
+[2857.00-2860.04]  son exactamente igual
+[2860.04-2865.52]  en el edificio dos
+[2865.52-2867.56]  hice un cambio
+[2867.56-2869.46]  ¿cuál?
+[2870.34-2871.44]  en el edificio dos
+[2871.44-2872.92]  se mantuvo el tipo de suelo
+[2872.92-2873.56]  porque el semestre pasado
+[2873.56-2873.58]  se mantuvo el tipo de suelo
+[2873.58-2874.88]  el semestre pasado también era C
+[2874.88-2878.62]  ¿qué cambié?
+[2878.62-2882.54]  la altura del primer piso
+[2882.54-2885.70]  el semestre pasado
+[2885.70-2887.30]  todos los pisos eran de 3 metros
+[2887.30-2891.08]  y ahora
+[2891.08-2894.14]  dice ahí
+[2894.14-2898.16]  primer piso 3,5 metros
+[2898.16-2900.06]  y los demás 3 metros
+[2900.06-2903.56]  ¿por qué cambié?
+[2903.56-2904.10]  y eso
+[2904.10-2909.06]  para que el alumno entienda
+[2909.06-2912.06]  como los dos primeros
+[2912.06-2913.72]  todos los pisos eran iguales
+[2913.72-2916.70]  entonces el alumno no lograba entender
+[2916.70-2920.58]  como el corte que le transmiten
+[2920.58-2921.90]  las vigas a las columnas
+[2921.90-2923.42]  depende de la rigidez
+[2923.42-2925.58]  de los elementos que llegan al nudo
+[2925.58-2927.74]  como las dos columnas
+[2927.74-2928.86]  tienen la misma rigidez
+[2928.86-2930.82]  entonces el 50% paga una
+[2930.82-2933.32]  aquí como el primer piso
+[2933.32-2934.26]  tiene 3,50
+[2934.26-2935.18]  tiene menos rigidez
+[2935.18-2936.38]  que la segunda que le eché el metro
+[2936.38-2938.20]  entonces hay más para arriba
+[2938.20-2938.90]  y menos para abajo
+[2938.90-2942.06]  cambié ese tipo de cosas
+[2942.06-2943.96]  para fortalecer la parte conceptual
+[2943.96-2946.52]  entonces yo siempre voy analizando
+[2946.52-2948.38]  qué cosas hacerle para que
+[2948.38-2950.52]  entiendan mejor la parte conceptual
+[2950.52-2951.94]  ese es el cambio
+[2951.94-2955.28]  que hice en los enunciados
+[2955.28-2958.62]  en las preguntas
+[2958.62-2961.32]  hay un cambio súper importante
+[2963.32-2965.40]  y es que
+[2965.40-2966.38]  ¿qué es lo que hicieron?
+[2966.38-2967.46]  ¿qué por qué?
+[2967.46-2968.76]  ¿qué es lo que hicieron?
+[2968.76-2969.34]  primero
+[2969.34-2970.24]  en el edificio 1
+[2970.24-2976.42]  todo esto lo hicieron
+[2976.42-2978.70]  pero fíjense lo que agregue
+[2978.70-2981.98]  ubicación del centro de base
+[2981.98-2983.20]  y el centro de rigidez
+[2983.20-2983.92]  cada vez
+[2983.92-2987.92]  ¿por qué fuese eso?
+[2988.32-2989.64]  porque el alumno
+[2989.64-2991.38]  al menos el semestre pasado
+[2991.38-2993.22]  nunca entendió
+[2993.22-2993.30]  que era un centro de rigidez
+[2993.32-2994.88]  la importancia del centro de rigidez.
+[2999.32-3000.90]  Entonces, ¿qué pasa?
+[3001.60-3008.70]  Que al saber yo en cada piso la posición del centro de masa y el centro de rigidez,
+[3009.38-3016.44]  inmediatamente voy a saber para un muro en particular que quiera determinar los esfuerzos,
+[3017.22-3019.06]  cuál es el estado de carga que manda inmediatamente.
+[3019.06-3034.10]  Entonces, he introducido en el enunciado pedir un montón de cosas que luego se preguntan,
+[3034.14-3037.98]  van a ver más abajo en el enunciado, se preguntan, para dominar,
+[3038.34-3042.10]  no solamente saber el centro de rigidez, el centro de gravedad de la rigidez.
+[3042.34-3044.22]  Ok, ya, ya, ok. ¿Qué más?
+[3045.84-3048.16]  Ah, el centro de rigidez.
+[3049.06-3052.38]  Es el punto con respecto al cual gira el edificio.
+[3053.88-3058.68]  Si el centro de rigidez es respecto al punto al cual gira el edificio,
+[3060.90-3066.40]  mientras un muro está más alejado del centro de rigidez,
+[3067.62-3071.76]  va a estar solicitado a mayor corte debido al momento torsional en el implante.
+[3074.06-3075.60]  Eso, ¿qué le pasa al alumno?
+[3076.16-3079.04]  No lo va a entender porque quiere aplicar la fórmula para ver,
+[3079.06-3083.94]  no, no, sin aplicar ninguna fórmula, yo sé todo lo que está ocurriendo en el edificio.
+[3085.20-3090.24]  El ingeniero no muestra los conocimientos con las fórmulas,
+[3090.48-3093.96]  muestra el conocimiento por tener claros los conceptos.
+[3095.74-3096.90]  Las fórmulas se olvidan.
+[3097.70-3099.14]  Las fórmulas, digamos, se ven,
+[3100.40-3102.64]  la pregunta de inteligencia artificial es que ve la fórmula.
+[3105.22-3107.58]  El otro día, cambiando,
+[3107.58-3107.66]  ¿no?
+[3109.06-3116.40]  Me contrate, digamos, esa cuestión del chat que meté para tener más acceso,
+[3116.66-3123.30]  se paga 20 lucas mensuales, voy a preguntarle cosas de los cursos, ¿ya?
+[3123.90-3127.58]  Entonces le dije, ¿qué le puede decir, digamos, lo cierto, ya?
+[3128.10-3133.28]  ¿Cómo determina el centro de rigidez y qué implica si pago borre A, B, C, y todo?
+[3133.48-3134.56]  Y me empezó a responder.
+[3136.48-3138.84]  La mayoría de las preguntas, la respuesta estaba,
+[3139.06-3140.44]  correcta, ¿ya?
+[3140.52-3142.48]  La mayoría de las respuestas estaban correctas.
+[3144.82-3149.20]  Fíjense que, por ejemplo, yo no me acordaba de cómo se determinaba, ¿no es cierto?
+[3149.26-3150.96]  Porque mucho tiempo que no lo aplicaba,
+[3151.52-3156.24]  para determinar el periodo, ¿no es cierto?, del suelo según el método de una cámpula.
+[3157.36-3158.56]  Entonces le dije, mira,
+[3159.90-3161.22]  y la importancia, no sé,
+[3161.62-3165.46]  y perdónenme que para ayudarle, pues si no, no lo aplican así.
+[3167.44-3168.66]  Si yo voy a usar inteligencia artificial,
+[3169.06-3176.78]  como ingeniero y lo, lo que hago es, hago la pregunta, mire, dime tal cosa,
+[3178.08-3178.96]  la respuesta es el malo.
+[3180.96-3183.00]  Entonces, ¿cómo se le pregunta a Charlie O'Brien?
+[3184.38-3185.54]  ¿Cómo le pregunto yo?
+[3186.14-3194.00]  Me presento, le digo, mire, yo soy ingeniero civil estructural con alta experiencia, ¿no es cierto?,
+[3194.00-3195.46]  en diseño de edificios.
+[3195.86-3198.98]  Es decir, inmediatamente le digo, viejito, respóndele a un fulano que, ¿sabe?
+[3199.08-3200.64]  ¿Cómo me la van a estar preguntando?
+[3200.68-3201.86]  Me considero de alimentar, eh, pues.
+[3202.90-3205.76]  Entonces, ya que me entiendo, primero que en la zona,
+[3206.38-3208.14]  ¿quién me está preguntando?
+[3209.32-3210.10]  Entonces, si yo digo,
+[3211.10-3213.26]  si yo me presento como una persona que,
+[3214.06-3217.12]  soy estudiante de enseñanza media y estoy preguntando eso,
+[3217.12-3221.44]  va a preguntar para el sindical una respuesta muy básica
+[3221.44-3224.00]  para poder entenderlo a nivel de enseñanza media, por favor.
+[3224.76-3227.18]  Pero si yo le digo que soy ingeniero civil estructural
+[3227.18-3228.12]  con 40 años de experiencia,
+[3229.06-3231.44]  experiencia, profesor de la universidad
+[3231.44-3233.30]  en el ramo todo, me va
+[3233.30-3234.58]  a otro nivel, tiene respuesta
+[3234.58-3236.76]  eso es lo primero que tiene que hacer
+[3236.76-3239.08]  ubicarse, y eso
+[3239.08-3241.26]  en cualquier pregunta, ubicarse
+[3241.26-3242.80]  entonces, ah ya, este es un grado, es
+[3242.80-3245.18]  un grado civil popular, así que no puedo
+[3245.18-3247.18]  responder cualquier cosa, tengo que irme a otro nivel
+[3247.18-3248.42]  a consultarlo, a otro nivel
+[3248.42-3250.76]  eso es lo primero, entonces le puse todo eso
+[3250.76-3252.38]  y le dije, dime
+[3252.38-3255.12]  explícame paso a paso
+[3255.12-3257.50]  cómo se determina
+[3257.50-3259.04]  el periodo
+[3259.04-3260.74]  ¿no es cierto? según Nakamura
+[3260.74-3263.00]  y luego, me muestras
+[3263.00-3264.98]  un ejemplo concreto con valores
+[3264.98-3265.62]  obtenidos
+[3265.62-3269.46]  impecable
+[3269.46-3272.80]  estaba todo perfecto, no había
+[3272.80-3274.18]  ninguna cosa mala
+[3274.18-3277.08]  clarita, miren me recordé
+[3277.08-3278.44]  en cinco minutos
+[3278.44-3280.44]  recordé toda la verdad que no me acordaba de
+[3280.44-3281.96]  aplicar
+[3281.96-3284.66]  ¿por qué? por la forma como se
+[3284.66-3285.62]  preguntó
+[3285.62-3288.60]  ah, y además, porque era pagado
+[3288.60-3290.72]  obviamente, esa es una medida importante
+[3290.72-3292.82]  la respuesta de pagado
+[3292.82-3294.80]  no es lo mismo que la respuesta de otro
+[3294.80-3299.56]  fíjense la segunda cosa
+[3299.56-3303.14]  yo no sé si ustedes saben
+[3303.14-3304.62]  porque esto, estas cosas
+[3304.62-3306.74]  yo siento que no hay mucha importancia
+[3306.74-3308.76]  a saber la cosa básica
+[3308.76-3309.30]  de las cosas
+[3309.30-3312.50]  cuando tú le preguntas a
+[3312.50-3313.26]  HHPT
+[3313.26-3317.92]  ¿cómo responde?
+[3318.60-3321.36]  resulta que
+[3321.36-3322.86]  cuando se crea la cosa
+[3322.86-3325.54]  se gasta cualquier
+[3325.54-3326.34]  cantidad
+[3326.34-3329.28]  y se mete toda la información que hay
+[3329.28-3330.88]  en ese momento en el mundo
+[3330.88-3332.44]  al HHPT
+[3332.44-3335.28]  pero supone que esa carga
+[3335.28-3336.96]  haya sido en 2025
+[3336.96-3341.12]  eso quiere decir
+[3341.12-3343.10]  si apareció algo posterior
+[3343.10-3345.18]  al 2025, HHPT no lo
+[3345.18-3346.78]  sabe
+[3346.78-3348.52]  no lo va a buscarlo
+[3348.60-3349.44]  en la web
+[3349.44-3353.38]  simplemente no sabe responder
+[3353.38-3354.78]  si yo le pregunto
+[3354.78-3357.20]  dime, digamos, no siento lo que va a contener
+[3357.20-3358.70]  tal cuestión, no va a saber
+[3358.70-3361.84]  para que me responda
+[3361.84-3363.70]  con eso yo tengo que además
+[3363.70-3366.08]  al interior de HHPT
+[3366.08-3367.58]  lo siento, decirle
+[3367.58-3370.32]  y además busca en las páginas web
+[3370.32-3371.56]  digamos, en el mundo
+[3371.56-3373.72]  para que estés actualizado
+[3373.72-3375.46]  o
+[3375.46-3378.40]  le agrego archivo para que
+[3378.40-3379.24]  los lea allí
+[3379.24-3380.90]  mira, aprende primero esto
+[3380.90-3382.64]  y después me respondí
+[3382.64-3383.98]  entonces yo ¿qué le puse?
+[3383.98-3385.88]  le puse material higiénico
+[3385.88-3387.40]  tú sabes toda esa cuestión
+[3387.40-3388.92]  perfecto
+[3388.92-3390.14]  pero ahora tú tienes que primero
+[3390.14-3391.82]  antes de responderle
+[3391.82-3394.28]  leer esta cuestión que te estoy enviando
+[3394.28-3395.82]  leer este archivo
+[3395.82-3397.02]  y ahora responde
+[3397.02-3399.62]  y hay que responderlo
+[3399.62-3402.20]  confusión, lo único que quiero sacar con eso
+[3402.20-3403.96]  no digo, yo soy un experto en charles
+[3403.96-3405.32]  no estoy diciendo nada de eso
+[3405.32-3406.70]  estoy diciendo nada
+[3406.70-3407.52]  que sí
+[3407.52-3408.24]  yo experimenté
+[3408.24-3410.24]  cómo se busca mejor
+[3410.24-3412.20]  la información como ingeniero
+[3412.20-3415.82]  hagan este tipo de cosas
+[3415.82-3417.88]  y el tipo de respuesta que van a tener
+[3417.88-3418.60]  va a mejorar
+[3418.60-3420.50]  pero cualquier cantidad
+[3420.50-3423.32]  cualquier persona que haga clase
+[3423.32-3425.16]  digamos sobre inteligencia artificial
+[3425.16-3426.78]  le va a decir los PRO
+[3426.78-3427.94]  que es lo que se llama la pregunta
+[3427.94-3428.50]  los PRO
+[3428.50-3431.56]  la importancia de escribir bien un PRO
+[3431.56-3433.28]  eso, ya
+[3433.28-3435.68]  dicho eso
+[3435.68-3437.36]  entonces
+[3437.36-3438.22]  ¿qué es lo que se llama la pregunta?
+[3438.24-3442.40]  la inteligencia artificial
+[3442.40-3444.48]  hay que utilizarla
+[3444.48-3446.96]  bueno, para consultar cosas por supuesto
+[3446.96-3448.74]  ¿por qué no?
+[3448.74-3452.40]  ¿qué es lo que no hay que hacer con la inteligencia artificial?
+[3452.40-3456.72]  creer ciegamente en lo que es verdad
+[3456.72-3458.56]  porque hay errores
+[3458.56-3460.22]  hay errores
+[3460.22-3462.28]  todas las cosas de ahí
+[3462.28-3464.16]  entonces ustedes se dan cuenta
+[3464.16-3465.54]  esto de acá
+[3465.54-3467.36]  es lo mismo que se me gustaba
+[3467.36-3468.24]  esto de acá
+[3468.24-3469.48]  también es lo mismo
+[3469.48-3470.96]  esto de acá es lo mismo
+[3470.96-3473.68]  y esto de acá es lo mismo
+[3473.68-3477.68]  no hay ningún cambio
+[3477.68-3480.24]  el cambio viene acá
+[3480.24-3482.74]  aquí está el gran cambio
+[3482.74-3485.00]  y quiero explicarles por qué
+[3485.00-3486.72]  no es por querer hacerle trabajar
+[3486.72-3490.80]  además quiero justificar este cambio
+[3490.80-3492.88]  primera cosa
+[3492.88-3495.52]  actualmente
+[3495.52-3496.46]  ¿qué hacemos con el edificio?
+[3496.46-3496.48]  ¿qué hacemos con el edificio?
+[3496.48-3498.24]  ¿qué hacemos con el edificio?
+[3498.24-3500.04]  le colocamos diafragma rígido
+[3500.04-3500.84]  a nivel de piso
+[3500.84-3504.76]  ¿qué dice la nueva normativa?
+[3506.76-3507.48]  amigo
+[3507.48-3509.94]  usted tiene que justificar
+[3509.94-3511.62]  lo que puede hacer con diafragma rígido
+[3511.62-3516.82]  y la normativa nueva dice
+[3516.82-3520.06]  usted debe considerar
+[3520.06-3522.12]  tantos grados de libertad
+[3522.12-3522.96]  por piso
+[3522.96-3524.78]  dependiendo de la rigidez
+[3524.78-3526.66]  que tiene el edificio a nivel del plano
+[3528.24-3530.24]  ¿qué dice la nueva normativa?
+[3530.24-3531.24]  confusión
+[3531.24-3533.76]  lo que quiero demostrar
+[3533.76-3534.96]  con este edificio
+[3534.96-3537.00]  y por eso mantuve el edificio
+[3537.00-3539.84]  que el considerar
+[3539.84-3541.78]  un diafragma rígido
+[3541.78-3544.26]  y un diafragma semirrigido
+[3544.26-3545.70]  es decir que el propio programa
+[3545.70-3547.52]  vea si es rígido
+[3547.52-3549.20]  y cómo distribuir la fuerza
+[3549.20-3551.82]  dan distintos resultados
+[3551.82-3554.04]  dan distintos resultados
+[3554.04-3555.56]  y da por el lado
+[3555.56-3557.54]  desfavorable considerar
+[3557.54-3558.22]  un diafragma rígido
+[3558.24-3561.46]  no por el lado de la seguridad
+[3561.46-3565.54]  ¿por qué?
+[3565.82-3568.00]  porque el edificio es muy largo
+[3568.00-3569.32]  respecto al ancho
+[3569.32-3573.06]  entonces
+[3573.06-3575.18]  ¿qué pasa con lo que estoy diciendo?
+[3577.56-3580.12]  que como el edificio es así
+[3580.12-3585.38]  la relación entre este largo
+[3585.38-3587.18]  y este ancho es mucha
+[3588.24-3589.42]  entonces
+[3589.42-3591.48]  esta parte de aquí
+[3591.48-3592.58]  ¿no es cierto?
+[3593.64-3595.02]  hace que vas a ver
+[3595.02-3597.42]  que los desplazamientos que hay aquí
+[3597.42-3599.20]  respecto a los desplazamientos
+[3599.20-3600.26]  que hay en otros puntos
+[3600.26-3601.12]  es muy diferente
+[3601.12-3603.48]  y este entonces no se comporta
+[3603.48-3604.64]  como diafragma rígido
+[3604.64-3607.82]  se comporta como diafragma
+[3607.82-3609.62]  digamos semirrígido
+[3609.62-3612.10]  tenemos que decirle al programa
+[3612.10-3614.34]  encuéntreme la rigidez
+[3614.34-3617.78]  eso entonces hace
+[3618.24-3620.06]  que como eso está exigiendo
+[3620.06-3621.06]  la norma nueva
+[3621.06-3622.48]  o sea la norma nueva
+[3622.48-3623.02]  no hay que decir
+[3623.02-3624.14]  ¿cómo diafragma rígido?
+[3624.22-3624.64]  no, cuidado
+[3624.64-3625.72]  primero demuéstralo
+[3625.72-3628.04]  y te voy a mostrar
+[3628.04-3629.84]  cómo demostrarlo
+[3629.84-3633.28]  te voy a mostrar por ejemplo
+[3633.28-3635.42]  consideramos diafragma rígido
+[3635.42-3637.50]  las tensiones de corte
+[3637.50-3638.06]  en el plano
+[3638.06-3639.30]  todas cero
+[3639.30-3642.88]  no considero diafragma rígido
+[3642.88-3644.50]  las tensiones de corte
+[3644.50-3645.48]  son distintas de cero
+[3645.48-3648.22]  ah, quiere decir que
+[3648.22-3649.48]  entonces son importantes
+[3649.48-3650.00]  las tensiones de corte
+[3650.00-3651.16]  no pueden ser diafragma rígido
+[3651.16-3655.62]  entonces cambia el concepto
+[3655.62-3656.72]  de la nueva norma
+[3656.72-3660.02]  la norma no cierta actualmente
+[3660.02-3663.12]  te lleva a no considerar
+[3663.12-3663.80]  diafragma rígido
+[3663.80-3667.22]  la pregunta es la siguiente
+[3667.22-3669.64]  lo normal
+[3669.64-3671.00]  es que no me consideren
+[3671.00-3671.62]  diafragma rígido
+[3671.62-3672.58]  sino que semirrígido
+[3672.58-3676.70]  lo normal actualmente era
+[3676.70-3677.64]  rígido
+[3678.22-3680.40]  y de vez en cuando semirrígido
+[3680.40-3683.24]  cambió totalmente esa norma
+[3683.24-3685.06]  y eso lo complejizó
+[3685.06-3692.22]  entonces se dan cuenta
+[3692.22-3694.58]  que eso me llevó a mí
+[3694.58-3697.88]  a decir en el edificio 1
+[3697.88-3700.16]  ¿por qué en el 1 y no en el 2?
+[3700.38-3701.12]  porque en el 2
+[3701.12-3702.00]  no es cierto
+[3702.00-3703.72]  se demuestra que se comporta
+[3703.72-3704.54]  como diafragma rígido
+[3704.54-3706.12]  yo ya lo hice
+[3706.12-3707.96]  ya puedo decirlo
+[3708.22-3709.12]  lo hice todo ya
+[3709.12-3710.90]  entonces en el edificio 2
+[3710.90-3713.30]  da los mismos rígidos
+[3713.30-3713.84]  el diafragma rígido
+[3713.84-3714.76]  da el mismo resultado
+[3714.76-3716.24]  en el 8 no
+[3716.24-3718.72]  entonces
+[3718.72-3720.92]  ¿qué es lo que tuve que hacer para eso?
+[3722.26-3723.24]  tuve que decirle
+[3723.24-3728.76]  usted va a tener que hacer
+[3728.76-3730.22]  varios modelos
+[3730.94-3732.22]  no uno
+[3732.74-3736.16]  en el primero
+[3736.16-3736.24]  primero
+[3736.24-3738.16]  usted me va a decir
+[3738.22-3740.02]  ¿qué es lo que usted va a considerar?
+[3740.02-3741.98]  diafragma rígido a nivel del tiso
+[3741.98-3744.84]  y la torsión accidental
+[3744.84-3745.92]  según el caso A
+[3745.92-3747.76]  para los estudiantes
+[3747.76-3749.16]  que son primeros del curso
+[3749.16-3750.86]  hay dos formas de considerar
+[3750.86-3751.96]  torsión accidental
+[3751.96-3753.72]  método A y método B
+[3753.72-3757.52]  entonces esto fue
+[3757.52-3759.20]  y acá
+[3759.20-3761.06]  diafragma rígido
+[3761.06-3762.74]  torsión en el caso B
+[3762.74-3764.20]  forma 1 y forma 2
+[3764.20-3766.60]  ¿qué hicieron el semestre pasado
+[3766.60-3767.40]  los estudiantes?
+[3768.22-3769.14]  hicieron
+[3769.14-3770.76]  este
+[3770.76-3772.86]  con el escaso 3
+[3772.86-3774.46]  este hicieron el semestre pasado
+[3774.46-3777.02]  escaso 3
+[3777.02-3780.86]  ahora van a tener que hacer
+[3780.86-3781.90]  con diafragma rígido
+[3781.90-3782.58]  estos dos casos
+[3782.58-3786.20]  y decirme con cuál
+[3786.20-3787.76]  da el mayor corte
+[3787.76-3789.50]  en un mundo de evidencia
+[3789.50-3792.06]  después
+[3792.06-3794.56]  diafragma semi rígido
+[3794.56-3795.74]  no lo hemos hecho nunca
+[3795.74-3796.84]  no lo hemos hecho nunca
+[3796.84-3797.34]  no lo hemos hecho nunca
+[3797.34-3797.86]  no lo hemos hecho nunca
+[3797.86-3798.20]  no lo hemos hecho nunca
+[3798.22-3799.86]  y nuevamente
+[3799.86-3801.34]  los tres casos
+[3801.34-3801.92]  es decir
+[3801.92-3803.50]  hay que hacer seis casos
+[3803.50-3805.56]  seis modelos
+[3805.56-3809.00]  obviamente el modelo
+[3809.00-3810.50]  lo que va cambiando
+[3810.50-3811.52]  es simplemente
+[3811.52-3812.40]  colocar el rígido
+[3812.40-3812.92]  o no rígido
+[3812.92-3814.16]  bueno, se copia el modelo
+[3814.16-3814.86]  y se mueve la cuestión
+[3814.86-3816.24]  no, así es todo
+[3816.24-3816.92]  ¿ya?
+[3817.90-3818.58]  conclusión
+[3818.58-3820.68]  esto así
+[3820.68-3823.10]  se estaría haciendo
+[3823.10-3823.94]  todo
+[3823.94-3825.24]  lo que pide
+[3825.24-3826.52]  la nueva normativa
+[3828.22-3830.86]  y estaríamos
+[3830.86-3831.80]  haciendo
+[3831.80-3834.24]  como se hace el caso
+[3834.24-3836.06]  de mover el centro de masa
+[3836.06-3837.54]  ¿se acuerda que la
+[3837.54-3838.50]  semestre pasado
+[3838.50-3839.16]  lo hice a mano
+[3839.16-3840.20]  que hay un problema
+[3840.20-3840.48]  a mano
+[3840.48-3841.32]  correr el centro de masa
+[3841.32-3848.86]  este es el gran
+[3848.86-3849.94]  cambio de tallar
+[3849.94-3853.08]  que van a aplicar
+[3853.08-3854.58]  todo lo que existe
+[3854.58-3855.38]  la norma
+[3855.38-3856.16]  actual
+[3856.16-3858.10]  y la nueva
+[3858.10-3858.20]  norma
+[3858.22-3859.70]  que vamos a hacer
+[3859.70-3861.76]  en el mundo
+[3861.76-3862.02]  en el mundo
+[3862.02-3862.08]  en el mundo
+[3862.08-3862.18]  en el mundo
+[3862.18-3862.24]  en el mundo
+[3862.24-3863.02]  en el mundo
+[3863.02-3863.36]  en el mundo
+[3863.36-3864.30]  después
+[3864.30-3865.12]  ¿qué pasa?
+[3865.90-3866.72]  aquí viene
+[3866.72-3869.66]  determinar el esfuerzo
+[3869.66-3870.30]  de corte
+[3870.30-3870.92]  de diseño
+[3870.92-3872.38]  más desfavorable
+[3872.38-3873.76]  en el muro
+[3873.76-3874.58]  del eje uno
+[3874.58-3875.78]  y en el muro
+[3875.78-3876.76]  del eje F
+[3876.76-3879.92]  muro eje uno
+[3879.92-3881.28]  muro eje F
+[3881.28-3888.10]  muro eje uno
+[3888.10-3888.12]  muro eje F
+[3888.12-3888.14]  muro eje F
+[3888.14-3888.16]  muro eje F
+[3888.16-3888.18]  muro eje F
+[3888.18-3888.20]  muro eje F
+[3888.20-3899.06]  midiendo. Encuéntrenme el corte más desfavorable aquí debido a los seis casos. Y el más desfavorable
+[3899.06-3908.86]  de este mundo. Tengan en cuenta que elegí los muros más alejados del centro de rigidez.
+[3908.86-3921.62]  Bien. Esto lo hizo todo el busto en su memoria. Terminó hace lo malo. Nueve edificios de
+[3921.62-3930.00]  Chilpa, Tofagasta. Y no es cierto que este edificio está hecho de nueve. Es un edificio
+[3930.00-3936.92]  real, es un edificio de Santiago. Y eso que se llevó, este edificio que está acá, el
+[3936.92-3938.84]  de la floresta, digamos, y eso que está.
+[3938.86-3952.36]  Entonces dijo, hagámosle, ¿no es cierto? Que se conciere de tal forma la torsión accidentaria.
+[3952.36-3965.08]  ¿Cambian los resultados? Son iguales. Entonces, eso lo vamos a quitar acá. Para que estén
+[3965.08-3966.52]  salgando con un plus.
+[3968.86-3983.52]  Aplicar el método A, no hay ninguna oficina que lo haga. Ninguna. Y le puedo decir, porque
+[3983.52-3984.28]  hemos conversado con él.
+[3986.08-3991.68]  ¿Has aplicado alguna vez el método A? No, es muy complicado, muy largo. Ah, sí, pues
+[3991.68-3994.62]  a veces sale más económico. Sí, sí, no, pero mucho.
+[3998.86-4006.58]  Pero con la nueva norma, ¿verdad? Están pasando cosas curiosas, que con el método A da mayor
+[4006.58-4017.56]  esfuerzo que con el otro. Así que a A parece que hay que hacerse. Esto entonces, la nueva
+[4017.56-4022.90]  generación de profesionales que van a salir van a tener que aplicar cosas que no se han
+[4022.90-4023.70]  aplicado.
+[4023.70-4028.86]  Y eso va a tener la oportunidad de usted de aprender.
+[4028.86-4036.66]  Y yo me di el trabajo de todo eso escribírselo en el documento siguiente.
+[4039.24-4044.64]  El documento que cambió más radicalmente también fue este.
+[4044.64-4070.06]  Este de acá cambió en forma importante porque le agregué cosas.
+[4070.06-4071.28]  Miren lo que le agregué.
+[4074.64-4085.18]  Le hice una explicación de cuáles son los estados de carga que hay que considerar en los seis metros.
+[4087.54-4088.82]  Lo voy a explicar en clase.
+[4089.92-4091.20]  Eso nos da una puntuación.
+[4092.66-4093.42]  ¿Qué más hice?
+[4096.14-4098.50]  Al tanto, acá.
+[4100.60-4102.64]  ¿Qué acá y qué es lo que hice?
+[4104.64-4108.26]  Le puse...
+[4108.26-4110.24]  Todo esto nos da la puntuación anterior.
+[4113.32-4115.52]  Aplicación de torsión accidental etapa.
+[4116.06-4118.02]  Métoda normativa vigente.
+[4120.02-4121.10]  ¿Cómo se hace?
+[4121.28-4122.12]  Veinte pasos más.
+[4125.34-4125.98]  Después.
+[4127.82-4129.04]  Veinte pasos más.
+[4129.16-4129.76]  ¿Cómo se hace?
+[4129.76-4129.82]  ¿Cómo se hace?
+[4131.90-4133.98]  Según la torsión accidental.
+[4134.64-4135.80]  Forma uno y forma dos.
+[4135.96-4137.28]  ¿Cómo se hace la forma uno?
+[4137.54-4138.82]  ¿Cómo se hace la forma dos?
+[4139.76-4140.58]  ¿Para qué?
+[4140.58-4140.66]  ¿Para qué?
+[4143.08-4145.42]  Y esto lo encontramos con Cristóbal.
+[4146.90-4152.54]  Hay oficinas que hacen la forma uno y hay oficinas que hacen la forma dos.
+[4153.78-4158.92]  Y lo que no sabía ninguna de ellas es que la forma uno y la forma dos son iguales.
+[4159.92-4163.38]  Yo escribí diciendo la forma uno y la forma dos son iguales.
+[4164.64-4166.06]  ¿Por qué es tan importante?
+[4166.16-4166.68]  Claro, lo escribí.
+[4167.26-4171.64]  En ese otro edificio, cuando fuera hasta...
+[4171.64-4175.48]  Entonces me dijeron, chupay, entonces qué bueno, porque no teníamos justificación,
+[4175.68-4179.28]  porque pensábamos que estábamos haciendo algo que no cumplíamos la norma.
+[4180.80-4181.22]  Y no.
+[4182.02-4183.68]  Están haciendo lo que corresponde.
+[4184.88-4186.52]  Y eso es aporte de Cristóbal.
+[4187.28-4187.78]  Justo.
+[4189.00-4190.40]  También aquí hay memoria.
+[4190.96-4193.02]  Uno puede hacer dos tipos de memoria.
+[4194.64-4197.70]  a mi juicio, una memoria por cumplir
+[4197.70-4199.22]  y terminar la carrera
+[4199.22-4202.34]  y otra
+[4202.34-4205.16]  usar la memoria
+[4205.16-4206.64]  como un gran trampolín
+[4206.64-4208.96]  de salir con un conocimiento
+[4208.96-4211.68]  que me permita ubicarme mejor en el mundo del trabajo
+[4211.68-4215.80]  memoria como la del pistón
+[4215.80-4216.68]  permíteme decir
+[4216.68-4218.96]  ¿me acuerda?
+[4219.90-4222.18]  memoria como la que está haciendo Andrea
+[4222.18-4223.02]  permíteme decir
+[4223.02-4225.30]  hay que hacer las mismas
+[4225.30-4227.76]  la memoria de Andrea
+[4227.76-4228.78]  digamos, no es cierto
+[4228.78-4231.24]  si ella hace todo eso bien
+[4231.24-4233.96]  queda con un plus muy importante
+[4233.96-4234.92]  para el mundo del trabajo
+[4234.92-4237.38]  entonces yo siempre
+[4237.38-4238.48]  digo, no es cierto
+[4238.48-4242.14]  que cuando quieran elegir algo
+[4242.14-4244.48]  no vean la inmediatez
+[4244.48-4245.50]  ¿cuál es la inmediatez?
+[4245.54-4246.28]  terminar rápido
+[4246.28-4248.92]  entonces ahí se la inmediatez
+[4248.92-4251.82]  ¿cuál es la? pensar un poquito más allá
+[4251.82-4253.00]  ¿cuál es la? pensar un poquito más allá
+[4253.00-4254.66]  oye, y si hago esto
+[4254.66-4255.46]  ¿qué plus me da?
+[4256.40-4258.80]  mira, el propio tipo de oficina
+[4258.80-4260.08]  si mandáis el currículo
+[4260.08-4261.84]  naturalmente por son los dos
+[4261.84-4264.66]  esa es la diferencia
+[4264.66-4266.54]  entre una memoria y otra memoria
+[4266.54-4267.46]  ¿ya?
+[4268.34-4270.06]  eso es lo que está entonces puesto ahí
+[4270.06-4271.18]  en los apuntes
+[4271.18-4273.10]  entonces todo esto es nuevo
+[4273.10-4274.88]  todo esto entonces
+[4274.88-4277.54]  lo que estoy tratando de decirles con eso
+[4277.54-4279.66]  que bajen, ¿no es cierto?
+[4279.86-4282.50]  estos apuntes, que lean todo esto
+[4283.00-4285.58]  necesito que lean todo esto
+[4285.58-4287.06]  para poder ir entendiendo
+[4287.06-4289.12]  lo que vamos a ir viendo en el curso
+[4289.12-4292.86]  entonces, ¿qué están diciendo ahí?
+[4293.96-4295.48]  que para el muro 1
+[4295.48-4297.38]  y el muro, y el eje F
+[4297.38-4301.18]  hay seis formas de poder hacerlo
+[4301.18-4306.12]  ¿cuál es la mejor?
+[4306.86-4308.16]  ¿cuál es la más esfuerzo?
+[4310.16-4312.26]  y la gracia que tiene el edificio
+[4312.26-4312.98]  que elegimos
+[4313.00-4315.78]  que no es la tradicional
+[4315.78-4317.50]  que hemos hecho, es la que da mayor esfuerzo
+[4317.50-4322.34]  ¿por qué? porque es muy largo el edificio
+[4322.34-4325.88]  eso no es cierto
+[4325.88-4327.62]  lo que está pensado ahí
+[4327.62-4331.82]  en el edificio 2
+[4331.82-4334.54]  la mayoría de las preguntas
+[4334.54-4336.02]  son iguales
+[4336.02-4337.96]  lo que cambia
+[4337.96-4338.80]  ¿ya?
+[4339.80-4340.94]  en la primera parte
+[4340.94-4342.90]  lo único que va a cambiar
+[4343.00-4344.80]  en el edificio 2
+[4344.80-4347.64]  va a cambiar el periodo del edificio
+[4347.64-4348.78]  ¿eh? ¿por qué va a cambiar el periodo?
+[4352.58-4354.16]  fíjense, en el edificio 2
+[4354.16-4355.86]  el suelo de fundación
+[4355.86-4357.40]  es el mismo del semestre pasado
+[4357.40-4360.16]  sin embargo
+[4360.16-4362.48]  el periodo va a subir
+[4362.48-4363.94]  ¿por qué?
+[4364.34-4364.82]  pregunta
+[4364.82-4367.16]  respuesta a la pregunta ¿por qué?
+[4368.78-4370.58]  ¿por la altura del piso 1?
+[4371.32-4371.88]  exactamente
+[4371.88-4373.92]  al aumentar la altura
+[4373.92-4375.18]  le quitaste rigidez
+[4375.18-4377.38]  porque si usted
+[4377.38-4379.10]  ¿cómo tú lo debuce eso?
+[4381.06-4381.78]  y aquí la verdad
+[4381.78-4382.90]  es una cosa importante
+[4382.90-4384.44]  la rigidez
+[4384.44-4387.22]  está relacionada con
+[4387.22-4389.84]  EI partido por L
+[4389.84-4391.90]  siempre
+[4391.90-4393.68]  en cualquier término de rigidez aparece
+[4393.68-4395.12]  EI partido por L
+[4395.12-4397.68]  que es 4, que es 6, lo que quiera
+[4397.68-4399.54]  siempre EI partido por L
+[4399.54-4401.32]  entonces eso quiere decir
+[4401.32-4403.42]  mientras el elemento es más largo
+[4403.42-4404.84]  menos rigidez
+[4404.84-4407.54]  entonces como el edificio era 3 metros
+[4407.54-4409.22]  y lo subimos a 3,5
+[4409.22-4411.64]  el edificio va a moverse más que antes
+[4411.64-4413.88]  a 10 mayores de formación
+[4413.88-4417.26]  y eso podría hacer
+[4417.26-4419.02]  que el edificio no cumpliera
+[4419.02-4420.78]  los requisitos de formación
+[4420.78-4424.28]  conclusión
+[4424.28-4427.64]  eso lo quiero fundamentalmente dirigirme a los estudiantes
+[4427.64-4428.58]  del semestre pasado
+[4428.58-4430.18]  es un taller
+[4430.18-4432.06]  si bien son los mismos
+[4432.06-4433.56]  es un taller distinto
+[4433.56-4437.98]  hay que pensar más
+[4437.98-4439.86]  y no automatizarse
+[4439.86-4441.80]  eso es lo que quise hacer con el taller
+[4441.80-4444.06]  digamos de esta nueva redacción
+[4444.06-4446.68]  producto de lo que pasó
+[4446.68-4447.72]  en semestre pasado
+[4447.72-4453.74]  después viene la parte 2
+[4453.74-4454.70]  diseño
+[4454.70-4458.04]  prácticamente todo es igual
+[4458.04-4460.04]  a medida de las cosas
+[4460.18-4463.20]  y después se está ahí
+[4463.20-4467.58]  aquí lo más importante
+[4467.58-4469.22]  se debe desarrollar
+[4469.22-4470.38]  en clase de taller
+[4470.38-4472.28]  asistencia obligatoria
+[4472.28-4475.02]  trabajo en grupo de dos estudiantes
+[4475.02-4479.02]  grupos deben ir entregando informes
+[4479.02-4480.96]  en fecha del paro
+[4480.96-4485.40]  los informes que me entregan
+[4485.40-4486.64]  80 páginas
+[4486.64-4487.38]  no vamos a pagar
+[4487.38-4489.64]  los informes van a ser cortitos
+[4490.18-4494.26]  como 80 páginas
+[4494.26-4495.90]  ¿de quién va a leer 80 páginas?
+[4495.90-4499.52]  ¿quién va a hacer un buen informe?
+[4500.14-4501.80]  porque es un informe
+[4501.80-4502.70]  ingenier
+[4502.70-4505.96]  este no es una novela
+[4505.96-4509.26]  entonces ¿qué quiere decir eso?
+[4510.12-4511.24]  que ustedes, ¿no es cierto?
+[4511.36-4512.94]  los cálculos lo van a hacer
+[4512.94-4515.52]  ya sea en Excel
+[4515.52-4516.92]  en ACAP
+[4516.92-4517.70]  lo que quieran
+[4517.70-4519.32]  y van a pegar eso
+[4519.32-4520.16]  estrictamente eso
+[4520.18-4523.70]  y van a mostrarme
+[4523.70-4524.68]  a mí la planilla Excel
+[4524.68-4526.08]  donde hicieron los cálculos
+[4526.08-4528.72]  tal manera que cuando tengan que verificar
+[4528.72-4529.90]  en el muro
+[4529.90-4532.18]  que requiere o no confinamiento
+[4532.18-4533.46]  para las cuatro direcciones
+[4533.46-4535.88]  en una sola línea la planilla Excel
+[4535.88-4536.60]  se hace todo eso
+[4536.60-4538.66]  y no ocho o veinte más
+[4538.66-4543.08]  cambia también
+[4543.08-4544.98]  cómo se relaja
+[4544.98-4546.34]  el informe
+[4546.34-4550.02]  conclusión entonces
+[4550.02-4550.16]  es que
+[4550.18-4555.06]  el taller está más optimizado
+[4555.06-4559.86]  para que no queden con ninguna falencia
+[4559.86-4561.92]  de cosas que tienen
+[4561.92-4563.60]  en las próximas normativas
+[4563.60-4567.50]  y se pide entonces
+[4567.50-4569.14]  hacer todo ese tipo de
+[4569.14-4572.82]  para que esto resulte bien
+[4572.82-4574.88]  se requieren dos cosas
+[4574.88-4577.66]  que yo enseñe bien
+[4577.66-4579.78]  y que ustedes
+[4579.78-4581.78]  dediquen tiempo
+[4581.78-4583.78]  a hacer las cosas
+[4583.78-4585.78]  cualquiera de esas dos que fallen
+[4585.78-4587.78]  tenemos más resultados
+[4587.78-4591.26]  entonces las clases de taller
+[4591.26-4593.26]  pasan a ser clave
+[4593.26-4594.56]  ¿no es cierto?
+[4594.56-4596.56]  para poder
+[4596.56-4597.70]  o sea tanto las clases
+[4597.70-4598.94]  teóricas como las de taller
+[4598.94-4600.54]  pasan a ser importantes claves
+[4600.54-4603.54]  para tener buen resultado en el curso
+[4609.78-4622.10]  ahora va a dejarlo en foro
+[4622.10-4625.78]  ahora vamos a empezar
+[4625.78-4627.48]  con los estudiantes nuevos
+[4627.48-4631.28]  quiero contarles lo siguiente
+[4631.28-4637.78]  yo necesito tanto los nuevos
+[4637.78-4638.90]  como los antiguos
+[4638.90-4639.76]  para que tengan el propósito de ser pacíficos
+[4639.78-4648.70]  Que me estudien lo siguiente para entender lo que vamos a explicar.
+[4654.70-4666.44]  Los apuntes de la página, creo que los anoten para que, ¿no es cierto?, quede clarito, digamos, lo que estoy diciendo.
+[4669.78-4685.10]  De la página 11, ahí está la número 11, 11, hasta, de la 11, de la 11 hasta,
+[4699.78-4710.74]  de la 11 a la 26, de la página 11 a la 26, esto yo no lo paso en el curso, se da por curso.
+[4713.44-4723.64]  Página, de la página 11 a 26, en materia conocida.
+[4729.78-4737.06]  ¿Y qué es lo que es? ¿Cómo se encuentra la matriz de rígido?
+[4739.30-4748.62]  Eso, profesor Parnes me dijo, no insista, cuadra en eso, ya todo eso se envió con un poco de detalle en el curso de dinámica de estructura.
+[4749.54-4751.04]  Dale más tiempo a la norma.
+[4751.84-4756.50]  Ok, ya me acuerdo, ya me acuerdo, digamos, como haría de estructura, digamos, todo eso, hacer.
+[4756.50-4757.18]  Ok.
+[4758.14-4759.50]  Por supuesto, cualquiera que tenga...
+[4759.78-4766.32]  Que tenga dudas de la página 11 a la 26, va a mi oficina y me consulta, eso no quiere decir que no se pueda preguntar, ¿no?
+[4766.76-4768.66]  Ya, ya, al respecto.
+[4769.26-4777.12]  De tal manera que, ¿no es cierto?, el método directo, todo eso, bueno, si se pregunta en la prueba hay que saber hacerlo o no.
+[4777.84-4780.56]  Ya, mi punto, ya había quedado sano usted hacer esa cuestión.
+[4781.32-4784.92]  Eso es muy importante, digamos, al respecto.
+[4789.78-4793.74]  Duda.
+[4793.74-4793.82]  Duda.
+[4799.70-4806.74]  Entonces, mañana que vamos a empezar, a ver, ya tenemos todos los...
+[4807.32-4813.74]  Entonces, yo les pido que bajen todo el material, ¿no es cierto?, que está en un...
+[4813.74-4814.24]  ¿Ya?
+[4815.46-4817.74]  Se vea la página...
+[4817.74-4819.76]  Léanse de la 1 a la 26.
+[4819.78-4840.80]  Ya, léanse de la 1 a la 26, que permite, ¿qué cosa?, saber encontrar la matriz de rigidez y, segundo, saber lo que es el centro de rigidez y el centro de masa y qué es la torsión natural y la torsión accidental.
+[4842.06-4849.76]  Mañana vamos a ver eso, qué es torsión natural, torsión accidental y cuáles son los elementos que hay en un edificio.
+[4849.78-4852.12]  Para resistir las fuerzas víctimas.
+[4852.92-4853.80]  Lo más importante.
+[4854.64-4857.40]  Fíjense ustedes este edificio donde estamos.
+[4858.98-4869.78]  Este edificio tiene cuatro pisos y si ustedes se dan cuenta, el edificio tiene elementos verticales y elementos horizontales.
+[4871.48-4875.52]  Por ejemplo, este muro es un elemento vertical.
+[4876.26-4879.52]  En cambio, si saco este cielo falso, está listo.
+[4879.78-4882.36]  La losa es un elemento horizontal.
+[4884.10-4889.96]  Y los elementos horizontales y verticales no tienen la misma finalidad en un edificio.
+[4892.06-4906.16]  El elemento horizontal tiene por finalidad frente a la fuerza sísmica, que resulta que a nivel de piso está en el mayor peso del edificio.
+[4906.92-4909.76]  Ya, si usted calcular cuánto pesan las losas.
+[4910.30-4913.74]  Respecto al peso total del edificio, una parte importante.
+[4915.40-4920.96]  Entonces me voy al curso más elemental de dinámica, no de estructuras, de dinámica.
+[4922.38-4924.90]  Y creo que son las fuerzas inerciales.
+[4927.64-4936.34]  Son las fuerzas producto de las fuerzas que se producen cuando hay aceleraciones y masa.
+[4937.76-4939.76]  Entonces las fuerzas inerciales no son nada más.
+[4939.76-4941.86]  Nada más que masa por aceleración.
+[4943.40-4948.26]  Y esas fuerzas inerciales, ¿dónde actúan en el edificio?
+[4949.74-4951.48]  En el centro de masa.
+[4952.82-4957.26]  Y el centro de masa del edificio, ¿dónde está en cada piso?
+[4957.82-4958.40]  En la losa.
+[4959.88-4961.08]  Entonces fíjense ustedes.
+[4962.00-4963.20]  Fíjense la siguiente cosa.
+[4964.42-4966.14]  Porque es importante lo que yo voy a decir.
+[4967.70-4969.74]  ¿Dónde está el centro de masa?
+[4969.76-4971.98]  El centro de masa para el programa ETA, que va a dar un valor.
+[4972.40-4977.26]  Va a decir, miren, en el piso 1, el centro de masa está ubicado en tal eje X y Y.
+[4977.94-4979.80]  Y el centro de energía está en tal eje Y y Y.
+[4980.40-4981.64]  ¿Cómo lo calcula?
+[4982.72-4984.34]  ¿Y cómo no lo calcula?
+[4985.76-4987.16]  Además, ¿qué decimos nosotros?
+[4987.58-4995.22]  Ya sabéis que como la losa es rectangular, entonces está en el centro.
+[4997.40-4997.92]  ¿Por qué?
+[4997.92-4999.68]  Porque todos los otros pesos.
+[4999.76-5000.68]  No lo vamos a despreciar.
+[5001.60-5002.82]  El programa ETA dice que no va a tener.
+[5005.40-5013.32]  Usted tiene que tomar para esa losa el peso de la mitad de este piso para arriba
+[5013.32-5017.30]  y el peso de la mitad del piso de arriba, porque eso tributa a la esa.
+[5019.68-5027.00]  Entonces calcula el centro de masa considerando la mitad del piso superior
+[5027.00-5028.52]  y la mitad del piso inferior.
+[5028.94-5029.32]  ¿Por qué?
+[5029.32-5033.48]  Porque todo ese peso se concentra en ese piso.
+[5035.10-5040.58]  Dicho así, para este edificio, ¿dónde estaría el centro de masa?
+[5043.02-5047.22]  Fíjense, allá hay más masa que allá atrás.
+[5049.66-5051.06]  Por lo tanto, se mueve para acá.
+[5051.16-5052.42]  El centro se mueve para acá.
+[5054.66-5057.82]  Allá hay menos masa.
+[5057.82-5058.90]  Hay más masa que allá.
+[5059.32-5062.20]  Entonces, se mueve más para acá y más para allá.
+[5062.90-5063.44]  Ahí está el centro.
+[5068.04-5070.44]  Entonces, lo que...
+[5070.44-5073.62]  Y otra cosa es, ¿dónde está el centro de rigidez?
+[5074.80-5079.16]  Ah, el centro de rigidez es el centro de gravedad de la rigidez.
+[5081.08-5086.00]  Entonces, obviamente, este edificio tiene más rigidez ahí que allá.
+[5086.00-5087.64]  Más rigidez allá que acá.
+[5087.82-5089.24]  Entonces, más acá y más acá.
+[5089.32-5095.22]  Y como la rigidez no es igual que la masa,
+[5095.34-5097.38]  esos dos puntos no necesariamente coinciden.
+[5099.80-5101.76]  En conclusión, entonces,
+[5102.54-5106.04]  saber dónde está el centro de masa
+[5106.04-5110.12]  y el centro de rigidez del edificio de cada piso
+[5110.12-5116.32]  es fundamental para poder ver cómo se va a comportar el edificio.
+[5117.20-5119.30]  ¿Cuál sería un mal comportamiento?
+[5119.30-5123.70]  ¿Cuál sería un mal comportamiento de un edificio que la distancia entre el centro de rigidez...
+[5123.70-5130.42]  Si yo como ingeniero, porque yo defino dónde va a estar el centro de masa y el centro de rigidez,
+[5130.58-5131.94]  ¿por qué?
+[5132.26-5138.36]  Porque soy yo el que definió que aquí va a haber un muro y en cambio allá va a haber una ventana.
+[5139.10-5140.90]  Lo decidimos con el arquitecto.
+[5141.36-5145.00]  El arquitecto dijo, mira, acá ventana, allá baja ventana.
+[5146.50-5147.46]  Y tú no le puedes decir nada.
+[5147.46-5147.72]  ¿Por qué?
+[5148.42-5149.14]  ¿Por qué?
+[5149.14-5149.18]  ¿Por qué?
+[5149.18-5150.10]  Tienes que estar loco.
+[5150.56-5154.22]  No solamente el edificio de los edificios que yo te da para que funcione como sale de clase,
+[5154.76-5155.78]  esa es la primera función.
+[5156.54-5160.60]  Entonces el arquitecto ya te hizo que el centro de rigidez no esté en el centro.
+[5163.04-5163.32]  Casi.
+[5164.54-5165.50]  Hay poco tiempo.
+[5166.08-5167.32]  ¿Cuáles son los edificios que están?
+[5167.68-5168.30]  ¿Cómo te lo decís?
+[5169.62-5171.46]  Ah, los van a alquilar en el centro.
+[5172.68-5174.12]  Los van a alquilar en la CERTE.
+[5174.30-5174.80]  En la CERTE.
+[5174.96-5175.38]  ¿Por qué?
+[5175.38-5177.68]  Porque son edificios de 50 metros.
+[5178.18-5179.16]  O sea, de 100 metros.
+[5179.18-5179.20]  ¿Por qué?
+[5179.20-5179.22]  Porque son edificios de 50 metros.
+[5179.22-5179.24]  ¿Por qué?
+[5179.24-5179.28]  Porque son edificios de 50 metros.
+[5179.28-5185.20]  Y entonces, si estos puntos no lo hacían coincidir, había mucha torsión natural.
+[5187.32-5191.06]  Entonces, ahí el edificio dijo, no, amigo, aquí está usted, coincide.
+[5191.94-5194.14]  Entonces, el edificio, como son las casillas, como le digo,
+[5194.56-5197.36]  el edificio va a conseguir la torsión natural.
+[5198.98-5202.34]  Y eso es lo que vamos a ir viendo, los conceptos todos.
+[5202.82-5205.90]  Entonces, en clase, ¿cuál es lo que ocurre en clase?
+[5205.90-5208.08]  Que se dicen muchas cosas.
+[5208.30-5209.02]  ¿Qué es lo que ocurre en clase?
+[5209.02-5210.82]  Adicional a lo que está en los apuntes.
+[5211.62-5213.14]  Y el que no vino, no lo escuchó.
+[5213.52-5216.28]  Y como no lo escuchó, después de la prueba no sabe responder.
+[5217.84-5220.66]  Esa es la diferencia entre venir y no venir.
+[5221.34-5222.82]  Esa es toda la diferencia.
+[5222.96-5226.32]  Que yo voy diciendo muchas cosas en clase, ¿no es cierto?
+[5226.74-5228.26]  Adicional a lo que está en los apuntes.
+[5228.48-5230.66]  Para reforzar lo que dicen los apuntes.
+[5231.84-5233.20]  Bueno, quedamos hasta acá.
+[5233.20-5235.78]  Nos vemos, si Dios quiere, mañana.
+[5236.40-5238.98]  Y ustedes ya empiecen a formar.
+[5239.02-5240.28]  Los grupos de las dos personas.
+[5241.00-5241.12]  ¿Ya?
+[5241.24-5243.60]  Para que yo, en un momento dado, les voy a pasar una listita.
+[5243.78-5245.60]  Ya, incluyánselos todos, digamos todos.
+[5245.94-5247.52]  Y ya vamos a poner nombres.
+[5248.16-5248.94]  Nombres de los grupos.
+[5249.06-5250.72]  Grupo 1, grupo 2, grupo 3.
+[5251.22-5251.58]  ¿Profe?
+[5251.84-5252.60]  No, resulta, entonces,
+[5253.32-5255.18]  pese a que es importante la norma nueva,
+[5255.52-5257.02]  no se va a evaluar las diferencias, ¿cierto?
+[5257.10-5258.20]  Solo la norma anterior.
+[5258.46-5259.00]  O sea, la vigente.
+[5259.00-5260.92]  Vamos a hablar sobre la norma, claro, la norma.
+[5262.78-5264.18]  Déjame ir viendo el camino.
+[5264.18-5264.88]  Ah, está.
+[5264.88-5267.66]  Déjame ir viendo el camino en función de los énfasis que hagamos.
+[5267.86-5268.42]  Ya, perfecto.
+[5269.02-5271.02]  Ya, perfecto.

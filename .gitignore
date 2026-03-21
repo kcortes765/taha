@@ -1,0 +1,5 @@
+﻿.env
+.current-prompt.md
+node_modules/
+*.log
+.agente/contexto/sesion-*.md

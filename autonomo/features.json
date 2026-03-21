@@ -1,0 +1,256 @@
+{
+  "project": "ETABS Edificio 1 — Taller ADSE UCN 1S-2026",
+  "created": "2026-03-20",
+  "total_estimated_hours": "8-10",
+  "features": [
+    {
+      "id": "R01",
+      "name": "Research CSI OAPI — documentación oficial",
+      "phase": "research",
+      "model": "opus",
+      "max_turns": 100,
+      "description": "Investigar exhaustivamente la API oficial de CSI para ETABS (OAPI - Open Application Programming Interface).\n\n1. Buscar en internet: 'CSI ETABS API documentation', 'CSI OAPI reference guide', 'ETABS API programming'\n2. Buscar en CSI Knowledge Base y wiki oficial\n3. Documentar TODAS las funciones relevantes para modelación de edificios HA:\n   - SapModel (objeto principal)\n   - PropMaterial (materiales)\n   - PropFrame, PropArea (secciones)\n   - PointObj, FrameObj, AreaObj (geometría)\n   - LoadPatterns, LoadCases (cargas)\n   - RespCombo (combinaciones)\n   - Analyze (análisis)\n   - Results (resultados)\n   - DatabaseTables (tablas)\n4. Para cada función documentar: nombre exacto, parámetros, tipos, retorno\n5. Prestar especial atención a las firmas correctas (muchos errores previos por firmas incorrectas)\n\nEscribir documento completo en autonomo/research/etabs_api_reference.md",
+      "outputs": ["autonomo/research/etabs_api_reference.md"]
+    },
+    {
+      "id": "R02",
+      "name": "Research Python + comtypes + ETABS — patrones y ejemplos",
+      "phase": "research",
+      "model": "opus",
+      "max_turns": 100,
+      "description": "Investigar patrones de uso de Python con ETABS via comtypes.\n\n1. Buscar en GitHub: repos con 'etabs python', 'etabs api', 'etabs comtypes', 'pyetabs'\n2. Buscar en PyPI: paquetes relacionados con ETABS\n3. Buscar en Stack Overflow: preguntas sobre ETABS API\n4. Buscar tutoriales y blog posts sobre ETABS + Python\n5. Documentar:\n   - Cómo conectar via comtypes (GetActiveObject vs CreateObject)\n   - Cómo manejar el ciclo de vida COM\n   - Patrones de manejo de errores\n   - Cómo definir materiales programáticamente\n   - Cómo crear geometría (frames, areas, points)\n   - Cómo asignar cargas\n   - Cómo correr análisis\n   - Cómo extraer resultados\n6. Compilar snippets de código VERIFICADOS (de repos reales, no inventados)\n7. Documentar diferencias entre versiones de ETABS (v17/v18/v19/v21)\n\nEscribir en autonomo/research/python_etabs_patterns.md",
+      "outputs": ["autonomo/research/python_etabs_patterns.md"]
+    },
+    {
+      "id": "R03",
+      "name": "Research firmas COM reales — funciones críticas",
+      "phase": "research",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Las firmas COM de ETABS son el punto donde más errores hemos tenido. Investigar las firmas EXACTAS de las funciones más usadas.\n\n1. Buscar documentación CSI sobre las firmas de:\n   - InitializeNewModel, NewBlank, NewGridOnly\n   - PropMaterial.SetMaterial, SetMPIsotropic, SetOConcrete_1\n   - PropFrame.SetRectangle\n   - PropArea.SetShell_1, SetWall\n   - PointObj.AddCartesian\n   - FrameObj.AddByCoord, AddByPoint\n   - AreaObj.AddByCoord, AddByPoint\n   - AreaObj.SetDiaphragm\n   - LoadPatterns.Add\n   - AreaObj.SetLoadUniform\n   - FrameObj.SetLoadDistributed\n   - Func.FuncRS.SetFromFile\n   - LoadCases.ResponseSpectrum.SetCase\n   - LoadCases.ResponseSpectrum.SetLoads\n   - Analyze.RunAnalysis\n   - Results.Setup.SetCaseSelectedForOutput\n   - Results.JointDrifts, StoryDrifts\n   - DatabaseTables.GetTableForDisplayArray\n2. Para cada función: nombre exacto, número de args, tipos, valores de retorno\n3. Cruzar con repos de GitHub que las usen\n4. MARCAR las que tienen firmas inconsistentes entre versiones\n\nEscribir en autonomo/research/com_signatures.md",
+      "outputs": ["autonomo/research/com_signatures.md"]
+    },
+    {
+      "id": "R04",
+      "name": "Verificar fórmulas NCh433+DS61 — α, R*, C, Cmín, Cmáx",
+      "phase": "research",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Verificar TODAS las fórmulas sísmicas contra las normas originales.\n\n1. Leer docs/apuntes/INDICE.md para ubicar cada fórmula\n2. Leer los PDFs de apuntes relevantes (02c, 02d, 02e)\n3. Verificar contra DS61 (docs/Normas Utilizadas ADSE/DECRETO 61...) y NCh433:\n   - α(T): confirmar que denominador usa 3 fijo (ya verificado pero documentar)\n   - R*: encontrar la fórmula EXACTA en NCh433. Hay disputa entre:\n     a) R* = 1 + T*/(0.10·To + T*/Ro)  — versión A\n     b) R* = 1 + (Ro-1)·T*/(0.10·To + T*)  — versión B\n     Determinar cuál es la correcta leyendo la norma literal\n   - C = 2.75·S·Ao·α / (g·R*) — verificar\n   - Cmín = Ao·S / (6·g) — verificar\n   - Cmáx — encontrar fórmula exacta y dónde aparece n\n   - Qmín = Cmín × I × P\n4. Calcular valores numéricos para nuestro caso (Zona 3, Suelo C, muros)\n5. Documentar con referencia exacta (artículo, ecuación, página)\n\nEscribir en autonomo/research/formulas_verificadas.md",
+      "outputs": ["autonomo/research/formulas_verificadas.md"]
+    },
+    {
+      "id": "R05",
+      "name": "Extraer info Material Apoyo Taller — Prof. Music",
+      "phase": "research",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "El Material Apoyo Taller 2026 (47 páginas) es la referencia MÁS IMPORTANTE del taller.\nContiene instrucciones específicas del profesor para ETABS.\n\nLeer docs/Material taller/Material Apoyo Taller 2026.pdf COMPLETO y extraer:\n1. Sección B: Cómo verificar drift en ETABS — tablas, condiciones, fórmulas\n2. Sección H: Torsión accidental — los 3 métodos exactos del profesor\n3. Sección I: Combinaciones de carga — formato y factores\n4. Diagramas P-M: cómo obtenerlos\n5. Section Cuts: cómo usarlos\n6. Cualquier instrucción sobre ejes ETABS vs SAP\n7. Validaciones que el profesor espera ver\n8. Cualquier detalle que NO esté en la guía actual\n\nEscribir resumen estructurado en autonomo/research/material_apoyo_extracto.md\nSer MUY específico — números, fórmulas, menús exactos.",
+      "outputs": ["autonomo/research/material_apoyo_extracto.md"]
+    },
+    {
+      "id": "R06",
+      "name": "Extraer info Lafontaine — Tutorial ETABS paso a paso",
+      "phase": "research",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "El tutorial de Lafontaine (143 páginas) es la referencia más detallada para modelación ETABS.\n\nLeer docs/Material taller/Paso a Paso ETABS M.Lafontaine.pdf y extraer:\n1. Flujo completo de modelación (materiales → secciones → geometría → análisis → resultados)\n2. Configuraciones específicas que recomienda:\n   - J=0 vigas — dónde y por qué\n   - Inercia losa 25% — cómo configurar\n   - Peso/área ≈ 1 tonf/m² — cómo verificar\n   - Espectro From File — formato exacto\n3. Menús ETABS exactos que usa (comparar con nuestra guía)\n4. Errores comunes que menciona\n5. Cualquier práctica chilena que no esté en nuestra guía\n6. Diferencias entre su versión de ETABS y v19\n\nEscribir en autonomo/research/lafontaine_extracto.md",
+      "outputs": ["autonomo/research/lafontaine_extracto.md"]
+    },
+    {
+      "id": "G01",
+      "name": "Completar tabla espectral 0-5.0s + archivo .txt",
+      "phase": "guide",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Generar la tabla completa del espectro elástico y el archivo .txt listo para ETABS.\n\n1. Usar parámetros confirmados: Ao=0.4g, S=1.05, To=0.40, p=1.60\n2. α(T) = [1 + 4.5·(T/To)^p] / [1 + (T/To)³]\n3. Sa_elástico = S·Ao·α (en m/s²) y Sa/g (adimensional)\n4. Calcular para T = 0.00, 0.05, 0.10, ..., 5.00 (ΔT=0.05 como pide enunciado)\n5. Generar 2 archivos:\n   a) autonomo/research/espectro_tabla_completa.md — tabla formateada con T, α, Sa(m/s²), Sa/g\n   b) autonomo/scripts/espectro_elastico_Z3SC.txt — archivo .txt listo para ETABS (2 columnas: T, Sa/g)\n6. Verificar que el pico de α es ~2.78 en T≈0.35s\n7. Actualizar la guía (docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md) reemplazando la tabla parcial por referencia al archivo completo",
+      "outputs": [
+        "autonomo/research/espectro_tabla_completa.md",
+        "autonomo/scripts/espectro_elastico_Z3SC.txt"
+      ]
+    },
+    {
+      "id": "G02",
+      "name": "Corregir guía — fórmulas R*, C, Cmín, Cmáx",
+      "phase": "guide",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Con las fórmulas verificadas en R04, corregir la guía ETABS.\n\n1. Leer autonomo/research/formulas_verificadas.md\n2. Leer la sección 11.5 de la guía (corte basal de diseño)\n3. Corregir:\n   - Fórmula de R* (usar la versión correcta de la norma)\n   - Fórmula de C\n   - Fórmula de Cmín y Cmáx\n   - Uso del parámetro n (dónde aparece realmente)\n4. Agregar cálculo numérico de ejemplo para nuestro edificio\n5. Verificar coherencia con el resto de la guía\n\nEditar directamente docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md",
+      "outputs": ["docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md"]
+    },
+    {
+      "id": "G03",
+      "name": "Corregir guía — torsión accidental (3 métodos)",
+      "phase": "guide",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Con el extracto del Material Apoyo (R05), corregir la sección de torsión de la guía.\n\n1. Leer autonomo/research/material_apoyo_extracto.md\n2. Leer FASE 8 de la guía actual\n3. Verificar que los 3 métodos están correctamente descritos:\n   a) Desplazar CM (casos 1 y 4)\n   b) Forma 1: momentos estáticos aplicados (casos 2 y 5)\n   c) Forma 2: excentricidad por piso (casos 3 y 6)\n4. Corregir fórmulas de excentricidad, masa sources, load cases\n5. Agregar detalles faltantes del Material Apoyo\n6. Verificar que los 6 casos están bien definidos\n\nEditar docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md",
+      "outputs": ["docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md"]
+    },
+    {
+      "id": "G04",
+      "name": "Corregir guía — drift y verificaciones",
+      "phase": "guide",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Verificar y completar la sección de drift y verificaciones post-análisis.\n\n1. Leer Material Apoyo (sección B sobre drift)\n2. Verificar en la guía:\n   - 2 condiciones de drift NCh433:\n     Cond 1: Story Drifts (δ/h) < 0.002 por piso\n     Cond 2: Max/Avg drift por diafragma < 1.001×0.002\n   - Cómo extraer estas tablas en ETABS v19\n   - Menús exactos: Display > Show Tables > ...\n3. Verificar sección de resultados (FASE 11)\n4. Agregar instrucciones para gráficos de drift por piso\n5. Agregar verificación de participación modal (>90% masa)\n\nEditar docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md",
+      "outputs": ["docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md"]
+    },
+    {
+      "id": "G05",
+      "name": "Completar guía — fases 6 a 13 con detalles faltantes",
+      "phase": "guide",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Revisar las fases 6-13 de la guía y completar detalles faltantes.\n\n1. Leer la guía completa de FASE 6 a FASE 13\n2. Leer autonomo/research/lafontaine_extracto.md y material_apoyo_extracto.md\n3. Para cada fase, verificar:\n   - ¿Están todos los menús ETABS v19 correctos?\n   - ¿Faltan pasos intermedios?\n   - ¿Los valores numéricos son correctos?\n4. Completar especialmente:\n   - FASE 6 (cargas): pasillos vs oficinas, cómo distinguir zonas en ETABS\n   - FASE 9 (combinaciones): los 7 combos NCh3171 completos con factores\n   - FASE 10 (ejecutar): check model, p-delta, validación peso/área\n   - FASE 12 (6 casos): instrucciones claras para cada caso\n   - FASE 13 (entregables): qué tablas/gráficos entregar exactamente\n\nEditar docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md",
+      "outputs": ["docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md"]
+    },
+    {
+      "id": "A01",
+      "name": "Script API — config.py (conexión ETABS + datos edificio)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear el script base de configuración y conexión ETABS.\n\nDebe incluir:\n1. Conexión COM robusta (patrón GetActiveObject → GetObject → CreateObject)\n2. Limpieza de comtypes.gen stale\n3. Manejo de instancia visible\n4. Todos los datos del edificio como constantes:\n   - Coordenadas de ejes X (17) e Y (6)\n   - Alturas de pisos\n   - Propiedades de materiales (G30, A630-420H)\n   - Nombres de secciones\n   - Espesores de muros por eje\n   - Cargas por tipo\n   - Parámetros sísmicos\n5. Helper functions: connect(), disconnect(), verify_model()\n6. Manejo de errores COM con mensajes claros\n7. Documentación exhaustiva\n\nUsar la investigación de R01, R02, R03 como referencia.\nBasar las firmas COM en la investigación, NO inventar.\n\nEscribir en autonomo/scripts/config.py",
+      "outputs": ["autonomo/scripts/config.py"]
+    },
+    {
+      "id": "A02",
+      "name": "Script API — 01_init_model.py (modelo nuevo + grilla)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para inicializar modelo y grilla.\n\n1. Crear modelo nuevo en blanco (tonf, m, C)\n2. Configurar grilla:\n   - 17 ejes X con espaciamientos exactos del enunciado\n   - 6 ejes Y (A-F) con espaciamientos exactos\n   - 20 pisos: piso 1 = 3.40m, pisos 2-20 = 2.60m\n3. Verificar que grilla se creó correctamente\n4. Guardar modelo como 'Edificio1_api.edb'\n\nUsar funciones de config.py.\nReferenciar firmas COM de autonomo/research/com_signatures.md.\n\nEscribir en autonomo/scripts/01_init_model.py",
+      "outputs": ["autonomo/scripts/01_init_model.py"]
+    },
+    {
+      "id": "A03",
+      "name": "Script API — 02_materials_sections.py",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para definir materiales y secciones.\n\nMateriales:\n- G30: f'c=300 kgf/cm², Ec=2,624,300 tonf/m², γ=2.5 tonf/m³, ν=0.2\n- A630-420H: fy=42,000 tonf/m², fu=63,000 tonf/m², Es=2,039,000 tonf/m²\n\nSecciones:\n- MHA30G30: Shell, Wall, t=0.30m, material G30\n- MHA20G30: Shell, Wall, t=0.20m, material G30\n- VI20/60G30: Frame, Rectangular, 0.20×0.60m, material G30\n- Losa15G30: Shell, Slab, t=0.15m, material G30\n\nModifiers vigas: J=0 (torsion)\nModifiers losas: m11=m22=m12=0.25 (inercia 25%)\n\nEscribir en autonomo/scripts/02_materials_sections.py",
+      "outputs": ["autonomo/scripts/02_materials_sections.py"]
+    },
+    {
+      "id": "A04",
+      "name": "Script API — 03_walls.py (muros por eje)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Crear script para dibujar TODOS los muros del edificio.\n\nMuros dirección Y:\n- e=30cm (MHA30G30): ejes 1, 3, 4, 5, 7, 12, 13, 14, 16, 17\n- e=20cm (MHA20G30): ejes 2, 6, 8, 9, 10, 11, 15\n- Cada muro va entre los ejes Y correspondientes según la planta\n\nMuros dirección X:\n- e=30cm: eje C entre ejes 3-6 y 10-14\n- e=20cm: todos los demás en X\n\nPara cada muro:\n- Usar AreaObj.AddByCoord con las coordenadas exactas\n- Asignar sección correcta (MHA30 o MHA20)\n- Crear en piso tipo y luego replicar\n\nLeer el enunciado (docs/Enunciado Taller.pdf) páginas 2-3 para ubicación exacta.\nUsar coordenadas de ejes de config.py.\n\nEscribir en autonomo/scripts/03_walls.py",
+      "outputs": ["autonomo/scripts/03_walls.py"]
+    },
+    {
+      "id": "A05",
+      "name": "Script API — 04_beams.py (vigas invertidas)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para dibujar TODAS las vigas del edificio.\n\n- Todas las vigas son VI20/60G30 (invertidas)\n- Ubicar vigas según planta típica (enunciado pág 2)\n- Las vigas van donde indica el color azul en la planta\n- Asignar Cardinal Point = 2 (Bottom Center) para vigas invertidas\n- J=0 (torsion modifier) ya definido en la sección\n\nPara cada viga:\n- FrameObj.AddByCoord con coordenadas exactas\n- Asignar sección VI20/60G30\n- Asignar insertion point (cardinal point 2)\n\nEscribir en autonomo/scripts/04_beams.py",
+      "outputs": ["autonomo/scripts/04_beams.py"]
+    },
+    {
+      "id": "A06",
+      "name": "Script API — 05_slabs.py (losas con shaft)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para dibujar TODAS las losas.\n\n- Losa15G30, t=0.15m en todos los pisos\n- Dibujar panel por panel (NO un rectángulo grande)\n- Dejar hueco del shaft: 7.7 × 2.345 m\n- Piso tipo: ~7 paneles (definidos por muros y vigas)\n- Techo: ~5 paneles (sin balcones/voladizos)\n- Asignar diafragma D1 a cada panel\n\nLa geometría de losas debe coincidir con los paneles reales.\nUsar config.py para coordenadas.\nVerificar área total ≈ 468.4 m² por piso.\n\nEscribir en autonomo/scripts/05_slabs.py",
+      "outputs": ["autonomo/scripts/05_slabs.py"]
+    },
+    {
+      "id": "A07",
+      "name": "Script API — 06_assignments.py (diafragma, mesh, apoyos)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para asignaciones post-geometría.\n\n1. Diafragma D1 (rígido) a todas las losas\n2. AutoMesh = 0.4m para todas las áreas (muros y losas)\n3. Auto Edge Constraints para conectividad losa-muro\n4. Restricciones de base: empotramiento en todos los nodos de Story1/Base\n5. Replicar geometría del piso tipo a todos los pisos (si no se hizo antes)\n\nVerificar:\n- Todos los elementos tienen sección asignada\n- No hay nodos sueltos\n- Restricciones de base correctas\n\nEscribir en autonomo/scripts/06_assignments.py",
+      "outputs": ["autonomo/scripts/06_assignments.py"]
+    },
+    {
+      "id": "A08",
+      "name": "Script API — 07_loads.py (patrones y cargas)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para definir patrones de carga y aplicar cargas.\n\nPatrones (Load Patterns):\n- PP: Dead, SWM=1 (peso propio automático)\n- TERP: Super Dead, SWM=0\n- TERT: Super Dead, SWM=0\n- SCP: Live, SWM=0\n- SCT: Live Roof, SWM=0\n\nCargas (aplicar a losas como Uniform Load):\n- TERP = 0.140 tonf/m² en pisos 1-19\n- TERT = 0.100 tonf/m² en piso 20\n- SCP = 0.250 tonf/m² en oficinas pisos 1-19\n- SCP = 0.500 tonf/m² en pasillos pisos 1-19\n- SCT = 0.100 tonf/m² en piso 20\n\nNota: distinguir zonas de oficina vs pasillo según planta.\n\nEscribir en autonomo/scripts/07_loads.py",
+      "outputs": ["autonomo/scripts/07_loads.py"]
+    },
+    {
+      "id": "A09",
+      "name": "Script API — 08_seismic.py (masa, espectro, modos)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Crear script para configuración sísmica completa.\n\n1. Mass Source: PP×1.0 + TERP×1.0 + SCP×0.25\n   (verificar factores según NCh433/NCh3171)\n2. Función de espectro: cargar desde autonomo/scripts/espectro_elastico_Z3SC.txt\n   - From File, damping 5%\n3. Caso Modal: Eigen, 30 modos, convergencia 1E-9\n4. Casos de espectro base (sin torsión):\n   - SDX: U1, Esp_Elastico_Z3SC, SF=9.81, CQC, SRSS\n   - SDY: U2, Esp_Elastico_Z3SC, SF=9.81, CQC, SRSS\n\nPrestar especial atención a:\n- Firma correcta de FuncRS.SetFromFile (problema conocido)\n- Firma correcta de MassSource (problema conocido)\n- Verificar que SetLoads recibe los parámetros en orden correcto\n\nEscribir en autonomo/scripts/08_seismic.py",
+      "outputs": ["autonomo/scripts/08_seismic.py"]
+    },
+    {
+      "id": "A10",
+      "name": "Script API — 09_torsion.py (3 métodos, 6 casos)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Crear script para implementar los 3 métodos de torsión accidental.\n\nMétodo a) Desplazar CM:\n- Crear 4 Mass Sources adicionales (±5% en X, ±5% en Y)\n- Crear 4 casos modales con masa desplazada\n- Crear 4 casos de espectro con masa desplazada\n\nMétodo b) Forma 1 — Momentos estáticos:\n- Calcular momentos torsionales Mx = Fx·ey, My = Fy·ex\n- Crear casos estáticos con momentos aplicados\n- Combinar: SDX ± torsión en Y\n\nMétodo c) Forma 2 — Excentricidad por piso:\n- Diaphragm Eccentricity en los Load Cases\n- Aplicar 5% en la dirección perpendicular al sismo\n\n6 Casos totales:\n- Caso 1: Método a + diafragma rígido\n- Caso 2: Método b-F1 + diafragma rígido\n- Caso 3: Método b-F2 + diafragma rígido\n- Caso 4: Método a + diafragma semi-rígido\n- Caso 5: Método b-F1 + diafragma semi-rígido\n- Caso 6: Método b-F2 + diafragma semi-rígido\n\nEscribir en autonomo/scripts/09_torsion.py",
+      "outputs": ["autonomo/scripts/09_torsion.py"]
+    },
+    {
+      "id": "A11",
+      "name": "Script API — 10_combinations.py (NCh3171)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para definir combinaciones de carga según NCh3171.\n\nCombinaciones típicas para diseño sísmico:\n- C1: 1.4D\n- C2: 1.2D + 1.6L\n- C3: 1.2D + 1.0L + 1.4SDX\n- C4: 1.2D + 1.0L - 1.4SDX\n- C5: 1.2D + 1.0L + 1.4SDY\n- C6: 1.2D + 1.0L - 1.4SDY\n- C7: 0.9D + 1.4SDX\n- C8: 0.9D - 1.4SDX\n- C9: 0.9D + 1.4SDY\n- C10: 0.9D - 1.4SDY\n\nDonde D incluye PP + TERP (o TERT en techo).\nVerificar factores exactos contra NCh3171 (docs/Normas Utilizadas ADSE/).\nEnvolvente para diseño.\n\nNota: el factor 1.4 del sismo puede incluir I/R* según el método elegido.\n\nEscribir en autonomo/scripts/10_combinations.py",
+      "outputs": ["autonomo/scripts/10_combinations.py"]
+    },
+    {
+      "id": "A12",
+      "name": "Script API — 11_run_analysis.py (análisis + validación)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script para ejecutar análisis y validar resultados iniciales.\n\n1. Check Model (verificar antes de correr)\n2. Set Analysis Options (P-Delta si corresponde)\n3. Run Analysis\n4. Validaciones post-análisis:\n   - Peso total ≈ 9,368 tonf (468m² × 20p × 1 tonf/m²)\n   - T1 ≈ 1.0-1.3s (traslacional)\n   - Participación modal > 90% en ambas direcciones\n   - Que no haya inestabilidades\n5. Extraer y mostrar resumen de resultados clave\n\nEscribir en autonomo/scripts/11_run_analysis.py",
+      "outputs": ["autonomo/scripts/11_run_analysis.py"]
+    },
+    {
+      "id": "A13",
+      "name": "Script API — 12_extract_results.py (drift, fuerzas, modos)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Crear script para extraer TODOS los resultados del taller.\n\n1. Periodos y modos (T, participación masa, tipo)\n2. Drift por piso (condición 1 y 2 de NCh433)\n3. Corte basal por caso\n4. Centro de masa y rigidez por piso\n5. Corte y momento volcante por piso\n6. Fuerzas en muros de borde (eje 1 y F)\n7. Diagramas P-M de muros\n\nExportar como:\n- Tablas formateadas en consola\n- Archivos CSV para post-proceso\n- Resumen en autonomo/research/resultados_esperados.md\n\nEscribir en autonomo/scripts/12_extract_results.py",
+      "outputs": ["autonomo/scripts/12_extract_results.py"]
+    },
+    {
+      "id": "A14",
+      "name": "Script API — run_pipeline.py (ejecución completa)",
+      "phase": "api",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Crear script maestro que ejecuta todo el pipeline en orden.\n\n1. Importar y ejecutar cada script en secuencia:\n   01_init → 02_materials → 03_walls → 04_beams → 05_slabs →\n   06_assignments → 07_loads → 08_seismic → 09_torsion →\n   10_combinations → 11_run → 12_results\n2. Separar en 2 fases COM (geometría y análisis) para evitar crash\n3. Checkpoint entre fases (guardar .edb)\n4. Log de cada paso con tiempos\n5. Manejo de errores: si un paso falla, reportar y abortar limpiamente\n6. Modo --dry-run para verificar sin ejecutar\n7. Modo --from N para retomar desde paso N\n\nEscribir en autonomo/scripts/run_pipeline.py",
+      "outputs": ["autonomo/scripts/run_pipeline.py"]
+    },
+    {
+      "id": "V01",
+      "name": "Validación cruzada — API vs UI guide",
+      "phase": "validation",
+      "model": "opus",
+      "max_turns": 60,
+      "description": "Verificar que los scripts API producen el mismo modelo que la guía UI.\n\n1. Leer la guía UI completa\n2. Leer cada script API\n3. Para cada fase, verificar que:\n   - Los mismos materiales y propiedades\n   - La misma geometría (coordenadas, secciones)\n   - Las mismas cargas (valores, patrones)\n   - La misma configuración sísmica\n   - Las mismas combinaciones\n4. Documentar cualquier discrepancia encontrada\n5. Corregir discrepancias (priorizar la guía UI como fuente de verdad)\n\nEscribir informe en autonomo/research/validacion_cruzada.md",
+      "outputs": ["autonomo/research/validacion_cruzada.md"]
+    },
+    {
+      "id": "V02",
+      "name": "Revisión final — calidad y completitud",
+      "phase": "validation",
+      "model": "opus",
+      "max_turns": 80,
+      "description": "Revisión final exhaustiva de TODO lo producido.\n\n1. Leer la guía UI completa — verificar coherencia interna\n2. Leer cada script API — verificar que compila, tiene docstrings, maneja errores\n3. Verificar que todos los valores numéricos son consistentes entre documentos\n4. Verificar que las referencias normativas son correctas\n5. Lista de verificación:\n   - [ ] Todos los ejes y coordenadas correctos\n   - [ ] Todos los materiales con propiedades correctas\n   - [ ] Todos los muros con espesor correcto por eje\n   - [ ] Todas las cargas con valores correctos\n   - [ ] Espectro calculado correctamente\n   - [ ] 6 casos de análisis definidos\n   - [ ] Drift, fuerzas, modos: método de extracción documentado\n   - [ ] Scripts API compilables y documentados\n6. Generar informe final en autonomo/research/informe_final.md\n7. Actualizar RETOMAR.md con el estado final",
+      "outputs": [
+        "autonomo/research/informe_final.md",
+        "RETOMAR.md"
+      ]
+    }
+  ]
+}

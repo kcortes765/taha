@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSE - Control 1 | Estudio Interactivo</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Three.js r128 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Chart.js 4.x -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- MathJax 3 -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            },
+            startup: {
+                ready: function() {
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+    <!-- App Styles -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body data-theme="dark">
+
+    <!-- ============================================================ -->
+    <!-- TOP BAR                                                       -->
+    <!-- ============================================================ -->
+    <header id="topbar" class="topbar">
+        <div class="topbar-left">
+            <button id="sidebar-toggle" class="topbar-btn" aria-label="Menú lateral">
+                <span class="icon">&#9776;</span>
+            </button>
+            <div class="topbar-brand">
+                <span class="brand-icon">&#127959;</span>
+                <div class="brand-text">
+                    <h1>Análisis y Diseño Sísmico de Edificios</h1>
+                    <span class="brand-subtitle">Control 1 &mdash; UCN 1S-2026 &mdash; Prof. Juan Music</span>
+                </div>
+            </div>
+        </div>
+        <div class="topbar-right">
+            <div class="progress-mini" title="Progreso global">
+                <span id="global-progress-label">0%</span>
+                <div class="progress-mini-bar">
+                    <div id="global-progress-fill" class="progress-mini-fill" style="width:0%"></div>
+                </div>
+            </div>
+            <button id="theme-toggle" class="topbar-btn" aria-label="Cambiar tema">
+                <span class="icon theme-icon-dark">&#9790;</span>
+                <span class="icon theme-icon-light">&#9788;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- SIDEBAR NAVIGATION                                            -->
+    <!-- ============================================================ -->
+    <nav id="sidebar" class="sidebar" aria-label="Navegación principal">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">&#128218;</span>
+            <span class="sidebar-title">Módulos C1</span>
+        </div>
+
+        <ul class="nav-list sidebar-nav">
+            <li>
+                <button class="nav-item active" data-module="dashboard">
+                    <span class="nav-icon">&#127968;</span>
+                    <span class="nav-label">Dashboard</span>
+                    <span class="nav-badge" id="badge-dashboard"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod1">
+                    <span class="nav-icon">&#9888;</span>
+                    <span class="nav-label">M1: Riesgo Sísmico</span>
+                    <span class="nav-badge" id="badge-mod1"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod2">
+                    <span class="nav-icon">&#128296;</span>
+                    <span class="nav-label">M2: Conceptos de Diseño</span>
+                    <span class="nav-badge" id="badge-mod2"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod3">
+                    <span class="nav-icon">&#128737;</span>
+                    <span class="nav-label">M3: Estrategias Protección</span>
+                    <span class="nav-badge" id="badge-mod3"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod4">
+                    <span class="nav-icon">&#128260;</span>
+                    <span class="nav-label">M4: Diafragmas y Torsión</span>
+                    <span class="nav-badge" id="badge-mod4"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod5">
+                    <span class="nav-icon">&#129518;</span>
+                    <span class="nav-label">M5: Matrices de Rigidez</span>
+                    <span class="nav-badge" id="badge-mod5"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod6">
+                    <span class="nav-icon">&#127970;</span>
+                    <span class="nav-label">M6: Clasificación Edificios</span>
+                    <span class="nav-badge" id="badge-mod6"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod7">
+                    <span class="nav-icon">&#128220;</span>
+                    <span class="nav-label">M7: Normativa NCh433/DS61</span>
+                    <span class="nav-badge" id="badge-mod7"></span>
+                </button>
+            </li>
+            <li>
+                <button class="nav-item" data-module="mod8">
+                    <span class="nav-icon">&#127912;</span>
+                    <span class="nav-label">M8: Análisis Modal Espectral</span>
+                    <span class="nav-badge" id="badge-mod8"></span>
+                </button>
+            </li>
+            <li class="nav-separator"></li>
+            <li>
+                <button class="nav-item nav-item-tests" data-module="mod9">
+                    <span class="nav-icon">&#128221;</span>
+                    <span class="nav-label">M9: Tests y Práctica</span>
+                    <span class="nav-badge" id="badge-mod9"></span>
+                </button>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-completed">0</span>
+                    <span class="stat-label">Completados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-score">--</span>
+                    <span class="stat-label">Puntaje</span>
+                </div>
+            </div>
+            <button id="reset-progress" class="btn-reset" title="Reiniciar progreso">
+                &#128260; Reiniciar
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- MAIN CONTENT AREA                                             -->
+    <!-- ============================================================ -->
+    <main id="main-content" class="main-content">
+
+        <!-- ======================================================== -->
+        <!-- DASHBOARD                                                  -->
+        <!-- ======================================================== -->
+        <section id="section-dashboard" class="module-section active" data-module="dashboard">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <h2>&#127968; Bienvenido al Estudio Interactivo</h2>
+                    <p class="module-description">Prepara tu Control 1 de Análisis y Diseño Sísmico de Edificios (ADSE). Cubre los capítulos 1 y 2 del curso del Prof. Music &mdash; UCN, 1er Semestre 2026.</p>
+                </div>
+            </div>
+
+            <!-- Progress Overview -->
+            <div class="dashboard-grid">
+                <div class="card card-progress">
+                    <h3>&#128202; Progreso General</h3>
+                    <div class="progress-ring-container">
+                        <canvas id="dashboard-progress-ring" width="200" height="200"></canvas>
+                        <div class="progress-ring-label">
+                            <span id="dashboard-progress-pct">0%</span>
+                            <small>completado</small>
+                        </div>
+                    </div>
+                    <div class="progress-details" id="dashboard-module-progress">
+                        <!-- JS fills module-by-module progress bars -->
+                    </div>
+                </div>
+
+                <div class="card card-info">
+                    <h3>&#128218; Contenido del Control 1</h3>
+                    <p>El C1 vale el <strong>20% de NC</strong> y cubre sismología y conceptos fundamentales:</p>
+                    <ul class="content-list">
+                        <li><strong>Cap. 2a</strong> &mdash; Riesgo sísmico, vulnerabilidad, peligro, etapas proyecto</li>
+                        <li><strong>Cap. 2b</strong> &mdash; NCh433, DS61, zonificación, tipos de suelo, Vs30</li>
+                        <li><strong>Cap. 1</strong> &mdash; Diafragmas, GDL, matrices rigidez, clasificación</li>
+                        <li><strong>Cap. 2c</strong> &mdash; Análisis estático, corte basal, C, distribución</li>
+                        <li><strong>Cap. 2d</strong> &mdash; Análisis modal espectral, modos, CQC, drift</li>
+                    </ul>
+                    <div class="info-badge">
+                        <span>&#128197;</span> Antofagasta = Zona 3 &bull; A<sub>0</sub> = 0.4g
+                    </div>
+                </div>
+
+                <div class="card card-quickstart">
+                    <h3>&#128640; Inicio Rápido</h3>
+                    <div class="quickstart-actions">
+                        <button class="btn btn-primary" data-goto="mod1">Comenzar Módulo 1</button>
+                        <button class="btn btn-secondary" data-goto="mod9">Ir a Tests</button>
+                    </div>
+                    <div class="tip-box">
+                        <span class="tip-icon">&#128161;</span>
+                        <p><strong>Consejo:</strong> Estudia los módulos en orden. Cada uno incluye conceptos clave, fórmulas interactivas y diagramas. Al final, usa el Módulo 9 para evaluar tu comprensión.</p>
+                    </div>
+                </div>
+
+                <div class="card card-stats">
+                    <h3>&#128200; Estadísticas de Estudio</h3>
+                    <canvas id="dashboard-stats-chart" height="180"></canvas>
+                    <div class="stats-summary">
+                        <div class="stat-block">
+                            <span class="stat-number" id="dash-total-questions">0</span>
+                            <span class="stat-desc">Preguntas respondidas</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-number" id="dash-accuracy">--</span>
+                            <span class="stat-desc">Precisión</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-number" id="dash-time-spent">0m</span>
+                            <span class="stat-desc">Tiempo estudiado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 1: RIESGO SÍSMICO                                  -->
+        <!-- ======================================================== -->
+        <section id="section-mod1" class="module-section" data-module="mod1">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 1</span>
+                    <h2>&#9888; Riesgo Sísmico</h2>
+                    <p class="module-description">Ecuación del riesgo, peligro, vulnerabilidad y exposición. Conceptos fundamentales de ingeniería sísmica.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="dashboard" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod2" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Ecuación del Riesgo -->
+                <div class="content-card card-formula">
+                    <h3>Ecuación Fundamental del Riesgo Sísmico</h3>
+                    <div class="formula-display">
+                        \[ \text{Riesgo} = \text{Peligro} \times \text{Vulnerabilidad} \times \text{Exposición} \]
+                    </div>
+                    <div class="formula-breakdown">
+                        <div class="formula-term">
+                            <h4>&#127755; Peligro (Hazard)</h4>
+                            <p>Probabilidad de que ocurra un sismo de cierta intensidad en un lugar y período dado. Depende de la <strong>sismicidad</strong> del sitio, <strong>fallas</strong> activas y <strong>condiciones del suelo</strong>.</p>
+                            <div class="key-point">
+                                <span>&#128204;</span> Chile: zona de subducción Nazca-Sudamericana. Antofagasta = Zona 3 (A<sub>0</sub>=0.4g).
+                            </div>
+                        </div>
+                        <div class="formula-term">
+                            <h4>&#127960; Vulnerabilidad</h4>
+                            <p>Susceptibilidad de la estructura a sufrir daño. Depende del <strong>diseño</strong>, <strong>materiales</strong>, <strong>detallamiento</strong> y <strong>calidad de construcción</strong>.</p>
+                            <div class="key-point">
+                                <span>&#128204;</span> Es el factor que el ingeniero estructural <strong>puede controlar</strong>.
+                            </div>
+                        </div>
+                        <div class="formula-term">
+                            <h4>&#128101; Exposición</h4>
+                            <p>Valor de lo expuesto: personas, bienes, infraestructura crítica, patrimonio cultural.</p>
+                            <div class="key-point">
+                                <span>&#128204;</span> Un hospital tiene mayor exposición que un bodega vacía.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sismología Básica -->
+                <div class="content-card">
+                    <h3>Sismología Básica para Ingenieros</h3>
+                    <div class="two-column">
+                        <div class="column">
+                            <h4>Tipos de Ondas Sísmicas</h4>
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>Onda</th><th>Tipo</th><th>Velocidad</th><th>Movimiento</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>P</strong></td><td>Cuerpo</td><td>Rápida</td><td>Compresión-dilatación</td></tr>
+                                    <tr><td><strong>S</strong></td><td>Cuerpo</td><td>~0.6 V<sub>P</sub></td><td>Corte (transversal)</td></tr>
+                                    <tr><td><strong>Rayleigh</strong></td><td>Superficie</td><td>~0.9 V<sub>S</sub></td><td>Elíptico retrógrado</td></tr>
+                                    <tr><td><strong>Love</strong></td><td>Superficie</td><td>~V<sub>S</sub></td><td>Horizontal transversal</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="column">
+                            <h4>Escalas de Magnitud e Intensidad</h4>
+                            <div class="concept-box">
+                                <h5>&#128207; Magnitud (M<sub>w</sub>)</h5>
+                                <p>Energía liberada en el foco. Escala logarítmica, objetiva, un solo valor por sismo.</p>
+                                \[ M_w = \frac{2}{3} \log_{10}(M_0) - 10.7 \]
+                            </div>
+                            <div class="concept-box">
+                                <h5>&#128200; Intensidad (MMI)</h5>
+                                <p>Efectos observados en superficie. Subjetiva, varía por ubicación. Escala I a XII.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactivo: Mapa de Peligro -->
+                <div class="content-card card-interactive">
+                    <h3>&#127758; Zonificación Sísmica de Chile (Interactivo)</h3>
+                    <p>Haz clic en cada zona para ver sus parámetros según NCh433/DS61.</p>
+                    <div class="interactive-container">
+                        <div id="mod1-zone-map" class="zone-map-container">
+                            <!-- JS renders interactive zone map -->
+                        </div>
+                        <div id="mod1-zone-info" class="zone-info-panel">
+                            <p class="placeholder-text">Selecciona una zona para ver detalles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conceptos Clave -->
+                <div class="content-card">
+                    <h3>Conceptos Clave</h3>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128293;</span>
+                            <h4>Hipocentro / Foco</h4>
+                            <p>Punto interior de la Tierra donde se origina la ruptura. La <strong>profundidad focal</strong> influye en los efectos superficiales.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128205;</span>
+                            <h4>Epicentro</h4>
+                            <p>Proyección del hipocentro en la superficie. Se determina por triangulación de estaciones sismológicas.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128200;</span>
+                            <h4>Período de Retorno (T<sub>R</sub>)</h4>
+                            <p>Tiempo medio entre eventos de cierta magnitud. NCh433 usa T<sub>R</sub> asociado a la aceleración de diseño.</p>
+                            \[ P = 1 - \left(1 - \frac{1}{T_R}\right)^n \]
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#9878;</span>
+                            <h4>Subducción</h4>
+                            <p>Placa Nazca se subduce bajo la Sudamericana a ~8 cm/año. Genera los sismos más grandes del planeta (Chile 1960, M<sub>w</sub>=9.5).</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128202;</span>
+                            <h4>Espectro de Respuesta</h4>
+                            <p>Gráfico de respuesta máxima (aceleración, velocidad, desplazamiento) vs. período. Base del análisis dinámico.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128736;</span>
+                            <h4>Filosofía de Diseño</h4>
+                            <p>Sismos frecuentes: sin daño. Sismos moderados: daño reparable. Sismo severo: no colapso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapas del Proyecto -->
+                <div class="content-card">
+                    <h3>Etapas del Proyecto de Ingeniería Sísmica</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h4>Estructuración</h4>
+                                <p>Definir sistema resistente (muros, marcos, dual). Ubicar elementos, definir materiales. <strong>Decisión más importante</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <h4>Predimensionamiento</h4>
+                                <p>Estimar secciones iniciales con criterios simplificados. Muros: espesor mínimo, largo en planta. Columnas: carga tributaria.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <h4>Análisis</h4>
+                                <p>Modelar y calcular: estático o modal espectral. Obtener fuerzas internas, desplazamientos, derivas.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">4</div>
+                            <div class="timeline-content">
+                                <h4>Diseño</h4>
+                                <p>Dimensionar armadura, verificar capacidades. Cumplir ACI318 (DS60), detallamiento sísmico.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">5</div>
+                            <div class="timeline-content">
+                                <h4>Verificación</h4>
+                                <p>Revisar derivas, corte basal mínimo/máximo, irregularidades, torsión. Iterar si no cumple.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 2: CONCEPTOS DE DISEÑO                             -->
+        <!-- ======================================================== -->
+        <section id="section-mod2" class="module-section" data-module="mod2">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 2</span>
+                    <h2>&#128296; Conceptos de Diseño Sismorresistente</h2>
+                    <p class="module-description">Rigidez, resistencia, ductilidad, disipación de energía y criterios de diseño.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod1" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod3" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Rigidez -->
+                <div class="content-card card-formula">
+                    <h3>Rigidez Lateral</h3>
+                    <div class="formula-display">
+                        \[ K = \frac{F}{\Delta} \quad \text{[kN/m]} \]
+                    </div>
+                    <p>La rigidez controla los <strong>desplazamientos</strong> y la <strong>distribución de fuerzas</strong> entre elementos.</p>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Muro en Voladizo (Flexión)</h5>
+                                \[ K_{flexion} = \frac{3EI}{H^3} \]
+                                <p>Gobierna en muros esbeltos (H/L > 2)</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Muro Corte Puro</h5>
+                                \[ K_{corte} = \frac{GA_v}{H} \]
+                                <p>Gobierna en muros achaparrados (H/L < 1)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="concept-box">
+                        <h5>Rigidez Combinada (Serie)</h5>
+                        \[ \frac{1}{K_{total}} = \frac{1}{K_{flexion}} + \frac{1}{K_{corte}} \]
+                        <p>Para elementos reales se combinan ambos efectos. La menor rigidez gobierna.</p>
+                    </div>
+                </div>
+
+                <!-- Diagrama Fuerza-Deformación Interactivo -->
+                <div class="content-card card-interactive">
+                    <h3>&#128200; Diagrama Fuerza-Deformación (Interactivo)</h3>
+                    <p>Compara el comportamiento de diferentes tipos de sistemas estructurales.</p>
+                    <div class="chart-controls">
+                        <label>
+                            <input type="checkbox" id="mod2-show-elastic" checked> Elástico
+                        </label>
+                        <label>
+                            <input type="checkbox" id="mod2-show-ductile" checked> Dúctil
+                        </label>
+                        <label>
+                            <input type="checkbox" id="mod2-show-brittle" checked> Frágil
+                        </label>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="mod2-force-deformation-chart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Ductilidad -->
+                <div class="content-card card-formula">
+                    <h3>Ductilidad</h3>
+                    <div class="formula-display">
+                        \[ \mu = \frac{\Delta_u}{\Delta_y} \]
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span>
+                        La ductilidad permite que la estructura <strong>disipe energía</strong> mediante deformación inelástica sin perder capacidad resistente. Es la propiedad más valiosa para diseño sísmico.
+                    </div>
+                    <div class="formula-breakdown">
+                        <div class="formula-term">
+                            <h4>Ductilidad de Desplazamiento</h4>
+                            <p>\(\mu_\Delta = \Delta_u / \Delta_y\) &mdash; A nivel global de la estructura.</p>
+                        </div>
+                        <div class="formula-term">
+                            <h4>Ductilidad de Curvatura</h4>
+                            <p>\(\mu_\phi = \phi_u / \phi_y\) &mdash; A nivel de sección. Siempre \(\mu_\phi > \mu_\Delta\).</p>
+                        </div>
+                        <div class="formula-term">
+                            <h4>Ductilidad de Rotación</h4>
+                            <p>\(\mu_\theta = \theta_u / \theta_y\) &mdash; A nivel de rótula plástica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Balance Energético -->
+                <div class="content-card">
+                    <h3>Balance Energético</h3>
+                    <div class="formula-display">
+                        \[ E_{input} = E_{cinética} + E_{deformación} + E_{amortiguamiento} + E_{histerética} \]
+                    </div>
+                    <div class="energy-diagram">
+                        <div class="energy-bar" id="mod2-energy-bar">
+                            <!-- JS renders animated energy balance bar -->
+                        </div>
+                    </div>
+                    <div class="key-concepts-grid cols-2">
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128165;</span>
+                            <h4>Energía Histerética</h4>
+                            <p>Energía disipada por deformación inelástica. Área dentro del ciclo histerético. <strong>Depende de la ductilidad</strong>.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#127754;</span>
+                            <h4>Amortiguamiento</h4>
+                            <p>Disipación viscosa. Típicamente 5% del amortiguamiento crítico para HA. Reduce la respuesta.</p>
+                            \[ \xi = \frac{c}{2\sqrt{km}} \]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ecuación de Movimiento -->
+                <div class="content-card card-formula">
+                    <h3>Ecuación de Movimiento</h3>
+                    <div class="formula-display">
+                        \[ m\ddot{u} + c\dot{u} + ku = -m\ddot{u}_g(t) \]
+                    </div>
+                    <p>Ecuación fundamental de un oscilador de 1 GDL bajo excitación sísmica. Para múltiples GDL:</p>
+                    <div class="formula-display">
+                        \[ [M]\{\ddot{u}\} + [C]\{\dot{u}\} + [K]\{u\} = -[M]\{1\}\ddot{u}_g(t) \]
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Término</th><th>Significado</th><th>Depende de</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>\(m\ddot{u}\)</td><td>Fuerza de inercia</td><td>Masa &times; aceleración</td></tr>
+                            <tr><td>\(c\dot{u}\)</td><td>Fuerza de amortiguamiento</td><td>Amortiguamiento &times; velocidad</td></tr>
+                            <tr><td>\(ku\)</td><td>Fuerza restauradora</td><td>Rigidez &times; desplazamiento</td></tr>
+                            <tr><td>\(-m\ddot{u}_g\)</td><td>Fuerza sísmica</td><td>Masa &times; aceleración del suelo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Comparación Ecuaciones -->
+                <div class="content-card">
+                    <h3>Comparación de Estrategias: Ecuaciones de Movimiento</h3>
+                    <div class="key-concepts-grid cols-3">
+                        <div class="concept-card">
+                            <span class="concept-icon">&#127960;</span>
+                            <h4>Convencional</h4>
+                            \[ m\ddot{u} + c\dot{u} + ku = -m\ddot{u}_g \]
+                            <p>La estructura absorbe energía mediante <strong>daño controlado</strong> (ductilidad). k se reduce, pero la estructura sobrevive.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128736;</span>
+                            <h4>Aislación Basal</h4>
+                            \[ m\ddot{u} + c\dot{u} + k_b u = -m\ddot{u}_g \]
+                            <p>Se reduce \(k_b \ll k\) con aisladores. El período se alarga (\(T = 2\pi\sqrt{m/k_b}\)) reduciendo Sa.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#9881;</span>
+                            <h4>Disipadores</h4>
+                            \[ m\ddot{u} + (c + c_d)\dot{u} + ku = -m\ddot{u}_g \]
+                            <p>Se incrementa el amortiguamiento \(c_d\). No cambia T pero reduce la respuesta por mayor \(\xi\).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lazos Histeréticos -->
+                <div class="content-card card-interactive">
+                    <h3>&#128200; Lazo Histerético (Interactivo)</h3>
+                    <p>El área del lazo histerético representa la <strong>energía disipada</strong> por ciclo. A mayor ductilidad, mayor disipación.</p>
+                    <div class="chart-controls">
+                        <label>
+                            Ductilidad &mu;: <input type="range" id="mod2-ductility-slider" min="1" max="8" value="4" step="0.5">
+                            <span id="mod2-ductility-value">4.0</span>
+                        </label>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="mod2-hysteresis-chart"></canvas>
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span> &mu; = 1 &rarr; comportamiento elástico (sin disipación). &mu; > 4 &rarr; estructura muy dúctil con gran disipación histerética.
+                    </div>
+                </div>
+
+                <!-- Principio de iguales desplazamientos -->
+                <div class="content-card card-formula">
+                    <h3>Principio de Iguales Desplazamientos (Newmark-Hall)</h3>
+                    <div class="formula-display">
+                        \[ R^* = \mu \quad \text{(para } T > T_g \text{)} \]
+                    </div>
+                    <p>Para estructuras de período largo, el desplazamiento máximo inelástico es aproximadamente igual al elástico. Esto justifica el factor de reducción R.</p>
+                    <div class="concept-box concept-box-warning">
+                        <h5>&#9888; Principio de Iguales Energías</h5>
+                        \[ R^* = \sqrt{2\mu - 1} \quad \text{(para } T \approx T_g \text{)} \]
+                        <p>Para períodos cortos, el desplazamiento inelástico es <strong>mayor</strong> que el elástico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 3: ESTRATEGIAS DE PROTECCIÓN                       -->
+        <!-- ======================================================== -->
+        <section id="section-mod3" class="module-section" data-module="mod3">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 3</span>
+                    <h2>&#128737; Estrategias de Protección Sísmica</h2>
+                    <p class="module-description">Diseño convencional, aislación basal y disipadores de energía.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod2" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod4" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Comparación de Estrategias -->
+                <div class="content-card">
+                    <h3>Comparación de Estrategias</h3>
+                    <div class="strategy-comparison">
+                        <div class="strategy-card strategy-conventional">
+                            <div class="strategy-header">
+                                <span class="strategy-icon">&#127960;</span>
+                                <h4>Convencional</h4>
+                            </div>
+                            <ul>
+                                <li>Absorbe energía mediante <strong>daño controlado</strong></li>
+                                <li>Rótulas plásticas en elementos designados</li>
+                                <li>Usa ductilidad como mecanismo de protección</li>
+                                <li>Requiere buen detallamiento</li>
+                                <li>Daño esperado en sismo de diseño</li>
+                            </ul>
+                            <div class="strategy-badge">R = 5~7 (marcos) | R = 4~6 (muros)</div>
+                        </div>
+                        <div class="strategy-card strategy-isolation">
+                            <div class="strategy-header">
+                                <span class="strategy-icon">&#128736;</span>
+                                <h4>Aislación Basal</h4>
+                            </div>
+                            <ul>
+                                <li><strong>Desacopla</strong> la estructura del suelo</li>
+                                <li>Aumenta el período fundamental (T > 2s)</li>
+                                <li>Reduce drásticamente aceleraciones</li>
+                                <li>Desplazamientos concentrados en aisladores</li>
+                                <li>Estructura permanece esencialmente elástica</li>
+                            </ul>
+                            <div class="strategy-badge">Hospitales, edificios esenciales</div>
+                        </div>
+                        <div class="strategy-card strategy-dampers">
+                            <div class="strategy-header">
+                                <span class="strategy-icon">&#9881;</span>
+                                <h4>Disipadores</h4>
+                            </div>
+                            <ul>
+                                <li>Agregan <strong>amortiguamiento adicional</strong></li>
+                                <li>Tipos: viscosos, friccionales, metálicos, viscoelásticos</li>
+                                <li>Reducen desplazamientos y fuerzas</li>
+                                <li>Pueden combinarse con aislación</li>
+                                <li>Rehabilitación de estructuras existentes</li>
+                            </ul>
+                            <div class="strategy-badge">&#958; adicional = 10~30%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagrama espectral interactivo -->
+                <div class="content-card card-interactive">
+                    <h3>&#128200; Efecto en el Espectro de Respuesta</h3>
+                    <p>Observa cómo cada estrategia modifica la respuesta espectral.</p>
+                    <div class="chart-controls">
+                        <label>
+                            Amortiguamiento: <input type="range" id="mod3-damping-slider" min="2" max="30" value="5" step="1">
+                            <span id="mod3-damping-value">5%</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="mod3-show-isolated"> Mostrar aislado
+                        </label>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="mod3-spectrum-chart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Aisladores -->
+                <div class="content-card">
+                    <h3>Tipos de Aisladores</h3>
+                    <div class="key-concepts-grid cols-3">
+                        <div class="concept-card">
+                            <span class="concept-icon">&#11044;</span>
+                            <h4>Elastomérico (LRB)</h4>
+                            <p>Capas alternadas de goma y acero con núcleo de plomo. Período aislado típico 2-3s.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#9711;</span>
+                            <h4>Friccional (FPS)</h4>
+                            <p>Péndulo de fricción. Período depende del radio de curvatura: \(T = 2\pi\sqrt{R/g}\).</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#9645;</span>
+                            <h4>Elastomérico Alto Amortiguamiento (HDRB)</h4>
+                            <p>Goma con compuestos especiales. Sin núcleo de plomo, amortiguamiento 10-15%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualización 3D -->
+                <div class="content-card card-interactive">
+                    <h3>&#127912; Visualización: Edificio con Aislación vs Convencional</h3>
+                    <p>Compara la respuesta de un edificio convencional vs uno con aislación basal ante un sismo.</p>
+                    <div class="viz-3d-container">
+                        <canvas id="mod3-isolation-3d" class="canvas-3d"></canvas>
+                        <div class="viz-controls">
+                            <button class="btn btn-small" id="mod3-play-seismic">&#9654; Simular Sismo</button>
+                            <button class="btn btn-small" id="mod3-reset-seismic">&#128260; Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 4: DIAFRAGMAS Y TORSIÓN                            -->
+        <!-- ======================================================== -->
+        <section id="section-mod4" class="module-section" data-module="mod4">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 4</span>
+                    <h2>&#128260; Diafragmas y Torsión</h2>
+                    <p class="module-description">Diafragmas rígidos y flexibles, centro de masa, centro de rigidez, excentricidad y torsión accidental.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod3" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod5" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Diafragma Rígido -->
+                <div class="content-card">
+                    <h3>Hipótesis de Diafragma Rígido</h3>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Diafragma Rígido</h5>
+                                <p>La losa es <strong>infinitamente rígida</strong> en su plano. Todos los puntos del piso se mueven como un cuerpo rígido.</p>
+                                <ul>
+                                    <li>3 GDL por piso: \(u_x, u_y, \theta_z\)</li>
+                                    <li>Para N pisos: 3N GDL totales</li>
+                                    <li>Losas de HA típicas: siempre rígido</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h5>Diafragma Flexible</h5>
+                                <p>La losa se deforma en su plano. Cada nodo tiene sus propios GDL independientes.</p>
+                                <ul>
+                                    <li>Edificios con losas delgadas, aberturas grandes</li>
+                                    <li>Estructuras de madera o acero liviano</li>
+                                    <li>Plantas muy alargadas (L/B > 3~4)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Índice de Flexibilidad -->
+                <div class="content-card card-formula">
+                    <h3>Índice de Flexibilidad del Diafragma</h3>
+                    <div class="formula-display">
+                        \[ IF = \frac{D_{MD}}{D_{PEV}} \]
+                    </div>
+                    <p>Donde \(D_{MD}\) = deformación máxima del diafragma y \(D_{PEV}\) = desplazamiento promedio de los elementos verticales.</p>
+                    <div class="concept-box concept-box-highlight">
+                        <h5>Criterio ASCE 7-16</h5>
+                        <table class="data-table">
+                            <tbody>
+                                <tr><td>\(IF \leq 2.0\)</td><td>&rarr; Diafragma <strong>rígido</strong></td></tr>
+                                <tr><td>\(IF > 2.0\)</td><td>&rarr; Diafragma <strong>flexible</strong> o <strong>semirígido</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span> Losas de HA de 12-20cm con planta compacta: siempre rígido. Losas delgadas, plantas alargadas (L/B > 3-4), aberturas grandes: verificar IF.
+                    </div>
+                </div>
+
+                <!-- Tabla GDL -->
+                <div class="content-card">
+                    <h3>Grados de Libertad por Tipo de Diafragma</h3>
+                    <table class="data-table data-table-striped">
+                        <thead>
+                            <tr><th>Diafragma</th><th>GDL por piso</th><th>GDL total (N pisos)</th><th>Análisis</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Rígido</strong></td>
+                                <td>3 (\(u_x, u_y, \theta_z\))</td>
+                                <td>\(3N\)</td>
+                                <td>Más simple, CM/CR por piso</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flexible</strong></td>
+                                <td>Depende de nodos</td>
+                                <td>Muchos más</td>
+                                <td>Cada nodo libre, FEM completo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semirígido</strong></td>
+                                <td>3 + correcciones</td>
+                                <td>\(3N\) + deformabilidad</td>
+                                <td>Intermedio, modelos especiales</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- CM y CR -->
+                <div class="content-card card-formula">
+                    <h3>Centro de Masa (CM) y Centro de Rigidez (CR)</h3>
+                    <div class="two-column">
+                        <div class="column">
+                            <h4>Centro de Masa</h4>
+                            \[ x_{CM} = \frac{\sum m_i \cdot x_i}{\sum m_i} \quad;\quad y_{CM} = \frac{\sum m_i \cdot y_i}{\sum m_i} \]
+                            <p>Punto donde se aplica la fuerza sísmica (inercia).</p>
+                        </div>
+                        <div class="column">
+                            <h4>Centro de Rigidez</h4>
+                            \[ x_{CR} = \frac{\sum K_{yi} \cdot x_i}{\sum K_{yi}} \quad;\quad y_{CR} = \frac{\sum K_{xi} \cdot y_i}{\sum K_{xi}} \]
+                            <p>Punto donde la fuerza lateral produce solo traslación (sin giro).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Excentricidad y Torsión -->
+                <div class="content-card card-formula">
+                    <h3>Excentricidad y Torsión</h3>
+                    <div class="formula-display">
+                        \[ e_{est} = |CM - CR| \]
+                    </div>
+                    <div class="concept-box concept-box-warning">
+                        <h5>&#9888; Torsión Accidental (NCh433)</h5>
+                        \[ e_{dis} = e_{est} \pm 0.05 \cdot b \]
+                        <p>Donde \(b\) es la dimensión del edificio perpendicular a la dirección de análisis. Se aplica en <strong>ambos sentidos</strong> y se toma el más desfavorable.</p>
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span>
+                        La torsión accidental considera incertidumbres en: distribución real de masas, rigidez efectiva de elementos, y componente rotacional del sismo.
+                    </div>
+                </div>
+
+                <!-- Interactivo: CM/CR -->
+                <div class="content-card card-interactive">
+                    <h3>&#128295; Calculadora CM/CR (Interactivo)</h3>
+                    <p>Arrastra los elementos para ver cómo cambia la excentricidad y la torsión.</p>
+                    <div class="interactive-container">
+                        <canvas id="mod4-cmcr-canvas" class="canvas-interactive" width="600" height="400"></canvas>
+                        <div class="interactive-panel" id="mod4-cmcr-results">
+                            <div class="result-item">
+                                <span class="result-label">CM:</span>
+                                <span class="result-value" id="mod4-cm-pos">(0, 0)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">CR:</span>
+                                <span class="result-value" id="mod4-cr-pos">(0, 0)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Excentricidad:</span>
+                                <span class="result-value" id="mod4-ecc-value">0 m</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Torsión accidental:</span>
+                                <span class="result-value" id="mod4-torsion-value">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Distribución de fuerzas por torsión -->
+                <div class="content-card">
+                    <h3>Distribución de Fuerzas con Torsión</h3>
+                    <div class="formula-display">
+                        \[ V_i = V \cdot \frac{K_i}{\sum K_j} + M_T \cdot \frac{K_i \cdot d_i}{\sum K_j \cdot d_j^2} \]
+                    </div>
+                    <p>Donde:</p>
+                    <ul class="formula-legend">
+                        <li>\(V_i\) = Fuerza en el elemento \(i\)</li>
+                        <li>\(V\) = Corte basal del piso</li>
+                        <li>\(K_i\) = Rigidez del elemento \(i\)</li>
+                        <li>\(M_T = V \cdot e_{dis}\) = Momento torsor</li>
+                        <li>\(d_i\) = Distancia del elemento \(i\) al CR</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 5: MATRICES DE RIGIDEZ                              -->
+        <!-- ======================================================== -->
+        <section id="section-mod5" class="module-section" data-module="mod5">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 5</span>
+                    <h2>&#129518; Matrices de Rigidez</h2>
+                    <p class="module-description">Matrices de rigidez lateral: 1 piso, N pisos y método directo de rigidez.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod4" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod6" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- 1 Piso -->
+                <div class="content-card card-formula">
+                    <h3>Caso 1 Piso: Rigidez Lateral</h3>
+                    <div class="formula-display">
+                        \[ K_{piso} = \sum_{i=1}^{n} K_i \]
+                    </div>
+                    <p>Para un piso con \(n\) elementos verticales (muros o columnas) en la dirección de análisis, la rigidez lateral total es la suma de rigideces individuales.</p>
+                    <div class="concept-box">
+                        <h5>Columna empotrada-empotrada</h5>
+                        \[ K = \frac{12EI}{H^3} \]
+                    </div>
+                    <div class="concept-box">
+                        <h5>Columna empotrada-libre (voladizo)</h5>
+                        \[ K = \frac{3EI}{H^3} \]
+                    </div>
+                </div>
+
+                <!-- N Pisos -->
+                <div class="content-card card-formula">
+                    <h3>Caso N Pisos: Matriz de Rigidez Condensada</h3>
+                    <p>Para un edificio con diafragma rígido, la ecuación de movimiento por piso:</p>
+                    <div class="formula-display">
+                        \[ [M]\{\ddot{u}\} + [C]\{\dot{u}\} + [K]\{u\} = -[M]\{1\}\ddot{u}_g \]
+                    </div>
+                    <div class="matrix-display">
+                        <h4>Matriz de rigidez lateral (edificio de corte):</h4>
+                        \[
+                        [K] = \begin{bmatrix}
+                        k_1+k_2 & -k_2 & 0 & \cdots & 0 \\
+                        -k_2 & k_2+k_3 & -k_3 & \cdots & 0 \\
+                        0 & -k_3 & k_3+k_4 & \cdots & 0 \\
+                        \vdots & \vdots & \vdots & \ddots & -k_N \\
+                        0 & 0 & 0 & -k_N & k_N
+                        \end{bmatrix}
+                        \]
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span>
+                        Matriz <strong>tridiagonal simétrica</strong> para edificio de corte. El término diagonal \(K_{ii} = k_i + k_{i+1}\) y el fuera de diagonal \(K_{i,i+1} = -k_{i+1}\).
+                    </div>
+                </div>
+
+                <!-- Interactivo: Constructor de Matrices -->
+                <div class="content-card card-interactive">
+                    <h3>&#128295; Constructor de Matrices (Interactivo)</h3>
+                    <p>Define el número de pisos y rigideces para ver la matriz resultante.</p>
+                    <div class="interactive-container">
+                        <div class="matrix-builder-controls">
+                            <label>
+                                Número de pisos:
+                                <input type="number" id="mod5-num-floors" min="1" max="10" value="3" class="input-number">
+                            </label>
+                            <div id="mod5-floor-inputs" class="floor-inputs">
+                                <!-- JS generates inputs per floor -->
+                            </div>
+                            <button class="btn btn-primary" id="mod5-build-matrix">Construir Matriz</button>
+                        </div>
+                        <div id="mod5-matrix-result" class="matrix-result">
+                            <!-- JS renders the resulting matrix -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Método Directo -->
+                <div class="content-card">
+                    <h3>Método Directo de Rigidez</h3>
+                    <p>Para estructuras más complejas (marcos, sistemas mixtos), se ensambla la matriz de rigidez global a partir de las matrices de elemento:</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h4>Discretizar</h4>
+                                <p>Identificar nodos y elementos. Definir GDL en cada nodo.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <h4>Matriz de Elemento</h4>
+                                <p>Calcular \([k_e]\) para cada elemento en coordenadas locales (6x6 para viga-columna 2D).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <h4>Transformar</h4>
+                                <p>Rotar a coordenadas globales: \([K_e] = [T]^T [k_e] [T]\).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">4</div>
+                            <div class="timeline-content">
+                                <h4>Ensamblar</h4>
+                                <p>Sumar contribuciones en la matriz global \([K]\) según conectividad.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">5</div>
+                            <div class="timeline-content">
+                                <h4>Condiciones de Borde</h4>
+                                <p>Aplicar restricciones (empotramientos, apoyos). Reducir el sistema.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">6</div>
+                            <div class="timeline-content">
+                                <h4>Resolver</h4>
+                                <p>\(\{F\} = [K]\{u\} \Rightarrow \{u\} = [K]^{-1}\{F\}\)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matrices de Transformación -->
+                <div class="content-card card-formula">
+                    <h3>Matrices de Transformación para Subestructuras</h3>
+                    <p>Para pasar de coordenadas locales de subestructura a coordenadas globales del edificio:</p>
+                    <div class="formula-display">
+                        \[ [K_p]_{global} = [A_p]^T [K_p]_{local} [A_p] \]
+                    </div>
+                    <p>Donde \([A_p]\) es la matriz de transformación de la subestructura \(p\):</p>
+                    <div class="formula-display">
+                        \[ [A_{xi}] = \begin{bmatrix} 1 & 0 & -y_i \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \quad ; \quad
+                        [A_{yi}] = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & x_i \\ 0 & 0 & 0 \end{bmatrix} \]
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span> \(x_i, y_i\) = coordenadas de la subestructura respecto al CM. La fila 3 acopla traslación con rotación (torsión).
+                    </div>
+                </div>
+
+                <!-- Ensamblaje Paso a Paso -->
+                <div class="content-card">
+                    <h3>Ejemplo: Ensamblaje Paso a Paso</h3>
+                    <p>Edificio 1 piso con 2 muros en dirección Y en posiciones \(x_1\) y \(x_2\):</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h4>Rigideces locales</h4>
+                                <p>\(k_{y1}\) = rigidez muro 1, \(k_{y2}\) = rigidez muro 2</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <h4>Contribución al sistema global (3&times;3)</h4>
+                                <p>Muro 1 en \(x_1\): contribuye \(k_{y1}\) a \(K_{yy}\) y \(k_{y1} \cdot x_1\) al acoplamiento \(K_{y\theta}\)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <h4>Matriz ensamblada</h4>
+                                \[ [K] = \begin{bmatrix} \sum k_{xi} & 0 & -\sum k_{xi}y_i \\ 0 & \sum k_{yi} & \sum k_{yi}x_i \\ -\sum k_{xi}y_i & \sum k_{yi}x_i & \sum(k_{xi}y_i^2 + k_{yi}x_i^2) \end{bmatrix} \]
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">4</div>
+                            <div class="timeline-content">
+                                <h4>Caso simétrico</h4>
+                                <p>Si CM = CR, los términos fuera de diagonal son 0 &rarr; traslación y rotación desacopladas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Condensación Estática -->
+                <div class="content-card card-formula">
+                    <h3>Condensación Estática (Guyan)</h3>
+                    <p>Con diafragma rígido, se condensan los GDL internos para obtener la matriz reducida por piso:</p>
+                    <div class="formula-display">
+                        \[ [K^*] = [K_{mm}] - [K_{ms}][K_{ss}]^{-1}[K_{sm}] \]
+                    </div>
+                    <p>Donde los subíndices \(m\) = GDL maestros (de piso) y \(s\) = GDL esclavos (internos).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 6: CLASIFICACIÓN DE EDIFICIOS                       -->
+        <!-- ======================================================== -->
+        <section id="section-mod6" class="module-section" data-module="mod6">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 6</span>
+                    <h2>&#127970; Clasificación de Edificios</h2>
+                    <p class="module-description">Tipos I a V según sistema estructural resistente. Visualización 3D interactiva.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod5" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod7" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Selector de Tipo -->
+                <div class="content-card card-interactive">
+                    <h3>Tipos de Edificios según Sistema Resistente</h3>
+                    <div class="building-type-selector">
+                        <button class="type-btn active" data-type="1">Tipo I</button>
+                        <button class="type-btn" data-type="2">Tipo II</button>
+                        <button class="type-btn" data-type="3">Tipo III</button>
+                        <button class="type-btn" data-type="4">Tipo IV</button>
+                        <button class="type-btn" data-type="5">Tipo V</button>
+                    </div>
+
+                    <div class="building-type-display">
+                        <!-- Visualización 3D -->
+                        <div class="viz-3d-container">
+                            <canvas id="mod6-building-3d" class="canvas-3d"></canvas>
+                        </div>
+
+                        <!-- Info del tipo seleccionado -->
+                        <div id="mod6-type-info" class="type-info-panel">
+                            <!-- JS fills content based on selected type -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabla Comparativa -->
+                <div class="content-card">
+                    <h3>Tabla Comparativa de Tipos</h3>
+                    <div class="table-responsive">
+                        <table class="data-table data-table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Sistema</th>
+                                    <th>Resistencia Lateral</th>
+                                    <th>Rigidez</th>
+                                    <th>Ductilidad</th>
+                                    <th>R<sub>0</sub> (NCh433)</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>I</strong></td>
+                                    <td>Marcos dúctiles</td>
+                                    <td>Marcos</td>
+                                    <td>Baja</td>
+                                    <td>Alta</td>
+                                    <td>7 (HA) / 7 (Acero)</td>
+                                    <td>Edificios bajos, naves industriales</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>II</strong></td>
+                                    <td>Muros y marcos (dual)</td>
+                                    <td>Ambos (&ge;25%)</td>
+                                    <td>Media-Alta</td>
+                                    <td>Media-Alta</td>
+                                    <td>7</td>
+                                    <td>Edificios medianos, hospitales</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>III</strong></td>
+                                    <td>Muros de HA</td>
+                                    <td>Muros</td>
+                                    <td>Alta</td>
+                                    <td>Media</td>
+                                    <td>6</td>
+                                    <td>Edificios habitacionales Chile</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>IV</strong></td>
+                                    <td>Muros esbeltamente arriostrados</td>
+                                    <td>Muros/arriostramientos</td>
+                                    <td>Alta</td>
+                                    <td>Baja-Media</td>
+                                    <td>5 (albañilería)</td>
+                                    <td>Albañilería confinada</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>V</strong></td>
+                                    <td>Otros</td>
+                                    <td>Variable</td>
+                                    <td>Variable</td>
+                                    <td>Variable</td>
+                                    <td>3</td>
+                                    <td>Estructuras especiales</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Deformada característica -->
+                <div class="content-card">
+                    <h3>Deformada Característica por Tipo</h3>
+                    <div class="key-concepts-grid cols-2">
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128200;</span>
+                            <h4>Marco (Tipo I)</h4>
+                            <p>Deformada tipo <strong>"corte"</strong>: mayores desplazamientos relativos (drift) en pisos inferiores. Curva cóncava hacia arriba.</p>
+                        </div>
+                        <div class="concept-card">
+                            <span class="concept-icon">&#128200;</span>
+                            <h4>Muro (Tipo III)</h4>
+                            <p>Deformada tipo <strong>"flexión"</strong>: mayores drift en pisos superiores. Curva cóncava hacia el eje. Menores desplazamientos totales.</p>
+                        </div>
+                    </div>
+                    <div class="chart-container chart-container-medium">
+                        <canvas id="mod6-deformation-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 7: NORMATIVA NCh433/DS61                            -->
+        <!-- ======================================================== -->
+        <section id="section-mod7" class="module-section" data-module="mod7">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 7</span>
+                    <h2>&#128220; Normativa NCh433 / DS61</h2>
+                    <p class="module-description">Zonificación sísmica, clasificación de suelos, parámetros espectrales y requisitos de análisis.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod6" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod8" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Zonificación -->
+                <div class="content-card card-formula">
+                    <h3>Zonificación Sísmica (NCh433 Tabla 6.2 / DS61 Art. 4)</h3>
+                    <table class="data-table data-table-striped">
+                        <thead>
+                            <tr>
+                                <th>Zona</th>
+                                <th>A<sub>0</sub> (g)</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Zona 1</strong></td><td>0.20g</td><td>Menor peligrosidad (interior)</td></tr>
+                            <tr><td><strong>Zona 2</strong></td><td>0.30g</td><td>Intermedia</td></tr>
+                            <tr class="row-highlight"><td><strong>Zona 3</strong></td><td>0.40g</td><td>Mayor peligrosidad (costa norte/centro). <strong>Antofagasta</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Clasificación de Suelos -->
+                <div class="content-card">
+                    <h3>Clasificación de Suelos (DS61 Art. 5)</h3>
+                    <p>Basada en la velocidad de onda de corte \(V_{s30}\) en los primeros 30m:</p>
+                    <div class="formula-display">
+                        \[ V_{s30} = \frac{30}{\sum_{i=1}^{n} \frac{h_i}{V_{si}}} \]
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table data-table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Suelo</th>
+                                    <th>V<sub>s30</sub> (m/s)</th>
+                                    <th>Descripción</th>
+                                    <th>S</th>
+                                    <th>T<sub>0</sub> (s)</th>
+                                    <th>T' (s)</th>
+                                    <th>n</th>
+                                    <th>p</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>A</strong></td>
+                                    <td>&ge; 900</td>
+                                    <td>Roca, cementado</td>
+                                    <td>0.90</td>
+                                    <td>0.15</td>
+                                    <td>0.20</td>
+                                    <td>1.00</td>
+                                    <td>2.0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B</strong></td>
+                                    <td>500 &ndash; 900</td>
+                                    <td>Roca blanda, suelo muy denso</td>
+                                    <td>1.00</td>
+                                    <td>0.30</td>
+                                    <td>0.35</td>
+                                    <td>1.33</td>
+                                    <td>1.5</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>C</strong></td>
+                                    <td>350 &ndash; 500</td>
+                                    <td>Suelo denso o firme</td>
+                                    <td>1.05</td>
+                                    <td>0.40</td>
+                                    <td>0.45</td>
+                                    <td>1.40</td>
+                                    <td>1.6</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>D</strong></td>
+                                    <td>180 &ndash; 350</td>
+                                    <td>Suelo medianamente denso</td>
+                                    <td>1.20</td>
+                                    <td>0.75</td>
+                                    <td>0.85</td>
+                                    <td>1.80</td>
+                                    <td>1.0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>E</strong></td>
+                                    <td>&lt; 180</td>
+                                    <td>Suelo blando</td>
+                                    <td>1.30</td>
+                                    <td>1.20</td>
+                                    <td>1.35</td>
+                                    <td>1.80</td>
+                                    <td>1.0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F</strong></td>
+                                    <td colspan="7">Requiere estudio especial (licuefacción, turba, etc.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Espectro de Diseño -->
+                <div class="content-card card-formula">
+                    <h3>Espectro de Diseño Elástico (DS61 Art. 6.3)</h3>
+                    <div class="formula-display">
+                        \[ S_a(T) = \frac{S \cdot A_0 \cdot \alpha}{R^*} \]
+                    </div>
+                    <p>Donde \(\alpha\) depende del período:</p>
+                    <div class="formula-display">
+                        \[ \alpha = \left(1 + 4.5 \cdot \left(\frac{T_n}{T_0}\right)^p\right) / \left(1 + \left(\frac{T_n}{T_0}\right)^3\right) \]
+                    </div>
+                    <div class="concept-box concept-box-highlight">
+                        <h5>Factor de Reducción R* (NCh433 Art. 6.3.5)</h5>
+                        \[ R^* = 1 + \frac{T^*}{0.10 \cdot T_0 + \frac{T^*}{R_0}} \]
+                        <p>Donde \(T^* = T^* (T_n)\) es el período modal y \(R_0\) depende del tipo de estructura.</p>
+                    </div>
+                </div>
+
+                <!-- Interactivo: Espectro -->
+                <div class="content-card card-interactive">
+                    <h3>&#128200; Generador de Espectro DS61 (Interactivo)</h3>
+                    <p>Selecciona zona y suelo para generar el espectro de diseño.</p>
+                    <div class="chart-controls">
+                        <div class="control-group">
+                            <label for="mod7-zone">Zona:</label>
+                            <select id="mod7-zone" name="zone" class="input-select">
+                                <option value="1">Zona 1 (A0=0.20g)</option>
+                                <option value="2">Zona 2 (A0=0.30g)</option>
+                                <option value="3" selected>Zona 3 (A0=0.40g)</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="mod7-soil">Suelo:</label>
+                            <select id="mod7-soil" name="soil" class="input-select">
+                                <option value="A">A - Roca</option>
+                                <option value="B">B - Roca blanda</option>
+                                <option value="C" selected>C - Suelo denso</option>
+                                <option value="D">D - Medianamente denso</option>
+                                <option value="E">E - Suelo blando</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="mod7-R0">R<sub>0</sub>:</label>
+                            <select id="mod7-R0" name="Ro" class="input-select">
+                                <option value="3">3 (Tipo V)</option>
+                                <option value="5">5 (Albañilería)</option>
+                                <option value="6">6 (Muros HA)</option>
+                                <option value="7" selected>7 (Marcos/Dual)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="mod7-spectrum-chart"></canvas>
+                    </div>
+                    <div id="mod7-spectrum-params" class="spectrum-params">
+                        <!-- JS fills computed parameters -->
+                    </div>
+                </div>
+
+                <!-- Corte Basal -->
+                <div class="content-card card-formula">
+                    <h3>Corte Basal (NCh433 Art. 6.2)</h3>
+                    <div class="formula-display">
+                        \[ Q_0 = C \cdot I \cdot P \]
+                    </div>
+                    <div class="two-column">
+                        <div class="column">
+                            <h4>Coeficiente Sísmico C</h4>
+                            \[ C = \frac{S \cdot A_0 \cdot \alpha}{g \cdot R^*} \]
+                            <div class="concept-box concept-box-warning">
+                                <h5>Límites de C</h5>
+                                <p>C<sub>mín</sub>: según tabla NCh433</p>
+                                <p>C<sub>máx</sub>: \( C_{max} = \frac{0.35 \cdot S \cdot A_0}{g} \)</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <h4>Categoría de Ocupación (I)</h4>
+                            <table class="data-table">
+                                <tbody>
+                                    <tr><td>I = 0.6</td><td>Provisional, aislada</td></tr>
+                                    <tr><td>I = 0.8</td><td>Habitacional, oficinas</td></tr>
+                                    <tr><td>I = 1.0</td><td>Locales de reunión</td></tr>
+                                    <tr><td>I = 1.2</td><td>Edificios esenciales</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estados de Carga NCh3171:2017 -->
+                <div class="content-card card-formula">
+                    <h3>Estados de Carga (NCh3171:2017)</h3>
+                    <p>Combinaciones de carga para diseño por resistencia requerida (LRFD). D = carga permanente, L = sobrecarga de uso, Lr = sobrecarga de techo, E = sismo.</p>
+                    <div class="table-responsive">
+                        <table class="data-table data-table-striped">
+                            <thead>
+                                <tr><th>Caso</th><th>Combinación</th><th>Aplica</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>C1</strong></td><td>\(1.4 D\)</td><td>Solo peso propio</td></tr>
+                                <tr><td><strong>C2</strong></td><td>\(1.2 D + 1.6 L + 0.5 L_r\)</td><td>Gravitacional dominante</td></tr>
+                                <tr><td><strong>C3</strong></td><td>\(1.2 D + L + 1.6 L_r\)</td><td>Techo dominante</td></tr>
+                                <tr class="row-highlight"><td><strong>C4</strong></td><td>\(1.2 D + L \pm 1.4 E_x\)</td><td>Sismo dir. X</td></tr>
+                                <tr><td><strong>C5</strong></td><td>\(0.9 D \pm 1.4 E_x\)</td><td>Sismo X + volcamiento</td></tr>
+                                <tr class="row-highlight"><td><strong>C6</strong></td><td>\(1.2 D + L \pm 1.4 E_y\)</td><td>Sismo dir. Y</td></tr>
+                                <tr><td><strong>C7</strong></td><td>\(0.9 D \pm 1.4 E_y\)</td><td>Sismo Y + volcamiento</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span> Los casos C4-C7 son los <strong>sismocontrolados</strong>. El factor 1.4 amplifica el sismo. C5 y C7 son críticos para <strong>volcamiento y tracción</strong> en muros.
+                    </div>
+                    <div class="concept-box concept-box-warning">
+                        <h5>&#9888; Signo del Sismo</h5>
+                        <p>Cada caso con \(\pm E\) genera <strong>2 subcombinaciones</strong>. En total, los casos C4-C7 generan <strong>8 combinaciones</strong> (4 casos &times; 2 signos). Para diseño de muros con M2 y M3, se generan <strong>4 subcombinaciones por caso</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Peso Sísmico -->
+                <div class="content-card card-formula">
+                    <h3>Peso Sísmico (P)</h3>
+                    <div class="formula-display">
+                        \[ P = \sum_{i=1}^{N} (D_i + 0.25 \cdot L_i) \]
+                    </div>
+                    <p>Es la masa sísmica multiplicada por g. Incluye peso propio, sobrecarga permanente y 25% de la sobrecarga de uso.</p>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Componentes del peso</h5>
+                                <ul>
+                                    <li><strong>PP</strong>: Peso propio estructura</li>
+                                    <li><strong>SCP</strong>: Sobrecarga permanente (pisos, cielos, tabiques)</li>
+                                    <li><strong>0.25 &times; SCT</strong>: 25% sobrecarga temporal de uso</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h5>Ejemplo Antofagasta</h5>
+                                <p>Edificio oficinas 20 pisos:</p>
+                                <ul>
+                                    <li>Losa 15cm: 2.5&times;0.15 = 375 kgf/m&sup2;</li>
+                                    <li>SCP: 140 kgf/m&sup2;</li>
+                                    <li>SCT oficinas: 250 kgf/m&sup2;</li>
+                                    <li>w<sub>piso</sub> = 375+140+0.25&times;250 = 577.5 kgf/m&sup2;</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Método Estático Completo -->
+                <div class="content-card card-formula">
+                    <h3>Método Estático: Distribución de Fuerzas por Piso</h3>
+                    <div class="concept-box concept-box-warning">
+                        <h5>&#9888; Condición de Aplicabilidad</h5>
+                        <p>Método estático: solo para edificios <strong>regulares</strong> con T* &le; 0.56 s y altura &le; 5 pisos o 20m. En la práctica, casi siempre se usa el método <strong>dinámico modal espectral</strong>.</p>
+                    </div>
+                    <div class="formula-display">
+                        \[ F_k = Q_0 \cdot \frac{w_k \cdot h_k^x}{\sum_{j=1}^{N} w_j \cdot h_j^x} \]
+                    </div>
+                    <p>Donde:</p>
+                    <ul class="formula-legend">
+                        <li>\(F_k\) = Fuerza sísmica en el piso \(k\)</li>
+                        <li>\(Q_0 = C \cdot I \cdot P\) = Corte basal</li>
+                        <li>\(w_k\) = Peso del piso \(k\)</li>
+                        <li>\(h_k\) = Altura del piso \(k\) medida desde la base</li>
+                        <li>\(x = 1\) si T* &le; 0.5s; \(x = 2\) si T* &ge; 2.5s; interpolación lineal entre ambos</li>
+                    </ul>
+                    <div class="key-point">
+                        <span>&#128204;</span> La distribución es <strong>triangular invertida</strong> (x=1) para edificios rígidos y <strong>parabólica</strong> (x=2) para edificios flexibles.
+                    </div>
+                </div>
+
+                <!-- Cmín y Cmáx -->
+                <div class="content-card card-formula">
+                    <h3>Límites del Coeficiente Sísmico: C<sub>mín</sub> y C<sub>máx</sub></h3>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>C<sub>mín</sub> (NCh433 Art. 6.3.7)</h5>
+                                \[ C_{min} = \frac{A_0 \cdot S}{6g} \]
+                                <p>Garantiza un <strong>corte basal mínimo</strong> para cualquier edificio independiente de su período.</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box concept-box-warning">
+                                <h5>C<sub>máx</sub> (NCh433 Art. 6.3.7)</h5>
+                                \[ C_{max} = \frac{0.35 \cdot S \cdot A_0}{g} \]
+                                <p>Limita el <strong>corte máximo</strong> para edificios muy rígidos (períodos cortos).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="data-table data-table-striped">
+                        <thead>
+                            <tr><th>Suelo</th><th>S</th><th>C<sub>mín</sub> (Zona 3)</th><th>C<sub>máx</sub> (Zona 3)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>A</td><td>0.90</td><td>0.0061</td><td>0.0128</td></tr>
+                            <tr><td>B</td><td>1.00</td><td>0.0068</td><td>0.0143</td></tr>
+                            <tr class="row-highlight"><td>C</td><td>1.05</td><td>0.0071</td><td>0.0150</td></tr>
+                            <tr><td>D</td><td>1.20</td><td>0.0081</td><td>0.0171</td></tr>
+                            <tr><td>E</td><td>1.30</td><td>0.0088</td><td>0.0186</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Torsión Accidental Estática -->
+                <div class="content-card card-formula">
+                    <h3>Torsión Accidental &mdash; Método Estático (NCh433 Art. 5.9.2)</h3>
+                    <div class="formula-display">
+                        \[ e_{dis} = e_{est} \pm 0.05 \cdot b \]
+                    </div>
+                    <p>Donde \(b\) es la dimensión del edificio perpendicular a la dirección del sismo.</p>
+                    <div class="concept-box">
+                        <h5>Procedimiento</h5>
+                        <ol>
+                            <li>Calcular excentricidad estática: \(e_{est} = |x_{CM} - x_{CR}|\)</li>
+                            <li>Calcular excentricidad accidental: \(e_{acc} = 0.05 \cdot b\)</li>
+                            <li>Formar 2 valores de diseño: \(e_{+} = e_{est} + e_{acc}\) y \(e_{-} = e_{est} - e_{acc}\)</li>
+                            <li>Calcular momento torsor: \(M_T = Q_{piso} \cdot e_{dis}\)</li>
+                            <li>Distribuir fuerzas: \(V_i = V \cdot \frac{K_i}{\sum K_j} \pm M_T \cdot \frac{K_i \cdot d_i}{\sum K_j \cdot d_j^2}\)</li>
+                            <li>Usar el caso <strong>más desfavorable</strong> para cada elemento</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Verificación Deformaciones -->
+                <div class="content-card card-formula">
+                    <h3>Verificación de Deformaciones &mdash; Método Estático</h3>
+                    <div class="formula-display">
+                        \[ \delta_i = \frac{\Delta_i}{h_i} = \frac{u_i - u_{i-1}}{h_i} \leq 0.002 \]
+                    </div>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Desplazamiento absoluto</h5>
+                                <p>Los desplazamientos calculados por el método estático ya incluyen la reducción por R*, por lo que <strong>no se amplifican</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box concept-box-warning">
+                                <h5>Con diafragma flexible</h5>
+                                <p>Si no hay diafragma rígido, cada elemento se desplaza independientemente. Se verifica cada muro o marco por separado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactivo: Calculadora Estática -->
+                <div class="content-card card-interactive">
+                    <h3>&#128295; Calculadora Método Estático (Interactivo)</h3>
+                    <p>Calcula el corte basal y la distribución de fuerzas por piso.</p>
+                    <div class="calculator-grid" id="mod7-static-calc">
+                        <div class="calc-inputs">
+                            <div class="control-group">
+                                <label>Zona:</label>
+                                <select id="calc-zone" class="input-select">
+                                    <option value="1">Zona 1 (0.20g)</option>
+                                    <option value="2">Zona 2 (0.30g)</option>
+                                    <option value="3" selected>Zona 3 (0.40g)</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Suelo:</label>
+                                <select id="calc-soil" class="input-select">
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C" selected>C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Tipo estructura (R<sub>0</sub>):</label>
+                                <select id="calc-Ro" class="input-select">
+                                    <option value="3">Tipo V (R0=3)</option>
+                                    <option value="5">Albañilería (R0=5)</option>
+                                    <option value="6">Muros HA (R0=6)</option>
+                                    <option value="7" selected>Marcos/Dual (R0=7)</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Importancia (I):</label>
+                                <select id="calc-I" class="input-select">
+                                    <option value="0.6">I=0.6 (Provisional)</option>
+                                    <option value="0.8">I=0.8 (Habitac/Oficinas)</option>
+                                    <option value="1.0" selected>I=1.0 (Reunión)</option>
+                                    <option value="1.2">I=1.2 (Esencial)</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>T* (período fundamental, s):</label>
+                                <input type="number" id="calc-T" value="0.8" min="0.05" max="5" step="0.05" class="input-number">
+                            </div>
+                            <div class="control-group">
+                                <label>Peso sísmico P (tonf):</label>
+                                <input type="number" id="calc-P" value="5000" min="100" max="100000" step="100" class="input-number">
+                            </div>
+                            <div class="control-group">
+                                <label>N&deg; pisos:</label>
+                                <input type="number" id="calc-N" value="10" min="1" max="30" step="1" class="input-number">
+                            </div>
+                            <button class="btn btn-primary" id="calc-static-btn">Calcular</button>
+                        </div>
+                        <div class="calc-results" id="calc-static-results">
+                            <p class="placeholder-text">Presiona "Calcular" para ver resultados</p>
+                        </div>
+                    </div>
+                    <div class="chart-container chart-container-medium">
+                        <canvas id="mod7-force-dist-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 8: ANÁLISIS MODAL ESPECTRAL                         -->
+        <!-- ======================================================== -->
+        <section id="section-mod8" class="module-section" data-module="mod8">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 8</span>
+                    <h2>&#127912; Análisis Modal Espectral</h2>
+                    <p class="module-description">Procedimiento completo en 10 etapas: desde el modelo hasta la verificación de derivas.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod7" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="mod9" title="Siguiente">&#9654;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Las 10 Etapas -->
+                <div class="content-card">
+                    <h3>Las 10 Etapas del Análisis Modal Espectral</h3>
+                    <div class="stages-container">
+                        <!-- Etapa 1 -->
+                        <div class="stage-card" data-stage="1">
+                            <div class="stage-number">1</div>
+                            <div class="stage-content">
+                                <h4>Modelo Estructural</h4>
+                                <p>Definir masas, rigideces, GDL. Modelo de elementos finitos con diafragma rígido.</p>
+                                <div class="formula-display formula-small">
+                                    \[ [M], [K] \rightarrow N_{GDL} = 3 \times N_{pisos} \]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 2 -->
+                        <div class="stage-card" data-stage="2">
+                            <div class="stage-number">2</div>
+                            <div class="stage-content">
+                                <h4>Problema de Valores Propios</h4>
+                                <p>Resolver para obtener frecuencias naturales y formas modales.</p>
+                                <div class="formula-display formula-small">
+                                    \[ ([K] - \omega_n^2 [M])\{\phi_n\} = \{0\} \]
+                                </div>
+                                <div class="formula-display formula-small">
+                                    \[ \det([K] - \omega_n^2 [M]) = 0 \]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 3 -->
+                        <div class="stage-card" data-stage="3">
+                            <div class="stage-number">3</div>
+                            <div class="stage-content">
+                                <h4>Períodos y Modos</h4>
+                                <p>Calcular períodos y normalizar modos.</p>
+                                <div class="formula-display formula-small">
+                                    \[ T_n = \frac{2\pi}{\omega_n} \quad ; \quad \{\phi_n\}^T [M] \{\phi_n\} = 1 \]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 4 -->
+                        <div class="stage-card" data-stage="4">
+                            <div class="stage-number">4</div>
+                            <div class="stage-content">
+                                <h4>Masa Modal Participante</h4>
+                                <p>Verificar que se incluyen suficientes modos (&ge;90% masa).</p>
+                                <div class="formula-display formula-small">
+                                    \[ L_n = \{\phi_n\}^T [M] \{1\} \quad ; \quad M_n^* = \frac{L_n^2}{\{\phi_n\}^T [M] \{\phi_n\}} \]
+                                </div>
+                                <div class="key-point">
+                                    <span>&#128204;</span> NCh433: incluir modos hasta sumar &ge; 90% de la masa total en cada dirección.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 5 -->
+                        <div class="stage-card" data-stage="5">
+                            <div class="stage-number">5</div>
+                            <div class="stage-content">
+                                <h4>Espectro de Diseño</h4>
+                                <p>Obtener \(S_a(T_n)\) para cada modo según DS61.</p>
+                                <div class="formula-display formula-small">
+                                    \[ S_a(T_n) = \frac{S \cdot A_0 \cdot \alpha(T_n)}{R^*(T_n)} \]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 6 -->
+                        <div class="stage-card" data-stage="6">
+                            <div class="stage-number">6</div>
+                            <div class="stage-content">
+                                <h4>Respuesta Modal</h4>
+                                <p>Calcular desplazamientos y fuerzas para cada modo.</p>
+                                <div class="formula-display formula-small">
+                                    \[ \{u_n\} = \frac{L_n}{\omega_n^2} S_a(T_n) \{\phi_n\} \]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 7 -->
+                        <div class="stage-card" data-stage="7">
+                            <div class="stage-number">7</div>
+                            <div class="stage-content">
+                                <h4>Combinación Modal (CQC)</h4>
+                                <p>Combinar respuestas modales considerando correlación.</p>
+                                <div class="formula-display formula-small">
+                                    \[ r = \sqrt{\sum_i \sum_j r_i \cdot \rho_{ij} \cdot r_j} \]
+                                </div>
+                                <div class="formula-display formula-small">
+                                    \[ \rho_{ij} = \frac{8\xi^2(1+\beta_{ij})\beta_{ij}^{3/2}}{(1-\beta_{ij}^2)^2 + 4\xi^2\beta_{ij}(1+\beta_{ij})^2} \quad ; \quad \beta_{ij} = \frac{\omega_i}{\omega_j} \]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 8 -->
+                        <div class="stage-card" data-stage="8">
+                            <div class="stage-number">8</div>
+                            <div class="stage-content">
+                                <h4>Combinación Direccional</h4>
+                                <p>Combinar direcciones X e Y (100%-30% o SRSS).</p>
+                                <div class="formula-display formula-small">
+                                    \[ r = \sqrt{r_x^2 + r_y^2} \quad \text{(SRSS)} \]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 9 -->
+                        <div class="stage-card" data-stage="9">
+                            <div class="stage-number">9</div>
+                            <div class="stage-content">
+                                <h4>Verificación de Corte Basal</h4>
+                                <p>Verificar que el corte dinámico &ge; corte mínimo.</p>
+                                <div class="key-point">
+                                    <span>&#128204;</span> Si Q<sub>dinámico</sub> < Q<sub>mín</sub>, escalar todas las fuerzas proporcionalmente.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 10 -->
+                        <div class="stage-card" data-stage="10">
+                            <div class="stage-number">10</div>
+                            <div class="stage-content">
+                                <h4>Verificación de Derivas (Drift)</h4>
+                                <p>Controlar desplazamientos relativos de entrepiso.</p>
+                                <div class="formula-display formula-small">
+                                    \[ \delta_i = \frac{\Delta_i}{h_i} \leq \delta_{max} \]
+                                </div>
+                                <div class="concept-box concept-box-warning">
+                                    <h5>Límites NCh433 (Art. 5.9.3)</h5>
+                                    <p>Drift máximo: <strong>0.002</strong> (centros de masa de pisos consecutivos, desplazamientos del análisis sin amplificar por R).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactivo: Modos de Vibración -->
+                <div class="content-card card-interactive">
+                    <h3>&#127912; Visualización de Modos (Interactivo)</h3>
+                    <p>Visualiza los primeros modos de vibración de un edificio.</p>
+                    <div class="chart-controls">
+                        <div class="control-group">
+                            <label for="mod8-num-floors">Pisos:</label>
+                            <input type="number" id="mod8-num-floors" min="2" max="20" value="5" class="input-number">
+                        </div>
+                        <div class="control-group">
+                            <label>Modo:</label>
+                            <div class="mode-selector" id="mod8-mode-selector">
+                                <button class="mode-btn active" data-mode="1">1</button>
+                                <button class="mode-btn" data-mode="2">2</button>
+                                <button class="mode-btn" data-mode="3">3</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-small" id="mod8-animate">&#9654; Animar</button>
+                    </div>
+                    <div class="chart-container chart-container-tall">
+                        <canvas id="mod8-modes-canvas" class="canvas-interactive"></canvas>
+                    </div>
+                </div>
+
+                <!-- Drift Detallado -->
+                <div class="content-card card-formula">
+                    <h3>Verificación de Derivas &mdash; Dos Condiciones (NCh433)</h3>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Condición 1: Centro de Masa</h5>
+                                \[ \frac{\delta_{CM,i}}{h_i} \leq 0.002 \]
+                                <p>Desplazamiento relativo entre <strong>centros de masa</strong> de pisos consecutivos.</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box concept-box-warning">
+                                <h5>Condición 2: Cualquier Punto</h5>
+                                \[ \frac{\delta_{max,i}}{h_i} \leq 0.001 \]
+                                <p>Desplazamiento relativo en <strong>cualquier punto</strong> del piso (incluye torsión). Más restrictiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <span>&#128204;</span> La Condición 2 controla la <strong>torsión</strong>: si CM y CR están lejos, los extremos se desplazan más que el CM. Ambas condiciones usan desplazamientos del análisis <strong>sin amplificar</strong>.
+                    </div>
+                </div>
+
+                <!-- Torsión Accidental Dinámica -->
+                <div class="content-card card-formula">
+                    <h3>Torsión Accidental &mdash; Método Dinámico (NCh433 Art. 6.3.4)</h3>
+                    <p>En el método dinámico modal espectral existen <strong>dos formas</strong> de incorporar la torsión accidental:</p>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Forma 1: Desplazar CM</h5>
+                                <p>Mover el centro de masa una distancia \(\pm 0.05b\) en cada dirección. Genera <strong>4 modelos</strong> adicionales por dirección (8 total). Más riguroso.</p>
+                                <ul>
+                                    <li>CM<sub>x</sub> + 0.05b, CM<sub>y</sub> + 0.05b</li>
+                                    <li>CM<sub>x</sub> + 0.05b, CM<sub>y</sub> &minus; 0.05b</li>
+                                    <li>CM<sub>x</sub> &minus; 0.05b, CM<sub>y</sub> + 0.05b</li>
+                                    <li>CM<sub>x</sub> &minus; 0.05b, CM<sub>y</sub> &minus; 0.05b</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h5>Forma 2: Amplificar resultados</h5>
+                                <p>Aplicar factor de amplificación a los resultados del análisis sin torsión accidental. Más simple, más conservador.</p>
+                                \[ \delta_j = \delta_{CM} \cdot \left(1 + \frac{0.05 \cdot b \cdot x_j}{r^2}\right) \]
+                                <p>Donde \(x_j\) = distancia del punto al CM y \(r\) = radio de giro.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="concept-box concept-box-warning">
+                        <h5>&#9888; Los 6 Casos del Taller</h5>
+                        <p>En ETABS/SAP para el taller se deben correr: Sismo+X, Sismo&minus;X, Sismo+Y, Sismo&minus;Y, más los efectos de torsión accidental (&plusmn;0.05b). En total son 6 análisis por dirección cuando se usa la Forma 1.</p>
+                    </div>
+                </div>
+
+                <!-- Verificación Corte Basal -->
+                <div class="content-card card-formula">
+                    <h3>Verificación del Corte Basal (NCh433 Art. 6.3.7)</h3>
+                    <div class="formula-display">
+                        \[ Q_{min} \leq Q_{dinámico} \leq Q_{max} \]
+                    </div>
+                    <div class="concept-box concept-box-highlight">
+                        <h5>Corte Basal Mínimo</h5>
+                        \[ Q_{min} = C_{min} \cdot I \cdot P = \frac{A_0 \cdot S}{6g} \cdot I \cdot P \]
+                        <p>Si el corte del análisis dinámico es menor, se deben <strong>escalar todas las fuerzas</strong> proporcionalmente por el factor \(Q_{min}/Q_{din}\).</p>
+                    </div>
+                    <div class="concept-box concept-box-warning">
+                        <h5>Corte Basal Máximo</h5>
+                        \[ Q_{max} = C_{max} \cdot I \cdot P = \frac{0.35 \cdot S \cdot A_0}{g} \cdot I \cdot P \]
+                        <p>Si el corte dinámico supera este valor, se puede <strong>reducir</strong> al máximo (raro en la práctica para edificios altos).</p>
+                    </div>
+                </div>
+
+                <!-- Combinación Direccional Detallada -->
+                <div class="content-card">
+                    <h3>Combinación Direccional: 100%-30%</h3>
+                    <p>NCh433 permite dos métodos para combinar las respuestas en X e Y:</p>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>Método 1: 100%-30%</h5>
+                                <p>Se consideran dos combinaciones:</p>
+                                \[ r_1 = 1.0 \cdot r_x + 0.3 \cdot r_y \]
+                                \[ r_2 = 0.3 \cdot r_x + 1.0 \cdot r_y \]
+                                <p>Se toma el <strong>máximo</strong>. Más conservador.</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h5>Método 2: SRSS Direccional</h5>
+                                \[ r = \sqrt{r_x^2 + r_y^2} \]
+                                <p>Raíz cuadrada de suma de cuadrados de las respuestas en cada dirección. Menos conservador.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactivos: Drift Checker + CQC -->
+                <div class="content-card card-interactive">
+                    <h3>&#128295; Verificador de Drift (Interactivo)</h3>
+                    <p>Ingresa desplazamientos por piso para verificar cumplimiento de derivas.</p>
+                    <div class="calculator-grid" id="mod8-drift-calc">
+                        <div class="calc-inputs">
+                            <div class="control-group">
+                                <label>N&deg; pisos:</label>
+                                <input type="number" id="drift-floors" value="5" min="2" max="20" step="1" class="input-number">
+                            </div>
+                            <div class="control-group">
+                                <label>Altura entrepiso (m):</label>
+                                <input type="number" id="drift-height" value="2.8" min="2" max="5" step="0.1" class="input-number">
+                            </div>
+                            <button class="btn btn-primary" id="drift-generate-btn">Generar tabla</button>
+                        </div>
+                        <div id="drift-table-container">
+                            <p class="placeholder-text">Presiona "Generar tabla" para ingresar desplazamientos</p>
+                        </div>
+                        <div class="chart-container chart-container-medium">
+                            <canvas id="mod8-drift-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactivo: Calculadora CQC -->
+                <div class="content-card card-interactive">
+                    <h3>&#128295; Calculadora CQC (Interactivo)</h3>
+                    <p>Combina respuestas modales usando CQC. Ingresa hasta 5 modos.</p>
+                    <div class="calculator-grid" id="mod8-cqc-calc">
+                        <div class="calc-inputs">
+                            <div class="control-group">
+                                <label>Amortiguamiento &xi;:</label>
+                                <input type="number" id="cqc-xi" value="0.05" min="0.01" max="0.20" step="0.01" class="input-number">
+                            </div>
+                            <div id="cqc-modes-inputs">
+                                <div class="cqc-mode-row">
+                                    <label>Modo 1: T(s)</label>
+                                    <input type="number" class="cqc-T input-number" value="0.80" step="0.01" min="0.01">
+                                    <label>r</label>
+                                    <input type="number" class="cqc-r input-number" value="100" step="1">
+                                </div>
+                                <div class="cqc-mode-row">
+                                    <label>Modo 2: T(s)</label>
+                                    <input type="number" class="cqc-T input-number" value="0.25" step="0.01" min="0.01">
+                                    <label>r</label>
+                                    <input type="number" class="cqc-r input-number" value="30" step="1">
+                                </div>
+                                <div class="cqc-mode-row">
+                                    <label>Modo 3: T(s)</label>
+                                    <input type="number" class="cqc-T input-number" value="0.12" step="0.01" min="0.01">
+                                    <label>r</label>
+                                    <input type="number" class="cqc-r input-number" value="10" step="1">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="cqc-calc-btn">Calcular CQC</button>
+                        </div>
+                        <div id="cqc-results">
+                            <p class="placeholder-text">Presiona "Calcular CQC" para ver resultados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CQC vs SRSS -->
+                <div class="content-card">
+                    <h3>CQC vs SRSS</h3>
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>SRSS (Raíz Suma de Cuadrados)</h5>
+                                \[ r = \sqrt{\sum_n r_n^2} \]
+                                <p>Asume modos <strong>no correlacionados</strong>. Adecuado cuando frecuencias están bien separadas.</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box concept-box-highlight">
+                                <h5>CQC (Combinación Cuadrática Completa)</h5>
+                                \[ r = \sqrt{\sum_i \sum_j r_i \rho_{ij} r_j} \]
+                                <p>Considera <strong>correlación</strong> entre modos. <strong>Método preferido</strong> por NCh433.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- MÓDULO 9: TESTS Y PRÁCTICA                                 -->
+        <!-- ======================================================== -->
+        <section id="section-mod9" class="module-section" data-module="mod9">
+            <div class="module-header">
+                <div class="module-header-text">
+                    <span class="module-number">Módulo 9</span>
+                    <h2>&#128221; Tests y Práctica</h2>
+                    <p class="module-description">Evalúa tu conocimiento con preguntas de selección múltiple, verdadero/falso, cálculos, completar, asociar y ordenar.</p>
+                </div>
+                <div class="module-nav-arrows">
+                    <button class="btn-arrow" data-goto="mod8" title="Anterior">&#9664;</button>
+                    <button class="btn-arrow" data-goto="dashboard" title="Dashboard">&#127968;</button>
+                </div>
+            </div>
+
+            <div class="module-content">
+                <!-- Test Configuration -->
+                <div class="content-card" id="test-config-panel">
+                    <h3>&#9881; Configurar Test</h3>
+
+                    <!-- Module Filter -->
+                    <div class="test-config-section">
+                        <h4>Módulos a evaluar</h4>
+                        <div class="module-filter-grid">
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="all" checked>
+                                <span>Todos</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod1" checked>
+                                <span>M1: Riesgo</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod2" checked>
+                                <span>M2: Diseño</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod3" checked>
+                                <span>M3: Protección</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod4" checked>
+                                <span>M4: Diafragmas</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod5" checked>
+                                <span>M5: Matrices</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod6" checked>
+                                <span>M6: Clasificación</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod7" checked>
+                                <span>M7: Normativa</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-module-filter" value="mod8" checked>
+                                <span>M8: Modal</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Test Type Selector -->
+                    <div class="test-config-section">
+                        <h4>Tipo de preguntas</h4>
+                        <div class="test-type-grid">
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-type-filter" value="all" checked>
+                                <span>Todos</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-type-filter" value="multiple-choice" checked>
+                                <span>&#127312; Selección Múltiple</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-type-filter" value="true-false" checked>
+                                <span>&#9989; Verdadero / Falso</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-type-filter" value="calculation" checked>
+                                <span>&#128290; Cálculo</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-type-filter" value="fill-blank" checked>
+                                <span>&#9999; Completar</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-type-filter" value="matching" checked>
+                                <span>&#128279; Asociar</span>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" class="test-type-filter" value="ordering" checked>
+                                <span>&#128290; Ordenar</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Number of Questions -->
+                    <div class="test-config-section">
+                        <h4>Cantidad de preguntas</h4>
+                        <div class="question-count-selector">
+                            <button class="count-btn" data-count="5">5</button>
+                            <button class="count-btn active" data-count="10">10</button>
+                            <button class="count-btn" data-count="15">15</button>
+                            <button class="count-btn" data-count="20">20</button>
+                            <button class="count-btn" data-count="all">Todas</button>
+                        </div>
+                    </div>
+
+                    <!-- Difficulty -->
+                    <div class="test-config-section">
+                        <h4>Dificultad</h4>
+                        <div class="difficulty-selector">
+                            <button class="diff-btn" data-diff="easy">&#128994; Básico</button>
+                            <button class="diff-btn active" data-diff="medium">&#128992; Intermedio</button>
+                            <button class="diff-btn" data-diff="hard">&#128308; Avanzado</button>
+                            <button class="diff-btn" data-diff="all">Todos</button>
+                        </div>
+                    </div>
+
+                    <!-- Start Button -->
+                    <div class="test-start-section">
+                        <button class="btn btn-primary btn-large" id="test-start-btn">
+                            &#128640; Comenzar Test
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Test In Progress -->
+                <div class="content-card" id="test-active-panel" style="display:none;">
+                    <!-- Progress Bar -->
+                    <div class="test-progress-bar">
+                        <div class="test-progress-info">
+                            <span id="test-question-counter">Pregunta 1 de 10</span>
+                            <span id="test-score-live">Aciertos: 0/0</span>
+                        </div>
+                        <div class="progress-bar-track">
+                            <div class="progress-bar-fill" id="test-progress-fill" style="width:0%"></div>
+                        </div>
+                        <div class="test-timer" id="test-timer">00:00</div>
+                    </div>
+
+                    <!-- Question Display -->
+                    <div class="test-question-area">
+                        <!-- Module/Type Badge -->
+                        <div class="question-badges">
+                            <span class="badge badge-module" id="test-q-module">Módulo 1</span>
+                            <span class="badge badge-type" id="test-q-type">Selección Múltiple</span>
+                            <span class="badge badge-diff" id="test-q-diff">Intermedio</span>
+                        </div>
+
+                        <!-- Question Text -->
+                        <div class="question-text" id="test-q-text">
+                            <!-- JS fills question text -->
+                        </div>
+
+                        <!-- Question Image/Formula (optional) -->
+                        <div class="question-media" id="test-q-media" style="display:none;">
+                            <!-- JS fills optional formula/image -->
+                        </div>
+
+                        <!-- Answer Area: Multiple Choice -->
+                        <div class="answer-area answer-multiple-choice" id="answer-multiple-choice" style="display:none;">
+                            <div class="options-grid" id="test-mc-options">
+                                <!-- JS generates option buttons -->
+                            </div>
+                        </div>
+
+                        <!-- Answer Area: True/False -->
+                        <div class="answer-area answer-true-false" id="answer-true-false" style="display:none;">
+                            <div class="tf-buttons">
+                                <button class="btn-tf" data-answer="true">
+                                    <span class="tf-icon">&#9989;</span> Verdadero
+                                </button>
+                                <button class="btn-tf" data-answer="false">
+                                    <span class="tf-icon">&#10060;</span> Falso
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Answer Area: Calculation -->
+                        <div class="answer-area answer-calculation" id="answer-calculation" style="display:none;">
+                            <div class="calc-input-group">
+                                <label for="test-calc-input">Tu respuesta:</label>
+                                <div class="calc-input-row">
+                                    <input type="number" id="test-calc-input" class="input-calc" step="any" placeholder="Ingresa el valor numérico">
+                                    <span class="calc-unit" id="test-calc-unit">kN</span>
+                                </div>
+                                <p class="calc-hint" id="test-calc-hint"></p>
+                            </div>
+                        </div>
+
+                        <!-- Answer Area: Fill in the Blank -->
+                        <div class="answer-area answer-fill-blank" id="answer-fill-blank" style="display:none;">
+                            <div class="fill-blank-group">
+                                <label for="test-fill-input">Completa:</label>
+                                <input type="text" id="test-fill-input" class="input-fill" placeholder="Escribe tu respuesta">
+                            </div>
+                        </div>
+
+                        <!-- Answer Area: Matching -->
+                        <div class="answer-area answer-matching" id="answer-matching" style="display:none;">
+                            <div class="matching-container">
+                                <div class="matching-column matching-left" id="test-match-left">
+                                    <!-- JS generates left items -->
+                                </div>
+                                <div class="matching-column matching-right" id="test-match-right">
+                                    <!-- JS generates right items (draggable) -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Answer Area: Ordering -->
+                        <div class="answer-area answer-ordering" id="answer-ordering" style="display:none;">
+                            <p class="ordering-instruction">Arrastra los elementos para ordenarlos correctamente:</p>
+                            <div class="ordering-list" id="test-ordering-list">
+                                <!-- JS generates sortable items -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="test-actions">
+                        <button class="btn btn-secondary" id="test-skip-btn">Saltar</button>
+                        <button class="btn btn-primary" id="test-submit-btn">Verificar Respuesta</button>
+                        <button class="btn btn-primary" id="test-next-btn" style="display:none;">Siguiente &#9654;</button>
+                    </div>
+
+                    <!-- Feedback Area -->
+                    <div class="test-feedback" id="test-feedback" style="display:none;">
+                        <div class="feedback-icon" id="test-feedback-icon"></div>
+                        <div class="feedback-text" id="test-feedback-text"></div>
+                        <div class="feedback-explanation" id="test-feedback-explanation"></div>
+                    </div>
+                </div>
+
+                <!-- Test Results -->
+                <div class="content-card" id="test-results-panel" style="display:none;">
+                    <h3>&#127942; Resultados del Test</h3>
+
+                    <!-- Score Summary -->
+                    <div class="results-summary">
+                        <div class="results-score-ring">
+                            <canvas id="test-results-ring" width="200" height="200"></canvas>
+                            <div class="results-score-label">
+                                <span id="test-results-pct">0%</span>
+                                <small>correctas</small>
+                            </div>
+                        </div>
+                        <div class="results-stats">
+                            <div class="result-stat">
+                                <span class="result-stat-value" id="results-correct">0</span>
+                                <span class="result-stat-label">Correctas</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="result-stat-value" id="results-incorrect">0</span>
+                                <span class="result-stat-label">Incorrectas</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="result-stat-value" id="results-skipped">0</span>
+                                <span class="result-stat-label">Saltadas</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="result-stat-value" id="results-time">00:00</span>
+                                <span class="result-stat-label">Tiempo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance by Module -->
+                    <div class="results-breakdown">
+                        <h4>Rendimiento por Módulo</h4>
+                        <div class="chart-container chart-container-medium">
+                            <canvas id="test-results-by-module"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Performance by Type -->
+                    <div class="results-breakdown">
+                        <h4>Rendimiento por Tipo de Pregunta</h4>
+                        <div class="chart-container chart-container-medium">
+                            <canvas id="test-results-by-type"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Review Questions -->
+                    <div class="results-review">
+                        <h4>&#128269; Revisión de Preguntas</h4>
+                        <div class="review-filter">
+                            <button class="review-filter-btn active" data-filter="all">Todas</button>
+                            <button class="review-filter-btn" data-filter="incorrect">Solo incorrectas</button>
+                            <button class="review-filter-btn" data-filter="correct">Solo correctas</button>
+                            <button class="review-filter-btn" data-filter="skipped">Saltadas</button>
+                        </div>
+                        <div class="review-list" id="test-review-list">
+                            <!-- JS generates review items -->
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="results-actions">
+                        <button class="btn btn-secondary" id="test-review-btn">&#128269; Revisar Errores</button>
+                        <button class="btn btn-primary" id="test-retry-btn">&#128260; Nuevo Test</button>
+                        <button class="btn btn-secondary" data-goto="dashboard">&#127968; Dashboard</button>
+                    </div>
+                </div>
+
+                <!-- Quick Practice (always visible) -->
+                <div class="content-card" id="test-quick-practice">
+                    <h3>&#9889; Práctica Rápida</h3>
+                    <p>Responde preguntas aleatorias sin configurar un test formal.</p>
+                    <div class="quick-practice-grid">
+                        <button class="btn-quick-practice" data-type="multiple-choice" data-module="all">
+                            <span class="qp-icon">&#127312;</span>
+                            <span class="qp-label">Selección Múltiple</span>
+                            <span class="qp-desc">4 opciones, 1 correcta</span>
+                        </button>
+                        <button class="btn-quick-practice" data-type="true-false" data-module="all">
+                            <span class="qp-icon">&#9989;</span>
+                            <span class="qp-label">Verdadero / Falso</span>
+                            <span class="qp-desc">Evalúa afirmaciones</span>
+                        </button>
+                        <button class="btn-quick-practice" data-type="calculation" data-module="all">
+                            <span class="qp-icon">&#128290;</span>
+                            <span class="qp-label">Cálculo</span>
+                            <span class="qp-desc">Resuelve numéricamente</span>
+                        </button>
+                        <button class="btn-quick-practice" data-type="fill-blank" data-module="all">
+                            <span class="qp-icon">&#9999;</span>
+                            <span class="qp-label">Completar</span>
+                            <span class="qp-desc">Llena los espacios</span>
+                        </button>
+                        <button class="btn-quick-practice" data-type="matching" data-module="all">
+                            <span class="qp-icon">&#128279;</span>
+                            <span class="qp-label">Asociar</span>
+                            <span class="qp-desc">Conecta pares</span>
+                        </button>
+                        <button class="btn-quick-practice" data-type="ordering" data-module="all">
+                            <span class="qp-icon">&#128290;</span>
+                            <span class="qp-label">Ordenar</span>
+                            <span class="qp-desc">Secuencia correcta</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- SCROLL TO TOP BUTTON                                          -->
+    <!-- ============================================================ -->
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Volver arriba" title="Volver arriba">
+        &#9650;
+    </button>
+
+    <!-- ============================================================ -->
+    <!-- NOTIFICATION TOAST                                             -->
+    <!-- ============================================================ -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- ============================================================ -->
+    <!-- APP SCRIPT                                                     -->
+    <!-- ============================================================ -->
+    <script src="questions.js"></script>
+    <script src="modules.js"></script>
+    <script src="calculators.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

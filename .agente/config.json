@@ -1,0 +1,14 @@
+{
+  "nombre": "1° Sem. 2026 - UCN",
+  "rutas": {
+    "contexto": "CONTEXT.md",
+    "features": "feature_list.json",
+    "codingPrompt": "prompts/coding_prompt.md"
+  },
+  "version": "2.0",
+  "creado": "2026-03-21 13:38:53",
+  "automatico": {
+    "pausaEntreSesiones": 3,
+    "maxReintentos": 3
+  }
+}

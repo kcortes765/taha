@@ -1,0 +1,3 @@
+source_pattern: "{date}__{course}__{kind}__{index}"
+session_title_pattern: "{course_name} - {date}"
+
