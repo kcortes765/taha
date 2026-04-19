@@ -36,6 +36,7 @@ from ed2_static_official import (
     extract_story_weights_from_db,
     export_story_weights,
     extract_modal_rows_from_db,
+    list_available_tables,
     modal_directional_summary,
     write_csv,
     write_json,
@@ -215,10 +216,14 @@ def main() -> int:
             )
             log.info(f"  Story weights source: {real_story_weights[0]['source_table']}")
         else:
+            available_tables = list_available_tables(SapModel)
+            if available_tables:
+                write_json("ed2_available_tables.json", available_tables)
             if not args.allow_analytic_fallback:
                 raise RuntimeError(
-                    "ETABS no expuso 'Mass Summary by Story'/'Story Mass Summary'. "
+                    "ETABS no expuso una tabla reconocible de masa/peso por historia. "
                     "El flujo oficial exige pesos reales por piso. "
+                    "Se dejo `ed2_available_tables.json` para auditar el build exacto. "
                     "Usa --allow-analytic-fallback solo para precheck no oficial."
                 )
             export_story_weights(compute_story_weights_analytic())

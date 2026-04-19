@@ -21,6 +21,8 @@ import csv
 import json
 import math
 import os
+import re
+import unicodedata
 from typing import Dict, Iterable, List, Optional, Tuple
 
 from config_ed2 import (
@@ -188,12 +190,25 @@ def read_json(filename: str):
 
 def parse_db_table(SapModel, table_key: str, group: str = "All") -> Tuple[Optional[List[str]], Optional[List[Dict[str, str]]]]:
     """Parse DatabaseTables.GetTableForDisplayArray with a tolerant strategy."""
-    try:
-        result = SapModel.DatabaseTables.GetTableForDisplayArray(
-            table_key, "", group, 1, [], 0, [],
-        )
-    except Exception:
-        return None, None
+    groups_to_try = []
+    for candidate in [group, "", "All"]:
+        if candidate not in groups_to_try:
+            groups_to_try.append(candidate)
+
+    result = None
+    for current_group in groups_to_try:
+        try:
+            trial = SapModel.DatabaseTables.GetTableForDisplayArray(
+                table_key, "", current_group, 1, [], 0, [],
+            )
+        except Exception:
+            continue
+        if isinstance(trial, (tuple, list)) and len(trial) >= 1:
+            ret_code = trial[-1] if isinstance(trial[-1], int) else 0
+            if ret_code == 0:
+                result = trial
+                break
+        result = trial
 
     if not isinstance(result, (tuple, list)) or len(result) < 2:
         return None, None
@@ -249,6 +264,94 @@ def parse_db_table(SapModel, table_key: str, group: str = "All") -> Tuple[Option
             continue
         rows.append({fields[i]: chunk[i] for i in range(n_fields)})
     return fields, rows
+
+
+def _normalize_token(text: str) -> str:
+    base = unicodedata.normalize("NFKD", str(text or ""))
+    ascii_only = "".join(ch for ch in base if not unicodedata.combining(ch))
+    return re.sub(r"[^a-z0-9]+", "", ascii_only.lower())
+
+
+def list_available_tables(SapModel) -> List[Dict[str, str]]:
+    """List available ETABS database tables with best-effort parsing."""
+    try:
+        result = SapModel.DatabaseTables.GetAvailableTables()
+    except Exception:
+        return []
+
+    if not isinstance(result, (tuple, list)) or len(result) < 3:
+        return []
+
+    number = 0
+    try:
+        number = int(result[0])
+    except Exception:
+        number = 0
+
+    keys = []
+    names = []
+    import_types = []
+
+    for item in result[1:]:
+        if isinstance(item, (tuple, list)):
+            values = [str(x) for x in item]
+            if not keys:
+                keys = values
+            elif not names:
+                names = values
+            elif not import_types:
+                import_types = values
+
+    count = max(number, len(keys), len(names))
+    tables = []
+    for idx in range(count):
+        key = keys[idx] if idx < len(keys) else ""
+        name = names[idx] if idx < len(names) else key
+        import_type = import_types[idx] if idx < len(import_types) else ""
+        if key or name:
+            tables.append({
+                "key": key,
+                "name": name,
+                "import_type": import_type,
+            })
+    return tables
+
+
+def find_table_candidates(
+    SapModel,
+    exact_names: Iterable[str],
+    keyword_groups: Iterable[Iterable[str]],
+) -> List[str]:
+    """Find ETABS table keys by exact or fuzzy name matching."""
+    available = list_available_tables(SapModel)
+    if not available:
+        return list(exact_names)
+
+    exact_normalized = {_normalize_token(name) for name in exact_names}
+    seen = set()
+    candidates: List[str] = []
+
+    def add_candidate(key: str):
+        token = _normalize_token(key)
+        if key and token not in seen:
+            seen.add(token)
+            candidates.append(key)
+
+    for table in available:
+        hay = _normalize_token(table["key"] + " " + table["name"])
+        if hay in exact_normalized:
+            add_candidate(table["key"] or table["name"])
+
+    for keywords in keyword_groups:
+        normalized_keywords = [_normalize_token(word) for word in keywords]
+        for table in available:
+            hay = _normalize_token(table["key"] + " " + table["name"])
+            if all(word in hay for word in normalized_keywords):
+                add_candidate(table["key"] or table["name"])
+
+    for name in exact_names:
+        add_candidate(name)
+    return candidates
 
 
 def select_cases_for_output(SapModel, cases: Iterable[str]) -> None:
@@ -487,9 +590,21 @@ def extract_story_weights_from_db(SapModel) -> Optional[List[Dict[str, float]]]:
         "Mass Summary by Story",
         "Story Mass Summary",
         "Mass Summary By Story",
+        "Story Masses",
+        "Masses by Story",
     ]
+    table_candidates = find_table_candidates(
+        SapModel,
+        exact_names=table_names,
+        keyword_groups=[
+            ["mass", "story"],
+            ["mass", "summary", "story"],
+            ["story", "mass", "summary"],
+            ["story", "masses"],
+        ],
+    )
 
-    for table_name in table_names:
+    for table_name in table_candidates:
         fields, rows = parse_db_table(SapModel, table_name)
         if not rows:
             continue
