@@ -1,4 +1,4 @@
-"""
+r"""
 diag_story_cm_ed2.py - Sonda cruda para centro de masa por historia en ETABS 21.
 
 Uso en WS:
