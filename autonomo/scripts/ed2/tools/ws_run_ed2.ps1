@@ -1,11 +1,11 @@
 param(
-    [ValidateSet("bootstrap","update","diag","phase1","phase2","full","verify","package","shell")]
+    [ValidateSet("bootstrap","update","diag","phase1","phase2","full","verify","package","shell","cleanfull")]
     [string]$Action = "diag",
 
     [string]$BaseDir = "C:\Users\Civil\Documents\taha",
     [string]$RepoDirName = "ucn_adse",
     [string]$RepoUrl = "",
-    [string]$Branch = "master",
+    [string]$Branch = "main",
     [string]$PythonExe = "python",
     [switch]$CreateIfMissing,
     [switch]$InstallComtypes,
@@ -21,7 +21,15 @@ function Step($msg) {
 }
 
 function Resolve-RepoPaths {
-    $repoDir = Join-Path $BaseDir $RepoDirName
+    if (Test-Path (Join-Path $BaseDir ".git")) {
+        $repoDir = $BaseDir
+    }
+    elseif ([string]::IsNullOrWhiteSpace($RepoDirName)) {
+        $repoDir = $BaseDir
+    }
+    else {
+        $repoDir = Join-Path $BaseDir $RepoDirName
+    }
     $ed2Dir = Join-Path $repoDir "autonomo\scripts\ed2"
     $modelPath = Join-Path (Join-Path $BaseDir "models") $ModelName
 
@@ -83,11 +91,58 @@ function Update-Repo {
     Push-Location $paths.RepoDir
     try {
         git fetch --all --prune
-        git checkout $Branch
-        git pull --ff-only
+        if (git show-ref --verify --quiet ("refs/heads/" + $Branch)) {
+            git checkout $Branch
+            git pull --ff-only
+        }
+        else {
+            git checkout -B $Branch ("origin/" + $Branch)
+        }
     }
     finally {
         Pop-Location
+    }
+}
+
+function Clear-Ed2Env {
+    Remove-Item Env:ED2_RUNTIME_ROOT -ErrorAction SilentlyContinue
+    Remove-Item Env:ED2_ETABS_CREATE_IF_MISSING -ErrorAction SilentlyContinue
+    Remove-Item Env:ED2_ETABS_MODEL_PATH -ErrorAction SilentlyContinue
+    Remove-Item Env:ED2_ETABS_FORCE_MODEL_OPEN -ErrorAction SilentlyContinue
+}
+
+function Stop-Etabs {
+    Step "Stopping ETABS if running"
+    $procs = Get-Process | Where-Object { $_.ProcessName -like 'ETABS*' }
+    if ($procs) {
+        $procs | Stop-Process -Force
+        Start-Sleep -Seconds 3
+        Write-Host "Stopped $($procs.Count) ETABS process(es)."
+    }
+    else {
+        Write-Host "No ETABS process found."
+    }
+}
+
+function Reset-RuntimeArtifacts {
+    param($paths)
+
+    Step "Cleaning runtime artifacts"
+    $runtimeDirs = @(
+        (Join-Path $BaseDir "models"),
+        (Join-Path $BaseDir "results"),
+        (Join-Path $BaseDir "transfer")
+    )
+
+    foreach ($dir in $runtimeDirs) {
+        if (Test-Path $dir) {
+            Remove-Item $dir -Recurse -Force
+        }
+        New-Item -ItemType Directory -Path $dir | Out-Null
+    }
+
+    if (Test-Path $paths.Ed2Dir) {
+        Get-ChildItem $paths.Ed2Dir -Filter "pipeline_ed2_*.log" -File -ErrorAction SilentlyContinue | Remove-Item -Force -ErrorAction SilentlyContinue
     }
 }
 
@@ -162,13 +217,30 @@ function Run-Package {
     Invoke-Ed2Python -paths $paths -ScriptName "package_transfer_ed2.py" -ScriptArgs @("--tag", $TransferTag)
 }
 
+function Run-CleanFull {
+    param($paths)
+
+    Clear-Ed2Env
+    Stop-Etabs
+    Update-Repo -paths $paths
+    Reset-RuntimeArtifacts -paths $paths
+
+    $script:CreateIfMissing = $true
+
+    Run-Diag -paths $paths
+    Run-Phase1 -paths $paths
+    Run-Phase2 -paths $paths
+    Run-Verify -paths $paths
+    Run-Package -paths $paths
+}
+
 Ensure-BaseDir
 Ensure-Python
 Ensure-Comtypes
 
 $paths = Resolve-RepoPaths
 
-if ($Action -in @("diag","phase1","phase2","full","verify","package")) {
+if ($Action -in @("diag","phase1","phase2","full","verify","package","cleanfull")) {
     if (-not (Test-Path (Join-Path $paths.RepoDir ".git"))) {
         throw "No existe repo local en $($paths.RepoDir). Corre bootstrap primero."
     }
@@ -203,6 +275,9 @@ switch ($Action) {
     }
     "package" {
         Run-Package -paths $paths
+    }
+    "cleanfull" {
+        Run-CleanFull -paths $paths
     }
     "shell" {
         Step "Environment"
