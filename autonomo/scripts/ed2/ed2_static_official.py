@@ -1148,107 +1148,66 @@ def _extract_story_cm_from_table(SapModel) -> Dict[str, Dict[str, float]]:
 
 
 def _extract_story_cm_from_assembled_joint_masses(SapModel) -> Dict[str, Dict[str, float]]:
-    """Derive story CM from nodal assembled masses when CM/CR table is absent."""
-    fields, rows = parse_db_table(SapModel, "Assembled Joint Masses")
-    if not rows:
-        return {}
+    """Derive story CM from assembled joint masses using the Results API.
 
-    fields = fields or []
-    story_key = _pick_field_by_tokens(fields, exact_tokens=["Story"], contains_tokens=["story"])
-    point_key = _pick_field_by_tokens(
-        fields,
-        exact_tokens=["PointElm", "Joint", "Point", "Label", "UniqueName", "Name"],
-        contains_tokens=["pointelm", "joint", "point", "label", "uniquename", "name"],
-    )
-    x_key = _pick_field_by_tokens(
-        fields,
-        exact_tokens=["X", "CoordX", "GlobalX", "XCoord"],
-        contains_tokens=["coordx", "globalx"],
-        exclude_tokens=["ux", "xcm", "xcr", "massx"],
-    )
-    y_key = _pick_field_by_tokens(
-        fields,
-        exact_tokens=["Y", "CoordY", "GlobalY", "YCoord"],
-        contains_tokens=["coordy", "globaly"],
-        exclude_tokens=["uy", "ycm", "ycr", "massy"],
-    )
-    z_key = _pick_field_by_tokens(
-        fields,
-        exact_tokens=["Z", "CoordZ", "GlobalZ", "ZCoord"],
-        contains_tokens=["coordz", "globalz"],
-        exclude_tokens=["uz", "massz"],
-    )
-
-    mass_keys: List[str] = []
-    for candidate in [
-        "UX Mass",
-        "UY Mass",
-        "UZ Mass",
-        "Mass X",
-        "Mass Y",
-        "Mass Z",
-        "U1",
-        "U2",
-        "U3",
-        "UX",
-        "UY",
-        "UZ",
-        "Mass",
-    ]:
-        field_name = _pick_field_by_tokens(
-            fields,
-            exact_tokens=[candidate],
-            contains_tokens=[candidate],
-            exclude_tokens=["coord", "global", "story", "joint", "point", "label", "name", "xcm", "ycm", "xcr", "ycr"],
-        )
-        if field_name and field_name not in mass_keys:
-            mass_keys.append(field_name)
-
-    if not mass_keys:
-        return {}
-
+    CSI documents `Results.AssembledJointMass(...)` as the official API to
+    recover assembled masses for point elements. Some ETABS 21.2.0 builds show
+    a blocking popup when the same information is requested through
+    `DatabaseTables` as `Assembled Joint Masses`, so this path avoids the table
+    interface altogether.
+    """
     joint_lookup = _collect_joint_lookup(SapModel)
+    if not joint_lookup:
+        return {}
+
+    try:
+        result = SapModel.Results.AssembledJointMass("ALL", 2, 0, [], [], [], [], [], [], [])
+    except Exception:
+        return {}
+
+    if not isinstance(result, (tuple, list)) or len(result) < 8:
+        return {}
+
+    ret_code = result[-1] if isinstance(result[-1], int) else 0
+    if ret_code != 0:
+        return {}
+
+    try:
+        number_results = int(result[0])
+    except Exception:
+        number_results = 0
+    if number_results <= 0:
+        return {}
+
+    try:
+        point_elms = [str(value) for value in result[1]]
+        u1 = [float(value) for value in result[2]]
+        u2 = [float(value) for value in result[3]]
+        u3 = [float(value) for value in result[4]]
+    except Exception:
+        return {}
+
     accum = {
         story_name: {"mass": 0.0, "mx": 0.0, "my": 0.0, "point_count": 0}
         for story_name in STORY_NAMES
     }
 
-    for row in rows:
-        story = _match_story_name(str(row.get(story_key or "", "")))
-        joint_name = str(row.get(point_key or "", "")).strip()
+    for idx in range(min(number_results, len(point_elms), len(u1), len(u2), len(u3))):
+        joint_name = point_elms[idx].strip()
         joint_payload = joint_lookup.get(_normalize_token(joint_name), {})
+        if not joint_payload:
+            continue
 
-        x_value = None
-        y_value = None
-        z_value = None
-        if x_key and str(row.get(x_key, "")).strip() != "":
-            x_value = safe_float(row.get(x_key), 0.0)
-        if y_key and str(row.get(y_key, "")).strip() != "":
-            y_value = safe_float(row.get(y_key), 0.0)
-        if z_key and str(row.get(z_key, "")).strip() != "":
-            z_value = safe_float(row.get(z_key), 0.0)
-
-        if x_value is None and joint_payload:
-            x_value = joint_payload.get("x")
-        if y_value is None and joint_payload:
-            y_value = joint_payload.get("y")
-        if z_value is None and joint_payload:
-            z_value = joint_payload.get("z")
-
-        if not story and joint_payload:
-            story = _match_story_name(str(joint_payload.get("story", "")))
-        if not story and z_value is not None:
-            story = _story_from_z(z_value)
+        story = _match_story_name(str(joint_payload.get("story", "")))
         if story not in STORY_NAMES:
             continue
+
+        x_value = joint_payload.get("x")
+        y_value = joint_payload.get("y")
         if x_value is None or y_value is None:
             continue
 
-        masses = [
-            abs(safe_float(row.get(key), 0.0))
-            for key in mass_keys
-            if str(row.get(key, "")).strip() != ""
-        ]
+        masses = [abs(u1[idx]), abs(u2[idx]), abs(u3[idx])]
         masses = [value for value in masses if value > 0.0]
         if not masses:
             continue
