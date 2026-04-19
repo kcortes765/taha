@@ -14,6 +14,7 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config_ed2 import (
+    DEFAULT_MODEL_FILENAME,
     MODELS_DIR,
     UNITS_TONF_M_C,
     check_ret,
@@ -39,7 +40,7 @@ def ensure_model_path(SapModel) -> str:
         return filepath
 
     os.makedirs(MODELS_DIR, exist_ok=True)
-    filepath = os.path.join(MODELS_DIR, "Edificio2_parte1_oficial.edb")
+    filepath = os.path.join(MODELS_DIR, DEFAULT_MODEL_FILENAME)
     ret = SapModel.File.Save(filepath)
     check_ret(ret, f"File.Save('{filepath}')")
     return filepath

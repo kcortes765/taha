@@ -6,7 +6,7 @@ Creates a new ETABS model from scratch:
   2. Creates 5 stories via NewGridOnly (h1=3.50m, h2-5=3.00m)
   3. Relabels grid lines (X: 1-6, Y: A-F) — spacing is already correct (6.5m uniform)
   4. Verifies stories and grid
-  5. Saves model as Edificio2_api.edb
+  5. Saves model as Edificio2_parte1_oficial.edb
 
 Prerequisites:
   - ETABS (v19/v21) must be open manually (File > New Model > Blank)
@@ -43,6 +43,7 @@ from config_ed2 import (
     GRID_SPACING,
     LX_PLANTA, LY_PLANTA, H_TOTAL,
     STORY_NAMES, STORY_HEIGHTS, STORY_ELEVATIONS,
+    DEFAULT_MODEL_FILENAME,
     MODELS_DIR,
 )
 
@@ -360,7 +361,7 @@ def verify_units(SapModel):
 # STEP 5: Save model
 # ===================================================================
 
-def save_model(SapModel, filename="Edificio2_api.edb"):
+def save_model(SapModel, filename=DEFAULT_MODEL_FILENAME):
     """Save the model to the ed2/models/ directory.
 
     Creates the output directory if it doesn't exist.

@@ -116,6 +116,7 @@ ENV_RUNTIME_ROOT = "ED2_RUNTIME_ROOT"
 # Runtime objetivo para este paquete
 EXPECTED_ETABS_MAJOR = 21
 ALLOW_OTHER_ETABS_MAJOR = False
+DEFAULT_MODEL_FILENAME = "Edificio2_parte1_oficial.edb"
 
 # Soft error mode legacy. En ETABS 21 el paquete trabaja en modo estricto:
 # ret != 0 => falla, salvo que una llamada use soft=True explicitamente.

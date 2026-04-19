@@ -37,6 +37,17 @@ PHASE_NAMES = {1: "GEOMETRY", 2: "ANALYSIS"}
 PHASE_1_LAST_STEP = 7
 
 
+def resolve_model_arg(model_arg):
+    if not model_arg:
+        return None
+    if os.path.isabs(model_arg):
+        return os.path.abspath(model_arg)
+    runtime_root = str(os.getenv("ED2_RUNTIME_ROOT", "")).strip()
+    if runtime_root:
+        return os.path.abspath(os.path.join(runtime_root, model_arg))
+    return os.path.abspath(model_arg)
+
+
 def setup_logging(log_file=None):
     logger = logging.getLogger("pipeline_ed2")
     logger.handlers.clear()
@@ -169,8 +180,9 @@ def run_pipeline(args):
     log.info(f"Runtime root: {os.getenv('ED2_RUNTIME_ROOT', SCRIPT_DIR)}")
     if args.create_if_missing:
         log.info("ETABS startup: attach or create if missing")
-    if args.model:
-        log.info(f"Target model: {os.path.abspath(args.model)}")
+    resolved_model = resolve_model_arg(args.model)
+    if resolved_model:
+        log.info(f"Target model: {resolved_model}")
 
     start_step = args.from_step
     end_step = args.to_step
@@ -186,8 +198,8 @@ def run_pipeline(args):
         log.error("No steps selected")
         return 1
 
-    if args.model and start_step > 1 and not os.path.isfile(os.path.abspath(args.model)):
-        log.error(f"--model not found for step {start_step}: {os.path.abspath(args.model)}")
+    if resolved_model and start_step > 1 and not os.path.isfile(resolved_model):
+        log.error(f"--model not found for step {start_step}: {resolved_model}")
         return 1
 
     print_plan(log, PIPELINE_STEPS, start_step, end_step)
@@ -203,8 +215,8 @@ def run_pipeline(args):
     env_overrides = {}
     if args.create_if_missing:
         env_overrides["ED2_ETABS_CREATE_IF_MISSING"] = "1"
-    if args.model:
-        env_overrides["ED2_ETABS_MODEL_PATH"] = os.path.abspath(args.model)
+    if resolved_model:
+        env_overrides["ED2_ETABS_MODEL_PATH"] = resolved_model
         if start_step > 1:
             env_overrides["ED2_ETABS_FORCE_MODEL_OPEN"] = "1"
 

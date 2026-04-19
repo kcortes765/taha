@@ -1,4 +1,4 @@
-"""
+r"""
 diag.py - Diagnostico COM para ETABS 21 en WS UCN
 Corre ANTES de ejecutar el pipeline. Verifica:
   1. Python version
@@ -89,7 +89,6 @@ print()
 # --- 3. Conectar a ETABS ---
 print("[3] Conectando a ETABS...")
 
-etabs_obj = None
 sap_model = None
 detected_major = 0
 
@@ -99,7 +98,6 @@ try:
         model_path=args.model,
         force_open_model=bool(args.model),
     )
-    etabs_obj = sap_model
     print("    PASS")
 except Exception as e:
     print()
@@ -117,8 +115,7 @@ print()
 # --- 4. Verificar modelo ---
 print("[4] Verificando modelo...")
 try:
-    sap_model = etabs_obj.SapModel
-    print(f"    SapModel: PASS")
+    print("    SapModel: PASS")
 
     # Version
     etabs_version = "unknown"
@@ -258,7 +255,7 @@ n_fail = 0
 checks = [
     ("Python >= 3.7", ok_python),
     ("comtypes installed", True),  # would have exited above
-    ("ETABS connected", etabs_obj is not None),
+    ("ETABS connected", sap_model is not None),
     ("SapModel accessible", sap_model is not None),
     ("ETABS 21 detected", detected_major == 21),
     ("All scripts present", len(missing) == 0),

@@ -27,9 +27,9 @@ Usage:
 
 Units: Tonf, m, C (eUnits=12) throughout.
 
-COM signatures:
+    COM signatures:
   - FrameObj.SetInsertionPoint: (Name, CardinalPoint, Mirror2, StiffTransform,
-                                 Offset1, Offset2, [CSys], [ItemType])
+                                 Offset1[3], Offset2[3], [CSys], [ItemType])
   - FrameObj.SetEndLengthOffset: (Name, AutoOffset, Length1, Length2, RzFactor, [ItemType])
     AutoOffset=True: ETABS computes offsets from connectivity; RzFactor scales them
     Standard OAPI method (SAP2000/ETABS), not in local com_signatures.md
@@ -128,13 +128,11 @@ def set_beam_insertion_point(SapModel, cardinal_point=VIGA_CARDINAL_POINT):
         try:
             ret = SapModel.FrameObj.SetInsertionPoint(
                 frame_name,
-                cardinal_point,    # 8 = Top Center
-                False,             # Mirror2 = False
-                True,              # StiffTransform = True
-                0.0,               # Offset1 = 0.0
-                0.0,               # Offset2 = 0.0
-                "Local",           # CoordSys (CSI default)
-                0,                 # ItemType = Object
+                cardinal_point,          # 8 = Top Center
+                False,                   # Mirror2 = False
+                True,                    # StiffTransform = True
+                [0.0, 0.0, 0.0],         # Offset1 = [dx, dy, dz] at I-End
+                [0.0, 0.0, 0.0],         # Offset2 = [dx, dy, dz] at J-End
             )
 
             if isinstance(ret, (tuple, list)):
@@ -489,16 +487,15 @@ def verify_insertion_points(SapModel, cardinal_point=VIGA_CARDINAL_POINT):
     for frame_name in beam_names[:sample_size]:
         try:
             result = SapModel.FrameObj.GetInsertionPoint(frame_name)
-            if isinstance(result, (tuple, list)) and len(result) >= 4:
+            if isinstance(result, (tuple, list)) and len(result) >= 3:
                 cp = int(result[0])
                 stiff_transform = bool(result[2])
-                ret_code = result[-1] if len(result) > 4 else 0
-                if ret_code == 0 and cp == cardinal_point and stiff_transform:
+                if cp == cardinal_point and stiff_transform:
                     verified += 1
                 else:
                     check_failed += 1
                     log.warning(
-                        f"  {frame_name}: CP={cp}, StiffTransform={stiff_transform}, ret={ret_code}"
+                        f"  {frame_name}: CP={cp}, StiffTransform={stiff_transform}"
                     )
             else:
                 check_failed += 1
