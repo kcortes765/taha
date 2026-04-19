@@ -1160,6 +1160,16 @@ def _extract_story_cm_from_assembled_joint_masses(SapModel) -> Dict[str, Dict[st
     if not joint_lookup:
         return {}
 
+    try:
+        point_result = SapModel.PointObj.GetNameList()
+        point_object_names = [
+            str(name).strip()
+            for name in (point_result[1] if isinstance(point_result, (tuple, list)) and len(point_result) >= 2 else [])
+            if str(name).strip()
+        ]
+    except Exception:
+        point_object_names = []
+
     def _mass_rows_from_result(result) -> List[Tuple[str, float]]:
         if not isinstance(result, (tuple, list)) or len(result) < 8:
             return []
@@ -1207,9 +1217,9 @@ def _extract_story_cm_from_assembled_joint_masses(SapModel) -> Dict[str, Dict[st
     if not mass_rows:
         unique_point_names = sorted(
             {
-                str(payload.get("name", "")).strip()
-                for payload in joint_lookup.values()
-                if str(payload.get("story", "")).strip() in STORY_NAMES
+                point_name
+                for point_name in point_object_names
+                if _match_story_name(str(joint_lookup.get(_normalize_token(point_name), {}).get("story", ""))) in STORY_NAMES
             }
         )
         for point_name in unique_point_names:
