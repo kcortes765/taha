@@ -24,7 +24,12 @@ from config_ed2 import (
     log,
     set_units,
 )
-from ed2_static_official import GRAVITY_CASES, OFFICIAL_CASES, select_cases_for_output, write_json
+from ed2_static_official import (
+    GRAVITY_CASES,
+    OFFICIAL_CASES,
+    extract_base_reaction_case,
+    write_json,
+)
 
 
 def ensure_model_path(SapModel) -> str:
@@ -59,38 +64,6 @@ def set_run_flags(SapModel) -> None:
             continue
 
 
-def get_base_reaction(SapModel, case_name: str):
-    select_cases_for_output(SapModel, [case_name])
-    try:
-        result = SapModel.Results.BaseReac()
-        if not isinstance(result, (tuple, list)) or len(result) < 10:
-            return None
-        n = int(result[0])
-        if n <= 0:
-            return None
-        load_cases = result[1]
-        fx = result[4]
-        fy = result[5]
-        fz = result[6]
-        mx = result[7]
-        my = result[8]
-        mz = result[9]
-        for i in range(n):
-            if str(load_cases[i]).upper() == case_name.upper():
-                return {
-                    "case": case_name,
-                    "fx": abs(float(fx[i])),
-                    "fy": abs(float(fy[i])),
-                    "fz": abs(float(fz[i])),
-                    "mx": abs(float(mx[i])),
-                    "my": abs(float(my[i])),
-                    "mz": abs(float(mz[i])),
-                }
-    except Exception:
-        return None
-    return None
-
-
 def normalize_ret_code(ret) -> int:
     if isinstance(ret, (tuple, list)):
         if len(ret) > 1:
@@ -115,8 +88,15 @@ def main() -> int:
 
         filepath = ensure_model_path(SapModel)
         log.info(f"Model file: {filepath}")
+
+        log.info("Step 1: Saving model before analysis...")
+        ret = SapModel.File.Save(filepath)
+        check_ret(ret, f"File.Save('{filepath}')")
+
+        log.info("Step 2: Enabling official analysis cases...")
         set_run_flags(SapModel)
 
+        log.info("Step 3: Running full official analysis...")
         ret = SapModel.Analyze.RunAnalysis()
         ret_code = normalize_ret_code(ret)
         check_ret(ret, "Analyze.RunAnalysis")
@@ -128,8 +108,11 @@ def main() -> int:
             "etabs_runtime": get_runtime_etabs_info(),
             "cases": {},
         }
+        log.info("Step 4: Reading base reactions...")
         for case_name in ["PP", "TERP", "TERT", "SCP", "SCT", "EX", "EY", "TEX", "TEY"]:
-            snapshot["cases"][case_name] = get_base_reaction(SapModel, case_name)
+            snapshot["cases"][case_name] = extract_base_reaction_case(SapModel, case_name)
+
+        write_json("ed2_analysis_run.json", snapshot)
 
         ex_info = snapshot["cases"].get("EX") or {}
         ey_info = snapshot["cases"].get("EY") or {}
@@ -144,7 +127,6 @@ def main() -> int:
         if float(tey_info.get("mz", 0.0)) <= 0.0:
             raise RuntimeError("TEY no genero momento basal torsor real.")
 
-        write_json("ed2_analysis_run.json", snapshot)
         ret = SapModel.File.Save(filepath)
         check_ret(ret, f"File.Save('{filepath}')")
 
@@ -154,7 +136,8 @@ def main() -> int:
             if info:
                 log.info(
                     f"  {case_name}: Fx={info['fx']:.3f}, Fy={info['fy']:.3f}, "
-                    f"Fz={info['fz']:.3f}, Mz={info['mz']:.3f}"
+                    f"Fz={info['fz']:.3f}, Mz={info['mz']:.3f} "
+                    f"[{info.get('source', 'unknown')}]"
                 )
             else:
                 log.info(f"  {case_name}: no data")

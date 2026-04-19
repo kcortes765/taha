@@ -567,6 +567,230 @@ def select_combos_for_output(SapModel, combos: Iterable[str]) -> None:
             continue
 
 
+def _call_base_reac_attempts(SapModel) -> List[Tuple[str, object]]:
+    attempts: List[Tuple[str, object]] = []
+    for label, fn in [
+        ("results_no_args", lambda: SapModel.Results.BaseReac()),
+        (
+            "results_explicit_refs",
+            lambda: SapModel.Results.BaseReac(
+                0,
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                0.0,
+                0.0,
+                0.0,
+            ),
+        ),
+    ]:
+        try:
+            attempts.append((label, fn()))
+        except Exception:
+            continue
+    return attempts
+
+
+def _parse_base_reac_rows(result) -> List[Dict[str, object]]:
+    if not isinstance(result, (tuple, list)) or len(result) < 10:
+        return []
+
+    try:
+        number_results = int(result[0])
+    except Exception:
+        number_results = 0
+    if number_results <= 0:
+        return []
+
+    try:
+        load_cases = list(result[1])
+        step_types = list(result[2])
+        step_nums = list(result[3])
+        fx_vals = list(result[4])
+        fy_vals = list(result[5])
+        fz_vals = list(result[6])
+        mx_vals = list(result[7])
+        my_vals = list(result[8])
+        mz_vals = list(result[9])
+    except Exception:
+        return []
+
+    max_len = min(
+        number_results,
+        len(load_cases),
+        len(step_types),
+        len(step_nums),
+        len(fx_vals),
+        len(fy_vals),
+        len(fz_vals),
+        len(mx_vals),
+        len(my_vals),
+        len(mz_vals),
+    )
+    rows = []
+    for idx in range(max_len):
+        rows.append(
+            {
+                "case": str(load_cases[idx]).strip(),
+                "step_type": str(step_types[idx]).strip(),
+                "step_num": safe_float(step_nums[idx], 0.0),
+                "fx": abs(safe_float(fx_vals[idx], 0.0)),
+                "fy": abs(safe_float(fy_vals[idx], 0.0)),
+                "fz": abs(safe_float(fz_vals[idx], 0.0)),
+                "mx": abs(safe_float(mx_vals[idx], 0.0)),
+                "my": abs(safe_float(my_vals[idx], 0.0)),
+                "mz": abs(safe_float(mz_vals[idx], 0.0)),
+            }
+        )
+    return rows
+
+
+def _pick_base_reaction_row(
+    rows: Iterable[Dict[str, object]],
+    case_name: str,
+) -> Optional[Dict[str, object]]:
+    rows = list(rows)
+    if not rows:
+        return None
+
+    target = _normalize_token(case_name)
+    filtered = [row for row in rows if _normalize_token(row.get("case", "")) == target]
+    if not filtered and len(rows) == 1:
+        filtered = rows
+    if not filtered:
+        return None
+
+    picked = max(
+        filtered,
+        key=lambda row: max(
+            safe_float(row.get("fx", 0.0)),
+            safe_float(row.get("fy", 0.0)),
+            safe_float(row.get("fz", 0.0)),
+            safe_float(row.get("mx", 0.0)),
+            safe_float(row.get("my", 0.0)),
+            safe_float(row.get("mz", 0.0)),
+        ),
+    )
+    return {
+        "case": case_name,
+        "fx": safe_float(picked.get("fx", 0.0)),
+        "fy": safe_float(picked.get("fy", 0.0)),
+        "fz": safe_float(picked.get("fz", 0.0)),
+        "mx": safe_float(picked.get("mx", 0.0)),
+        "my": safe_float(picked.get("my", 0.0)),
+        "mz": safe_float(picked.get("mz", 0.0)),
+        "step_type": str(picked.get("step_type", "")),
+        "step_num": safe_float(picked.get("step_num", 0.0)),
+    }
+
+
+def _pick_base_reaction_from_table(
+    fields: Optional[List[str]],
+    rows: Optional[List[Dict[str, str]]],
+    case_name: str,
+) -> Optional[Dict[str, object]]:
+    if not rows:
+        return None
+
+    fields = fields or []
+    case_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["OutputCase", "Load Case", "Case", "Combo"],
+        contains_tokens=["outputcase", "loadcase", "case", "combo"],
+    )
+    step_type_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["StepType", "Step Type"],
+        contains_tokens=["steptype"],
+    )
+    step_num_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["StepNum", "Step Num"],
+        contains_tokens=["stepnum"],
+    )
+    fx_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["FX", "GlobalFX"],
+        contains_tokens=["globalfx"],
+    )
+    fy_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["FY", "GlobalFY"],
+        contains_tokens=["globalfy"],
+    )
+    fz_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["FZ", "GlobalFZ"],
+        contains_tokens=["globalfz"],
+    )
+    mx_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["MX", "GlobalMX"],
+        contains_tokens=["globalmx"],
+    )
+    my_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["MY", "GlobalMY"],
+        contains_tokens=["globalmy"],
+    )
+    mz_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["MZ", "GlobalMZ"],
+        contains_tokens=["globalmz"],
+    )
+
+    parsed_rows = []
+    for row in rows:
+        row_case = str(row.get(case_key or "", "")).strip() if case_key else ""
+        parsed_rows.append(
+            {
+                "case": row_case,
+                "step_type": str(row.get(step_type_key or "", "")).strip() if step_type_key else "",
+                "step_num": safe_float(row.get(step_num_key or "", 0.0), 0.0) if step_num_key else 0.0,
+                "fx": abs(safe_float(row.get(fx_key or "", 0.0), 0.0)) if fx_key else 0.0,
+                "fy": abs(safe_float(row.get(fy_key or "", 0.0), 0.0)) if fy_key else 0.0,
+                "fz": abs(safe_float(row.get(fz_key or "", 0.0), 0.0)) if fz_key else 0.0,
+                "mx": abs(safe_float(row.get(mx_key or "", 0.0), 0.0)) if mx_key else 0.0,
+                "my": abs(safe_float(row.get(my_key or "", 0.0), 0.0)) if my_key else 0.0,
+                "mz": abs(safe_float(row.get(mz_key or "", 0.0), 0.0)) if mz_key else 0.0,
+            }
+        )
+
+    return _pick_base_reaction_row(parsed_rows, case_name)
+
+
+def extract_base_reaction_case(SapModel, case_name: str) -> Optional[Dict[str, object]]:
+    select_cases_for_output(SapModel, [case_name])
+
+    for source_name, raw_result in _call_base_reac_attempts(SapModel):
+        picked = _pick_base_reaction_row(_parse_base_reac_rows(raw_result), case_name)
+        if picked:
+            picked["source"] = source_name
+            return picked
+
+    fields, rows = parse_db_table(SapModel, "Base Reactions")
+    picked = _pick_base_reaction_from_table(fields, rows, case_name)
+    if picked:
+        picked["source"] = "base_reactions_table"
+        return picked
+    return None
+
+
+def extract_base_reactions_for_cases(SapModel, cases: Iterable[str]) -> List[Dict[str, object]]:
+    extracted = []
+    for case_name in cases:
+        reaction = extract_base_reaction_case(SapModel, case_name)
+        if reaction:
+            extracted.append(reaction)
+    return extracted
+
+
 def get_story_index(story_name: str) -> int:
     try:
         return STORY_NAMES.index(story_name)

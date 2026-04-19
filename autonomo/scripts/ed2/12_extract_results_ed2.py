@@ -45,6 +45,7 @@ from ed2_static_official import (
     OFFICIAL_CASES,
     clamp,
     collect_joint_lookup,
+    extract_base_reaction_case,
     extract_cm_cr_rows,
     extract_story_cm_data,
     REQUIRED_RESULT_FILES,
@@ -90,42 +91,24 @@ def extract_base_reactions() -> list:
     cases = GRAVITY_CASES + ["EX", "EY", "TEX", "TEY"]
     rows = []
     for case_name in cases:
-        select_cases_for_output(SapModel, [case_name])
-        try:
-            result = SapModel.Results.BaseReac()
-        except Exception:
-            result = None
-        if not isinstance(result, (tuple, list)) or len(result) < 10:
+        reaction = extract_base_reaction_case(SapModel, case_name)
+        if not reaction:
             continue
-        try:
-            n = int(result[0])
-        except Exception:
-            n = 0
-        if n <= 0:
-            continue
-        load_cases = result[1]
-        fx = result[4]
-        fy = result[5]
-        fz = result[6]
-        mx = result[7]
-        my = result[8]
-        mz = result[9]
-        for i in range(n):
-            if str(load_cases[i]).upper() != case_name.upper():
-                continue
-            rows.append({
+        rows.append(
+            {
                 "case": case_name,
-                "Fx": abs(float(fx[i])),
-                "Fy": abs(float(fy[i])),
-                "Fz": abs(float(fz[i])),
-                "Mx": abs(float(mx[i])),
-                "My": abs(float(my[i])),
-                "Mz": abs(float(mz[i])),
-            })
-            break
+                "Fx": abs(float(reaction.get("fx", 0.0))),
+                "Fy": abs(float(reaction.get("fy", 0.0))),
+                "Fz": abs(float(reaction.get("fz", 0.0))),
+                "Mx": abs(float(reaction.get("mx", 0.0))),
+                "My": abs(float(reaction.get("my", 0.0))),
+                "Mz": abs(float(reaction.get("mz", 0.0))),
+                "source": str(reaction.get("source", "")),
+            }
+        )
     write_csv(
         "ed2_base_reactions.csv",
-        ["case", "Fx_tonf", "Fy_tonf", "Fz_tonf", "Mx_tonf_m", "My_tonf_m", "Mz_tonf_m"],
+        ["case", "Fx_tonf", "Fy_tonf", "Fz_tonf", "Mx_tonf_m", "My_tonf_m", "Mz_tonf_m", "source"],
         [
             [
                 row["case"],
@@ -135,6 +118,7 @@ def extract_base_reactions() -> list:
                 f"{row['Mx']:.6f}",
                 f"{row['My']:.6f}",
                 f"{row['Mz']:.6f}",
+                row.get("source", ""),
             ]
             for row in rows
         ],
