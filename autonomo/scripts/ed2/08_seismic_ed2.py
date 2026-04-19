@@ -72,6 +72,19 @@ def ensure_model_path(SapModel) -> str:
 
 def configure_mass_source(SapModel) -> None:
     log.info("Step 1: Configuring official Mass Source...")
+    try:
+        was_locked = SapModel.GetModelIsLocked()
+    except Exception:
+        was_locked = None
+
+    try:
+        SapModel.SetModelIsLocked(False)
+        if was_locked:
+            log.info("  Model was locked after previous analysis; unlocked before Mass Source")
+    except Exception:
+        if was_locked:
+            log.warning("  Could not confirm unlock before Mass Source; continuing")
+
     load_patterns = list(MASS_SOURCE_PATTERNS.keys())
     scale_factors = list(MASS_SOURCE_PATTERNS.values())
 
@@ -88,8 +101,22 @@ def configure_mass_source(SapModel) -> None:
         load_patterns,
         scale_factors,
     )
-    check_ret(ret, "PropMaterial.SetMassSource_1")
-    log.info("  Mass Source OK")
+    if ret == 0:
+        log.info("  Mass Source OK via SetMassSource_1")
+        return
+
+    log.warning(
+        f"  SetMassSource_1 returned ret={ret}; trying deprecated SetMassSource fallback"
+    )
+
+    ret = SapModel.PropMaterial.SetMassSource(
+        3,  # elements/additional masses + loads
+        len(load_patterns),
+        load_patterns,
+        scale_factors,
+    )
+    check_ret(ret, "PropMaterial.SetMassSource (fallback)")
+    log.info("  Mass Source OK via deprecated SetMassSource fallback")
 
 
 def configure_modal_case(SapModel) -> None:
