@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+models/*.edb
+results/*
+!results/README.md
+taller_ed2/
+pipeline_ed2_*.log
+workspace_audit_*.json
+workspace_audit_*.md
+transfer/
+archive/
