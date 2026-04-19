@@ -44,9 +44,11 @@ from ed2_static_official import (
     OFFICIAL_DRIFT_COMBINATIONS,
     OFFICIAL_CASES,
     clamp,
+    collect_joint_lookup,
+    extract_cm_cr_rows,
+    extract_story_cm_data,
     REQUIRED_RESULT_FILES,
     export_summary_csv,
-    extract_story_cm_from_db,
     extract_modal_rows_from_db,
     modal_first_three_summary,
     modal_directional_summary,
@@ -285,6 +287,7 @@ def extract_story_forces() -> list:
 def extract_story_drifts() -> tuple:
     combo_names = list(OFFICIAL_DRIFT_COMBINATIONS.keys())
     select_combos_for_output(SapModel, combo_names)
+    joint_lookup = collect_joint_lookup(SapModel)
 
     def infer_direction(case_name: str, explicit_direction: str = "") -> str:
         direction = str(explicit_direction or "").upper()
@@ -325,6 +328,13 @@ def extract_story_drifts() -> tuple:
                 continue
             x, has_x = parse_coord_row(row, "X", "JointX", "X Coord", "CoordX")
             y, has_y = parse_coord_row(row, "Y", "JointY", "Y Coord", "CoordY")
+            if label and not (has_x and has_y):
+                joint_meta = joint_lookup.get("".join(ch for ch in label.lower() if ch.isalnum()))
+                if joint_meta:
+                    x = float(joint_meta.get("x", 0.0))
+                    y = float(joint_meta.get("y", 0.0))
+                    has_x = True
+                    has_y = True
 
             explicit_direction = str(row.get("Direction", row.get("Dir", row.get("direction", "")))).strip()
             if explicit_direction:
@@ -402,6 +412,17 @@ def extract_story_drifts() -> tuple:
     if not raw_records:
         raise RuntimeError("No se pudieron extraer drifts reales desde ETABS.")
 
+    if joint_lookup:
+        for record in raw_records:
+            if record["has_coord"] or not record["label"]:
+                continue
+            joint_meta = joint_lookup.get("".join(ch for ch in str(record["label"]).lower() if ch.isalnum()))
+            if not joint_meta:
+                continue
+            record["x"] = float(joint_meta.get("x", 0.0))
+            record["y"] = float(joint_meta.get("y", 0.0))
+            record["has_coord"] = True
+
     write_csv(
         "ed2_story_drifts.csv",
         ["story", "case", "direction", "drift", "label", "x_m", "y_m"],
@@ -451,7 +472,8 @@ def extract_story_drifts() -> tuple:
             "No se pudo extraer 'Diaphragm Max Over Avg Drifts' para verificar drift CM/exceso torsional."
         )
 
-    cm_targets = extract_story_cm_from_db(SapModel)
+    cm_meta = extract_story_cm_data(SapModel)
+    cm_targets = cm_meta.get("cm_map", {})
     cm_source = "diaphragm_avg_fallback"
     cm_records_by_case = {}
     if cm_targets:
@@ -480,7 +502,12 @@ def extract_story_drifts() -> tuple:
                 for key, value in nearest.items()
             }
             if cm_records_by_case:
-                cm_source = "nearest_cm_table"
+                if cm_meta.get("source") == "cm_table":
+                    cm_source = "nearest_cm_table"
+                elif cm_meta.get("source") == "assembled_joint_masses":
+                    cm_source = "nearest_cm_assembled_joint_masses"
+                else:
+                    cm_source = "nearest_cm_unknown"
 
     if not cm_records_by_case:
         fallback_cm = {}
@@ -718,44 +745,14 @@ def extract_story_drifts() -> tuple:
     }
 
 
-def extract_cm_cr() -> list:
-    rows = None
-    for table_name in [
-        "Centers Of Mass And Rigidity",
-        "Center Of Mass And Rigidity",
-        "Centers of Mass and Rigidity",
-    ]:
-        _, rows = parse_db_table(SapModel, table_name)
-        if rows:
-            break
-    if not rows:
-        raise RuntimeError("No se pudo extraer CM/CR por piso desde ETABS.")
-
-    parsed = []
-    for row in rows:
-        story = row.get("Story", row.get("story", ""))
-        if story not in STORY_NAMES:
-            continue
-        xcm = float(str(row.get("XCM", row.get("X Center Mass", row.get("CumX", "0")))).replace(",", "."))
-        ycm = float(str(row.get("YCM", row.get("Y Center Mass", row.get("CumY", "0")))).replace(",", "."))
-        xcr = float(str(row.get("XCR", row.get("X Center Rigidity", row.get("CenterRigidX", "0")))).replace(",", "."))
-        ycr = float(str(row.get("YCR", row.get("Y Center Rigidity", row.get("CenterRigidY", "0")))).replace(",", "."))
-        parsed.append({
-            "story": story,
-            "xcm": xcm,
-            "ycm": ycm,
-            "xcr": xcr,
-            "ycr": ycr,
-            "ex": abs(xcm - xcr),
-            "ey": abs(ycm - ycr),
-        })
-
+def extract_cm_cr() -> tuple:
+    parsed, meta = extract_cm_cr_rows(SapModel)
     if len(parsed) != len(STORY_NAMES):
         raise RuntimeError("CM/CR no contiene exactamente las 5 historias del modelo.")
 
     write_csv(
         "ed2_cm_cr_per_story.csv",
-        ["story", "xcm_m", "ycm_m", "xcr_m", "ycr_m", "ex_m", "ey_m"],
+        ["story", "xcm_m", "ycm_m", "xcr_m", "ycr_m", "ex_m", "ey_m", "source", "cr_available"],
         [
             [
                 row["story"],
@@ -765,14 +762,16 @@ def extract_cm_cr() -> list:
                 f"{row['ycr']:.6f}",
                 f"{row['ex']:.6f}",
                 f"{row['ey']:.6f}",
+                row.get("source", ""),
+                str(int(bool(row.get("cr_available", 0)))),
             ]
             for row in parsed
         ],
     )
-    return sorted(parsed, key=lambda item: STORY_NAMES.index(item["story"]))
+    return sorted(parsed, key=lambda item: STORY_NAMES.index(item["story"])), meta
 
 
-def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, cm_cr_rows):
+def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, cm_cr_rows, cm_cr_meta):
     static_seed = read_json("ed2_static_seed.json")
     torsion_application = read_json("ed2_torsion_application.json")
     analysis_run = read_json("ed2_analysis_run.json")
@@ -817,14 +816,18 @@ def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summa
         for story_data in torsion_application.values()
         if isinstance(story_data.get("TEY"), dict)
     )
+    cm_cr_real = bool(cm_cr_meta.get("cr_available", False))
     cm_cr_all_within_plan = all(
         0.0 <= row["xcm"] <= LX_PLANTA
         and 0.0 <= row["ycm"] <= LY_PLANTA
-        and 0.0 <= row["xcr"] <= LX_PLANTA
-        and 0.0 <= row["ycr"] <= LY_PLANTA
+        and (not cm_cr_real or 0.0 <= row["xcr"] <= LX_PLANTA)
+        and (not cm_cr_real or 0.0 <= row["ycr"] <= LY_PLANTA)
         for row in cm_cr_rows
     )
-    cm_cr_no_zero = all(abs(row["xcr"]) > 1.0e-9 and abs(row["ycr"]) > 1.0e-9 for row in cm_cr_rows)
+    cm_cr_no_zero = cm_cr_real and all(
+        abs(row["xcr"]) > 1.0e-9 and abs(row["ycr"]) > 1.0e-9
+        for row in cm_cr_rows
+    )
     summary = {
         "W_total_tonf": round(w_total, 6),
         "W_per_area_tonf_m2": round(w_per_area, 6),
@@ -857,6 +860,8 @@ def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summa
         "story_weight_file": static_seed.get("story_weight_file", ""),
         "drift_cm_source": drift_meta.get("cm_source", "unknown"),
         "drift_excess_source": drift_meta.get("excess_source", "unknown"),
+        "cm_cr_source": cm_cr_meta.get("source", "unknown"),
+        "cm_cr_real": cm_cr_real,
         "first_three_modes_ok": modal_first_three["covers_xyz"],
         "first_three_modes": modal_first_three["first_three"],
         "torsion_force_couple_count": torsion_force_couple_count,
@@ -906,8 +911,8 @@ def main() -> int:
         base_rows = extract_base_reactions()
         story_force_summary = extract_story_forces()
         _, envelope, drift_meta = extract_story_drifts()
-        cm_cr_rows = extract_cm_cr()
-        summary = build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, cm_cr_rows)
+        cm_cr_rows, cm_cr_meta = extract_cm_cr()
+        summary = build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, cm_cr_rows, cm_cr_meta)
 
         if not args.no_summary:
             log.info(

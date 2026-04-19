@@ -315,6 +315,46 @@ def _normalize_token(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", ascii_only.lower())
 
 
+def _match_story_name(raw_story: str) -> str:
+    token = _normalize_token(raw_story)
+    for story_name in STORY_NAMES:
+        if token == _normalize_token(story_name):
+            return story_name
+    return ""
+
+
+def _story_from_z(z_value: float, tol: float = 0.05) -> str:
+    for story_name, elevation in zip(STORY_NAMES, STORY_ELEVATIONS):
+        if abs(z_value - elevation) <= tol:
+            return story_name
+    return ""
+
+
+def _pick_field_by_tokens(
+    fields: Iterable[str],
+    exact_tokens: Iterable[str] = (),
+    contains_tokens: Iterable[str] = (),
+    exclude_tokens: Iterable[str] = (),
+) -> Optional[str]:
+    normalized = [(_normalize_token(field), field) for field in fields]
+    excluded = {_normalize_token(token) for token in exclude_tokens}
+
+    for exact in exact_tokens:
+        target = _normalize_token(exact)
+        for token, original in normalized:
+            if token == target:
+                return original
+
+    for contains in contains_tokens:
+        target = _normalize_token(contains)
+        for token, original in normalized:
+            if any(excluded_token and excluded_token in token for excluded_token in excluded):
+                continue
+            if target and target in token:
+                return original
+    return None
+
+
 def list_available_tables(SapModel) -> List[Dict[str, str]]:
     """List available ETABS database tables with best-effort parsing."""
     try:
@@ -358,6 +398,112 @@ def list_available_tables(SapModel) -> List[Dict[str, str]]:
                 "import_type": import_type,
             })
     return tables
+
+
+def _collect_joint_lookup(SapModel) -> Dict[str, Dict[str, float]]:
+    """Collect joint coordinates/story keyed by normalized labels.
+
+    Uses both PointObj.GetNameList and the database table
+    'Objects and Elements - Joints' to maximize compatibility with meshed
+    point elements and internal joint labels.
+    """
+    lookup: Dict[str, Dict[str, float]] = {}
+
+    def _store(alias: str, payload: Dict[str, float]) -> None:
+        token = _normalize_token(alias)
+        if not token:
+            return
+        lookup[token] = dict(payload)
+
+    try:
+        result = SapModel.PointObj.GetNameList()
+        names = [str(name) for name in (result[1] if isinstance(result, (tuple, list)) and len(result) >= 2 else [])]
+    except Exception:
+        names = []
+
+    for name in names:
+        try:
+            coord = SapModel.PointObj.GetCoordCartesian(name)
+            x = float(coord[0])
+            y = float(coord[1])
+            z = float(coord[2])
+        except Exception:
+            continue
+        story = _story_from_z(z)
+        payload = {"name": name, "x": x, "y": y, "z": z, "story": story}
+        _store(name, payload)
+
+    fields, rows = parse_db_table(SapModel, "Objects and Elements - Joints")
+    if not rows:
+        return lookup
+
+    fields = fields or []
+    object_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["Object", "Obj"],
+        contains_tokens=["object", "obj"],
+    )
+    element_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["Element", "Elm"],
+        contains_tokens=["element", "elm"],
+    )
+    story_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["Story"],
+        contains_tokens=["story"],
+    )
+    x_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["X", "GlobalX", "CoordX", "XCoord"],
+        contains_tokens=["coordx", "globalx"],
+        exclude_tokens=["ux", "xcm", "xcr"],
+    )
+    y_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["Y", "GlobalY", "CoordY", "YCoord"],
+        contains_tokens=["coordy", "globaly"],
+        exclude_tokens=["uy", "ycm", "ycr"],
+    )
+    z_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["Z", "GlobalZ", "CoordZ", "ZCoord"],
+        contains_tokens=["coordz", "globalz"],
+        exclude_tokens=["uz"],
+    )
+
+    for row in rows:
+        x_raw = row.get(x_key, "") if x_key else ""
+        y_raw = row.get(y_key, "") if y_key else ""
+        z_raw = row.get(z_key, "") if z_key else ""
+        if str(x_raw).strip() == "" or str(y_raw).strip() == "":
+            continue
+
+        x = safe_float(x_raw, 0.0)
+        y = safe_float(y_raw, 0.0)
+        z = safe_float(z_raw, 0.0)
+        story = _match_story_name(str(row.get(story_key, ""))) if story_key else ""
+        if not story:
+            story = _story_from_z(z)
+        payload = {
+            "name": str(row.get(object_key or "", row.get(element_key or "", ""))).strip(),
+            "x": x,
+            "y": y,
+            "z": z,
+            "story": story,
+        }
+        for key_name in [object_key, element_key]:
+            if not key_name:
+                continue
+            alias = str(row.get(key_name, "")).strip()
+            if alias:
+                _store(alias, payload)
+
+    return lookup
+
+
+def collect_joint_lookup(SapModel) -> Dict[str, Dict[str, float]]:
+    return _collect_joint_lookup(SapModel)
 
 
 def find_table_candidates(
@@ -959,7 +1105,7 @@ def geometric_center() -> Tuple[float, float]:
     return x, y
 
 
-def extract_story_cm_from_db(SapModel) -> Dict[str, Dict[str, float]]:
+def _extract_story_cm_from_table(SapModel) -> Dict[str, Dict[str, float]]:
     """Extract center of mass coordinates per story when ETABS exposes them."""
     table_names = [
         "Centers Of Mass And Rigidity",
@@ -968,22 +1114,256 @@ def extract_story_cm_from_db(SapModel) -> Dict[str, Dict[str, float]]:
     ]
 
     for table_name in table_names:
-        _, rows = parse_db_table(SapModel, table_name)
+        fields, rows = parse_db_table(SapModel, table_name)
         if not rows:
             continue
 
+        fields = fields or []
+        story_key = _pick_field_by_tokens(fields, exact_tokens=["Story"], contains_tokens=["story"])
+        xcm_key = _pick_field_by_tokens(
+            fields,
+            exact_tokens=["XCM", "X Center Mass", "CumX"],
+            contains_tokens=["xcentermass", "xcm", "cumx"],
+            exclude_tokens=["xcr"],
+        )
+        ycm_key = _pick_field_by_tokens(
+            fields,
+            exact_tokens=["YCM", "Y Center Mass", "CumY"],
+            contains_tokens=["ycentermass", "ycm", "cumy"],
+            exclude_tokens=["ycr"],
+        )
+
         parsed = {}
         for row in rows:
-            story = str(row.get("Story", row.get("story", ""))).strip()
+            story = _match_story_name(str(row.get(story_key or "", "")))
             if story not in STORY_NAMES:
                 continue
-            xcm = safe_float(row.get("XCM", row.get("X Center Mass", row.get("CumX", "0"))), 0.0)
-            ycm = safe_float(row.get("YCM", row.get("Y Center Mass", row.get("CumY", "0"))), 0.0)
+            xcm = safe_float(row.get(xcm_key or "", "0"), 0.0)
+            ycm = safe_float(row.get(ycm_key or "", "0"), 0.0)
             parsed[story] = {"xcm": xcm, "ycm": ycm}
         if len(parsed) == len(STORY_NAMES):
             return parsed
 
     return {}
+
+
+def _extract_story_cm_from_assembled_joint_masses(SapModel) -> Dict[str, Dict[str, float]]:
+    """Derive story CM from nodal assembled masses when CM/CR table is absent."""
+    fields, rows = parse_db_table(SapModel, "Assembled Joint Masses")
+    if not rows:
+        return {}
+
+    fields = fields or []
+    story_key = _pick_field_by_tokens(fields, exact_tokens=["Story"], contains_tokens=["story"])
+    point_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["PointElm", "Joint", "Point", "Label", "UniqueName", "Name"],
+        contains_tokens=["pointelm", "joint", "point", "label", "uniquename", "name"],
+    )
+    x_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["X", "CoordX", "GlobalX", "XCoord"],
+        contains_tokens=["coordx", "globalx"],
+        exclude_tokens=["ux", "xcm", "xcr", "massx"],
+    )
+    y_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["Y", "CoordY", "GlobalY", "YCoord"],
+        contains_tokens=["coordy", "globaly"],
+        exclude_tokens=["uy", "ycm", "ycr", "massy"],
+    )
+    z_key = _pick_field_by_tokens(
+        fields,
+        exact_tokens=["Z", "CoordZ", "GlobalZ", "ZCoord"],
+        contains_tokens=["coordz", "globalz"],
+        exclude_tokens=["uz", "massz"],
+    )
+
+    mass_keys: List[str] = []
+    for candidate in [
+        "UX Mass",
+        "UY Mass",
+        "UZ Mass",
+        "Mass X",
+        "Mass Y",
+        "Mass Z",
+        "U1",
+        "U2",
+        "U3",
+        "UX",
+        "UY",
+        "UZ",
+        "Mass",
+    ]:
+        field_name = _pick_field_by_tokens(
+            fields,
+            exact_tokens=[candidate],
+            contains_tokens=[candidate],
+            exclude_tokens=["coord", "global", "story", "joint", "point", "label", "name", "xcm", "ycm", "xcr", "ycr"],
+        )
+        if field_name and field_name not in mass_keys:
+            mass_keys.append(field_name)
+
+    if not mass_keys:
+        return {}
+
+    joint_lookup = _collect_joint_lookup(SapModel)
+    accum = {
+        story_name: {"mass": 0.0, "mx": 0.0, "my": 0.0, "point_count": 0}
+        for story_name in STORY_NAMES
+    }
+
+    for row in rows:
+        story = _match_story_name(str(row.get(story_key or "", "")))
+        joint_name = str(row.get(point_key or "", "")).strip()
+        joint_payload = joint_lookup.get(_normalize_token(joint_name), {})
+
+        x_value = None
+        y_value = None
+        z_value = None
+        if x_key and str(row.get(x_key, "")).strip() != "":
+            x_value = safe_float(row.get(x_key), 0.0)
+        if y_key and str(row.get(y_key, "")).strip() != "":
+            y_value = safe_float(row.get(y_key), 0.0)
+        if z_key and str(row.get(z_key, "")).strip() != "":
+            z_value = safe_float(row.get(z_key), 0.0)
+
+        if x_value is None and joint_payload:
+            x_value = joint_payload.get("x")
+        if y_value is None and joint_payload:
+            y_value = joint_payload.get("y")
+        if z_value is None and joint_payload:
+            z_value = joint_payload.get("z")
+
+        if not story and joint_payload:
+            story = _match_story_name(str(joint_payload.get("story", "")))
+        if not story and z_value is not None:
+            story = _story_from_z(z_value)
+        if story not in STORY_NAMES:
+            continue
+        if x_value is None or y_value is None:
+            continue
+
+        masses = [
+            abs(safe_float(row.get(key), 0.0))
+            for key in mass_keys
+            if str(row.get(key, "")).strip() != ""
+        ]
+        masses = [value for value in masses if value > 0.0]
+        if not masses:
+            continue
+        lumped_mass = max(masses)
+
+        accum[story]["mass"] += lumped_mass
+        accum[story]["mx"] += lumped_mass * x_value
+        accum[story]["my"] += lumped_mass * y_value
+        accum[story]["point_count"] += 1
+
+    parsed = {}
+    for story_name in STORY_NAMES:
+        data = accum[story_name]
+        if data["mass"] <= 0.0:
+            continue
+        parsed[story_name] = {
+            "xcm": data["mx"] / data["mass"],
+            "ycm": data["my"] / data["mass"],
+            "point_count": data["point_count"],
+            "lumped_mass": data["mass"],
+        }
+
+    if len(parsed) == len(STORY_NAMES):
+        return parsed
+    return {}
+
+
+def extract_story_cm_data(SapModel) -> Dict[str, object]:
+    cm_map = _extract_story_cm_from_table(SapModel)
+    if len(cm_map) == len(STORY_NAMES):
+        return {"cm_map": cm_map, "source": "cm_table"}
+
+    cm_map = _extract_story_cm_from_assembled_joint_masses(SapModel)
+    if len(cm_map) == len(STORY_NAMES):
+        return {"cm_map": cm_map, "source": "assembled_joint_masses"}
+
+    return {"cm_map": {}, "source": "missing"}
+
+
+def extract_story_cm_from_db(SapModel) -> Dict[str, Dict[str, float]]:
+    return extract_story_cm_data(SapModel)["cm_map"]
+
+
+def extract_cm_cr_rows(SapModel) -> Tuple[List[Dict[str, float]], Dict[str, object]]:
+    """Return CM/CR rows with explicit source metadata.
+
+    If the ETABS build does not expose the CM/CR table, the function falls back
+    to real CM from assembled joint masses and duplicates CM into CR placeholders
+    so the package shape remains stable. The source metadata makes that fallback
+    explicit for downstream verification/review.
+    """
+    table_names = [
+        "Centers Of Mass And Rigidity",
+        "Center Of Mass And Rigidity",
+        "Centers of Mass and Rigidity",
+    ]
+
+    for table_name in table_names:
+        fields, rows = parse_db_table(SapModel, table_name)
+        if not rows:
+            continue
+
+        fields = fields or []
+        story_key = _pick_field_by_tokens(fields, exact_tokens=["Story"], contains_tokens=["story"])
+        xcm_key = _pick_field_by_tokens(fields, exact_tokens=["XCM", "X Center Mass", "CumX"], contains_tokens=["xcentermass", "xcm", "cumx"])
+        ycm_key = _pick_field_by_tokens(fields, exact_tokens=["YCM", "Y Center Mass", "CumY"], contains_tokens=["ycentermass", "ycm", "cumy"])
+        xcr_key = _pick_field_by_tokens(fields, exact_tokens=["XCR", "X Center Rigidity", "CenterRigidX"], contains_tokens=["xcenterrigidity", "xcr", "centerrigidx"])
+        ycr_key = _pick_field_by_tokens(fields, exact_tokens=["YCR", "Y Center Rigidity", "CenterRigidY"], contains_tokens=["ycenterrigidity", "ycr", "centerrigidy"])
+
+        parsed = []
+        for row in rows:
+            story = _match_story_name(str(row.get(story_key or "", "")))
+            if story not in STORY_NAMES:
+                continue
+            xcm = safe_float(row.get(xcm_key or "", "0"), 0.0)
+            ycm = safe_float(row.get(ycm_key or "", "0"), 0.0)
+            xcr = safe_float(row.get(xcr_key or "", "0"), 0.0)
+            ycr = safe_float(row.get(ycr_key or "", "0"), 0.0)
+            parsed.append({
+                "story": story,
+                "xcm": xcm,
+                "ycm": ycm,
+                "xcr": xcr,
+                "ycr": ycr,
+                "ex": abs(xcm - xcr),
+                "ey": abs(ycm - ycr),
+                "source": "etabs_cm_table",
+                "cr_available": 1,
+            })
+
+        if len(parsed) == len(STORY_NAMES):
+            parsed.sort(key=lambda item: STORY_NAMES.index(item["story"]))
+            return parsed, {"source": "etabs_cm_table", "cr_available": True}
+
+    cm_data = extract_story_cm_data(SapModel)
+    cm_map = cm_data["cm_map"]
+    if len(cm_map) == len(STORY_NAMES):
+        parsed = []
+        for story in STORY_NAMES:
+            xcm = float(cm_map[story]["xcm"])
+            ycm = float(cm_map[story]["ycm"])
+            parsed.append({
+                "story": story,
+                "xcm": xcm,
+                "ycm": ycm,
+                "xcr": xcm,
+                "ycr": ycm,
+                "ex": 0.0,
+                "ey": 0.0,
+                "source": "assembled_joint_masses_placeholder_cr",
+                "cr_available": 0,
+            })
+        return parsed, {"source": "assembled_joint_masses_placeholder_cr", "cr_available": False}
+
+    return [], {"source": "missing", "cr_available": False}
 
 
 def _collect_story_points(SapModel) -> Dict[str, List[Dict[str, float]]]:

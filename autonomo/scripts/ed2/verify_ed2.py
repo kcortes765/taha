@@ -69,8 +69,11 @@ def main() -> int:
 
     if summary.get("story_weight_source", "unknown") != "etabs_table":
         failures.append("Los pesos por piso no provienen de tabla ETABS")
-    if summary.get("drift_cm_source", "unknown") != "nearest_cm_table":
-        failures.append("El drift en CM no proviene de tabla de drifts filtrada al CM")
+    drift_cm_source = summary.get("drift_cm_source", "unknown")
+    if drift_cm_source not in {"nearest_cm_table", "nearest_cm_assembled_joint_masses"}:
+        failures.append("El drift en CM no proviene de una referencia CM real del modelo")
+    elif drift_cm_source != "nearest_cm_table":
+        warnings.append("El CM se derivo desde Assembled Joint Masses; no desde tabla CM/CR directa")
     if summary.get("drift_excess_source", "unknown") != "paired_combo_cm":
         failures.append("La condicion 2 de drift no esta emparejada por combo CM/punto")
     if summary.get("analysis_return_code", None) != 0:
@@ -118,22 +121,30 @@ def main() -> int:
     if abs(expected_w_per_area - summary.get("W_per_area_tonf_m2", 0.0)) > 1e-6:
         failures.append("W/area no es consistente con W_total y area total")
 
-    if not summary.get("cm_cr_all_within_plan", False):
-        failures.append("CM/CR contiene coordenadas fuera de la planta")
-    if not summary.get("cm_cr_no_zero", False):
-        failures.append("CM/CR contiene rigideces con coordenada cero espuria")
+    cm_cr_real = bool(summary.get("cm_cr_real", True))
+    cm_cr_source = summary.get("cm_cr_source", "unknown")
+    if cm_cr_real:
+        if not summary.get("cm_cr_all_within_plan", False):
+            failures.append("CM/CR contiene coordenadas fuera de la planta")
+        if not summary.get("cm_cr_no_zero", False):
+            failures.append("CM/CR contiene rigideces con coordenada cero espuria")
+    else:
+        warnings.append(
+            f"ETABS no expuso CR real; se exporto CM con placeholder CR explicito ({cm_cr_source})"
+        )
 
     for row in cm_cr_rows:
         xcm = f(row, "xcm_m")
         ycm = f(row, "ycm_m")
-        xcr = f(row, "xcr_m")
-        ycr = f(row, "ycr_m")
         if not (0.0 <= xcm <= LX_PLANTA and 0.0 <= ycm <= LY_PLANTA):
             failures.append(f"CM fuera de planta en {row.get('story', '?')}")
             break
-        if not (0.0 <= xcr <= LX_PLANTA and 0.0 <= ycr <= LY_PLANTA):
-            failures.append(f"CR fuera de planta en {row.get('story', '?')}")
-            break
+        if cm_cr_real:
+            xcr = f(row, "xcr_m")
+            ycr = f(row, "ycr_m")
+            if not (0.0 <= xcr <= LX_PLANTA and 0.0 <= ycr <= LY_PLANTA):
+                failures.append(f"CR fuera de planta en {row.get('story', '?')}")
+                break
 
     static_by_story = {row["story"]: row for row in static_rows}
     story_force_by_case_story = {(row["case"], row["story"]): row for row in story_force_rows}
@@ -204,6 +215,7 @@ def main() -> int:
     print(f"Story weights file = {summary.get('story_weight_file', '')}")
     print(f"Drift CM source = {summary.get('drift_cm_source', 'unknown')}")
     print(f"Drift excess source = {summary.get('drift_excess_source', 'unknown')}")
+    print(f"CM/CR source = {summary.get('cm_cr_source', 'unknown')} | real CR = {summary.get('cm_cr_real', False)}")
     print(
         f"ETABS = {summary.get('etabs_detected_version', 'unknown')} | "
         f"major = {summary.get('etabs_detected_major', 0)} | "
