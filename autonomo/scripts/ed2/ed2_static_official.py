@@ -1160,40 +1160,70 @@ def _extract_story_cm_from_assembled_joint_masses(SapModel) -> Dict[str, Dict[st
     if not joint_lookup:
         return {}
 
-    try:
-        result = SapModel.Results.AssembledJointMass("ALL", 2, 0, [], [], [], [], [], [], [])
-    except Exception:
-        return {}
+    def _mass_rows_from_result(result) -> List[Tuple[str, float]]:
+        if not isinstance(result, (tuple, list)) or len(result) < 8:
+            return []
 
-    if not isinstance(result, (tuple, list)) or len(result) < 8:
-        return {}
+        ret_code = result[-1] if isinstance(result[-1], int) else 0
+        if ret_code != 0:
+            return []
 
-    ret_code = result[-1] if isinstance(result[-1], int) else 0
-    if ret_code != 0:
-        return {}
+        try:
+            number_results = int(result[0])
+        except Exception:
+            number_results = 0
+        if number_results <= 0:
+            return []
 
-    try:
-        number_results = int(result[0])
-    except Exception:
-        number_results = 0
-    if number_results <= 0:
-        return {}
+        try:
+            point_elms = [str(value) for value in result[1]]
+            u1 = [float(value) for value in result[2]]
+            u2 = [float(value) for value in result[3]]
+            u3 = [float(value) for value in result[4]]
+        except Exception:
+            return []
 
-    try:
-        point_elms = [str(value) for value in result[1]]
-        u1 = [float(value) for value in result[2]]
-        u2 = [float(value) for value in result[3]]
-        u3 = [float(value) for value in result[4]]
-    except Exception:
-        return {}
+        rows = []
+        for idx in range(min(number_results, len(point_elms), len(u1), len(u2), len(u3))):
+            masses = [abs(u1[idx]), abs(u2[idx]), abs(u3[idx])]
+            masses = [value for value in masses if value > 0.0]
+            if not masses:
+                continue
+            rows.append((point_elms[idx].strip(), max(masses)))
+        return rows
 
     accum = {
         story_name: {"mass": 0.0, "mx": 0.0, "my": 0.0, "point_count": 0}
         for story_name in STORY_NAMES
     }
 
-    for idx in range(min(number_results, len(point_elms), len(u1), len(u2), len(u3))):
-        joint_name = point_elms[idx].strip()
+    mass_rows: List[Tuple[str, float]] = []
+    try:
+        result = SapModel.Results.AssembledJointMass("ALL", 2, 0, [], [], [], [], [], [], [])
+        mass_rows = _mass_rows_from_result(result)
+    except Exception:
+        mass_rows = []
+
+    if not mass_rows:
+        unique_point_names = sorted(
+            {
+                str(payload.get("name", "")).strip()
+                for payload in joint_lookup.values()
+                if str(payload.get("story", "")).strip() in STORY_NAMES
+            }
+        )
+        for point_name in unique_point_names:
+            if not point_name:
+                continue
+            try:
+                result = SapModel.Results.AssembledJointMass(point_name, 0, 0, [], [], [], [], [], [], [])
+            except Exception:
+                continue
+            rows = _mass_rows_from_result(result)
+            if rows:
+                mass_rows.extend(rows)
+
+    for joint_name, lumped_mass in mass_rows:
         joint_payload = joint_lookup.get(_normalize_token(joint_name), {})
         if not joint_payload:
             continue
@@ -1206,12 +1236,6 @@ def _extract_story_cm_from_assembled_joint_masses(SapModel) -> Dict[str, Dict[st
         y_value = joint_payload.get("y")
         if x_value is None or y_value is None:
             continue
-
-        masses = [abs(u1[idx]), abs(u2[idx]), abs(u3[idx])]
-        masses = [value for value in masses if value > 0.0]
-        if not masses:
-            continue
-        lumped_mass = max(masses)
 
         accum[story]["mass"] += lumped_mass
         accum[story]["mx"] += lumped_mass * x_value
