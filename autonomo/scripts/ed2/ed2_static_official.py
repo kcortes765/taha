@@ -678,7 +678,18 @@ def extract_story_weights_from_db(SapModel) -> Optional[List[Dict[str, float]]]:
 
         def _pick_mass_keys():
             selected = []
-            for candidate in ["ux mass", "uy mass", "uz mass", "mass x", "mass y", "mass z", "mass"]:
+            for candidate in [
+                "ux mass",
+                "uy mass",
+                "uz mass",
+                "mass x",
+                "mass y",
+                "mass z",
+                "ux",
+                "uy",
+                "uz",
+                "mass",
+            ]:
                 norm_candidate = _normalize_token(candidate)
                 for token, original in normalized_map.items():
                     if norm_candidate in token and original not in selected:
