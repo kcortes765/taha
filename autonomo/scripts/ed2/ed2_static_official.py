@@ -1105,6 +1105,14 @@ def geometric_center() -> Tuple[float, float]:
     return x, y
 
 
+def _geometric_center_story_map() -> Dict[str, Dict[str, float]]:
+    xcg, ycg = geometric_center()
+    return {
+        story_name: {"xcm": xcg, "ycm": ycg}
+        for story_name in STORY_NAMES
+    }
+
+
 def _extract_story_cm_from_table(SapModel) -> Dict[str, Dict[str, float]]:
     """Extract center of mass coordinates per story when ETABS exposes them."""
     table_names = [
@@ -1269,7 +1277,7 @@ def _extract_story_cm_from_assembled_joint_masses(SapModel) -> Dict[str, Dict[st
     return {}
 
 
-def extract_story_cm_data(SapModel) -> Dict[str, object]:
+def extract_story_cm_data(SapModel, allow_geometric_fallback: bool = False) -> Dict[str, object]:
     cm_map = _extract_story_cm_from_table(SapModel)
     if len(cm_map) == len(STORY_NAMES):
         return {"cm_map": cm_map, "source": "cm_table"}
@@ -1278,14 +1286,17 @@ def extract_story_cm_data(SapModel) -> Dict[str, object]:
     if len(cm_map) == len(STORY_NAMES):
         return {"cm_map": cm_map, "source": "assembled_joint_masses"}
 
+    if allow_geometric_fallback:
+        return {"cm_map": _geometric_center_story_map(), "source": "geometric_center"}
+
     return {"cm_map": {}, "source": "missing"}
 
 
-def extract_story_cm_from_db(SapModel) -> Dict[str, Dict[str, float]]:
-    return extract_story_cm_data(SapModel)["cm_map"]
+def extract_story_cm_from_db(SapModel, allow_geometric_fallback: bool = False) -> Dict[str, Dict[str, float]]:
+    return extract_story_cm_data(SapModel, allow_geometric_fallback=allow_geometric_fallback)["cm_map"]
 
 
-def extract_cm_cr_rows(SapModel) -> Tuple[List[Dict[str, float]], Dict[str, object]]:
+def extract_cm_cr_rows(SapModel, allow_geometric_fallback: bool = False) -> Tuple[List[Dict[str, float]], Dict[str, object]]:
     """Return CM/CR rows with explicit source metadata.
 
     If the ETABS build does not expose the CM/CR table, the function falls back
@@ -1336,10 +1347,11 @@ def extract_cm_cr_rows(SapModel) -> Tuple[List[Dict[str, float]], Dict[str, obje
             parsed.sort(key=lambda item: STORY_NAMES.index(item["story"]))
             return parsed, {"source": "etabs_cm_table", "cr_available": True}
 
-    cm_data = extract_story_cm_data(SapModel)
+    cm_data = extract_story_cm_data(SapModel, allow_geometric_fallback=allow_geometric_fallback)
     cm_map = cm_data["cm_map"]
     if len(cm_map) == len(STORY_NAMES):
         parsed = []
+        source_name = cm_data.get("source", "unknown")
         for story in STORY_NAMES:
             xcm = float(cm_map[story]["xcm"])
             ycm = float(cm_map[story]["ycm"])
@@ -1351,10 +1363,10 @@ def extract_cm_cr_rows(SapModel) -> Tuple[List[Dict[str, float]], Dict[str, obje
                 "ycr": ycm,
                 "ex": 0.0,
                 "ey": 0.0,
-                "source": "assembled_joint_masses_placeholder_cr",
+                "source": f"{source_name}_placeholder_cr",
                 "cr_available": 0,
             })
-        return parsed, {"source": "assembled_joint_masses_placeholder_cr", "cr_available": False}
+        return parsed, {"source": f"{source_name}_placeholder_cr", "cr_available": False}
 
     return [], {"source": "missing", "cr_available": False}
 
@@ -1384,9 +1396,13 @@ def _collect_story_points(SapModel) -> Dict[str, List[Dict[str, float]]]:
     return by_story
 
 
-def find_story_center_points(SapModel, per_story: int = 4) -> Dict[str, List[Dict[str, float]]]:
+def find_story_center_points(
+    SapModel,
+    per_story: int = 4,
+    allow_geometric_fallback: bool = False,
+) -> Dict[str, List[Dict[str, float]]]:
     """Find joints nearest to the real story CM from ETABS."""
-    cm_map = extract_story_cm_from_db(SapModel)
+    cm_map = extract_story_cm_from_db(SapModel, allow_geometric_fallback=allow_geometric_fallback)
     if len(cm_map) != len(STORY_NAMES):
         raise RuntimeError(
             "ETABS no expuso el CM por historia. El flujo oficial no acepta "
@@ -1406,9 +1422,13 @@ def find_story_center_points(SapModel, per_story: int = 4) -> Dict[str, List[Dic
     return selected
 
 
-def find_story_torsion_points(SapModel, per_story: int = 4) -> Dict[str, List[Dict[str, float]]]:
+def find_story_torsion_points(
+    SapModel,
+    per_story: int = 4,
+    allow_geometric_fallback: bool = False,
+) -> Dict[str, List[Dict[str, float]]]:
     """Pick distributed joints per story to emulate a pure in-plane torque."""
-    cm_map = extract_story_cm_from_db(SapModel)
+    cm_map = extract_story_cm_from_db(SapModel, allow_geometric_fallback=allow_geometric_fallback)
     if len(cm_map) != len(STORY_NAMES):
         raise RuntimeError(
             "ETABS no expuso el CM por historia. El flujo oficial no acepta "
@@ -1456,7 +1476,15 @@ def find_story_torsion_points(SapModel, per_story: int = 4) -> Dict[str, List[Di
     return selected
 
 
-def find_story_center_joints(SapModel, per_story: int = 4) -> Dict[str, List[str]]:
+def find_story_center_joints(
+    SapModel,
+    per_story: int = 4,
+    allow_geometric_fallback: bool = False,
+) -> Dict[str, List[str]]:
     """Backward-compatible wrapper that returns only joint names."""
-    center_points = find_story_center_points(SapModel, per_story=per_story)
+    center_points = find_story_center_points(
+        SapModel,
+        per_story=per_story,
+        allow_geometric_fallback=allow_geometric_fallback,
+    )
     return {story: [point["name"] for point in points] for story, points in center_points.items()}

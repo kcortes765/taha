@@ -41,6 +41,15 @@ from ed2_static_official import (
     write_json,
 )
 
+ENV_ALLOW_GEOMETRIC_CM_FALLBACK = "ED2_ALLOW_CM_GEOMETRIC_FALLBACK"
+
+
+def env_flag(name: str, default: bool = False) -> bool:
+    value = os.getenv(name, "")
+    if not value:
+        return default
+    return str(value).strip().lower() in {"1", "true", "yes", "on", "si"}
+
 
 def reset_pattern(SapModel, name: str) -> None:
     try:
@@ -185,14 +194,27 @@ def apply_pure_torsion(SapModel, pattern_name: str, target_mz: float, points, st
     }
 
 
-def apply_story_forces(SapModel, static_data, allow_nodal_fallback: bool = False) -> None:
+def apply_story_forces(
+    SapModel,
+    static_data,
+    allow_nodal_fallback: bool = False,
+    allow_geometric_cm_fallback: bool = False,
+) -> None:
     log.info("Step 1: Resetting official static patterns...")
     for pattern in [EX_CASE, EY_CASE, TEX_CASE, TEY_CASE]:
         reset_pattern(SapModel, pattern)
 
     log.info("Step 2: Locating diaphragm joints per story...")
-    story_force_points = find_story_center_points(SapModel, per_story=4)
-    story_torsion_points = find_story_torsion_points(SapModel, per_story=4)
+    story_force_points = find_story_center_points(
+        SapModel,
+        per_story=4,
+        allow_geometric_fallback=allow_geometric_cm_fallback,
+    )
+    story_torsion_points = find_story_torsion_points(
+        SapModel,
+        per_story=4,
+        allow_geometric_fallback=allow_geometric_cm_fallback,
+    )
     missing = [story for story, points in story_force_points.items() if not points]
     if missing:
         raise RuntimeError(
@@ -295,7 +317,16 @@ def main() -> int:
         action="store_true",
         help="Permite story weights analiticos solo para depuracion no oficial.",
     )
+    parser.add_argument(
+        "--allow-geometric-cm-fallback",
+        action="store_true",
+        help="Permite CM=centro geometrico solo para precheck no oficial.",
+    )
     args = parser.parse_args()
+    allow_geometric_cm_fallback = args.allow_geometric_cm_fallback or env_flag(
+        ENV_ALLOW_GEOMETRIC_CM_FALLBACK,
+        False,
+    )
     SapModel = None
     try:
         log.info("=" * 72)
@@ -310,7 +341,12 @@ def main() -> int:
         except Exception:
             pass
 
-        apply_story_forces(SapModel, static_data, allow_nodal_fallback=args.allow_nodal_fallback)
+        apply_story_forces(
+            SapModel,
+            static_data,
+            allow_nodal_fallback=args.allow_nodal_fallback,
+            allow_geometric_cm_fallback=allow_geometric_cm_fallback,
+        )
         create_static_cases(SapModel)
 
         log.info(

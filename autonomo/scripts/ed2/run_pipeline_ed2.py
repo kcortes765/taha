@@ -219,6 +219,8 @@ def run_pipeline(args):
         env_overrides["ED2_ETABS_MODEL_PATH"] = resolved_model
         if start_step > 1:
             env_overrides["ED2_ETABS_FORCE_MODEL_OPEN"] = "1"
+    if args.allow_geometric_cm_fallback:
+        env_overrides["ED2_ALLOW_CM_GEOMETRIC_FALLBACK"] = "1"
 
     results = []
     pipeline_started = time.time()
@@ -302,6 +304,11 @@ Examples:
     parser.add_argument("--no-checkpoint", action="store_true", help="Skip pause between phase 1 and phase 2")
     parser.add_argument("--create-if-missing", action="store_true", help="Launch ETABS if no running instance is found")
     parser.add_argument("--model", help="Open/force this .edb after connecting")
+    parser.add_argument(
+        "--allow-geometric-cm-fallback",
+        action="store_true",
+        help="Permite CM=centro geometrico solo para precheck no oficial.",
+    )
     parser.add_argument("--log", help="Custom log file path")
     return parser
 

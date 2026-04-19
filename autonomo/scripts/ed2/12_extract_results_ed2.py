@@ -61,6 +61,15 @@ from ed2_static_official import (
     write_json,
 )
 
+ENV_ALLOW_GEOMETRIC_CM_FALLBACK = "ED2_ALLOW_CM_GEOMETRIC_FALLBACK"
+
+
+def env_flag(name: str, default: bool = False) -> bool:
+    value = os.getenv(name, "")
+    if not value:
+        return default
+    return str(value).strip().lower() in {"1", "true", "yes", "on", "si"}
+
 
 def extract_modal() -> list:
     modal_rows = extract_modal_rows_from_db(SapModel)
@@ -284,7 +293,7 @@ def extract_story_forces() -> list:
     return summary_rows
 
 
-def extract_story_drifts() -> tuple:
+def extract_story_drifts(allow_geometric_cm_fallback: bool = False) -> tuple:
     combo_names = list(OFFICIAL_DRIFT_COMBINATIONS.keys())
     select_combos_for_output(SapModel, combo_names)
     joint_lookup = collect_joint_lookup(SapModel)
@@ -472,7 +481,7 @@ def extract_story_drifts() -> tuple:
             "No se pudo extraer 'Diaphragm Max Over Avg Drifts' para verificar drift CM/exceso torsional."
         )
 
-    cm_meta = extract_story_cm_data(SapModel)
+    cm_meta = extract_story_cm_data(SapModel, allow_geometric_fallback=allow_geometric_cm_fallback)
     cm_targets = cm_meta.get("cm_map", {})
     cm_source = "diaphragm_avg_fallback"
     cm_records_by_case = {}
@@ -506,6 +515,8 @@ def extract_story_drifts() -> tuple:
                     cm_source = "nearest_cm_table"
                 elif cm_meta.get("source") == "assembled_joint_masses":
                     cm_source = "nearest_cm_assembled_joint_masses"
+                elif cm_meta.get("source") == "geometric_center":
+                    cm_source = "nearest_cm_geometric_center"
                 else:
                     cm_source = "nearest_cm_unknown"
 
@@ -745,8 +756,11 @@ def extract_story_drifts() -> tuple:
     }
 
 
-def extract_cm_cr() -> tuple:
-    parsed, meta = extract_cm_cr_rows(SapModel)
+def extract_cm_cr(allow_geometric_cm_fallback: bool = False) -> tuple:
+    parsed, meta = extract_cm_cr_rows(
+        SapModel,
+        allow_geometric_fallback=allow_geometric_cm_fallback,
+    )
     if len(parsed) != len(STORY_NAMES):
         raise RuntimeError("CM/CR no contiene exactamente las 5 historias del modelo.")
 
@@ -886,7 +900,16 @@ def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summa
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-summary", action="store_true")
+    parser.add_argument(
+        "--allow-geometric-cm-fallback",
+        action="store_true",
+        help="Permite CM=centro geometrico solo para precheck no oficial.",
+    )
     args = parser.parse_args()
+    allow_geometric_cm_fallback = args.allow_geometric_cm_fallback or env_flag(
+        ENV_ALLOW_GEOMETRIC_CM_FALLBACK,
+        False,
+    )
 
     missing_seeds = [
         name
@@ -910,8 +933,12 @@ def main() -> int:
         modal_rows = extract_modal()
         base_rows = extract_base_reactions()
         story_force_summary = extract_story_forces()
-        _, envelope, drift_meta = extract_story_drifts()
-        cm_cr_rows, cm_cr_meta = extract_cm_cr()
+        _, envelope, drift_meta = extract_story_drifts(
+            allow_geometric_cm_fallback=allow_geometric_cm_fallback
+        )
+        cm_cr_rows, cm_cr_meta = extract_cm_cr(
+            allow_geometric_cm_fallback=allow_geometric_cm_fallback
+        )
         summary = build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, cm_cr_rows, cm_cr_meta)
 
         if not args.no_summary:

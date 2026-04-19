@@ -70,10 +70,17 @@ def main() -> int:
     if summary.get("story_weight_source", "unknown") != "etabs_table":
         failures.append("Los pesos por piso no provienen de tabla ETABS")
     drift_cm_source = summary.get("drift_cm_source", "unknown")
-    if drift_cm_source not in {"nearest_cm_table", "nearest_cm_assembled_joint_masses"}:
+    if drift_cm_source not in {
+        "nearest_cm_table",
+        "nearest_cm_assembled_joint_masses",
+        "nearest_cm_geometric_center",
+    }:
         failures.append("El drift en CM no proviene de una referencia CM real del modelo")
     elif drift_cm_source != "nearest_cm_table":
-        warnings.append("El CM se derivo desde Assembled Joint Masses; no desde tabla CM/CR directa")
+        if drift_cm_source == "nearest_cm_assembled_joint_masses":
+            warnings.append("El CM se derivo desde Assembled Joint Masses; no desde tabla CM/CR directa")
+        elif drift_cm_source == "nearest_cm_geometric_center":
+            failures.append("El drift en CM uso centro geometrico; queda solo como precheck no oficial")
     if summary.get("drift_excess_source", "unknown") != "paired_combo_cm":
         failures.append("La condicion 2 de drift no esta emparejada por combo CM/punto")
     if summary.get("analysis_return_code", None) != 0:
