@@ -213,6 +213,50 @@ def parse_db_table(SapModel, table_key: str, group: str = "All") -> Tuple[Option
     if not isinstance(result, (tuple, list)) or len(result) < 2:
         return None, None
 
+    fields: Optional[List[str]] = None
+    data: Optional[List[str]] = None
+
+    # Explicit index patterns observed in different comtypes/CSI builds.
+    for fields_idx, data_idx in [(4, 6), (2, 4), (3, 5)]:
+        if len(result) <= data_idx:
+            continue
+        try:
+            candidate_fields = [str(x) for x in result[fields_idx]]
+            candidate_data = [str(x) for x in result[data_idx]]
+        except TypeError:
+            continue
+        if candidate_fields and candidate_data and len(candidate_data) >= len(candidate_fields):
+            fields = candidate_fields
+            data = candidate_data
+            break
+
+    # Heuristic fallback closer to the older ETABS scripts: find a field-like
+    # array and then the next sufficiently long array as flat data.
+    if fields is None or data is None:
+        for idx, item in enumerate(result):
+            if not isinstance(item, (list, tuple)) or len(item) < 2:
+                continue
+            try:
+                candidate = [str(x) for x in item]
+            except TypeError:
+                continue
+            first = candidate[0].strip().lower() if candidate else ""
+            if not any(token in first for token in ["case", "mode", "story", "output", "name", "type"]):
+                continue
+            fields = candidate
+            for next_item in result[idx + 1 :]:
+                if not isinstance(next_item, (list, tuple)):
+                    continue
+                try:
+                    candidate_data = [str(x) for x in next_item]
+                except TypeError:
+                    continue
+                if len(candidate_data) >= len(fields):
+                    data = candidate_data
+                    break
+            if fields and data:
+                break
+
     arrays: List[List[str]] = []
     for item in result:
         if item is None or isinstance(item, (int, float, str)):
@@ -239,19 +283,18 @@ def parse_db_table(SapModel, table_key: str, group: str = "All") -> Tuple[Option
                     non_numeric += 1
         return non_numeric >= max(1, len(arr[: min(6, len(arr))]) // 2)
 
-    fields = None
-    data = None
-    for idx, arr in enumerate(arrays):
-        if not looks_like_fields(arr):
-            continue
-        n_fields = len(arr)
-        for arr2 in arrays[idx + 1 :]:
-            if n_fields > 0 and len(arr2) % n_fields == 0:
-                fields = arr
-                data = arr2
+    if fields is None or data is None:
+        for idx, arr in enumerate(arrays):
+            if not looks_like_fields(arr):
+                continue
+            n_fields = len(arr)
+            for arr2 in arrays[idx + 1 :]:
+                if n_fields > 0 and len(arr2) % n_fields == 0:
+                    fields = arr
+                    data = arr2
+                    break
+            if fields and data:
                 break
-        if fields and data:
-            break
 
     if not fields or data is None:
         return None, None
