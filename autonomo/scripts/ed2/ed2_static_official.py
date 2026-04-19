@@ -653,12 +653,13 @@ def extract_story_weights_from_db(SapModel) -> Optional[List[Dict[str, float]]]:
             continue
 
         lower_map = {field.lower().strip(): field for field in (fields or [])}
+        normalized_map = {_normalize_token(field): field for field in (fields or [])}
+        story_name_map = {_normalize_token(name): name for name in STORY_NAMES}
 
         def _pick_story_key():
-            for candidate in ["story"]:
-                for lower_name, original in lower_map.items():
-                    if candidate == lower_name or lower_name.endswith(candidate):
-                        return original
+            for token, original in normalized_map.items():
+                if "story" in token:
+                    return original
             return None
 
         def _pick_weight_key():
@@ -669,16 +670,18 @@ def extract_story_weights_from_db(SapModel) -> Optional[List[Dict[str, float]]]:
                 "wt",
             ]
             for candidate in preferred:
-                for lower_name, original in lower_map.items():
-                    if candidate in lower_name:
+                norm_candidate = _normalize_token(candidate)
+                for token, original in normalized_map.items():
+                    if norm_candidate in token:
                         return original
             return None
 
         def _pick_mass_keys():
             selected = []
             for candidate in ["ux mass", "uy mass", "uz mass", "mass x", "mass y", "mass z", "mass"]:
-                for lower_name, original in lower_map.items():
-                    if candidate in lower_name and original not in selected:
+                norm_candidate = _normalize_token(candidate)
+                for token, original in normalized_map.items():
+                    if norm_candidate in token and original not in selected:
                         selected.append(original)
             return selected
 
@@ -691,7 +694,8 @@ def extract_story_weights_from_db(SapModel) -> Optional[List[Dict[str, float]]]:
 
         parsed = []
         for row in rows:
-            story = str(row.get(story_key, "")).strip()
+            raw_story = str(row.get(story_key, "")).strip()
+            story = story_name_map.get(_normalize_token(raw_story), raw_story)
             if story not in STORY_NAMES:
                 continue
 

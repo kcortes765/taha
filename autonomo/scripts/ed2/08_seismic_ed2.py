@@ -101,7 +101,8 @@ def configure_mass_source(SapModel) -> None:
         load_patterns,
         scale_factors,
     )
-    if ret == 0:
+    ret_code = ret[-1] if isinstance(ret, (tuple, list)) else ret
+    if ret_code == 0:
         log.info("  Mass Source OK via SetMassSource_1")
         return
 
