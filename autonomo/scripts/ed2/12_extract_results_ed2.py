@@ -75,6 +75,35 @@ def env_flag(name: str, default: bool = False) -> bool:
 def extract_modal() -> list:
     modal_rows = extract_modal_rows_from_db(SapModel)
     if not modal_rows:
+        try:
+            _, cached_rows = read_csv("ed2_modal_results.csv")
+        except Exception:
+            cached_rows = []
+
+        reused_rows = []
+        for row in cached_rows:
+            period = float(str(row.get("Period", "0")).replace(",", "."))
+            if period <= 0:
+                continue
+            reused_rows.append(
+                {
+                    "Mode": str(row.get("Mode", "")),
+                    "Period": f"{period:.6f}",
+                    "UX": str(row.get("UX", "0")),
+                    "UY": str(row.get("UY", "0")),
+                    "RZ": str(row.get("RZ", "0")),
+                    "SumUX": str(row.get("SumUX", "0")),
+                    "SumUY": str(row.get("SumUY", "0")),
+                }
+            )
+        if reused_rows:
+            log.warning(
+                "Las tablas modales no quedaron visibles via DB; se reutiliza "
+                "ed2_modal_results.csv generado en step 08."
+            )
+            modal_rows = reused_rows
+
+    if not modal_rows:
         raise RuntimeError("No se pudieron extraer resultados modales reales desde ETABS.")
     write_csv(
         "ed2_modal_results.csv",

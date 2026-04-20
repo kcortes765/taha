@@ -877,42 +877,56 @@ def extract_modal_rows_from_db(SapModel) -> List[Dict[str, str]]:
         "Modal Information",
         "Modal Periods And Frequencies",
     ]
-    for table_name in table_names:
-        fields, rows = parse_db_table(SapModel, table_name)
-        if rows:
-            normalized = []
-            lower_map = {field.lower().strip(): field for field in (fields or [])}
 
-            def _key(*candidates):
-                for candidate in candidates:
-                    for lower_name, original in lower_map.items():
-                        if candidate in lower_name:
-                            return original
-                return None
+    def _read_modal_tables() -> List[Dict[str, str]]:
+        for table_name in table_names:
+            fields, rows = parse_db_table(SapModel, table_name)
+            if rows:
+                normalized = []
+                lower_map = {field.lower().strip(): field for field in (fields or [])}
 
-            col_mode = _key("mode")
-            col_period = _key("period")
-            col_ux = _key("ux")
-            col_uy = _key("uy")
-            col_rz = _key("rz")
-            col_sum_ux = _key("sumux", "sum ux")
-            col_sum_uy = _key("sumuy", "sum uy")
-            for row in rows:
-                period = safe_float(row.get(col_period or "", "0"), 0.0)
-                if period <= 0:
-                    continue
-                normalized.append({
-                    "Mode": str(int(safe_float(row.get(col_mode or "", "0"), 0))),
-                    "Period": f"{period:.6f}",
-                    "UX": str(safe_float(row.get(col_ux or "", "0"), 0.0)),
-                    "UY": str(safe_float(row.get(col_uy or "", "0"), 0.0)),
-                    "RZ": str(safe_float(row.get(col_rz or "", "0"), 0.0)),
-                    "SumUX": str(safe_float(row.get(col_sum_ux or "", "0"), 0.0)),
-                    "SumUY": str(safe_float(row.get(col_sum_uy or "", "0"), 0.0)),
-                })
-            if normalized:
-                return normalized
-    return []
+                def _key(*candidates):
+                    for candidate in candidates:
+                        for lower_name, original in lower_map.items():
+                            if candidate in lower_name:
+                                return original
+                    return None
+
+                col_mode = _key("mode")
+                col_period = _key("period")
+                col_ux = _key("ux")
+                col_uy = _key("uy")
+                col_rz = _key("rz")
+                col_sum_ux = _key("sumux", "sum ux")
+                col_sum_uy = _key("sumuy", "sum uy")
+                for row in rows:
+                    period = safe_float(row.get(col_period or "", "0"), 0.0)
+                    if period <= 0:
+                        continue
+                    normalized.append({
+                        "Mode": str(int(safe_float(row.get(col_mode or "", "0"), 0))),
+                        "Period": f"{period:.6f}",
+                        "UX": str(safe_float(row.get(col_ux or "", "0"), 0.0)),
+                        "UY": str(safe_float(row.get(col_uy or "", "0"), 0.0)),
+                        "RZ": str(safe_float(row.get(col_rz or "", "0"), 0.0)),
+                        "SumUX": str(safe_float(row.get(col_sum_ux or "", "0"), 0.0)),
+                        "SumUY": str(safe_float(row.get(col_sum_uy or "", "0"), 0.0)),
+                    })
+                if normalized:
+                    return normalized
+        return []
+
+    modal_rows = _read_modal_tables()
+    if modal_rows:
+        return modal_rows
+
+    # Step 11 leaves the last seismic case selected for output. Re-select the
+    # modal case explicitly before re-querying DB tables in later steps.
+    try:
+        select_cases_for_output(SapModel, [MODAL_CASE])
+    except Exception:
+        pass
+    return _read_modal_tables()
 
 
 def compute_story_weights_analytic() -> List[Dict[str, float]]:
