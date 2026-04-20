@@ -69,6 +69,12 @@ def main() -> int:
 
     if summary.get("story_weight_source", "unknown") != "etabs_table":
         failures.append("Los pesos por piso no provienen de tabla ETABS")
+    story_forces_source = summary.get("story_forces_source", "unknown")
+    if story_forces_source != "etabs_table":
+        if story_forces_source == "theoretical_static_distribution":
+            failures.append("Story Forces uso distribucion estatica teorica; queda solo como precheck no oficial")
+        else:
+            failures.append("Story Forces no proviene de tabla ETABS")
     drift_cm_source = summary.get("drift_cm_source", "unknown")
     if drift_cm_source not in {
         "nearest_cm_table",
@@ -220,6 +226,7 @@ def main() -> int:
     )
     print(f"Story weights source = {summary.get('story_weight_source', 'unknown')}")
     print(f"Story weights file = {summary.get('story_weight_file', '')}")
+    print(f"Story Forces source = {summary.get('story_forces_source', 'unknown')}")
     print(f"Drift CM source = {summary.get('drift_cm_source', 'unknown')}")
     print(f"Drift excess source = {summary.get('drift_excess_source', 'unknown')}")
     print(f"CM/CR source = {summary.get('cm_cr_source', 'unknown')} | real CR = {summary.get('cm_cr_real', False)}")

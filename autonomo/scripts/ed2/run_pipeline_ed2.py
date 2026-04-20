@@ -221,6 +221,8 @@ def run_pipeline(args):
             env_overrides["ED2_ETABS_FORCE_MODEL_OPEN"] = "1"
     if args.allow_geometric_cm_fallback:
         env_overrides["ED2_ALLOW_CM_GEOMETRIC_FALLBACK"] = "1"
+    if args.allow_theoretical_story_forces_fallback:
+        env_overrides["ED2_ALLOW_STORY_FORCES_THEORETICAL_FALLBACK"] = "1"
 
     results = []
     pipeline_started = time.time()
@@ -308,6 +310,11 @@ Examples:
         "--allow-geometric-cm-fallback",
         action="store_true",
         help="Permite CM=centro geometrico solo para precheck no oficial.",
+    )
+    parser.add_argument(
+        "--allow-theoretical-story-forces-fallback",
+        action="store_true",
+        help="Permite Story Forces desde distribucion estatica solo para precheck no oficial.",
     )
     parser.add_argument("--log", help="Custom log file path")
     return parser

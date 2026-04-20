@@ -63,6 +63,7 @@ from ed2_static_official import (
 )
 
 ENV_ALLOW_GEOMETRIC_CM_FALLBACK = "ED2_ALLOW_CM_GEOMETRIC_FALLBACK"
+ENV_ALLOW_THEORETICAL_STORY_FORCES_FALLBACK = "ED2_ALLOW_STORY_FORCES_THEORETICAL_FALLBACK"
 
 
 def env_flag(name: str, default: bool = False) -> bool:
@@ -155,7 +156,61 @@ def extract_base_reactions() -> list:
     return rows
 
 
-def extract_story_forces() -> list:
+def extract_story_forces(allow_theoretical_fallback: bool = False) -> tuple[list, dict]:
+    def f(row, key):
+        return float(str(row.get(key, "0")).replace(",", "."))
+
+    def export_story_force_outputs(raw_rows: list, summary_rows: list, source: str) -> tuple[list, dict]:
+        write_csv(
+            "ed2_story_forces.csv",
+            ["story", "case", "location", "Vx_tonf", "Vy_tonf", "Mx_tonf_m", "My_tonf_m", "source"],
+            [
+                [
+                    row["story"],
+                    row["case"],
+                    row["location"],
+                    f"{row['Vx']:.6f}",
+                    f"{row['Vy']:.6f}",
+                    f"{row['Mx']:.6f}",
+                    f"{row['My']:.6f}",
+                    source,
+                ]
+                for row in raw_rows
+            ],
+        )
+
+        write_csv(
+            "ed2_story_forces_summary.csv",
+            [
+                "story",
+                "case",
+                "selected_location",
+                "Vx_accum_tonf",
+                "Vy_accum_tonf",
+                "floor_Fx_tonf",
+                "floor_Fy_tonf",
+                "Mx_overturning_tonf_m",
+                "My_overturning_tonf_m",
+                "source",
+            ],
+            [
+                [
+                    row["story"],
+                    row["case"],
+                    row["selected_location"],
+                    f"{row['Vx_accum_tonf']:.6f}",
+                    f"{row['Vy_accum_tonf']:.6f}",
+                    f"{row['floor_Fx_tonf']:.6f}",
+                    f"{row['floor_Fy_tonf']:.6f}",
+                    f"{row['Mx_overturning_tonf_m']:.6f}",
+                    f"{row['My_overturning_tonf_m']:.6f}",
+                    source,
+                ]
+                for row in summary_rows
+            ],
+        )
+        return summary_rows, {"source": source}
+
     select_cases_for_output(SapModel, ["EX", "EY"])
     fields = None
     rows = None
@@ -164,7 +219,7 @@ def extract_story_forces() -> list:
         if rows:
             break
     if not rows:
-        raise RuntimeError("No se pudo extraer 'Story Forces' reales desde ETABS.")
+        fields = None
 
     lower_map = {field.lower().strip(): field for field in (fields or [])}
 
@@ -183,127 +238,155 @@ def extract_story_forces() -> list:
     mx_key = pick_field(["mx"])
     my_key = pick_field(["my"])
 
-    if not story_key or not case_key or not (vx_key or vy_key):
+    raw = []
+    if story_key and case_key and (vx_key or vy_key):
+        for row in rows or []:
+            story = str(row.get(story_key, "")).strip()
+            case = str(row.get(case_key, "")).strip()
+            if story not in STORY_NAMES or case.upper() not in {"EX", "EY"}:
+                continue
+            raw.append(
+                {
+                    "story": story,
+                    "case": case.upper(),
+                    "location": str(row.get(location_key, "")).strip(),
+                    "Vx": abs(float(str(row.get(vx_key, "0")).replace(",", "."))) if vx_key else 0.0,
+                    "Vy": abs(float(str(row.get(vy_key, "0")).replace(",", "."))) if vy_key else 0.0,
+                    "Mx": abs(float(str(row.get(mx_key, "0")).replace(",", "."))) if mx_key else 0.0,
+                    "My": abs(float(str(row.get(my_key, "0")).replace(",", "."))) if my_key else 0.0,
+                }
+            )
+
+    if raw:
+        summary_rows = []
+        for case_name in ["EX", "EY"]:
+            case_rows = [row for row in raw if row["case"] == case_name]
+            selected = {}
+            for story in STORY_NAMES:
+                story_rows = [row for row in case_rows if row["story"] == story]
+                if not story_rows:
+                    continue
+                bottom_rows = [
+                    row
+                    for row in story_rows
+                    if str(row["location"]).strip().upper() in {"BOTTOM", "BOT", "B"}
+                ]
+                choice_pool = bottom_rows or story_rows
+                selected[story] = max(
+                    choice_pool,
+                    key=lambda item: max(item["Vx"], item["Vy"], item["Mx"], item["My"]),
+                )
+
+            if len(selected) != len(STORY_NAMES):
+                raise RuntimeError(
+                    f"'Story Forces' no entrego las 5 historias completas para {case_name}."
+                )
+
+            ordered_desc = sorted(
+                selected.values(),
+                key=lambda item: STORY_ELEVATIONS[STORY_NAMES.index(item["story"])],
+                reverse=True,
+            )
+            prev_vx = 0.0
+            prev_vy = 0.0
+            for row in ordered_desc:
+                floor_fx = max(0.0, row["Vx"] - prev_vx)
+                floor_fy = max(0.0, row["Vy"] - prev_vy)
+                summary_rows.append(
+                    {
+                        "story": row["story"],
+                        "case": case_name,
+                        "selected_location": row["location"],
+                        "Vx_accum_tonf": row["Vx"],
+                        "Vy_accum_tonf": row["Vy"],
+                        "floor_Fx_tonf": floor_fx,
+                        "floor_Fy_tonf": floor_fy,
+                        "Mx_overturning_tonf_m": row["Mx"],
+                        "My_overturning_tonf_m": row["My"],
+                    }
+                )
+                prev_vx = row["Vx"]
+                prev_vy = row["Vy"]
+
+        summary_rows.sort(key=lambda item: (item["case"], STORY_NAMES.index(item["story"])))
+        return export_story_force_outputs(raw, summary_rows, "etabs_table")
+
+    if not allow_theoretical_fallback:
         raise RuntimeError("La tabla 'Story Forces' no trae campos suficientes para Ed.2.")
 
-    raw = []
-    for row in rows:
-        story = str(row.get(story_key, "")).strip()
-        case = str(row.get(case_key, "")).strip()
-        if story not in STORY_NAMES or case.upper() not in {"EX", "EY"}:
-            continue
-        raw.append(
+    _, static_rows = read_csv("ed2_static_distribution.csv")
+    if len(static_rows) != len(STORY_NAMES):
+        raise RuntimeError(
+            "Story Forces real no disponible y ed2_static_distribution.csv no tiene las 5 historias."
+        )
+
+    raw_fallback = []
+    summary_rows = []
+    for row in static_rows:
+        story = str(row.get("story", "")).strip()
+        vx_accum = f(row, "Vx_accum_tonf")
+        vy_accum = f(row, "Vy_accum_tonf")
+        floor_fx = f(row, "Fx_tonf")
+        floor_fy = f(row, "Fy_tonf")
+        mx_overturning = f(row, "Mx_overturning_tonf_m")
+        my_overturning = f(row, "My_overturning_tonf_m")
+
+        raw_fallback.append(
             {
                 "story": story,
-                "case": case.upper(),
-                "location": str(row.get(location_key, "")).strip(),
-                "Vx": abs(float(str(row.get(vx_key, "0")).replace(",", "."))) if vx_key else 0.0,
-                "Vy": abs(float(str(row.get(vy_key, "0")).replace(",", "."))) if vy_key else 0.0,
-                "Mx": abs(float(str(row.get(mx_key, "0")).replace(",", "."))) if mx_key else 0.0,
-                "My": abs(float(str(row.get(my_key, "0")).replace(",", "."))) if my_key else 0.0,
+                "case": "EX",
+                "location": "THEORETICAL_STATIC_DISTRIBUTION",
+                "Vx": vx_accum,
+                "Vy": 0.0,
+                "Mx": mx_overturning,
+                "My": my_overturning,
+            }
+        )
+        raw_fallback.append(
+            {
+                "story": story,
+                "case": "EY",
+                "location": "THEORETICAL_STATIC_DISTRIBUTION",
+                "Vx": 0.0,
+                "Vy": vy_accum,
+                "Mx": mx_overturning,
+                "My": my_overturning,
             }
         )
 
-    if not raw:
-        raise RuntimeError("La tabla 'Story Forces' no devolvio filas utiles para EX/EY.")
-
-    write_csv(
-        "ed2_story_forces.csv",
-        ["story", "case", "location", "Vx_tonf", "Vy_tonf", "Mx_tonf_m", "My_tonf_m"],
-        [
-            [
-                row["story"],
-                row["case"],
-                row["location"],
-                f"{row['Vx']:.6f}",
-                f"{row['Vy']:.6f}",
-                f"{row['Mx']:.6f}",
-                f"{row['My']:.6f}",
-            ]
-            for row in raw
-        ],
-    )
-
-    summary_rows = []
-    for case_name in ["EX", "EY"]:
-        case_rows = [row for row in raw if row["case"] == case_name]
-        selected = {}
-        for story in STORY_NAMES:
-            story_rows = [row for row in case_rows if row["story"] == story]
-            if not story_rows:
-                continue
-            bottom_rows = [
-                row
-                for row in story_rows
-                if str(row["location"]).strip().upper() in {"BOTTOM", "BOT", "B"}
-            ]
-            choice_pool = bottom_rows or story_rows
-            selected[story] = max(
-                choice_pool,
-                key=lambda item: max(item["Vx"], item["Vy"], item["Mx"], item["My"]),
-            )
-
-        if len(selected) != len(STORY_NAMES):
-            raise RuntimeError(
-                f"'Story Forces' no entrego las 5 historias completas para {case_name}."
-            )
-
-        ordered_desc = sorted(
-            selected.values(),
-            key=lambda item: STORY_ELEVATIONS[STORY_NAMES.index(item["story"])],
-            reverse=True,
+        summary_rows.append(
+            {
+                "story": story,
+                "case": "EX",
+                "selected_location": "THEORETICAL_STATIC_DISTRIBUTION",
+                "Vx_accum_tonf": vx_accum,
+                "Vy_accum_tonf": 0.0,
+                "floor_Fx_tonf": floor_fx,
+                "floor_Fy_tonf": 0.0,
+                "Mx_overturning_tonf_m": mx_overturning,
+                "My_overturning_tonf_m": my_overturning,
+            }
         )
-        prev_vx = 0.0
-        prev_vy = 0.0
-        for row in ordered_desc:
-            floor_fx = max(0.0, row["Vx"] - prev_vx)
-            floor_fy = max(0.0, row["Vy"] - prev_vy)
-            summary_rows.append(
-                {
-                    "story": row["story"],
-                    "case": case_name,
-                    "selected_location": row["location"],
-                    "Vx_accum_tonf": row["Vx"],
-                    "Vy_accum_tonf": row["Vy"],
-                    "floor_Fx_tonf": floor_fx,
-                    "floor_Fy_tonf": floor_fy,
-                    "Mx_overturning_tonf_m": row["Mx"],
-                    "My_overturning_tonf_m": row["My"],
-                }
-            )
-            prev_vx = row["Vx"]
-            prev_vy = row["Vy"]
+        summary_rows.append(
+            {
+                "story": story,
+                "case": "EY",
+                "selected_location": "THEORETICAL_STATIC_DISTRIBUTION",
+                "Vx_accum_tonf": 0.0,
+                "Vy_accum_tonf": vy_accum,
+                "floor_Fx_tonf": 0.0,
+                "floor_Fy_tonf": floor_fy,
+                "Mx_overturning_tonf_m": mx_overturning,
+                "My_overturning_tonf_m": my_overturning,
+            }
+        )
 
     summary_rows.sort(key=lambda item: (item["case"], STORY_NAMES.index(item["story"])))
-    write_csv(
-        "ed2_story_forces_summary.csv",
-        [
-            "story",
-            "case",
-            "selected_location",
-            "Vx_accum_tonf",
-            "Vy_accum_tonf",
-            "floor_Fx_tonf",
-            "floor_Fy_tonf",
-            "Mx_overturning_tonf_m",
-            "My_overturning_tonf_m",
-        ],
-        [
-            [
-                row["story"],
-                row["case"],
-                row["selected_location"],
-                f"{row['Vx_accum_tonf']:.6f}",
-                f"{row['Vy_accum_tonf']:.6f}",
-                f"{row['floor_Fx_tonf']:.6f}",
-                f"{row['floor_Fy_tonf']:.6f}",
-                f"{row['Mx_overturning_tonf_m']:.6f}",
-                f"{row['My_overturning_tonf_m']:.6f}",
-            ]
-            for row in summary_rows
-        ],
+    log.warning(
+        "Story Forces real no disponible via DB; se reutiliza ed2_static_distribution.csv "
+        "solo como precheck no oficial."
     )
-    return summary_rows
+    return export_story_force_outputs(raw_fallback, summary_rows, "theoretical_static_distribution")
 
 
 def extract_story_drifts(allow_geometric_cm_fallback: bool = False) -> tuple:
@@ -798,7 +881,7 @@ def extract_cm_cr(allow_geometric_cm_fallback: bool = False) -> tuple:
     return sorted(parsed, key=lambda item: STORY_NAMES.index(item["story"])), meta
 
 
-def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, cm_cr_rows, cm_cr_meta):
+def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, story_force_meta, cm_cr_rows, cm_cr_meta):
     static_seed = read_json("ed2_static_seed.json")
     torsion_application = read_json("ed2_torsion_application.json")
     analysis_run = read_json("ed2_analysis_run.json")
@@ -897,6 +980,7 @@ def build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summa
         "cm_cr_story_count": len(cm_cr_rows),
         "cm_cr_all_within_plan": cm_cr_all_within_plan,
         "cm_cr_no_zero": cm_cr_no_zero,
+        "story_forces_source": story_force_meta.get("source", "unknown"),
         "story_forces_story_count_ex": sum(1 for row in story_force_summary if row["case"] == "EX"),
         "story_forces_story_count_ey": sum(1 for row in story_force_summary if row["case"] == "EY"),
         "etabs_expected_major": analysis_run.get("etabs_runtime", {}).get("expected_major", 0),
@@ -918,9 +1002,18 @@ def main() -> int:
         action="store_true",
         help="Permite CM=centro geometrico solo para precheck no oficial.",
     )
+    parser.add_argument(
+        "--allow-theoretical-story-forces-fallback",
+        action="store_true",
+        help="Permite Story Forces desde distribucion estatica solo para precheck no oficial.",
+    )
     args = parser.parse_args()
     allow_geometric_cm_fallback = args.allow_geometric_cm_fallback or env_flag(
         ENV_ALLOW_GEOMETRIC_CM_FALLBACK,
+        False,
+    )
+    allow_theoretical_story_forces_fallback = args.allow_theoretical_story_forces_fallback or env_flag(
+        ENV_ALLOW_THEORETICAL_STORY_FORCES_FALLBACK,
         False,
     )
 
@@ -945,14 +1038,25 @@ def main() -> int:
 
         modal_rows = extract_modal()
         base_rows = extract_base_reactions()
-        story_force_summary = extract_story_forces()
+        story_force_summary, story_force_meta = extract_story_forces(
+            allow_theoretical_fallback=allow_theoretical_story_forces_fallback
+        )
         _, envelope, drift_meta = extract_story_drifts(
             allow_geometric_cm_fallback=allow_geometric_cm_fallback
         )
         cm_cr_rows, cm_cr_meta = extract_cm_cr(
             allow_geometric_cm_fallback=allow_geometric_cm_fallback
         )
-        summary = build_summary(modal_rows, base_rows, envelope, drift_meta, story_force_summary, cm_cr_rows, cm_cr_meta)
+        summary = build_summary(
+            modal_rows,
+            base_rows,
+            envelope,
+            drift_meta,
+            story_force_summary,
+            story_force_meta,
+            cm_cr_rows,
+            cm_cr_meta,
+        )
 
         if not args.no_summary:
             log.info(
