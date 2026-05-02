@@ -30,3 +30,34 @@
 
 ## Repo
 - https://github.com/kcortes765/taller-etabs — pipeline ETABS Ed.1
+
+## SRC-20260430-APOSX - Fuente local APOS-X
+
+Fecha de consulta: 2026-04-30 23:43
+Tipo: local
+Fuente: `C:\Seba\seba_os\apos-system`
+Usado para: preparar memoria local del proyecto para APOS-X v1.0.
+Claims soportados:
+- La estructura APOS-X requerida existe en fuente versionada local.
+Confianza: alta
+Notas: fuente local creada antes de migrar proyectos.
+# 2026-05-02 - Fuentes paquete WS UCN Ed.1
+
+- `docs/Enunciado Taller.pdf`
+- `docs/Material taller/Material Apoyo Taller 2026.pdf`
+- `docs/Material taller/Paso a Paso ETABS M.Lafontaine.pdf`
+- `docs/Material taller/Manual de ETABS v19.pdf`
+- `materiales_fuente/Normas Curso/Normas a Utilizar en Curso/NCh433-2026 para Curso.pdf`
+- `docs/Normas Utilizadas ADSE/NCh0433-1996-Mod.2009.pdf`
+- `docs/Normas Utilizadas ADSE/DECRETO 61 2011 DISEÑO SISMICO DE EDIFICIOS.pdf`
+- `docs/Normas Utilizadas ADSE/NCh 3171- 2017.pdf`
+- `docs/Normas Utilizadas ADSE/NCh1537- 2009 Diseño estructural de edificios - Cargas perman.pdf`
+- `docs/apuntes/INDICE.md`
+- `docs/apuntes/02c-Analisis-Estatico.pdf`
+- `docs/apuntes/02d-Analisis-Dinamico-Modal-Espectral.pdf`
+- `docs/estudio/GUIA-EDIFICIO1-ETABS-v21.md`
+- `docs/estudio/00-ESTADO-NORMATIVO-CURSO-2026.md`
+- `taller-etabs/MODELADO_MANUAL_ED1_NOTAS.md`
+- `autonomo/research/validacion_cruzada.md`
+- `autonomo/research/resultados_esperados.md`
+- `autonomo/research/VERIFICACION-FINAL.md`

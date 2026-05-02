@@ -1,43 +1,125 @@
-# HANDOFF — ADSE 1S-2026
+# HANDOFF - ADSE 1S-2026
 
-**Última sesión:** 2026-03-20 (sesión 4)
+**Actualizacion:** 2026-05-02
 
-## Qué se hizo
-- **Verificado enunciado** pág 1 y 3: shaft Y = 2.345 m (no 2.945), pasillos = 500 kgf/m²
-- **Confirmado DS61 Tabla 12.3** renderizando PDF: Suelo C → n=1.40, p=1.60
-- **Confirmado α fórmula** en DS61 Art. 12.2: denominador = (Tn/To)³ fijo
-- **Aplicadas 8 correcciones** a la guía ETABS:
-  - n/p: 1.33/1.50 → 1.40/1.60
-  - Ec: 2,574,300 → 2,624,300 tonf/m² (factor ×101.937)
-  - Cardinal Point vigas: 8 → 2 (Bottom Center)
-  - Shaft Y: 2.945 → 2.345 m
-  - Tabla espectral recalculada con p=1.60
-  - SF espectro clarificado: Sa/g + SF=9.81
-- **Construido sistema autónomo** (`autonomo/`):
-  - `run.py` — orquestador Python (rate limits, reintentos, progreso)
-  - `features.json` — 27 features en 4 fases
-  - `context.md` — contexto para Claude por iteración
+## Delta nuevo
+- Se preparo un paquete de transferencia Git para continuar Edificio 1 en la WS UCN:
+  - `transfer/ws-u-ed1-ui-context/`
+- La carpeta contiene:
+  - `files/` con 20 archivos de contexto
+  - `README.md`
+  - `MANIFEST.md`
+  - `WS_U_COMMANDS.md`
+  - `PROMPT_BASE_WS_U.md`
+- Aclaracion operativa:
+  - el modelo ETABS `.EDB` vive en la WS y se trabaja por UI
+  - este repo se usa para bajar contexto, guia, material del profesor, normas y codigo
+  - no subir `.EDB` al repo sin decidir Git LFS
+- Estado actual Ed.1 UI:
+  - se esta trabajando desde planta tipo/manual
+  - se detecto que la apariencia 3D de vigas invertidas puede confundir
+  - criterio canonico: verificar `Insertion Point = 2 - Bottom Center` por asignacion/tablas
+  - la casilla `Do not transform frame stiffness for offsets from centroid` queda marcada por alineacion con Lafontaine/profesor
 
-## Qué cambió
-- `docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md` — 8 ediciones aplicadas
-- `autonomo/` — directorio nuevo completo (run.py, features.json, context.md, scripts/, research/, logs/)
-- `RETOMAR.md` — actualizado
+## Siguiente accion inmediata
+1. Empujar rama `codex/ws-u-ed1-ui-context`.
+2. En la WS:
+   - clonar o actualizar repo
+   - hacer checkout de la rama
+   - abrir `transfer/ws-u-ed1-ui-context/`
+3. Continuar el modelo en ETABS 21 desde el `.EDB` local de la WS, usando la guia `13_GUIA_ED1_ETABS_v21.md`.
+4. No volver a aplicar comandos masivos sin checkpoint previo.
 
-## Qué debe hacer el siguiente agente
-1. **Lanzar el agente autónomo**: `python autonomo/run.py`
-2. El orquestador ejecuta 27 features secuenciales (~8-10h):
-   - R01-R06: investigación exhaustiva (API, COM, fórmulas, Material Apoyo, Lafontaine)
-   - G01-G05: correcciones finales a la guía
-   - A01-A14: scripts API Python completos
-   - V01-V02: validación cruzada y revisión final
-3. Si hay rate limit → espera automática (5h) → retoma
-4. Progreso en `autonomo/progress.json`, logs en `autonomo/logs/`
+## Delta anterior
+- Se creo una nueva carpeta operativa para la primera sesion externa de Edificio 1:
+  - `review-ia/ed1-gpt55pro-cierre-final-10-sesiones-20x1/01_GEOMETRIA_CANONICA_UI_API_ETABS21/`
+- La carpeta trae `20 archivos de contexto + 1 prompt maestro` y un zip opcional:
+  - `review-ia/ed1-gpt55pro-cierre-final-10-sesiones-20x1/01_GEOMETRIA_CANONICA_UI_API_ETABS21.zip`
+- Foco: congelar o bloquear la geometria canonica del Edificio 1 cruzando enunciado, imagenes, guia UI y scripts ETABS 21.
+- Criterio nuevo: GPT-5.5 Pro es recomendado si esta disponible; GPT-5.4 Pro sigue siendo compatible. Image 2.0 queda solo como salida visual posterior, no como fuente tecnica.
 
-## Qué no debe asumir
-- Que los scripts API antiguos (repo taller-etabs) son correctos — rehacer desde cero con investigación
-- Que R* = 1+(Ro-1)·T*/(0.1·To+T*) es correcto — pendiente verificación en NCh433 literal (feature R04)
-- Que el orquestador ya fue probado en ejecución real — es v1, puede necesitar ajustes
+## Siguiente accion inmediata anterior
+1. Subir los 20 archivos de contexto de `01_GEOMETRIA_CANONICA_UI_API_ETABS21/`.
+2. Pegar `21_PROMPT_GPT55PRO_GEOMETRIA_CANONICA_UI_API_ETABS21.md` como prompt maestro.
+3. Exigir salida en `GEOM_ED1_PUNTOS`, `GEOM_ED1_TRAMOS`, cambios de guia UI y cambios de codigo ETABS 21.
 
-## Contexto mínimo para retomar
-Leer: este HANDOFF + `autonomo/context.md` + `autonomo/features.json`
-Si retoma manualmente (sin orquestador): `autonomo/progress.json` tiene el estado
+**Ultima sesion:** 2026-04-20
+
+## Que se hizo
+- Se fijo una nueva capa canonica de normativa del curso en:
+  - `docs/estudio/00-ESTADO-NORMATIVO-CURSO-2026.md`
+- Se dejo asentado que:
+  - `NCh433:2026` manda hoy en el curso
+  - `NCh433 + DS61` queda como capa historica/parcialmente desactualizada
+  - Ed.1 y Ed.2 deben defenderse formalmente con 2026
+  - en ambos edificios, para `Zona 3 / Sitio C / Categoria II`, varios parametros principales siguen coincidiendo numericamente con la capa historica
+- Se actualizo `docs/estudio/ED2_PARTE1_CANON.md` para reamarrar Edificio 2 a `NCh433:2026`.
+- Se absorbio la primera ronda completa de 10 salidas GPT-5.4 Pro de Ed.1 en un nuevo paquete activo de cierre final:
+  - `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/`
+- Ese paquete nuevo:
+  - mantiene formato estricto `20 contextos + 1 prompt`
+  - trae `fuentes-ronda1/` con hallazgos v1 curados
+  - reordena las 10 carpetas como frentes de cierre y no como auditorias generales
+  - fue validado con `GENERAR_20x1.ps1` y quedo con 10 carpetas de `21 archivos`
+- Se redefinio la sesion 9 como:
+  - `09_DEMANDAS_MUROS_V2`
+  - foco en congelar demandas concurrentes de muros, no detalle final de acero
+- Se mantuvo intacto el paquete viejo `review-ia/ed1-gpt54pro-10-sesiones/` y el paquete de primera ronda `review-ia/ed1-gpt54pro-10-sesiones-pro-20x1/` como capas historicas.
+
+## Que cambio
+- El paquete activo de Ed.1 ya no es el `20+1` de primera ronda.
+- La estrategia actual de Ed.1 pasa a ser:
+  - cierre secuencial
+  - congelamiento de frentes
+  - trazabilidad
+  - go/no-go final
+- El siguiente agente no debe volver a pedir una auditoria panoramica de Ed.1 si ya tiene el nuevo paquete de cierre.
+
+## Que debe hacer el siguiente agente
+1. Usar como punto de entrada:
+   - `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/00_INDICE_20x1.md`
+2. Si se va a correr el paquete final con GPT-5.4 Pro, hacerlo en este orden:
+   - si el objetivo sigue siendo cerrar Ed.2 Parte 1, usar primero:
+     - `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/00A_CORRIDA_CORTA_PRE_ED2.md`
+   - subset obligatorio:
+     - `01_GEOMETRIA_V2_CONGELAMIENTO`
+     - `02_MASA_CARGAS_Y_HUELLA_V2`
+     - `04_KERNEL_SISMICO_ESPECTRO_RSTAR_V2`
+     - `05_TORSION_ACCIDENTAL_V2`
+     - `06_CASOS_COMBOS_Y_ESCALAS_V2`
+     - `10_REDTEAM_GO_NO_GO_FINAL`
+   - subset condicional:
+     - `03_MODELO_ETABS_HARDENING_V2`
+     - `07_CM_CR_DRIFT_TORSION_EVIDENCIA_V2`
+     - `08_TRAZABILIDAD_ETABS_CRUDA_V2`
+   - no correr `09_DEMANDAS_MUROS_V2` mientras el foco siga en Parte 1
+3. Si algun frente alto cambia fuerte:
+   - geometria
+   - kernel sismico
+   - torsion / 6 casos
+   entonces no confiar ciegamente en resultados aguas abajo y rerun solo lo necesario.
+4. Mantener Ed.2 separado:
+   - la capa `ed2_ui_*` sigue vigente como respaldo local
+   - el bloqueo COM de drifts/story forces en la WS no se resolvio en esta sesion
+5. Cuando use guias o resumentes del repo:
+   - filtrar primero con `docs/estudio/00-ESTADO-NORMATIVO-CURSO-2026.md`
+   - no asumir que una referencia a `DS61` sigue siendo canon del curso
+
+## Que no debe asumir
+- No asumir que `review-ia/ed1-gpt54pro-10-sesiones-pro-20x1/` sigue siendo el paquete activo; ahora es baseline de primera ronda.
+- No asumir que la sesion 9 de Ed.1 ya permite detalle de armaduras; primero deben congelarse demandas concurrentes.
+- No asumir que un hallazgo v1 sea canon solo porque esta escrito; el paquete nuevo lo trata como baseline a confirmar o refutar.
+- No mezclar cierres Ed.1 con el trabajo pendiente de Ed.2.
+
+## Contexto minimo para retomar
+1. `.apos/BOOTSTRAP.md`
+2. `.apos/STATUS.md`
+3. `.apos/DECISIONS.md`
+4. `.apos/JOURNAL.md`
+5. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/00_INDICE_20x1.md`
+6. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/fuentes-ronda1/00_RESUMEN_RONDA1.md`
+7. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/fuentes-ronda1/01_BLOQUEOS_Y_DEPENDENCIAS.md`
+8. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/09_DEMANDAS_MUROS_V2/00_MAPA_DE_CARGA.md`
+9. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/10_REDTEAM_GO_NO_GO_FINAL/20_PROMPT_GPT54PRO.md`
+10. `docs/estudio/00-ESTADO-NORMATIVO-CURSO-2026.md`
+11. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/00A_CORRIDA_CORTA_PRE_ED2.md`

@@ -1,54 +1,39 @@
-# PLAN — ADSE 1S-2026
+# PLAN - ADSE 1S-2026
 
-## Fase 1: Setup y Material [90% COMPLETADA]
-- Apuntes cortados en 14 PDFs + INDICE.md
-- CLAUDE.md configurado para navegación de todo el material
-- Normas, tablas, manuales organizados
-- Faltan guías de estudio caps 2b-5
+## Fase 0: Auditoria externa Ed.1 con GPT-5.4 Pro [LISTA]
+- Paquete `review-ia/ed1-gpt54pro-10-sesiones/` creado y poblado
+- 10 sesiones separadas listas
+- Pendiente: correrlas y convertir hallazgos en decisiones del repo
 
-## Fase 2: App C1 [95% COMPLETADA]
-- App funcional (~11K líneas, 250 preguntas, 8 módulos)
-- Interactivos 3D, calculadoras, lazos histeréticos
-- Pendiente: testeo visual en navegador
+## Fase 1: Canon y alcance Ed.2 [85%]
+- Canon Ed.2 Parte 1 consolidado
+- Auditoria tecnica consolidada
+- Confusion Ed.1 vs Ed.2 resuelta con evidencia del enunciado
+- Pendiente: congelar una version final de guia UI ETABS 21 ya auditada
 
-## Fase 3: Pipeline ETABS Ed.1 — COM API [PAUSADO — DEC-008]
-- Pipeline 13 scripts completos y funcionales
-- Geometría config.py en 3ra iteración
-- **PAUSADO**: Se cambió a enfoque manual (DEC-008). Pipeline preservado como referencia.
+## Fase 2: Guia UI Ed.2 ETABS 21 [EN CURSO]
+- Paquete de auditoria externa listo
+- Evidencia de contexto y clases Music relevantes ya incluida
+- Pendiente: recibir hallazgos de otra IA o ejecutar esa auditoria localmente y aplicar correcciones finales a la guia
 
-## Fase 3b: Modelación ETABS Ed.1 — Dual (UI + API) [40% — EN CURSO]
-- ✅ Guía paso a paso completa (~1500 líneas, 13 fases)
-- ✅ 4 documentos del taller extraídos al 100%
-- ✅ 3 investigaciones externas completadas y analizadas
-- ✅ Verificación contra enunciado y DS61 completada
-- ✅ 8 correcciones aplicadas a la guía
-- ✅ Sistema autónomo construido (27 features)
-- ⬜ Lanzar agente autónomo (`python autonomo/run.py`)
-- ⬜ 6 research + 5 guide + 14 API + 2 validation features
-- ⬜ Modelar en ETABS v19 (con guía perfeccionada)
-- ⬜ Extraer resultados (6 casos de análisis)
-- Próximo: Lanzar agente → modelar
+## Fase 3: Pipeline Ed.2 ETABS 21 [EN CURSO]
+- Codigo Ed.2 rebaselinado al flujo estatico oficial
+- Arranque por consola endurecido para ETABS 21 WS UCN
+- Runtime root portable + bundle WS + empaquetado de retorno listos
+- Repo GitHub remoto ya poblado para que la WS baje codigo real por `git`
+- Pendiente: corrida viva en ETABS 21 con evidencia real
+- Pendiente: validar guia UI contra comportamiento real del modelo
 
-## Fase 4: Análisis Sísmico Ed.1 [0% — DEPENDE DE FASE 3b]
-- Depende de modelo correcto en ETABS
-- Incluye: espectro, torsión (3 métodos × 2 diafragmas), R*, drift, corte muros
-- Guía ya documenta TODO el procedimiento
+## Fase 4: Entrega intermedia Ed.1 + Ed.2 [ACTIVA]
+- Modal de ambos edificios exigido por correo del 2026-04-15
+- Para Ed.2: mantener modal como apoyo y exigencia de entrega, no como reemplazo del analisis estatico Parte 1
 
-## Fase 5: Taller Ed.1 — Entrega [0%]
-- Informe + exposición 1 (26 mayo)
-- Diseño de muros (corte, flexión, confinamiento)
-- Depende de modelo analizado
-
-## Fase 6: Preparación C1 [10%]
-- Fecha: 5 mayo (~6 semanas)
-- App lista, material listo
-- Falta: estudiar activamente, hacer problemas propuestos
-
-## Fase 7: Pipeline ETABS Ed.2 — Marcos [0%]
-- 5 pisos, marcos especiales HA
-- No empezado, depende de terminar Ed.1
-
-## Fase 8: C2 + C3 + Expo 2-3 [0%]
-- C2: 26 mayo (análisis)
-- C3: 30 junio (diseño muros + marcos)
-- Expo2: 16 junio, Expo3: 7 julio
+## Prioridad inmediata
+1. Empujar el paquete `transfer/ws-u-ed1-ui-context/` a rama Git `codex/ws-u-ed1-ui-context`
+2. Descargar esa rama en la WS UCN
+3. Continuar Edificio 1 por UI en ETABS 21 usando el `.EDB` local de la WS
+4. Usar `transfer/ws-u-ed1-ui-context/files/13_GUIA_ED1_ETABS_v21.md` como guia activa
+5. Verificar vigas invertidas por asignacion/tablas, no solo por apariencia 3D
+6. No versionar `.EDB` salvo decision posterior con Git LFS
+7. Correr primero la nueva sesion `01_GEOMETRIA_CANONICA_UI_API_ETABS21` si se necesita auditoria externa de geometria
+8. Consolidar hallazgos de Ed.1 antes de avanzar a masa, torsion, drift o resultados
