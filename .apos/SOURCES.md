@@ -61,3 +61,13 @@ Notas: fuente local creada antes de migrar proyectos.
 - `autonomo/research/validacion_cruzada.md`
 - `autonomo/research/resultados_esperados.md`
 - `autonomo/research/VERIFICACION-FINAL.md`
+
+# 2026-05-04 - Estado WS Ed.1
+
+- Reporte externo pegado por el usuario desde otra IA/correo, fechado por contexto 2026-05-04.
+- Ruta modelo activo reportada:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+- Ruta original corregido reportada:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_01_Grilla_v01.EDB`
+- Ruta backup pre-correcciones reportada:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\backups\ED1_01_Grilla_v01_pre_correcciones_20260502_193648.EDB`

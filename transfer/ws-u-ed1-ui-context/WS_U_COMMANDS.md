@@ -3,16 +3,16 @@
 ## Primera descarga
 
 ```powershell
-cd C:\Users\Civil\Documents
-git clone https://github.com/kcortes765/taha.git
-cd taha
-git checkout codex/ws-u-ed1-ui-context
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1"
+mkdir contexto_git
+cd contexto_git
+git clone --branch codex/ws-u-ed1-ui-context --single-branch https://github.com/kcortes765/taha.git .
 ```
 
 ## Si el repo ya existe en la WS
 
 ```powershell
-cd C:\Users\Civil\Documents\taha
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\contexto_git"
 git fetch origin
 git checkout codex/ws-u-ed1-ui-context
 git pull
@@ -53,4 +53,3 @@ No subir:
 - backups grandes
 - carpetas de analisis temporales de ETABS
 - renders o capturas duplicadas sin valor tecnico
-

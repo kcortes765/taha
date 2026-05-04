@@ -29,11 +29,18 @@
 - Para Ed.2: mantener modal como apoyo y exigencia de entrega, no como reemplazo del analisis estatico Parte 1
 
 ## Prioridad inmediata
-1. Empujar el paquete `transfer/ws-u-ed1-ui-context/` a rama Git `codex/ws-u-ed1-ui-context`
-2. Descargar esa rama en la WS UCN
-3. Continuar Edificio 1 por UI en ETABS 21 usando el `.EDB` local de la WS
-4. Usar `transfer/ws-u-ed1-ui-context/files/13_GUIA_ED1_ETABS_v21.md` como guia activa
-5. Verificar vigas invertidas por asignacion/tablas, no solo por apariencia 3D
-6. No versionar `.EDB` salvo decision posterior con Git LFS
-7. Correr primero la nueva sesion `01_GEOMETRIA_CANONICA_UI_API_ETABS21` si se necesita auditoria externa de geometria
-8. Consolidar hallazgos de Ed.1 antes de avanzar a masa, torsion, drift o resultados
+1. Retomar Ed.1 solo cuando vuelva licencia ETABS 21 en la WS
+2. Abrir `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+3. Re-verificar correcciones base reportadas:
+   - vigas `Cardinal Point = 2`
+   - offsets automaticos y `Rigid Zone Factor = 0.75`
+   - releases solo `M2/M3` donde corresponde
+   - apoyos base empotrados
+   - losa con `m11/m22/m12 = 0.25`
+4. Asignar diafragma rigido
+5. Crear patrones `PP/SCP/SCT/TERP/TERT`
+6. Aplicar cargas de uso, terminaciones y techo
+7. Definir fuente de masa
+8. Crear modal/espectral
+9. Resolver torsion accidental / 6 casos
+10. Exportar tablas: peso sismico, CM/CR, periodos, corte basal, drifts, Story Forces y esfuerzos en muros eje 1/eje F

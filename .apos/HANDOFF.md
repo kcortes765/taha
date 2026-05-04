@@ -1,8 +1,44 @@
 # HANDOFF - ADSE 1S-2026
 
-**Actualizacion:** 2026-05-02
+**Actualizacion:** 2026-05-04
 
 ## Delta nuevo
+- Se recibio estado externo de Ed.1 en WS ETABS 21.
+- El modelo base ya habria sido corregido por API COM antes del bloqueo de licencia.
+- Ruta de trabajo al retomar:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+- Rutas de respaldo:
+  - original corregido: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_01_Grilla_v01.EDB`
+  - backup pre-correcciones: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\backups\ED1_01_Grilla_v01_pre_correcciones_20260502_193648.EDB`
+- Correcciones reportadas:
+  - 320 vigas con `Cardinal Point = 2`
+  - offsets automaticos y `Rigid Zone Factor = 0.75`
+  - releases limpios solo en `M2/M3`
+  - base empotrada en 50 puntos
+  - modificadores flexurales de losa `0.25`
+- Pendiente vivo:
+  - licencia ETABS 21
+  - cargas, masa, diafragmas, modal/espectral, torsion, analisis y tablas
+
+## Siguiente accion inmediata
+1. Esperar/reactivar licencia ETABS 21 en la WS.
+2. Abrir solo:
+   - `ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+3. Re-verificar correcciones base antes de modificar:
+   - vigas invertidas
+   - offsets/rigid zone
+   - releases
+   - apoyos
+   - modificadores de losa
+4. Continuar con:
+   - diafragmas
+   - patrones y cargas
+   - mass source
+   - modal/espectral
+   - torsion accidental / 6 casos
+   - analisis y export de tablas
+
+## Delta 2026-05-02
 - Se preparo un paquete de transferencia Git para continuar Edificio 1 en la WS UCN:
   - `transfer/ws-u-ed1-ui-context/`
 - La carpeta contiene:
@@ -21,7 +57,7 @@
   - criterio canonico: verificar `Insertion Point = 2 - Bottom Center` por asignacion/tablas
   - la casilla `Do not transform frame stiffness for offsets from centroid` queda marcada por alineacion con Lafontaine/profesor
 
-## Siguiente accion inmediata
+## Siguiente accion inmediata 2026-05-02
 1. Empujar rama `codex/ws-u-ed1-ui-context`.
 2. En la WS:
    - clonar o actualizar repo

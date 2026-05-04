@@ -314,3 +314,21 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 - Si se necesita versionar `.EDB`, debe decidirse Git LFS explicitamente.
 - Mientras tanto, usar checkpoints locales con nombres claros en la WS.
 - La guia activa para Ed.1 UI es `transfer/ws-u-ed1-ui-context/files/13_GUIA_ED1_ETABS_v21.md`.
+
+# 2026-05-04 - Modelo Ed.1 activo para Parte 1
+
+## Decision
+- Al retomar en la WS, continuar solo sobre:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+
+## Razon
+- Ese archivo fue creado desde el modelo original ya corregido por API COM segun reporte externo.
+- El original corregido se mantiene como referencia:
+  - `ED1_01_Grilla_v01.EDB`
+- Existe backup pre-correcciones:
+  - `backups\ED1_01_Grilla_v01_pre_correcciones_20260502_193648.EDB`
+
+## Implicancia
+- No continuar sobre copias anteriores ni rehacer geometria.
+- La primera accion con licencia activa debe ser verificacion, no nuevas asignaciones masivas.
+- El bloqueo actual es licencia ETABS, no geometria ni correcciones base.

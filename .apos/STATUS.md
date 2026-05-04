@@ -1,7 +1,36 @@
 # STATUS - ADSE 1S-2026
-Ultima actualizacion: 2026-05-02
+Ultima actualizacion: 2026-05-04
 
 ## Progreso
+
+### Ed.1 WS ETABS 21 - Parte 1
+- Estado: modelo base corregido en WS; licencia ETABS bloquea continuar automatizacion.
+- Fuente: reporte externo pegado por el usuario desde otra IA/correo, no verificado localmente.
+- Ruta canonica de trabajo al retomar:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+- Rutas relacionadas:
+  - original corregido: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_01_Grilla_v01.EDB`
+  - backup pre-correcciones: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\backups\ED1_01_Grilla_v01_pre_correcciones_20260502_193648.EDB`
+- Correcciones base reportadas:
+  - 320 vigas invertidas con `Cardinal Point = 2`
+  - `End Length Offset = Auto`
+  - `Rigid Zone Factor = 0.75`
+  - releases corregidos solo en `M2/M3` donde correspondia
+  - sin releases indebidos de axial/corte/torsion
+  - 50 apoyos de base empotrados en 6 GDL
+  - `Losa15G30` con modificadores flexurales `m11/m22/m12 = 0.25`
+  - ETABS 21 build 21.2.0
+- No alcanzado:
+  - cargas `PP/SCP/SCT/TERP/TERT`
+  - fuente de masa
+  - diafragmas
+  - modal/espectral
+  - torsion accidental
+  - analisis y extraccion de tablas
+- Proximo bloque:
+  - retomar cuando vuelva licencia ETABS 21
+  - abrir solo `ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+  - re-verificar correcciones base antes de seguir
 
 ### Transferencia WS UCN Ed.1 UI/API
 - Estado: paquete Git preparado.
@@ -17,6 +46,7 @@ Ultima actualizacion: 2026-05-02
   - el modelo `.EDB` vivo se trabaja en la WS UCN, no en este repo
   - este repo pasa contexto, guia UI, normas, apuntes y codigo
   - no versionar `.EDB` salvo decision explicita con Git LFS
+  - carpeta WS correcta: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1`
 - Estado del modelado UI Ed.1:
   - planta tipo en ETABS trabajada manualmente
   - grillas, muros, vigas y losas ya fueron abordados

@@ -231,3 +231,17 @@ apos_migrate_project.py
   - crear/pushear rama `codex/ws-u-ed1-ui-context`
   - en WS ejecutar `git fetch`, `git checkout codex/ws-u-ed1-ui-context`
   - seguir desde `transfer/ws-u-ed1-ui-context/README.md`
+
+## 2026-05-04 - Estado externo WS Ed.1 antes de bloqueo de licencia
+- Hicimos: se registro el reporte de otra IA/correo sobre el estado del modelo Edificio 1 en la WS UCN.
+- Cambio real: la ruta activa para continuar Parte 1 queda fijada en:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+- Correccion o descubrimiento:
+  - el modelo base habria quedado corregido por API COM en ETABS 21 antes del bloqueo de licencia
+  - la automatizacion fallo despues, no durante las correcciones base
+  - correcciones reportadas: vigas invertidas, offsets, rigid zone, releases, apoyos base y modificadores de losa
+- Bloqueo:
+  - licencia ETABS 21 no disponible
+  - no hay ETABS corriendo
+- Siguiente paso:
+  - cuando vuelva la licencia, re-verificar correcciones base y continuar con diafragmas, cargas, mass source, modal/espectral, torsion, analisis y exportacion
