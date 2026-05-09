@@ -10,6 +10,8 @@ Ultima actualizacion: 2026-05-01 10:57
 5. `ACTIVE_SPEC.md`
 
 ## Ultimas decisiones relevantes
+- ## 2026-05-08 - Apuntes actualizados 080526 pasan a prioridad WS2
+- ## 2026-05-08 - WS2 cubre Parte 1 de Ed.1 y Ed.2
 - ## 2026-05-08 - WS2 debe clonar contexto dentro de HECRAS2
 - ## 2026-05-08 - Enunciado actualizado 2026-05-04 pasa a prioridad WS2
 - ## 2026-05-08 - APOS local y APOS WS2 se sincronizan por reportes
@@ -20,6 +22,7 @@ Ultima actualizacion: 2026-05-01 10:57
 - ## DEC-20260430-APOSX - Adoptar APOS-X v1.0 como politica local de continuidad
 
 ## Ultimas sesiones
+- ## 2026-05-08 - Apuntes actualizados y alcance Parte 1 ambos edificios
 - ## 2026-05-08 - Correccion ruta WS2 y enunciado actualizado
 - ## 2026-05-08 - APOS-X dual local/WS2
 - ## 2026-05-08 - Handoff WS2 Ed.1 y regla critica ETABS 21

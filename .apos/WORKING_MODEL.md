@@ -1,7 +1,7 @@
 # WORKING MODEL - ADSE 1S-2026
 
-## Thread: Edificio 1 WS2 ETABS 21 (ACTIVO)
-- Estado actual: continuidad de Edificio 1 pasa a una segunda workstation UCN (`WS2`) porque la WS anterior perdio/bloqueo licencia de ETABS 21.
+## Thread: Edificio 1 + Edificio 2 WS2 ETABS 21 Parte 1 (ACTIVO)
+- Estado actual: continuidad de Parte 1 de Edificio 1 y Edificio 2 pasa a una segunda workstation UCN (`WS2`) porque la WS anterior perdio/bloqueo licencia de ETABS 21.
 - Regla critica: no abrir ni usar mas de una instancia de ETABS 21. Verificar `Get-Process ETABS -ErrorAction SilentlyContinue` antes de abrir ETABS o correr scripts COM/API.
 - Ruta WS2 reportada:
   - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
@@ -14,14 +14,22 @@
 - Enunciado prioritario WS2:
   - `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
   - cambio detectado: agrega `En ambos considerar no aglomeracion de personas.`
+- Apuntes prioritarios WS2:
+  - `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+  - 344 paginas, reemplaza al PDF viejo de 321 paginas como fuente de curso
+- Fuentes Ed.2 agregadas:
+  - `transfer/ws2-ed1-etabs21-context/files/21_GUIA_ED2_ETABS_v21.md`
+  - `transfer/ws2-ed1-etabs21-context/files/22_ED2_PARTE1_CANON.md`
 - Primer objetivo:
-  - auditar el `.EDB` activo en WS2 y devolver reporte de estado antes de modificar
+  - auditar los `.EDB` activos de Ed.1 y Ed.2 en WS2 y devolver reporte de estado antes de modificar
   - no continuar cargas/masa/analisis hasta saber exactamente que avance UI se hizo en WS2
 - Evidencia:
   - `ETABS21_REGLA_LICENCIA.md`
   - `transfer/ws2-ed1-etabs21-context/README.md`
   - `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
   - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+  - `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
+  - `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
 - Ultima actualizacion: 2026-05-08
 
 ## Thread: Paquetes GPT-5.4 Pro Edificio 1 (ACTIVO)

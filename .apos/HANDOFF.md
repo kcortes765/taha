@@ -29,6 +29,12 @@
   - `transfer/ws2-ed1-etabs21-context/HECRAS2_ARCHIVOS_ESPERADOS.md`
   - `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
   - `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
+  - `docs/Apuntes del Curso 2026-05-08 actualizado.pdf`
+  - `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+  - `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
+  - `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+  - `transfer/ws2-ed1-etabs21-context/files/21_GUIA_ED2_ETABS_v21.md`
+  - `transfer/ws2-ed1-etabs21-context/files/22_ED2_PARTE1_CANON.md`
 
 ## Siguiente accion inmediata
 1. En WS2, bajar rama `codex/ws2-ed1-etabs21-context`.
@@ -36,8 +42,8 @@
 2. Leer `transfer/ws2-ed1-etabs21-context/README.md`.
 3. Verificar que no haya mas de una instancia ETABS:
    - `Get-Process ETABS -ErrorAction SilentlyContinue`
-4. Identificar el `.EDB` activo de Edificio 1 dentro de `HECRAS2`.
-5. Crear reporte de auditoria antes de modificar el modelo.
+4. Identificar los `.EDB` activos de Edificio 1 y Edificio 2 dentro de `HECRAS2`.
+5. Crear reporte de auditoria de ambos modelos antes de modificar.
 6. Si WS2 actualiza APOS, devolver delta en `transfer/ws2-ed1-etabs21-context/reports/`.
 
 ## Delta 2026-05-04

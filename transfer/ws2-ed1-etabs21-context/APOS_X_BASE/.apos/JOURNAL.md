@@ -298,3 +298,20 @@ apos_migrate_project.py
   - `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
 - Siguiente paso:
   - empujar rama actualizada y entregar nuevo prompt WS2 corregido.
+
+## 2026-05-08 - Apuntes actualizados y alcance Parte 1 ambos edificios
+- Hicimos: se agrego el PDF `Apuntes del Curso 080526.pdf` como fuente actualizada y se contrasto con el PDF viejo.
+- Cambio real:
+  - el PDF nuevo tiene 344 paginas versus 321 del anterior
+  - incorpora/explicita NCh433:2026 y nuevas paginas sobre NCh3793:2025, Vs30, Tg y H/V
+  - se documentaron paginas clave para metodo estatico, dinamico, torsion y combinaciones
+  - el paquete WS2 ahora cubre Parte 1 de Edificio 1 y Edificio 2
+- Archivos nuevos:
+  - `docs/Apuntes del Curso 2026-05-08 actualizado.pdf`
+  - `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+  - `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
+  - `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+  - `transfer/ws2-ed1-etabs21-context/files/21_GUIA_ED2_ETABS_v21.md`
+  - `transfer/ws2-ed1-etabs21-context/files/22_ED2_PARTE1_CANON.md`
+- Siguiente paso:
+  - WS2 debe auditar ambos modelos antes de ejecutar programaticamente Parte 1.

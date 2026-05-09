@@ -1,6 +1,6 @@
 # Prompt para Codex en WS2
 
-Estas trabajando en el proyecto ADSE UCN 1S-2026, Edificio 1, ETABS 21.
+Estas trabajando en el proyecto ADSE UCN 1S-2026, Parte 1 de Edificio 1 y Edificio 2, ETABS 21.
 
 ## Regla critica
 
@@ -45,7 +45,7 @@ git pull --ff-only origin codex/ws2-ed1-etabs21-context
 
 No modifiques el modelo al principio.
 
-Primero audita el estado real del modelo Edificio 1 en WS2 y produce un reporte. El usuario necesita devolver esa data al chat principal para decidir el siguiente paso.
+Primero audita el estado real de los modelos Edificio 1 y Edificio 2 en WS2 y produce un reporte. El usuario necesita devolver esa data al chat principal para decidir el siguiente paso.
 
 ## Lo que debes encontrar
 
@@ -84,8 +84,12 @@ Lee primero:
 - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos/HANDOFF.md`
 - `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
 - `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
+- `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
+- `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
 - `transfer/ws2-ed1-etabs21-context/files/13_GUIA_ED1_ETABS_v21.md`
+- `transfer/ws2-ed1-etabs21-context/files/21_GUIA_ED2_ETABS_v21.md`
 - `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+- `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
 - `transfer/ws2-ed1-etabs21-context/files/02_Material_Apoyo_Taller_2026.pdf`
 
 ## Output esperado
@@ -97,6 +101,8 @@ Devuelve un reporte en markdown con tres secciones:
 3. `Siguiente accion segura`
 
 No sigas modelando hasta cerrar esa auditoria.
+
+El reporte debe cubrir ambos edificios. Edificio 1 y Edificio 2 no tienen el mismo flujo: Ed.1 conserva la matriz de 6 casos; Ed.2 no la hereda y mantiene nucleo estatico con modal/checks segun curso.
 
 Ademas, si modificas memoria APOS en WS2, devuelve un delta en:
 

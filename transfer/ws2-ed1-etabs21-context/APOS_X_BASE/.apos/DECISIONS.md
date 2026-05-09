@@ -413,3 +413,37 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 ## Implicancia
 - WS2 debe usar el enunciado actualizado como fuente prioritaria.
 - El enunciado anterior queda solo como trazabilidad historica.
+
+# 2026-05-08 - Apuntes actualizados 080526 pasan a prioridad WS2
+
+## Decision
+- Agregar y priorizar:
+  - `docs/Apuntes del Curso 2026-05-08 actualizado.pdf`
+  - `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+
+## Razon
+- El usuario entrego apuntes actualizados para contrastar contra `NCh433:2026` y resolver Parte 1 de ambos edificios.
+- El PDF nuevo tiene 344 paginas, no 321.
+
+## Implicancia
+- El indice viejo `docs/apuntes/INDICE.md` sirve como orientacion historica, pero no como paginacion final del PDF nuevo.
+- WS2 debe leer `APUNTES_CAMBIOS_2026-05-08.md` antes de usar formulas/combinaciones.
+
+# 2026-05-08 - WS2 cubre Parte 1 de Ed.1 y Ed.2
+
+## Decision
+- Ampliar el alcance operativo del paquete WS2 a ambos modelos:
+  - Edificio 1
+  - Edificio 2
+
+## Razon
+- El usuario pidio resolver programaticamente completamente Parte 1 de ambos edificios.
+
+## Implicancia
+- El primer reporte WS2 debe auditar ambos `.EDB`.
+- Ed.1 conserva la matriz de 6 casos del enunciado.
+- Ed.2 no hereda esos 6 casos; mantiene nucleo estatico con modal/checks segun curso.
+- Se agregan al paquete:
+  - `files/21_GUIA_ED2_ETABS_v21.md`
+  - `files/22_ED2_PARTE1_CANON.md`
+  - `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`

@@ -54,16 +54,17 @@ git pull --ff-only origin codex/ws2-ed1-etabs21-context
 3. `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
 4. `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
 5. `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
-6. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
-7. `transfer/ws2-ed1-etabs21-context/PROMPT_PARA_CODEX_WS2.md`
+6. `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
+7. `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+8. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+9. `transfer/ws2-ed1-etabs21-context/PROMPT_PARA_CODEX_WS2.md`
 
 ## 5. Primera tarea
 
 No modelar primero.
 
-Auditar el `.EDB` activo de Edificio 1 dentro de `HECRAS2` y devolver reporte en:
+Auditar los `.EDB` activos de Edificio 1 y Edificio 2 dentro de `HECRAS2` y devolver reporte en:
 
 ```text
 transfer/ws2-ed1-etabs21-context/reports/
 ```
-

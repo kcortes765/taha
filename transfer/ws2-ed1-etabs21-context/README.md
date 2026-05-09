@@ -2,6 +2,8 @@
 
 Paquete de transferencia para continuar Edificio 1 en una segunda workstation UCN (`WS2`) despues de perdida/bloqueo de licencia en la workstation anterior.
 
+Actualizacion 2026-05-08: este paquete tambien incluye fuentes y criterio para resolver programaticamente Parte 1 de Edificio 2. El nombre historico de la carpeta conserva `ed1`, pero el alcance operativo WS2 ahora es `Ed.1 + Ed.2 Parte 1`.
+
 Leer primero:
 
 `00_START_AQUI_WS2.md`
@@ -102,6 +104,18 @@ Ademas se agrego el enunciado actualizado:
 
 Ese archivo debe tener prioridad sobre `files/01_Enunciado_Taller.pdf`.
 
+Tambien se agregaron los apuntes actualizados:
+
+`files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+
+Ese archivo debe tener prioridad sobre `docs/Apuntes del Curso.pdf` y sobre el indice cortado antiguo cuando haya conflicto de paginacion.
+
+Para Edificio 2 se agrego:
+
+- `files/21_GUIA_ED2_ETABS_v21.md`
+- `files/22_ED2_PARTE1_CANON.md`
+- `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+
 ## APOS-X
 
 Este paquete tambien trae un snapshot del APOS-X local:
@@ -126,9 +140,13 @@ El protocolo esta en:
 6. `APOS_X_BASE/.apos/STATUS.md`
 7. `FUENTES_PRIORITARIAS_WS2.md`
 8. `ENUNCIADO_CAMBIOS_2026-05-04.md`
-9. `files/13_GUIA_ED1_ETABS_v21.md`
-10. `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
-11. `files/02_Material_Apoyo_Taller_2026.pdf`
+9. `APUNTES_CAMBIOS_2026-05-08.md`
+10. `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+11. `files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+12. `files/13_GUIA_ED1_ETABS_v21.md`
+13. `files/21_GUIA_ED2_ETABS_v21.md`
+14. `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+15. `files/02_Material_Apoyo_Taller_2026.pdf`
 
 ## Criterio de seguridad
 

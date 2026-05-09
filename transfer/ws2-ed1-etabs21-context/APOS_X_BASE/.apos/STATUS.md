@@ -40,9 +40,18 @@ Ultima actualizacion: 2026-05-08
   - se agrego `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
   - cambio textual principal: se agrego `En ambos considerar no aglomeracion de personas.`
   - no se detectaron otros cambios textuales en paginas 2 a 14
+- Actualizacion apuntes 2026-05-08:
+  - se agrego `docs/Apuntes del Curso 2026-05-08 actualizado.pdf`
+  - se agrego `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+  - el PDF actualizado tiene 344 paginas vs 321 del anterior
+  - cambios relevantes: NCh433:2026 explicita, NCh3793:2025/Vs30/Tg/H/V, metodo estatico, dinamico modal espectral y combinaciones de torsion
+- Alcance WS2 ampliado:
+  - resolver programaticamente Parte 1 de Edificio 1 y Edificio 2
+  - se agregaron `files/21_GUIA_ED2_ETABS_v21.md` y `files/22_ED2_PARTE1_CANON.md`
+  - el nombre historico del paquete conserva Ed.1, pero el alcance operativo ahora incluye ambos modelos
 - Primer objetivo WS2:
   - no seguir modelando aun
-  - auditar primero el `.EDB` activo y devolver reporte de estado real
+  - auditar primero los `.EDB` activos de Ed.1 y Ed.2 y devolver reporte de estado real
 - Flujo APOS:
   - APOS local coordina y consolida decisiones
   - APOS WS2 registra ejecucion/evidencia de ETABS
