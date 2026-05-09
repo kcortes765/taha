@@ -51,15 +51,19 @@ git pull --ff-only origin codex/ws2-ed1-etabs21-context
 
 1. `transfer/ws2-ed1-etabs21-context/LICENCIA_ETABS21_REGLA_CRITICA.md`
 2. `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
-3. `transfer/ws2-ed1-etabs21-context/APOS_X_SYNC_PROTOCOL.md`
-4. `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
-5. `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
-6. `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
-7. `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
-8. `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
-9. `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
-10. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
-11. `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+3. `transfer/ws2-ed1-etabs21-context/MODO_GOD_WS2.md`
+4. `transfer/ws2-ed1-etabs21-context/MODO_GOD_DOCUMENTACION_WS2.md`
+5. `transfer/ws2-ed1-etabs21-context/MODO_AUTONOMO_WS2_HORAS.md`
+6. `transfer/ws2-ed1-etabs21-context/APOS_X_SYNC_PROTOCOL.md`
+7. `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
+8. `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
+9. `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
+10. `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
+11. `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
+12. `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
+13. `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+14. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+15. `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
 
 ## 5. Primera tarea
 

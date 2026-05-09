@@ -121,6 +121,8 @@ Ver detalle en `CODIGO_WS2_MANIFEST.md`.
 
 Ver contrato de adaptacion en `WORKBENCH_CODIGO_WS2.md`. WS2 debe usar el codigo como base para iterar y adaptar al `.EDB` real, no como diagnostico pasivo ni como pipeline para correr sin cambios.
 
+Para corrida larga sin supervision, leer `MODO_GOD_WS2.md`, `MODO_GOD_DOCUMENTACION_WS2.md` y `MODO_AUTONOMO_WS2_HORAS.md`. Esos archivos autorizan el loop autonomo: investigar fuentes, ejecutar, verificar, corregir y continuar, deteniendose solo ante bloqueos duros.
+
 ## APOS-X
 
 Este paquete tambien trae un snapshot del APOS-X local:
@@ -140,21 +142,24 @@ El protocolo esta en:
 1. `LICENCIA_ETABS21_REGLA_CRITICA.md`
 2. `APOS_X_SYNC_PROTOCOL.md`
 3. `PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
-4. `HANDOFF_WS2_ED1.md`
-5. `CODIGO_WS2_MANIFEST.md`
-6. `WORKBENCH_CODIGO_WS2.md`
-7. `PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
-8. `CHECKLIST_AUDITORIA_MODELO_ED1.md`
-9. `APOS_X_BASE/.apos/STATUS.md`
-10. `FUENTES_PRIORITARIAS_WS2.md`
-11. `ENUNCIADO_CAMBIOS_2026-05-04.md`
-12. `APUNTES_CAMBIOS_2026-05-08.md`
-13. `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
-14. `files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
-15. `files/13_GUIA_ED1_ETABS_v21.md`
-16. `files/21_GUIA_ED2_ETABS_v21.md`
-17. `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
-18. `files/02_Material_Apoyo_Taller_2026.pdf`
+4. `MODO_GOD_WS2.md`
+5. `MODO_GOD_DOCUMENTACION_WS2.md`
+6. `MODO_AUTONOMO_WS2_HORAS.md`
+7. `HANDOFF_WS2_ED1.md`
+8. `CODIGO_WS2_MANIFEST.md`
+9. `WORKBENCH_CODIGO_WS2.md`
+10. `PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+11. `CHECKLIST_AUDITORIA_MODELO_ED1.md`
+12. `APOS_X_BASE/.apos/STATUS.md`
+13. `FUENTES_PRIORITARIAS_WS2.md`
+14. `ENUNCIADO_CAMBIOS_2026-05-04.md`
+15. `APUNTES_CAMBIOS_2026-05-08.md`
+16. `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+17. `files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+18. `files/13_GUIA_ED1_ETABS_v21.md`
+19. `files/21_GUIA_ED2_ETABS_v21.md`
+20. `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+21. `files/02_Material_Apoyo_Taller_2026.pdf`
 
 ## Criterio de seguridad
 

@@ -508,3 +508,21 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 - El flujo correcto es auditoria minima, copia limpia, adaptacion de scripts, cambios por bloque, validacion y reporte.
 - Archivo rector:
   - `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
+
+# 2026-05-08 - WS2 queda autorizada para modo autonomo largo con investigacion documental
+
+## Decision
+- Permitir que la IA de WS2 trabaje durante horas sin loop humano constante.
+- Debe iterar errores de codigo por si misma, pero con limites duros de licencia/modelo.
+- Debe investigar fuentes/norma/apuntes antes de decisiones tecnicas relevantes.
+
+## Razon
+- El usuario quiere irse a dormir y dejar a WS2 avanzando hasta cerrar ambos edificios.
+- La calidad no puede depender solo de que el codigo corra; debe estar alineada con fuentes del curso.
+
+## Implicancia
+- Leer:
+  - `transfer/ws2-ed1-etabs21-context/MODO_GOD_WS2.md`
+  - `transfer/ws2-ed1-etabs21-context/MODO_GOD_DOCUMENTACION_WS2.md`
+  - `transfer/ws2-ed1-etabs21-context/MODO_AUTONOMO_WS2_HORAS.md`
+- Cada reporte final debe incluir fuentes usadas y criterio.

@@ -2,6 +2,8 @@
 
 Estas en WS2, proyecto ADSE UCN 1S-2026, ETABS 21. Tu objetivo es dejar completa la Parte 1 programatica/controlada de Edificio 1 y despues asegurar Edificio 2. No trabajes ambos edificios en paralelo.
 
+El usuario quiere dejarte trabajando por horas sin loop humano constante. Opera en MODO GOD: diagnostica solo como paso cero, investiga documentacion/norma/apuntes antes de cada decision relevante, adapta codigo, ejecuta por bloques, verifica, corrige tus propios errores y continua hasta cerrar Edificio 1 Parte 1 y luego Edificio 2 Parte 1. Solo detente ante bloqueo duro de licencia, modelo corrupto, edificio equivocado o decision tecnica/normativa imposible de resolver con las fuentes.
+
 ## Regla critica de licencia
 
 No abras mas de una instancia de ETABS 21. No corras dos scripts COM/OAPI en paralelo. No abras Edificio 1 y Edificio 2 al mismo tiempo.
@@ -34,17 +36,20 @@ No uses `C:\Users\Civil\Documents\taha` para este flujo.
 
 1. `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
 2. `transfer/ws2-ed1-etabs21-context/LICENCIA_ETABS21_REGLA_CRITICA.md`
-3. `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
-4. `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
-5. `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
-6. `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
-7. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
-8. `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
-9. `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
-10. `transfer/ws2-ed1-etabs21-context/files/02_Material_Apoyo_Taller_2026.pdf`
-11. `transfer/ws2-ed1-etabs21-context/files/05_NCh433_2026_para_Curso.pdf`
-12. `transfer/ws2-ed1-etabs21-context/code/ed1_taller_etabs_legacy/`
-13. `transfer/ws2-ed1-etabs21-context/code/ed2_pipeline_active/`
+3. `transfer/ws2-ed1-etabs21-context/MODO_GOD_WS2.md`
+4. `transfer/ws2-ed1-etabs21-context/MODO_GOD_DOCUMENTACION_WS2.md`
+5. `transfer/ws2-ed1-etabs21-context/MODO_AUTONOMO_WS2_HORAS.md`
+6. `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
+7. `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
+8. `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
+9. `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+10. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+11. `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+12. `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+13. `transfer/ws2-ed1-etabs21-context/files/02_Material_Apoyo_Taller_2026.pdf`
+14. `transfer/ws2-ed1-etabs21-context/files/05_NCh433_2026_para_Curso.pdf`
+15. `transfer/ws2-ed1-etabs21-context/code/ed1_taller_etabs_legacy/`
+16. `transfer/ws2-ed1-etabs21-context/code/ed2_pipeline_active/`
 
 ## Como debes usar el codigo
 

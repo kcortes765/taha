@@ -344,3 +344,12 @@ apos_migrate_project.py
   - `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
 - Siguiente paso:
   - WS2 debe leer el workbench y ejecutar Ed.1 por bloques verificables.
+
+## 2026-05-08 - Modo GOD autonomo + documentacion para WS2
+- Hicimos: se agrego una instruccion explicita para dejar la otra IA trabajando por horas sin loop humano constante.
+- Cambio real:
+  - `MODO_GOD_WS2.md` autoriza loop autonomo: observar, investigar fuentes, ejecutar, verificar, corregir y continuar.
+  - `MODO_GOD_DOCUMENTACION_WS2.md` obliga a alinear cada decision relevante con enunciado actualizado, apuntes 080526, Material Apoyo Taller y NCh433:2026.
+  - `MODO_AUTONOMO_WS2_HORAS.md` queda como complemento operativo.
+- Siguiente paso:
+  - WS2 debe hacer `git pull` y leer esos modos antes de abrir ETABS.
