@@ -493,3 +493,18 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 ## Implicancia
 - Ed.1 usa codigo historico como referencia, no como pipeline para correr a ciegas.
 - Ed.2 conserva pipeline activo, pero se ejecuta solo despues de Ed.1.
+
+# 2026-05-08 - WS2 debe iterar codigo, no solo diagnosticar
+
+## Decision
+- El codigo transferido a WS2 se considera base de adaptacion.
+- WS2 debe crear/modificar scripts incrementales segun el estado real del `.EDB`, licencia, rutas y ETABS 21.2.0.
+
+## Razon
+- El modelo Ed.1 ya tiene geometria hecha por UI; correr scripts historicos de geometria o `run_all.py` puede pisar trabajo real.
+- A la vez, diagnosticar sin implementar no cierra Parte 1.
+
+## Implicancia
+- El flujo correcto es auditoria minima, copia limpia, adaptacion de scripts, cambios por bloque, validacion y reporte.
+- Archivo rector:
+  - `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`

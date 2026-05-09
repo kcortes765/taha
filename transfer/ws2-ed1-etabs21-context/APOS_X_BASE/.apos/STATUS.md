@@ -310,6 +310,8 @@ Ultima actualizacion: 2026-05-08
   - `transfer/ws2-ed1-etabs21-context/code/ed2_pipeline_active/`
 - Prompt operativo actualizado:
   - `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+- Contrato de adaptacion codigo WS2:
+  - `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
 - Protocolo operativo:
   - `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
 - Reporte WS2 recibido y registrado:
@@ -349,6 +351,9 @@ Ultima actualizacion: 2026-05-08
   - torsion accidental/combinaciones
   - analisis
   - exportacion de tablas
+- Criterio de codigo:
+  - WS2 debe usar el codigo como base de adaptacion, no como pipeline final ni como diagnostico pasivo.
+  - Debe crear scripts incrementales propios si el codigo historico no calza con el `.EDB` real.
 
 ### Estado Edificio 2 WS2
 - Modelo activo probable:

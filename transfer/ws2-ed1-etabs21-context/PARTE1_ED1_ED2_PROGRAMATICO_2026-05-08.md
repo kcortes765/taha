@@ -142,12 +142,13 @@ Para cerrar cada edificio se debe poder trazar:
 
 - Ed.1: codigo historico incluido en `code/ed1_taller_etabs_legacy/`. Estaba orientado a flujo historico/ETABS 19 y/o generacion desde cero; adaptarlo incrementalmente a ETABS 21 y al `.EDB` ya modelado por UI.
 - Ed.2: flujo activo incluido en `code/ed2_pipeline_active/`. No ejecutarlo hasta cerrar Ed.1.
+- La WS2 debe usar `WORKBENCH_CODIGO_WS2.md` como contrato de iteracion: revisar el codigo actual, adaptarlo a las condiciones reales de la WS y crear scripts incrementales si hace falta.
 
-## Entregable inicial pedido a WS2
+## Entregable pedido a WS2
 
-No correr analisis completo aun.
+No correr analisis completo sin validaciones previas.
 
-Primero devolver un reporte con:
+Primero, si no esta confirmado en la sesion actual, devolver un reporte con:
 
 - Ed.1 `.EDB` activo y estado.
 - Ed.2 `.EDB` activo y estado.
@@ -155,3 +156,11 @@ Primero devolver un reporte con:
 - Que falta antes de correr Parte 1 completa.
 - Riesgos de usar UI vs API.
 - Propuesta de secuencia programatica segura.
+
+Despues, continuar con implementacion incremental de Ed.1 Parte 1:
+
+- scripts adaptados;
+- cambios aplicados al `.EDB` de trabajo;
+- analisis;
+- tablas exportadas;
+- reporte final trazable.

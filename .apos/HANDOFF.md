@@ -212,7 +212,8 @@ El siguiente agente debe partir de:
 2. `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
 3. `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
 4. `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
-5. `transfer/ws2-ed1-etabs21-context/reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md`
+5. `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
+6. `transfer/ws2-ed1-etabs21-context/reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md`
 
 Estado operativo:
 
@@ -222,6 +223,7 @@ Estado operativo:
 - No abrir mas de una instancia ETABS 21.
 - No trabajar dos edificios simultaneamente.
 - Crear copia limpia fechada antes de modificar cualquier `.EDB`.
+- El codigo incluido es base de adaptacion; WS2 debe iterar/adaptar scripts segun el `.EDB` real, no quedarse solo en diagnostico.
 
 Canon importante:
 

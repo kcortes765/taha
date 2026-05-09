@@ -333,3 +333,14 @@ apos_migrate_project.py
   - `transfer/ws2-ed1-etabs21-context/WS2_DELTA_CANON_20260508_RELEASES_TORSION.md`
 - Siguiente paso:
   - WS2 debe crear copia limpia del Ed.1 activo y completar Parte 1 de Ed.1 antes de tocar Ed.2.
+
+## 2026-05-08 - Se aclara que WS2 debe adaptar e iterar codigo
+- Hicimos: se agrego un contrato explicito de workbench para que WS2 use el codigo incluido como base adaptable.
+- Cambio real:
+  - el objetivo ya no queda interpretable como solo diagnostico;
+  - WS2 debe crear o modificar scripts incrementales contra el `.EDB` real;
+  - el codigo historico Ed.1 se usa como fuente de funciones/patrones OAPI, no como `run_all.py` directo.
+- Archivo nuevo:
+  - `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
+- Siguiente paso:
+  - WS2 debe leer el workbench y ejecutar Ed.1 por bloques verificables.

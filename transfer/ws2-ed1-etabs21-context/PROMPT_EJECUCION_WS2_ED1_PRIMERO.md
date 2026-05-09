@@ -36,14 +36,23 @@ No uses `C:\Users\Civil\Documents\taha` para este flujo.
 2. `transfer/ws2-ed1-etabs21-context/LICENCIA_ETABS21_REGLA_CRITICA.md`
 3. `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
 4. `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
-5. `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
-6. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
-7. `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
-8. `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
-9. `transfer/ws2-ed1-etabs21-context/files/02_Material_Apoyo_Taller_2026.pdf`
-10. `transfer/ws2-ed1-etabs21-context/files/05_NCh433_2026_para_Curso.pdf`
-11. `transfer/ws2-ed1-etabs21-context/code/ed1_taller_etabs_legacy/`
-12. `transfer/ws2-ed1-etabs21-context/code/ed2_pipeline_active/`
+5. `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
+6. `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+7. `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+8. `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+9. `transfer/ws2-ed1-etabs21-context/files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+10. `transfer/ws2-ed1-etabs21-context/files/02_Material_Apoyo_Taller_2026.pdf`
+11. `transfer/ws2-ed1-etabs21-context/files/05_NCh433_2026_para_Curso.pdf`
+12. `transfer/ws2-ed1-etabs21-context/code/ed1_taller_etabs_legacy/`
+13. `transfer/ws2-ed1-etabs21-context/code/ed2_pipeline_active/`
+
+## Como debes usar el codigo
+
+El codigo incluido es base de trabajo, no pipeline final congelado.
+
+Debes revisarlo, aprovechar funciones/patrones OAPI y adaptarlo al estado real de WS2. Si el codigo historico no calza con el `.EDB` actual, crea scripts nuevos incrementales en una carpeta de workbench local y deja registro.
+
+No te quedes solo en diagnostico: diagnostica primero por seguridad, luego modifica por bloques verificables hasta completar Edificio 1 Parte 1.
 
 ## Estado confirmado que debes respetar
 
@@ -84,17 +93,18 @@ Esto debe validarse y documentarse, no corregirse como error.
 Completar primero Edificio 1:
 
 1. Crear backup y copia limpia fechada desde el `.EDB` activo.
-2. Re-verificar estado base por OAPI sin guardar.
-3. Asignar diafragma `D1` a areas segun criterio de caso rigido.
-4. Crear/normalizar patrones `PP`, `SCP`, `SCT`, `TERP`, `TERT`.
-5. Aplicar cargas por losa/techo segun enunciado actualizado y apuntes.
-6. Definir mass source: `PP + TERP + TERT + fraccion SCP/SCT` segun curso/enunciado, evitando duplicar peso propio.
-7. Crear modal y espectral con base NCh433:2026 del curso.
-8. Implementar torsion accidental / matriz de casos de Edificio 1 segun enunciado y Material Apoyo Taller.
-9. Crear combinaciones requeridas.
-10. Correr analisis solo despues de validaciones.
-11. Exportar tablas ETABS exactas: peso sismico, CM/CR si aplica, periodos, participacion modal, corte basal, story forces, drifts, max/avg, base reactions, demandas relevantes de muros.
-12. Guardar reporte con rutas, tablas, errores y resultados.
+2. Crear/adaptar scripts incrementales para el `.EDB` real de WS2.
+3. Re-verificar estado base por OAPI sin guardar.
+4. Asignar diafragma `D1` a areas segun criterio de caso rigido.
+5. Crear/normalizar patrones `PP`, `SCP`, `SCT`, `TERP`, `TERT`.
+6. Aplicar cargas por losa/techo segun enunciado actualizado y apuntes.
+7. Definir mass source: `PP + TERP + TERT + fraccion SCP/SCT` segun curso/enunciado, evitando duplicar peso propio.
+8. Crear modal y espectral con base NCh433:2026 del curso.
+9. Implementar torsion accidental / matriz de casos de Edificio 1 segun enunciado y Material Apoyo Taller.
+10. Crear combinaciones requeridas.
+11. Correr analisis solo despues de validaciones.
+12. Exportar tablas ETABS exactas: peso sismico, CM/CR si aplica, periodos, participacion modal, corte basal, story forces, drifts, max/avg, base reactions, demandas relevantes de muros.
+13. Guardar reporte con rutas, tablas, errores, resultados y scripts modificados.
 
 ## Despues de Edificio 1
 
@@ -138,4 +148,3 @@ Cada reporte debe distinguir:
 - tablas exportadas;
 - dudas o bloqueos;
 - siguiente accion segura.
-

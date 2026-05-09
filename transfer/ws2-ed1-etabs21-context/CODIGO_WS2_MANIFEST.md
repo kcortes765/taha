@@ -6,6 +6,8 @@ Fecha: 2026-05-08
 
 Este paquete ahora incluye codigo local de referencia para Edificio 1 y Edificio 2. La carpeta `code/` estaba vacia en una version anterior del paquete; por eso se agrega explicitamente.
 
+La intencion no es que WS2 ejecute este codigo como caja negra. La intencion es darle todas las herramientas disponibles para que la IA de WS2 revise, adapte, mejore e itere codigo segun el estado real del modelo, la licencia, la version ETABS 21.2.0 y las rutas reales de `HECRAS2`.
+
 ## Carpetas
 
 ### Edificio 1
@@ -61,6 +63,8 @@ Se excluyeron elementos generados o no necesarios para ejecutar codigo:
 
 La IA de WS2 debe tratar este codigo como base de adaptacion, no como verdad final.
 
+Debe crear o modificar scripts incrementales propios cuando el codigo historico no calce con el `.EDB` real.
+
 Primero:
 
 1. leer contexto;
@@ -71,3 +75,8 @@ Primero:
 6. verificar con tablas;
 7. guardar reporte.
 
+Ver tambien:
+
+```text
+WORKBENCH_CODIGO_WS2.md
+```
