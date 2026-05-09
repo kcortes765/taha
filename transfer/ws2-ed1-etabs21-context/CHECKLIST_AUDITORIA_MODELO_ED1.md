@@ -50,7 +50,8 @@ Marcar cada item como:
 - End length offsets automaticos.
 - Rigid zone factor coherente.
 - Releases aplicados solo donde corresponde.
-- No hay liberacion axial/corte/torsion indebida.
+- Releases torsionales: verificar y documentar; no eliminarlos por defecto porque el usuario aclaro que fueron pedidos por el profesor.
+- No hay liberacion axial/corte indebida.
 
 ## 6. Losas
 
@@ -111,4 +112,3 @@ Marcar cada item como:
 - Captura o tabla de modificadores de losa.
 - Captura o tabla de mass source si existe.
 - Lista de archivos `.EDB` encontrados en `HECRAS2`.
-

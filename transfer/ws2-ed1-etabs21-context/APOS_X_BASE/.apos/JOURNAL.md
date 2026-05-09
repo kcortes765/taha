@@ -315,3 +315,21 @@ apos_migrate_project.py
   - `transfer/ws2-ed1-etabs21-context/files/22_ED2_PARTE1_CANON.md`
 - Siguiente paso:
   - WS2 debe auditar ambos modelos antes de ejecutar programaticamente Parte 1.
+
+## 2026-05-08 - WS2 auditado, releases torsionales corregidos en canon y codigo agregado
+- Hicimos: se absorbio el reporte WS2 de APOS-X y auditoria OAPI de Ed.1/Ed.2.
+- Cambio real:
+  - APOS-X quedo instalado en WS2 bajo `HECRAS2\apos-system`.
+  - WS2 audito con una sola instancia ETABS 21 y cerro sin dejar proceso abierto.
+  - Ed.1 activo probable es `HECRAS2\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`.
+  - Ed.2 activo probable es `HECRAS2\Edif2\Edificio2_Estatico con carga sismica.EDB`.
+  - se corrigio el canon: los releases torsionales de Ed.1 fueron pedidos por el profesor.
+  - se agrego codigo a `transfer/ws2-ed1-etabs21-context/code/`.
+- Archivos nuevos:
+  - `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
+  - `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
+  - `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+  - `transfer/ws2-ed1-etabs21-context/reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md`
+  - `transfer/ws2-ed1-etabs21-context/WS2_DELTA_CANON_20260508_RELEASES_TORSION.md`
+- Siguiente paso:
+  - WS2 debe crear copia limpia del Ed.1 activo y completar Parte 1 de Ed.1 antes de tocar Ed.2.

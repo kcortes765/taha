@@ -60,26 +60,22 @@ Estado previo conocido de WS1:
 
 ## Objetivo inmediato para WS2
 
-No continuar cargando el modelo a ciegas.
+Objetivo actual: terminar Edificio 1 Parte 1 primero. Luego asegurar Edificio 2.
 
-Primero se debe analizar el modelo abierto y devolver evidencia de estado:
+La auditoria inicial ya reporto estado base de ambos edificios. Antes de modificar, WS2 debe crear copia limpia fechada del `.EDB` activo y verificar que sigue siendo el mismo estado.
 
-1. Ruta exacta del `.EDB` activo.
-2. Nombre del modelo abierto en ETABS.
-3. Version/build de ETABS 21.
-4. Numero de stories.
-5. Conteo de muros, vigas, losas, puntos y apoyos.
-6. Confirmacion de grilla/ejes.
-7. Confirmacion de vigas invertidas por asignacion, no por apariencia 3D.
-8. Confirmacion de releases.
-9. Confirmacion de insertion points y offsets.
-10. Confirmacion de mesh/auto mesh.
-11. Confirmacion de diafragmas.
-12. Confirmacion de patrones de carga.
-13. Confirmacion de cargas aplicadas.
-14. Confirmacion de fuente de masa.
-15. Confirmacion de modal/espectral/torsion.
-16. Lista de diferencias contra el estado WS1.
+Para Edificio 1 se debe completar:
+
+1. diafragma asignado a areas;
+2. patrones y cargas `PP/SCP/SCT/TERP/TERT`;
+3. fuente de masa correcta;
+4. modal/espectral;
+5. torsion accidental y casos/combinaciones;
+6. analisis;
+7. exportacion de tablas;
+8. reporte trazable.
+
+Los releases torsionales de Edificio 1 fueron pedidos por el profesor; no eliminarlos por defecto.
 
 ## Archivos de contexto
 
@@ -116,6 +112,13 @@ Para Edificio 2 se agrego:
 - `files/22_ED2_PARTE1_CANON.md`
 - `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
 
+Codigo incluido:
+
+- `code/ed1_taller_etabs_legacy/`
+- `code/ed2_pipeline_active/`
+
+Ver detalle en `CODIGO_WS2_MANIFEST.md`.
+
 ## APOS-X
 
 Este paquete tambien trae un snapshot del APOS-X local:
@@ -134,19 +137,21 @@ El protocolo esta en:
 
 1. `LICENCIA_ETABS21_REGLA_CRITICA.md`
 2. `APOS_X_SYNC_PROTOCOL.md`
-3. `HANDOFF_WS2_ED1.md`
-4. `PROMPT_PARA_CODEX_WS2.md`
-5. `CHECKLIST_AUDITORIA_MODELO_ED1.md`
-6. `APOS_X_BASE/.apos/STATUS.md`
-7. `FUENTES_PRIORITARIAS_WS2.md`
-8. `ENUNCIADO_CAMBIOS_2026-05-04.md`
-9. `APUNTES_CAMBIOS_2026-05-08.md`
-10. `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
-11. `files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
-12. `files/13_GUIA_ED1_ETABS_v21.md`
-13. `files/21_GUIA_ED2_ETABS_v21.md`
-14. `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
-15. `files/02_Material_Apoyo_Taller_2026.pdf`
+3. `PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
+4. `HANDOFF_WS2_ED1.md`
+5. `CODIGO_WS2_MANIFEST.md`
+6. `PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+7. `CHECKLIST_AUDITORIA_MODELO_ED1.md`
+8. `APOS_X_BASE/.apos/STATUS.md`
+9. `FUENTES_PRIORITARIAS_WS2.md`
+10. `ENUNCIADO_CAMBIOS_2026-05-04.md`
+11. `APUNTES_CAMBIOS_2026-05-08.md`
+12. `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+13. `files/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`
+14. `files/13_GUIA_ED1_ETABS_v21.md`
+15. `files/21_GUIA_ED2_ETABS_v21.md`
+16. `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+17. `files/02_Material_Apoyo_Taller_2026.pdf`
 
 ## Criterio de seguridad
 

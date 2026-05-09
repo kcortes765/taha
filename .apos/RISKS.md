@@ -8,6 +8,7 @@
 - Mitigacion obligatoria:
   - verificar `Get-Process ETABS -ErrorAction SilentlyContinue` antes de abrir ETABS o correr COM/API
   - usar una sola instancia
+  - trabajar un solo edificio activo
   - no correr dos agentes/scripts simultaneos
   - no lanzar ETABS automaticamente desde scripts sin verificar instancia existente
 - Evidencia/registro:
@@ -16,10 +17,31 @@
 
 ## R-20260508-WS2-ESTADO-NO-TRAZADO
 
+- Estado: mitigado parcialmente.
+- Severidad: alta tecnica.
+- Riesgo: el usuario reporto que en WS2 hubo un avance leve por UI posterior a WS1. Ya existe auditoria OAPI inicial, pero aun faltan resultados de ejecucion Parte 1.
+- Mitigacion:
+  - usar `reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md` como baseline
+  - crear copia limpia fechada antes de modificar
+  - devolver reporte de ejecucion Ed.1
+
+## R-20260508-ED1-RELEASES-TORSION-MALINTERPRETADOS
+
 - Estado: vivo.
 - Severidad: alta tecnica.
-- Riesgo: el usuario reporta que en WS2 hubo un avance leve por UI posterior a WS1, pero el repo aun no contiene evidencia del estado real del `.EDB`.
+- Riesgo: una IA/agente puede eliminar releases torsionales de Ed.1 por considerarlos error, aunque el usuario aclaro que fueron pedidos por el profesor.
 - Mitigacion:
-  - no continuar modelando hasta auditar el modelo activo
-  - identificar ruta exacta del `.EDB`
-  - devolver reporte WS2 con conteos, asignaciones, cargas, mesh, diafragmas y diferencias contra WS1
+  - leer `WS2_DELTA_CANON_20260508_RELEASES_TORSION.md`
+  - preservar torsion liberada salvo instruccion explicita contraria
+  - verificar que no haya axial/corte liberados indebidamente
+
+## R-20260508-ED1-ED2-PARALELO
+
+- Estado: vivo.
+- Severidad: critica operacional.
+- Riesgo: trabajar Ed.1 y Ed.2 en paralelo puede mezclar modelos, scripts, reportes y abrir mas de una instancia ETABS.
+- Mitigacion:
+  - Ed.1 primero hasta cierre Parte 1
+  - Ed.2 despues
+  - registrar edificio activo en cada reporte
+  - usar `PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`

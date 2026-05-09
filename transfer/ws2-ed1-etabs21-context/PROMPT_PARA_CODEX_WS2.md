@@ -43,9 +43,11 @@ git pull --ff-only origin codex/ws2-ed1-etabs21-context
 
 ## Tu tarea inicial
 
-No modifiques el modelo al principio.
+Este prompt queda como auditoria base. Para ejecucion actual usa tambien:
 
-Primero audita el estado real de los modelos Edificio 1 y Edificio 2 en WS2 y produce un reporte. El usuario necesita devolver esa data al chat principal para decidir el siguiente paso.
+`transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+
+La auditoria inicial ya fue reportada. Ahora la prioridad es Edificio 1 primero, desde copia limpia fechada, hasta cerrar Parte 1. Edificio 2 se atiende despues.
 
 ## Lo que debes encontrar
 
@@ -60,8 +62,9 @@ Primero audita el estado real de los modelos Edificio 1 y Edificio 2 en WS2 y pr
    - `Cardinal Point = 2 - Bottom Center`
    - `Do not transform frame stiffness for offsets from centroid` marcado
 9. Confirmacion de releases:
-   - solo momentos `M2/M3` donde corresponde
-   - no liberar axial/corte/torsion
+   - releases de momento y torsion donde corresponde segun criterio del profesor
+   - no liberar axial/corte indebida
+   - no eliminar releases torsionales de Edificio 1 por defecto
 10. Confirmacion de apoyos de base.
 11. Confirmacion de modificadores de losa:
    - `m11/m22/m12 = 0.25` para `Losa15G30`
@@ -78,7 +81,10 @@ Lee primero:
 - `transfer/ws2-ed1-etabs21-context/README.md`
 - `transfer/ws2-ed1-etabs21-context/LICENCIA_ETABS21_REGLA_CRITICA.md`
 - `transfer/ws2-ed1-etabs21-context/APOS_X_SYNC_PROTOCOL.md`
+- `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
 - `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
+- `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
+- `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
 - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
 - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos/STATUS.md`
 - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos/HANDOFF.md`

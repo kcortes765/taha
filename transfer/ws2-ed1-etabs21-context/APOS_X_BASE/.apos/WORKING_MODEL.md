@@ -21,8 +21,9 @@
   - `transfer/ws2-ed1-etabs21-context/files/21_GUIA_ED2_ETABS_v21.md`
   - `transfer/ws2-ed1-etabs21-context/files/22_ED2_PARTE1_CANON.md`
 - Primer objetivo:
-  - auditar los `.EDB` activos de Ed.1 y Ed.2 en WS2 y devolver reporte de estado antes de modificar
-  - no continuar cargas/masa/analisis hasta saber exactamente que avance UI se hizo en WS2
+  - Ed.1 primero: crear copia limpia de `ED1_PARTE1_COMPLETA_TRABAJO.EDB` y completar Parte 1
+  - Ed.2 despues: auditar/asegurar solo cuando Ed.1 este cerrado
+  - no continuar con ningun edificio sin una sola instancia ETABS verificada
 - Evidencia:
   - `ETABS21_REGLA_LICENCIA.md`
   - `transfer/ws2-ed1-etabs21-context/README.md`
@@ -30,7 +31,27 @@
   - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
   - `transfer/ws2-ed1-etabs21-context/APUNTES_CAMBIOS_2026-05-08.md`
   - `transfer/ws2-ed1-etabs21-context/PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+  - `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
+  - `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+  - `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
+  - `transfer/ws2-ed1-etabs21-context/reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md`
 - Ultima actualizacion: 2026-05-08
+
+### Auditoria WS2 recibida
+- Ed.1 activo probable:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+- Ed.1 confirmado:
+  - 20 stories, 320 frames, 880 areas, 320 vigas invertidas, 50 apoyos empotrados, mesh presente.
+- Ed.1 pendiente:
+  - diafragma asignado, `PP/SCP/SCT/TERP/TERT`, mass source, modal/espectral, torsion/combinaciones, analisis y tablas.
+- Releases torsionales Ed.1:
+  - fueron pedidos por el profesor; no corregirlos por defecto.
+- Ed.2 activo probable:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\Edif2\Edificio2_Estatico con carga sismica.EDB`
+- Ed.2 confirmado:
+  - 5 stories, 480 frames, 130 areas, diafragma D1, cargas y combos existentes.
+- Ed.2 pendiente:
+  - queda despues de Ed.1; revisar 130 losas, `TEX/TEY/SDX/SDY`, combos y resultados.
 
 ## Thread: Paquetes GPT-5.4 Pro Edificio 1 (ACTIVO)
 - Estado actual: existe un paquete real de 10 carpetas autosuficientes para auditar Edificio 1 con sesiones largas y separadas de GPT-5.4 Pro.

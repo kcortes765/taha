@@ -14,9 +14,12 @@
 - `README.md`
 - `WS2_COMMANDS.md`
 - `PROMPT_PARA_CODEX_WS2.md`
+- `PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
 - `LICENCIA_ETABS21_REGLA_CRITICA.md`
+- `PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
 - `APOS_X_SYNC_PROTOCOL.md`
 - `HANDOFF_WS2_ED1.md`
+- `CODIGO_WS2_MANIFEST.md`
 - `CHECKLIST_AUDITORIA_MODELO_ED1.md`
 - `HECRAS2_ARCHIVOS_ESPERADOS.md`
 - `FUENTES_PRIORITARIAS_WS2.md`
@@ -25,6 +28,13 @@
 - `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
 - `APOS_X_BASE/.apos/`
 - `reports/README.md`
+- `reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md`
+- `WS2_DELTA_CANON_20260508_RELEASES_TORSION.md`
+
+## Codigo incluido
+
+- `code/ed1_taller_etabs_legacy/`
+- `code/ed2_pipeline_active/`
 
 ## Fuentes principales incluidas
 
@@ -51,3 +61,7 @@
 ## Criterio
 
 El enunciado actualizado tiene prioridad. El enunciado viejo se conserva solo para comparar.
+
+Edificio 1 se termina primero. Edificio 2 queda despues. Nunca trabajar dos edificios ni dos instancias ETABS en simultaneo.
+
+Los releases torsionales de Edificio 1 fueron pedidos por el profesor; no eliminarlos por defecto.

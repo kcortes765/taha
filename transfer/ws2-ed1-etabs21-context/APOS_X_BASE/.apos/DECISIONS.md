@@ -447,3 +447,49 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
   - `files/21_GUIA_ED2_ETABS_v21.md`
   - `files/22_ED2_PARTE1_CANON.md`
   - `PARTE1_ED1_ED2_PROGRAMATICO_2026-05-08.md`
+
+# 2026-05-08 - WS2 debe trabajar un edificio por vez y una instancia ETABS
+
+## Decision
+- WS2 debe terminar Edificio 1 Parte 1 antes de avanzar Edificio 2.
+- No se permite trabajar Ed.1 y Ed.2 en simultaneo.
+- No se permite mas de una instancia ETABS 21.
+- Antes de abrir ETABS o usar COM/OAPI se debe verificar:
+  - `Get-Process ETABS -ErrorAction SilentlyContinue`
+
+## Razon
+- El usuario reporto riesgo real de revoque/bloqueo de licencia al usar mas de una instancia.
+- El avance y los modelos se contaminan si Ed.1 y Ed.2 se modifican en paralelo.
+
+## Implicancia
+- Cada edificio requiere backup y copia limpia fechada antes de modificar.
+- Ed.2 se mantiene en espera hasta cerrar Ed.1 Parte 1.
+
+# 2026-05-08 - Releases torsionales Edificio 1 son canon del profesor
+
+## Decision
+- No tratar los releases torsionales de Edificio 1 como bug automatico.
+- Preservarlos salvo instruccion explicita contraria.
+
+## Razon
+- El usuario aclaro que los releases torsionales fueron pedidos por el profesor.
+- La auditoria WS2 los detecto, pero esa deteccion no justifica eliminarlos.
+
+## Implicancia
+- La validacion de releases debe confirmar que no haya axial/corte liberados indebidamente.
+- No cambiar al archivo alternativo `ED1_01_Grilla_v01.EDB` solo porque no trae torsion liberada.
+
+# 2026-05-08 - Codigo Ed.1/Ed.2 se agrega explicitamente al paquete WS2
+
+## Decision
+- Agregar codigo local al paquete WS2:
+  - `transfer/ws2-ed1-etabs21-context/code/ed1_taller_etabs_legacy/`
+  - `transfer/ws2-ed1-etabs21-context/code/ed2_pipeline_active/`
+
+## Razon
+- La carpeta `code/` del paquete estaba vacia.
+- WS2 necesita codigo de referencia para adaptar scripts a ETABS 21 y al modelo ya hecho por UI.
+
+## Implicancia
+- Ed.1 usa codigo historico como referencia, no como pipeline para correr a ciegas.
+- Ed.2 conserva pipeline activo, pero se ejecuta solo despues de Ed.1.

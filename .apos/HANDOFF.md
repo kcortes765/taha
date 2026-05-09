@@ -203,3 +203,31 @@
 9. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/10_REDTEAM_GO_NO_GO_FINAL/20_PROMPT_GPT54PRO.md`
 10. `docs/estudio/00-ESTADO-NORMATIVO-CURSO-2026.md`
 11. `review-ia/ed1-gpt54pro-cierre-final-10-sesiones-20x1/00A_CORRIDA_CORTA_PRE_ED2.md`
+
+## Actualizacion 2026-05-08 noche - WS2 ejecucion Ed.1 primero
+
+El siguiente agente debe partir de:
+
+1. `transfer/ws2-ed1-etabs21-context/00_START_AQUI_WS2.md`
+2. `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
+3. `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+4. `transfer/ws2-ed1-etabs21-context/CODIGO_WS2_MANIFEST.md`
+5. `transfer/ws2-ed1-etabs21-context/reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md`
+
+Estado operativo:
+
+- WS2 ya instalo APOS-X y audito modelos por OAPI.
+- Edificio 1 va primero hasta cerrar Parte 1.
+- Edificio 2 queda en espera aunque esta mas avanzado.
+- No abrir mas de una instancia ETABS 21.
+- No trabajar dos edificios simultaneamente.
+- Crear copia limpia fechada antes de modificar cualquier `.EDB`.
+
+Canon importante:
+
+- Los releases torsionales de Edificio 1 fueron pedidos por el profesor.
+- No eliminarlos por defecto ni cambiar a la base alternativa solo porque no tiene torsion liberada.
+
+Siguiente accion concreta:
+
+- En WS2, sobre `HECRAS2\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`, crear backup/copia de trabajo, re-verificar una sola instancia ETABS y completar diafragma, cargas, mass source, casos, combos, analisis y tablas de Parte 1.

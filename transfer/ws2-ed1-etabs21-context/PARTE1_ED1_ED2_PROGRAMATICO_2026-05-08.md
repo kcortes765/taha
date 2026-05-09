@@ -4,6 +4,8 @@
 
 Resolver completamente Parte 1 de ambos edificios por flujo programatico/controlado en ETABS 21, usando WS2 como maquina de ejecucion.
 
+Prioridad actual: Edificio 1 primero hasta cierre completo de Parte 1. Edificio 2 queda en espera hasta que Edificio 1 tenga analisis, resultados y reporte.
+
 ## Regla critica
 
 Una sola instancia de ETABS 21. Antes de abrir ETABS o correr COM/API:
@@ -13,6 +15,12 @@ Get-Process ETABS -ErrorAction SilentlyContinue
 ```
 
 Si hay una instancia abierta, no abrir otra.
+
+Ademas:
+
+- no trabajar dos edificios en simultaneo;
+- no correr dos scripts OAPI a la vez;
+- no abrir Edificio 2 hasta cerrar o pausar formalmente Edificio 1.
 
 ## Fuentes canonicas
 
@@ -34,7 +42,9 @@ Edificio 1:
 - Tiene matriz de 6 casos del enunciado.
 - La geometria fue trabajada por UI y debe auditarse antes de tocar.
 - No correr pipeline historico desde cero sin autorizacion.
-- Primer paso: identificar `.EDB` activo en `HECRAS2\prog\Edif1` y auditar su estado.
+- Modelo activo probable auditado: `HECRAS2\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`.
+- Releases torsionales fueron pedidos por el profesor; no eliminarlos por defecto.
+- Primer paso de ejecucion: crear backup y copia limpia fechada, luego completar diafragma, cargas, masa, casos, combos, analisis y tablas.
 
 Edificio 2:
 
@@ -42,6 +52,8 @@ Edificio 2:
 - No hereda la matriz de 6 casos de Ed.1.
 - Parte 1 mantiene nucleo de metodo estatico, con modal como exigencia/chequeo incorporado por curso.
 - Existen archivos `MODELO EDIF2.*` en raiz `HECRAS2`; deben auditarse antes de correr codigo.
+- Modelo activo probable auditado: `HECRAS2\Edif2\Edificio2_Estatico con carga sismica.EDB`.
+- No avanzar Ed.2 hasta que Ed.1 Parte 1 este cerrado.
 
 ## Flujo minimo seguro
 
@@ -128,8 +140,8 @@ Para cerrar cada edificio se debe poder trazar:
 
 ## Estado de codigo
 
-- Ed.1: el codigo historico en `taller-etabs` estaba orientado a ETABS 19 y/o generacion desde cero. No usarlo directamente sobre WS2 sin auditoria.
-- Ed.2: el flujo activo esta en `autonomo/scripts/ed2/`, pero tambien debe arrancar con auditoria del `.EDB`/estado real en `HECRAS2`.
+- Ed.1: codigo historico incluido en `code/ed1_taller_etabs_legacy/`. Estaba orientado a flujo historico/ETABS 19 y/o generacion desde cero; adaptarlo incrementalmente a ETABS 21 y al `.EDB` ya modelado por UI.
+- Ed.2: flujo activo incluido en `code/ed2_pipeline_active/`. No ejecutarlo hasta cerrar Ed.1.
 
 ## Entregable inicial pedido a WS2
 
@@ -143,4 +155,3 @@ Primero devolver un reporte con:
 - Que falta antes de correr Parte 1 completa.
 - Riesgos de usar UI vs API.
 - Propuesta de secuencia programatica segura.
-

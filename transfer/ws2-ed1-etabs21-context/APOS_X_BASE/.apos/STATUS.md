@@ -290,3 +290,82 @@ Ultima actualizacion: 2026-05-08
 - En el build 21.2.0 del laboratorio, no se puede asumir que exista tabla directa de `CM/CR`; el pipeline debe poder derivar `CM` real desde masas nodales.
 - En el build 21.2.0 del laboratorio, tampoco se puede asumir que `Story Forces` ni `drifts` sean accesibles por COM/DB aunque el analisis si corra y entregue base reactions.
 - Cuando la UI si expone las tablas, la forma correcta es importarlas como capa separada `ed2_ui_*`, no disfrazarlas como resultados oficiales por COM.
+
+## Thread: WS2 Parte 1 Ed.1 primero + Ed.2 despues (ACTIVO)
+
+- Ultima actualizacion: 2026-05-08 noche.
+- Ruta WS2 real:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+- Ruta repo/contexto WS2:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context`
+- Paquete activo:
+  - `transfer/ws2-ed1-etabs21-context/`
+- Regla critica:
+  - una sola instancia de ETABS 21;
+  - un solo edificio activo;
+  - verificar `Get-Process ETABS -ErrorAction SilentlyContinue` antes de UI/OAPI;
+  - no abrir Ed.1 y Ed.2 en simultaneo.
+- Codigo agregado al paquete:
+  - `transfer/ws2-ed1-etabs21-context/code/ed1_taller_etabs_legacy/`
+  - `transfer/ws2-ed1-etabs21-context/code/ed2_pipeline_active/`
+- Prompt operativo actualizado:
+  - `transfer/ws2-ed1-etabs21-context/PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`
+- Protocolo operativo:
+  - `transfer/ws2-ed1-etabs21-context/PROTOCOLO_UN_EDIFICIO_UNA_INSTANCIA.md`
+- Reporte WS2 recibido y registrado:
+  - `transfer/ws2-ed1-etabs21-context/reports/WS2_REPORTE_PARTE1_ED1_ED2_20260508_2116.md`
+
+### Estado Edificio 1 WS2
+- Modelo activo probable:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`
+- Verificado por OAPI:
+  - ETABS 21.2.0 build 21.2.0.3353
+  - 20 stories
+  - piso 1 = 3.4 m; 19 pisos = 2.6 m; altura total 52.8 m
+  - 41 grillas: 33 X + 8 Y
+  - 1350 puntos, 320 frames, 880 areas
+  - muros `MHA30G30` = 260, `MHA20G30` = 320
+  - losas `Losa15G30` = 300
+  - vigas `VI20/60G30` = 320
+  - vigas invertidas 320/320 con `Cardinal Point = 2 - Bottom Center`
+  - `Do not transform frame stiffness for offsets from centroid` confirmado
+  - offsets Auto, `RigidFact = 0.75`
+  - 50 apoyos base empotrados
+  - modificadores `Losa15G30`: `m11/m22/m12 = 0.25`
+  - mesh/auto mesh presente
+- Canon corregido:
+  - los releases torsionales fueron pedidos por el profesor;
+  - no eliminarlos por defecto.
+- Patron de releases reportado:
+  - `TI, M2I, M3I`: 180 frames
+  - `TJ, M2J, M3J`: 100 frames
+  - `TI, M2I, M3I, M2J, M3J`: 40 frames
+  - sin release: 0 frames
+- Falta Ed.1:
+  - asignar diafragma `D1` a areas
+  - crear/aplicar `PP/SCP/SCT/TERP/TERT`
+  - mass source correcta
+  - modal/espectral
+  - torsion accidental/combinaciones
+  - analisis
+  - exportacion de tablas
+
+### Estado Edificio 2 WS2
+- Modelo activo probable:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\Edif2\Edificio2_Estatico con carga sismica.EDB`
+- Verificado por OAPI:
+  - ETABS 21.2.0 build 21.2.0.3353
+  - 5 stories
+  - 261 puntos, 480 frames, 130 areas
+  - diafragma `D1` rigido asignado a 130 areas
+  - apoyos base 36 empotrados
+  - releases: ninguna en 480 frames
+  - cargas `PP`, `TERT`, `TERP`, `SCP`, `SCT`, `TEX`, `TEY`, `SDX`, `SDY`
+  - mass source `PP + TERP + TERT + 0.25*SCP + 0.25*SCT`
+  - 20 combinaciones, `Peso_Sismico` y `Combo 1` a `Combo 19`
+- Falta Ed.2:
+  - esperar cierre Ed.1
+  - revisar 130 losas vs canon nominal 125 panos
+  - revisar `TEX/TEY/SDX/SDY`
+  - revisar combos contra enunciado
+  - confirmar resultados/LOG/OUT
