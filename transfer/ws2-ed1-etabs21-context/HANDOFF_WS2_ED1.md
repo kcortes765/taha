@@ -10,6 +10,12 @@ La nueva raiz de trabajo reportada por el usuario es:
 
 `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
 
+El repo/contexto debe clonarse dentro de esa raiz:
+
+`C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context`
+
+No usar `C:\Users\Civil\Documents\taha` como ruta para este flujo.
+
 ## Regla de licencia
 
 No abrir mas de una instancia de ETABS 21. Esta regla es critica y tiene prioridad sobre cualquier automatizacion.
@@ -65,7 +71,6 @@ Crear un reporte breve con:
 
 Nombre sugerido del reporte:
 
-`transfer/ws2-ed1-etabs21-context/REPORTE_WS2_MODELO_ED1.md`
+`transfer/ws2-ed1-etabs21-context/reports/WS2_REPORTE_MODELO_ED1_YYYYMMDD_HHMM.md`
 
 Si el reporte queda local en WS2, pegarlo al chat y/o traerlo de vuelta al repo.
-

@@ -18,6 +18,29 @@ Si ya existe una instancia, usa esa instancia unica o pide confirmacion antes de
 
 `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
 
+## Ruta del repo/contexto
+
+No uses `C:\Users\Civil\Documents\taha` para este caso.
+
+Clona el repo dentro de la raiz real `HECRAS2`:
+
+```powershell
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2"
+git clone https://github.com/kcortes765/taha.git codex_ws2_context
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context"
+git fetch origin
+git checkout codex/ws2-ed1-etabs21-context
+```
+
+Si ya existe:
+
+```powershell
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context"
+git fetch origin
+git checkout codex/ws2-ed1-etabs21-context
+git pull --ff-only origin codex/ws2-ed1-etabs21-context
+```
+
 ## Tu tarea inicial
 
 No modifiques el modelo al principio.
@@ -59,8 +82,10 @@ Lee primero:
 - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
 - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos/STATUS.md`
 - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos/HANDOFF.md`
+- `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
+- `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
 - `transfer/ws2-ed1-etabs21-context/files/13_GUIA_ED1_ETABS_v21.md`
-- `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller.pdf`
+- `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
 - `transfer/ws2-ed1-etabs21-context/files/02_Material_Apoyo_Taller_2026.pdf`
 
 ## Output esperado

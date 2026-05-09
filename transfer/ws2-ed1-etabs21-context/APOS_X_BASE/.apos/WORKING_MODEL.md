@@ -5,8 +5,15 @@
 - Regla critica: no abrir ni usar mas de una instancia de ETABS 21. Verificar `Get-Process ETABS -ErrorAction SilentlyContinue` antes de abrir ETABS o correr scripts COM/API.
 - Ruta WS2 reportada:
   - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+- Ruta corregida para clonar repo/contexto:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context`
+- No usar para WS2:
+  - `C:\Users\Civil\Documents\taha`
 - Paquete de contexto activo:
   - `transfer/ws2-ed1-etabs21-context/`
+- Enunciado prioritario WS2:
+  - `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+  - cambio detectado: agrega `En ambos considerar no aglomeracion de personas.`
 - Primer objetivo:
   - auditar el `.EDB` activo en WS2 y devolver reporte de estado antes de modificar
   - no continuar cargas/masa/analisis hasta saber exactamente que avance UI se hizo en WS2

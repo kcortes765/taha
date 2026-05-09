@@ -382,3 +382,34 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 - WS2 no reescribe historia local: devuelve evidencia y delta.
 - El APOS local absorbe esos deltas con entradas append-only.
 - En conflicto, manda la evidencia directa del modelo ETABS abierto.
+
+# 2026-05-08 - WS2 debe clonar contexto dentro de HECRAS2
+
+## Decision
+- Para WS2, no usar `C:\Users\Civil\Documents\taha`.
+- Clonar el repo/contexto dentro de:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context`
+
+## Razon
+- El usuario indico que es un PC nuevo y que la carpeta real de trabajo es `HECRAS2`.
+- Poner el contexto fuera de `HECRAS2` aumenta el riesgo de separar modelo, evidencia y handoff.
+
+## Implicancia
+- Todos los prompts/comandos WS2 deben usar la raiz `HECRAS2`.
+- Los reportes de WS2 vuelven desde `HECRAS2\codex_ws2_context\transfer\ws2-ed1-etabs21-context\reports`.
+
+# 2026-05-08 - Enunciado actualizado 2026-05-04 pasa a prioridad WS2
+
+## Decision
+- Agregar y priorizar el enunciado actualizado:
+  - `docs/Enunciado Taller 2026-05-04 actualizado.pdf`
+  - `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+
+## Cambio detectado
+- En pagina 1 se agrego:
+  - `En ambos considerar no aglomeracion de personas.`
+- No se detectaron otros cambios textuales en paginas 2 a 14.
+
+## Implicancia
+- WS2 debe usar el enunciado actualizado como fuente prioritaria.
+- El enunciado anterior queda solo como trazabilidad historica.

@@ -2,6 +2,10 @@
 
 Paquete de transferencia para continuar Edificio 1 en una segunda workstation UCN (`WS2`) despues de perdida/bloqueo de licencia en la workstation anterior.
 
+Leer primero:
+
+`00_START_AQUI_WS2.md`
+
 ## Regla critica antes de todo
 
 No abrir mas de una instancia de ETABS 21.
@@ -21,6 +25,10 @@ Si ya hay una instancia abierta, no abrir otra. Usar esa instancia unica o cerra
 Carpeta raiz esperada:
 
 `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+
+El repo/contexto debe clonarse dentro de esa raiz, no en `C:\Users\Civil\Documents\taha`:
+
+`C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context`
 
 Elementos esperados dentro:
 
@@ -88,6 +96,12 @@ La carpeta `files/` trae 20 fuentes del paquete WS1:
 - ejes auxiliares
 - validaciones y resultados esperados
 
+Ademas se agrego el enunciado actualizado:
+
+`files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+
+Ese archivo debe tener prioridad sobre `files/01_Enunciado_Taller.pdf`.
+
 ## APOS-X
 
 Este paquete tambien trae un snapshot del APOS-X local:
@@ -110,9 +124,11 @@ El protocolo esta en:
 4. `PROMPT_PARA_CODEX_WS2.md`
 5. `CHECKLIST_AUDITORIA_MODELO_ED1.md`
 6. `APOS_X_BASE/.apos/STATUS.md`
-7. `files/13_GUIA_ED1_ETABS_v21.md`
-8. `files/01_Enunciado_Taller.pdf`
-9. `files/02_Material_Apoyo_Taller_2026.pdf`
+7. `FUENTES_PRIORITARIAS_WS2.md`
+8. `ENUNCIADO_CAMBIOS_2026-05-04.md`
+9. `files/13_GUIA_ED1_ETABS_v21.md`
+10. `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+11. `files/02_Material_Apoyo_Taller_2026.pdf`
 
 ## Criterio de seguridad
 

@@ -1,11 +1,27 @@
 # Comandos WS2
 
-## Clonar o actualizar repo
+## Carpeta correcta en WS2
+
+No usar `C:\Users\Civil\Documents\taha` como ruta de trabajo para este caso.
+
+La raiz real entregada por el usuario es:
+
+```text
+C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2
+```
+
+El repo/contexto debe quedar dentro de esa raiz, en:
+
+```text
+C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context
+```
+
+## Clonar o actualizar repo dentro de HECRAS2
 
 ```powershell
-cd C:\Users\Civil\Documents
-git clone https://github.com/kcortes765/taha.git taha
-cd taha
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2"
+git clone https://github.com/kcortes765/taha.git codex_ws2_context
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context"
 git fetch origin
 git checkout codex/ws2-ed1-etabs21-context
 ```
@@ -13,7 +29,7 @@ git checkout codex/ws2-ed1-etabs21-context
 Si el repo ya existe:
 
 ```powershell
-cd C:\Users\Civil\Documents\taha
+cd "C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context"
 git fetch origin
 git checkout codex/ws2-ed1-etabs21-context
 git pull --ff-only origin codex/ws2-ed1-etabs21-context
@@ -44,6 +60,5 @@ Get-ChildItem -LiteralPath "C:\Users\Civil\Documents\Rio mapocho (no borrar por 
 Nombre sugerido:
 
 ```text
-C:\Users\Civil\Documents\taha\transfer\ws2-ed1-etabs21-context\REPORTE_WS2_MODELO_ED1.md
+C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context\transfer\ws2-ed1-etabs21-context\reports\WS2_REPORTE_MODELO_ED1.md
 ```
-

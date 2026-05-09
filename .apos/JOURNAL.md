@@ -281,3 +281,20 @@ apos_migrate_project.py
   - `transfer/ws2-ed1-etabs21-context/reports/README.md`
 - Siguiente paso:
   - al recibir reporte WS2, absorberlo con append-only en `.apos/STATUS.md`, `.apos/JOURNAL.md`, `.apos/DECISIONS.md`, `.apos/RISKS.md` y `.apos/OPEN_QUESTIONS.md` segun corresponda.
+
+## 2026-05-08 - Correccion ruta WS2 y enunciado actualizado
+- Hicimos: se corrigio el paquete WS2 para no usar `C:\Users\Civil\Documents\taha`.
+- Cambio real:
+  - la ruta de contexto WS2 queda dentro de `HECRAS2\codex_ws2_context`
+  - se agrego el enunciado actualizado del 2026-05-04
+  - se documento la diferencia contra el enunciado anterior
+- Cambio del enunciado:
+  - pagina 1 agrega `En ambos considerar no aglomeracion de personas.`
+  - paginas 2 a 14 no presentan cambios textuales detectados
+- Archivos nuevos:
+  - `docs/Enunciado Taller 2026-05-04 actualizado.pdf`
+  - `transfer/ws2-ed1-etabs21-context/files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+  - `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
+  - `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
+- Siguiente paso:
+  - empujar rama actualizada y entregar nuevo prompt WS2 corregido.

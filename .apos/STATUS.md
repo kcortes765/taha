@@ -20,6 +20,10 @@ Ultima actualizacion: 2026-05-08
 - Motivo: la WS anterior perdio/bloqueo licencia; se continuara en otra IA/Codex en otro PC UCN.
 - Ruta WS2 reportada:
   - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+- Ruta corregida para clonar contexto en WS2:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context`
+- No usar como ruta WS2:
+  - `C:\Users\Civil\Documents\taha`
 - Paquete de contexto:
   - `transfer/ws2-ed1-etabs21-context/`
 - Contiene:
@@ -32,6 +36,10 @@ Ultima actualizacion: 2026-05-08
   - comandos WS2
   - listado HECRAS2 esperado
   - copia de los 20 archivos base de contexto de Ed.1
+- Actualizacion enunciado:
+  - se agrego `files/01_Enunciado_Taller_actualizado_2026-05-04.pdf`
+  - cambio textual principal: se agrego `En ambos considerar no aglomeracion de personas.`
+  - no se detectaron otros cambios textuales en paginas 2 a 14
 - Primer objetivo WS2:
   - no seguir modelando aun
   - auditar primero el `.EDB` activo y devolver reporte de estado real

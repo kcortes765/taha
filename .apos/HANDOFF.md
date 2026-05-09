@@ -9,6 +9,8 @@
   - antes de abrir ETABS o correr scripts COM/API, verificar `Get-Process ETABS -ErrorAction SilentlyContinue`
 - Se migra continuidad de Edificio 1 a WS2:
   - raiz reportada: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+  - ruta corregida para repo/contexto: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\codex_ws2_context`
+  - no usar `C:\Users\Civil\Documents\taha` para este flujo
   - paquete nuevo: `transfer/ws2-ed1-etabs21-context/`
 - Cambio real:
   - WS1 queda como antecedente
@@ -25,9 +27,12 @@
   - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
   - `transfer/ws2-ed1-etabs21-context/WS2_COMMANDS.md`
   - `transfer/ws2-ed1-etabs21-context/HECRAS2_ARCHIVOS_ESPERADOS.md`
+  - `transfer/ws2-ed1-etabs21-context/FUENTES_PRIORITARIAS_WS2.md`
+  - `transfer/ws2-ed1-etabs21-context/ENUNCIADO_CAMBIOS_2026-05-04.md`
 
 ## Siguiente accion inmediata
 1. En WS2, bajar rama `codex/ws2-ed1-etabs21-context`.
+   - clonar dentro de `HECRAS2\codex_ws2_context`
 2. Leer `transfer/ws2-ed1-etabs21-context/README.md`.
 3. Verificar que no haya mas de una instancia ETABS:
    - `Get-Process ETABS -ErrorAction SilentlyContinue`
