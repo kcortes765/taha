@@ -1,33 +1,69 @@
-# WORKING MODEL — ADSE 1S-2026
+# WORKING MODEL - ADSE 1S-2026
 
-## Thread: Modelación ETABS Ed.1 — Dual (UI + API) (ACTIVO)
-- **Estado actual**: Guía corregida (8 edits aplicados). Sistema autónomo construido para perfeccionarla + crear scripts API.
-- **Delta reciente**: Verificado enunciado (shaft=2.345, pasillos=500). Confirmado DS61 (n=1.40, p=1.60, α denom=3). Aplicadas 8 correcciones a guía. Construido autonomo/ (run.py + 27 features).
-- **Evidencia**: docs/estudio/GUIA-COMPLETA-EDIFICIO1-ETABS-v19.md, autonomo/
-- **Valores confirmados contra norma**: n=1.40, p=1.60, α denom=3, shaft=2.345, pasillos=500, Ec=2,624,300, Cardinal Pt=2, SF=9.81
-- **Pendiente**: R* fórmula (NCh433 literal), P-Delta (consultar profesor), ejecutar agente autónomo
-- **Última actualización**: 2026-03-20
+## Thread: Edificio 1 WS2 ETABS 21 (ACTIVO)
+- Estado actual: continuidad de Edificio 1 pasa a una segunda workstation UCN (`WS2`) porque la WS anterior perdio/bloqueo licencia de ETABS 21.
+- Regla critica: no abrir ni usar mas de una instancia de ETABS 21. Verificar `Get-Process ETABS -ErrorAction SilentlyContinue` antes de abrir ETABS o correr scripts COM/API.
+- Ruta WS2 reportada:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+- Paquete de contexto activo:
+  - `transfer/ws2-ed1-etabs21-context/`
+- Primer objetivo:
+  - auditar el `.EDB` activo en WS2 y devolver reporte de estado antes de modificar
+  - no continuar cargas/masa/analisis hasta saber exactamente que avance UI se hizo en WS2
+- Evidencia:
+  - `ETABS21_REGLA_LICENCIA.md`
+  - `transfer/ws2-ed1-etabs21-context/README.md`
+  - `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
+  - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+- Ultima actualizacion: 2026-05-08
 
-## Thread: Pipeline ETABS Ed.1 — COM API (PAUSADO)
-- **Estado actual**: Pipeline funcional (13 scripts). Geometría en 3ra iteración. Ya no es el enfoque principal — se preserva como referencia.
-- **Delta reciente**: Sin cambios. Pausado por decisión DEC-008.
-- **Evidencia**: Repo https://github.com/kcortes765/taller-etabs
-- **Abierto**: Geometría no verificada visualmente. Fase 2 COM nunca probada en sesión estable.
-- **Última actualización**: 2026-03-20
+## Thread: Paquetes GPT-5.4 Pro Edificio 1 (ACTIVO)
+- Estado actual: existe un paquete real de 10 carpetas autosuficientes para auditar Edificio 1 con sesiones largas y separadas de GPT-5.4 Pro.
+- Ruta:
+  - `review-ia/ed1-gpt54pro-10-sesiones/`
+- Delta reciente:
+  - se crearon dossiers comunes nuevos para estado actual, cambios de correos y canon vs historico vs dudoso
+  - se poblaron las 10 carpetas con hardlinks a fuentes reales del curso y del proyecto
+  - cada carpeta quedo con codigo del frente operativo `taller-etabs`, codigo historico `autonomo/scripts`, memorias `.apos/` y material del profesor
+- Pendiente:
+  - correr las 10 sesiones
+  - consolidar contradicciones y decisiones nuevas
+  - usar esos hallazgos para congelar mejor Ed.1
+- Ultima actualizacion: 2026-04-20
 
-## Thread: App C1 — Preparación Control 1
-- **Estado actual**: App completa (~11K líneas, 250 preguntas, 8 módulos). Pendiente testeo visual.
-- **Delta reciente**: Sin cambios esta sesión.
-- **Abierto**: Testeo visual pendiente.
-- **Última actualización**: 2026-03-02
+## Thread: Edificio 2 Parte 1 - alcance oficial y flujo tecnico (ACTIVO)
+- Estado actual: Ed.2 esta fijado como metodo estatico en su nucleo para Parte 1, con modal auxiliar ahora exigido para primera entrega.
+- Delta reciente: se resolvio la confusion con la tabla de 6 casos; no corresponde a Ed.2.
+- Evidencia:
+  - `docs/Enunciado Taller.pdf`
+  - correos de Music del 2026-04-13 y 2026-04-15
+  - `evidencia/enunciado-ed1-vs-ed2/`
+- Pendiente: no la comprension conceptual, sino la validacion viva ETABS 21.
+- Ultima actualizacion: 2026-04-16
 
-## Thread: Material de estudio
-- **Estado actual**: 2 guías + guía ETABS completa + referencia interfaz ETABS v19. Apuntes en 14 PDFs con índice maestro.
-- **Delta reciente**: Se agregaron 3 archivos en docs/estudio/ (guía ETABS, prompt investigación, referencia interfaz).
-- **Abierto**: Faltan guías estudio caps 2b-5.
-- **Última actualización**: 2026-03-20
+## Thread: Guia UI Ed.2 ETABS 21 (ACTIVO)
+- Estado actual: existe un paquete autocontenido para auditar la guia manual de Ed.2 con otra IA.
+- Delta reciente: se empaqueto contexto, fuentes, clases Music y scripts/derivados relevantes en un bundle de 19 archivos.
+- Evidencia:
+  - `C:\Seba\seba_os\study\adse_ed2\GUIA_UI_ED2_ETABS21_PAQUETE_PARA_SUBIR`
+  - `C:\Seba\seba_os\study\adse_ed2\GUIA_UI_ED2_ETABS21_PAQUETE_PARA_SUBIR.zip`
+- Pendiente: recibir o ejecutar auditoria y convertirla en correcciones concretas sobre la guia v21.
+- Ultima actualizacion: 2026-04-16
 
-## Thread: Evaluación y fechas críticas
-- **Estado actual**: C1 = 5 mayo (~6.5 semanas). Expo1 = 26 mayo.
-- **Sin cambios**.
-- **Última actualización**: 2026-03-20
+## Thread: Pipeline tecnico Ed.2 ETABS 21 (VIGENTE)
+- Estado actual: el pipeline esta rebaselinado al flujo estatico oficial y endurecido para corrida directa por consola en ETABS 21, pero no cerrado sin corrida real.
+- Evidencia:
+  - `autonomo/scripts/ed2/`
+  - `docs/estudio/ED2_PARTE1_CANON.md`
+  - `autonomo/research/ED2_PARTE1_AUDITORIA.md`
+  - `https://github.com/kcortes765/taha.git`
+- Delta reciente:
+  - `connect()` ahora soporta create/open model via env para pipeline multi-proceso.
+  - `run_pipeline_ed2.py` y `diag.py` ya exponen `--create-if-missing` y `--model`.
+  - `06_assignments_ed2.py` ya no acepta insertion point incompleto ni edge constraints manuales.
+- Abierto: corrida real, `results/`, `verify_ed2.py` en PASS, contraste UI/API en la misma workstation.
+- Regla operativa vigente:
+  - este PC publica codigo por git
+  - la WS baja codigo por git
+  - la WS devuelve evidencia por `transfer/`
+- Ultima actualizacion: 2026-04-19

@@ -1,0 +1,8 @@
+cache/
+transfers/raw/
+snapshots/large/
+evidence/**/raw-*
+evidence/**/*.tmp
+**/*.bak
+**/*.secret
+.env

@@ -1,8 +1,41 @@
 # HANDOFF - ADSE 1S-2026
 
-**Actualizacion:** 2026-05-04
+**Actualizacion:** 2026-05-08
 
 ## Delta nuevo
+- Regla critica nueva:
+  - no abrir ni usar mas de una instancia de ETABS 21
+  - el usuario reporto riesgo de revoque/bloqueo de licencia si hay mas de una instancia
+  - antes de abrir ETABS o correr scripts COM/API, verificar `Get-Process ETABS -ErrorAction SilentlyContinue`
+- Se migra continuidad de Edificio 1 a WS2:
+  - raiz reportada: `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+  - paquete nuevo: `transfer/ws2-ed1-etabs21-context/`
+- Cambio real:
+  - WS1 queda como antecedente
+  - WS2 debe auditar el modelo real primero, no continuar a ciegas
+  - el usuario reporta que en WS2 ya hubo un avance leve por UI despues de WS1, pero no esta documentado
+- Archivos nuevos clave:
+  - `ETABS21_REGLA_LICENCIA.md`
+  - `transfer/ws2-ed1-etabs21-context/README.md`
+  - `transfer/ws2-ed1-etabs21-context/LICENCIA_ETABS21_REGLA_CRITICA.md`
+  - `transfer/ws2-ed1-etabs21-context/APOS_X_SYNC_PROTOCOL.md`
+  - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos/`
+  - `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
+  - `transfer/ws2-ed1-etabs21-context/PROMPT_PARA_CODEX_WS2.md`
+  - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+  - `transfer/ws2-ed1-etabs21-context/WS2_COMMANDS.md`
+  - `transfer/ws2-ed1-etabs21-context/HECRAS2_ARCHIVOS_ESPERADOS.md`
+
+## Siguiente accion inmediata
+1. En WS2, bajar rama `codex/ws2-ed1-etabs21-context`.
+2. Leer `transfer/ws2-ed1-etabs21-context/README.md`.
+3. Verificar que no haya mas de una instancia ETABS:
+   - `Get-Process ETABS -ErrorAction SilentlyContinue`
+4. Identificar el `.EDB` activo de Edificio 1 dentro de `HECRAS2`.
+5. Crear reporte de auditoria antes de modificar el modelo.
+6. Si WS2 actualiza APOS, devolver delta en `transfer/ws2-ed1-etabs21-context/reports/`.
+
+## Delta 2026-05-04
 - Se recibio estado externo de Ed.1 en WS ETABS 21.
 - El modelo base ya habria sido corregido por API COM antes del bloqueo de licencia.
 - Ruta de trabajo al retomar:
@@ -20,7 +53,7 @@
   - licencia ETABS 21
   - cargas, masa, diafragmas, modal/espectral, torsion, analisis y tablas
 
-## Siguiente accion inmediata
+## Siguiente accion inmediata 2026-05-04
 1. Esperar/reactivar licencia ETABS 21 en la WS.
 2. Abrir solo:
    - `ED1_PARTE1_COMPLETA_TRABAJO.EDB`

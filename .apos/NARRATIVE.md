@@ -1,0 +1,23 @@
+Este proyecto empezo con una apuesta fuerte por automatizar ADSE con Python y ETABS via COM. Esa apuesta genero valor real: ordeno el dominio, obligo a explicitar geometria, cargas y chequeos, y produjo pipelines y guias reutilizables.
+
+Con el avance aparecio el limite importante: automatizar no garantizaba que la lectura del curso ni del modelo fuera correcta. El primer gran ajuste fue tecnico: dejar de tratar el pipeline como verdad autonoma y volver a poner por delante las fuentes originales del curso, la geometria correcta y la evidencia real.
+
+De ahi vino el rebaseline de Edificio 2 Parte 1. El proyecto dejo fijado que su camino principal era el metodo estatico, con el modal como apoyo para periodos y masas equivalentes. Ese cambio no fue cosmetico: redefinio el canon, las combinaciones, la guia UI y el pipeline tecnico.
+
+La sesion del 2026-04-16 agrego otra correccion importante, esta vez de alcance. Habia una confusion arrastrada entre Edificio 1 y Edificio 2 por la tabla de 6 casos del enunciado. La lectura directa del PDF mostro que esa matriz pertenece a Edificio 1, mientras que Edificio 2 arranca despues con otra estructura de requerimientos. Al mismo tiempo, los correos recientes de Music obligaron a refinar la frase corta sobre Ed.2: sigue siendo estatico en su nucleo para Parte 1, pero la primera entrega ahora exige analisis modal de ambos edificios.
+
+La forma vigente del proyecto es mas disciplinada:
+- mandan enunciado, clases y material de apoyo del curso
+- Ed.1 y Ed.2 no se mezclan por comodidad
+- el codigo y las guias derivadas son apoyo auditado, no reemplazo del curso
+- el cierre real exige ETABS 21, evidencia local y verificaciones reproducibles
+
+Eso explica por que hoy existen dos frentes coordinados y no uno solo: endurecer el flujo tecnico Ed.2 y, al mismo tiempo, auditar a fuego la guia UI para ETABS 21 usando paquetes de contexto bien curados. El proyecto ya no busca solo "hacer correr algo"; busca que lo que se entregue sea defendible frente al enunciado, Music y el laboratorio real.
+
+La sesion del 2026-04-19 empujo esa idea al plano operativo. Ya no bastaba con que el pipeline Ed.2 tuviera buena logica sismica; habia que cerrar la capa ETABS 21 real de la workstation UCN. Eso obligo a corregir una llamada COM incorrecta en `SetInsertionPoint`, a quitar la tolerancia a fallbacks manuales en la etapa 06 y a darle al orquestador una forma seria de arrancar ETABS o abrir un `.edb` concreto desde consola. La historia vigente del proyecto ahora incluye explicitamente ese criterio: para Ed.2, la calidad no se mide solo por formulas o guias, sino por que el flujo UI y el flujo API puedan encontrarse en ETABS 21 real sin zonas grises evitables.
+
+La misma sesion termino de cerrar otro frente practico: la portabilidad. Ya no tenia sentido que el codigo dependiera implicitamente del repo local si la corrida real ocurrira en `C:\Users\Civil\Documents\taha`. Por eso la forma vigente del proyecto ahora incorpora `ED2_RUNTIME_ROOT`, un bundle corto de 20 archivos para llevar a la WS o a una revision externa y un empaquetador de retorno para que la evidencia vuelva ordenada. Eso cambia la narrativa del trabajo: no se trata solo de "tener scripts", sino de tener un circuito completo y repetible entre desarrollo local, laboratorio y eventual auditoria externa.
+
+Ese circuito se volvio mas maduro en el mismo 2026-04-19, cuando el paquete minimo de Ed.2 se publico por fin en `https://github.com/kcortes765/taha.git`. Hasta ese punto, la WS seguia dependiendo de bundles o copias manuales porque el remoto existia pero estaba vacio. La publicacion del commit `164eac1` cambio la forma operativa vigente: el codigo ya no deberia viajar en zip salvo fallback; ahora debe ir por git, mientras que los resultados deben volver empaquetados por `transfer/`. Esa separacion ordena el proyecto y reduce el riesgo de correr una version distinta en el laboratorio.
+
+La sesion del 2026-04-20 abrio otro frente importante, esta vez para Edificio 1. El proyecto ya no necesitaba un resumen rapido ni un solo prompt maestro: necesitaba una auditoria externa dura, profunda y dividida por frentes tecnicos. Por eso se prepararon 10 carpetas autosuficientes para GPT-5.4 Pro, cada una con contexto real del curso, memoria viva del proyecto y codigo relevante de los frentes operativo e historico. Ese cambio no agrega solo orden; cambia la manera de revisar Ed.1. La auditoria ya no depende de una IA que intente reconstruir el proyecto desde piezas dispersas, sino de sesiones separadas diseñadas para encontrar contradicciones, tensiones metodologicas y puntos debiles de defensa antes de cerrar la entrega.

@@ -1,7 +1,47 @@
 # STATUS - ADSE 1S-2026
-Ultima actualizacion: 2026-05-04
+Ultima actualizacion: 2026-05-08
 
 ## Progreso
+
+### Regla critica ETABS 21 - Licencia WS
+- Estado: vigente y obligatoria.
+- Regla: no usar mas de una instancia de ETABS 21 al mismo tiempo.
+- Motivo: el usuario reporto que abrir/usar mas de una instancia puede producir revoque/bloqueo de licencia en la WS UCN.
+- Antes de abrir ETABS o correr COM/API:
+  - ejecutar `Get-Process ETABS -ErrorAction SilentlyContinue`
+  - si ya hay ETABS abierto, usar esa unica instancia o cerrarla manualmente antes de abrir otra
+  - no correr dos agentes/scripts contra ETABS al mismo tiempo
+- Registro visible:
+  - `ETABS21_REGLA_LICENCIA.md`
+  - `transfer/ws2-ed1-etabs21-context/LICENCIA_ETABS21_REGLA_CRITICA.md`
+
+### Ed.1 WS2 ETABS 21 - Transferencia de contexto
+- Estado: paquete WS2 preparado para nueva workstation.
+- Motivo: la WS anterior perdio/bloqueo licencia; se continuara en otra IA/Codex en otro PC UCN.
+- Ruta WS2 reportada:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+- Paquete de contexto:
+  - `transfer/ws2-ed1-etabs21-context/`
+- Contiene:
+  - regla critica de licencia
+  - snapshot APOS-X local para iniciar APOS WS2
+  - protocolo de sincronizacion APOS local <-> APOS WS2
+  - handoff WS2
+  - prompt para Codex WS2
+  - checklist de auditoria del modelo
+  - comandos WS2
+  - listado HECRAS2 esperado
+  - copia de los 20 archivos base de contexto de Ed.1
+- Primer objetivo WS2:
+  - no seguir modelando aun
+  - auditar primero el `.EDB` activo y devolver reporte de estado real
+- Flujo APOS:
+  - APOS local coordina y consolida decisiones
+  - APOS WS2 registra ejecucion/evidencia de ETABS
+  - WS2 devuelve reportes en `transfer/ws2-ed1-etabs21-context/reports/`
+- Dato nuevo del usuario:
+  - despues de WS1 hubo un pequeno avance en WS2 por UI
+  - ese avance todavia no esta trazado ni verificado en este repo
 
 ### Ed.1 WS ETABS 21 - Parte 1
 - Estado: modelo base corregido en WS; licencia ETABS bloquea continuar automatizacion.

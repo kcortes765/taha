@@ -245,3 +245,39 @@ apos_migrate_project.py
   - no hay ETABS corriendo
 - Siguiente paso:
   - cuando vuelva la licencia, re-verificar correcciones base y continuar con diafragmas, cargas, mass source, modal/espectral, torsion, analisis y exportacion
+
+## 2026-05-08 - Handoff WS2 Ed.1 y regla critica ETABS 21
+- Hicimos: se creo una rama/paquete de transferencia para continuar Edificio 1 en una segunda workstation UCN.
+- Cambio real:
+  - WS2 usa raiz `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+  - se registro como regla critica que no se puede usar mas de una instancia de ETABS 21
+  - se exige auditoria inicial del `.EDB` antes de modificar
+- Archivos nuevos:
+  - `ETABS21_REGLA_LICENCIA.md`
+  - `transfer/ws2-ed1-etabs21-context/README.md`
+  - `transfer/ws2-ed1-etabs21-context/LICENCIA_ETABS21_REGLA_CRITICA.md`
+  - `transfer/ws2-ed1-etabs21-context/HANDOFF_WS2_ED1.md`
+  - `transfer/ws2-ed1-etabs21-context/PROMPT_PARA_CODEX_WS2.md`
+  - `transfer/ws2-ed1-etabs21-context/CHECKLIST_AUDITORIA_MODELO_ED1.md`
+  - `transfer/ws2-ed1-etabs21-context/WS2_COMMANDS.md`
+  - `transfer/ws2-ed1-etabs21-context/HECRAS2_ARCHIVOS_ESPERADOS.md`
+- Bloqueo/advertencia:
+  - el usuario reporta avance leve en WS2 por UI posterior a WS1, pero aun no hay reporte trazado
+- Siguiente paso:
+  - bajar rama `codex/ws2-ed1-etabs21-context` en WS2
+  - verificar una sola instancia de ETABS
+  - auditar modelo y devolver reporte
+
+## 2026-05-08 - APOS-X dual local/WS2
+- Hicimos: se agrego un snapshot del APOS-X local al paquete WS2 y un protocolo de sincronizacion.
+- Cambio real:
+  - WS2 tendra su propio APOS operativo basado en `APOS_X_BASE/.apos`
+  - este APOS local sigue como coordinador/canon de decisiones
+  - los estados se conectan por reportes/deltas, no por memoria implicita
+- Archivos nuevos:
+  - `transfer/ws2-ed1-etabs21-context/APOS_X_SYNC_PROTOCOL.md`
+  - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos/`
+  - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/README.md`
+  - `transfer/ws2-ed1-etabs21-context/reports/README.md`
+- Siguiente paso:
+  - al recibir reporte WS2, absorberlo con append-only en `.apos/STATUS.md`, `.apos/JOURNAL.md`, `.apos/DECISIONS.md`, `.apos/RISKS.md` y `.apos/OPEN_QUESTIONS.md` segun corresponda.

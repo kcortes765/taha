@@ -332,3 +332,53 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 - No continuar sobre copias anteriores ni rehacer geometria.
 - La primera accion con licencia activa debe ser verificacion, no nuevas asignaciones masivas.
 - El bloqueo actual es licencia ETABS, no geometria ni correcciones base.
+
+# 2026-05-08 - Regla critica de licencia ETABS 21
+
+## Decision
+- No se puede abrir ni usar mas de una instancia de ETABS 21.
+- Antes de abrir ETABS o correr scripts COM/API, se debe verificar si ya existe proceso ETABS.
+
+## Razon
+- El usuario reporto que mas de una instancia puede producir revoque/bloqueo de licencia en la WS UCN.
+
+## Implicancia
+- Todo script/flujo de WS debe evitar `CreateObject` o arranque automatico sin inspeccion previa.
+- Solo un agente/script/proceso puede controlar ETABS a la vez.
+- La auditoria WS2 debe empezar por verificar procesos ETABS.
+
+# 2026-05-08 - WS2 pasa a ser frente activo de Edificio 1
+
+## Decision
+- Crear paquete dedicado de contexto para WS2:
+  - `transfer/ws2-ed1-etabs21-context/`
+- Usar raiz WS2 reportada:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2`
+
+## Razon
+- La WS anterior perdio/bloqueo licencia.
+- El usuario reporto un avance leve posterior en WS2 por UI que aun no esta trazado.
+
+## Implicancia
+- WS2 debe auditar estado real antes de modificar.
+- El primer entregable no es analisis final, sino reporte de estado del modelo `.EDB`.
+
+# 2026-05-08 - APOS local y APOS WS2 se sincronizan por reportes
+
+## Decision
+- Mantener dos APOS-X relacionados:
+  - APOS local principal como coordinador y memoria canonica de decisiones
+  - APOS WS2 como memoria operativa de ejecucion/evidencia ETABS
+- Incluir snapshot inicial en:
+  - `transfer/ws2-ed1-etabs21-context/APOS_X_BASE/.apos`
+- Sincronizar por reportes/deltas en:
+  - `transfer/ws2-ed1-etabs21-context/reports/`
+
+## Razon
+- WS2 trabajara en otro PC y otra IA/Codex.
+- La ejecucion real de ETABS ocurre alla, pero las decisiones de continuidad deben consolidarse aca.
+
+## Implicancia
+- WS2 no reescribe historia local: devuelve evidencia y delta.
+- El APOS local absorbe esos deltas con entradas append-only.
+- En conflicto, manda la evidencia directa del modelo ETABS abierto.
