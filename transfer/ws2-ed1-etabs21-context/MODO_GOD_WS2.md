@@ -76,6 +76,24 @@ Get-Process ETABS -ErrorAction SilentlyContinue
 
 Si hay instancia abierta, no abrir otra. Adjuntarse a esa instancia solo si corresponde al edificio/modelo correcto.
 
+## Regla anti-cierre de sesion ETABS/OAPI
+
+El cierre de ETABS por API solo puede ocurrir si se llama explicitamente `ApplicationExit`. Por defecto, ningun script debe cerrar ETABS.
+
+Protocolo obligatorio:
+
+- Si ETABS ya estaba abierto, adjuntarse y no llamar `ApplicationStart`.
+- Si el script no creo la instancia, no llamar `ApplicationExit`.
+- Si hay mas de una instancia, no usar `GetObject()` a ciegas; usar PID con `GetObjectProcess` o detenerse.
+- Registrar PID, modelo abierto, version/build y si `started_by_script=True/False`.
+- No poner `ApplicationExit` en bloques `finally` salvo que este protegido por `started_by_script and close_requested`.
+
+Ver:
+
+```text
+reports/WS2_ETABS_OAPI_SESSION_SAFETY_20260508_2205.md
+```
+
 ## Codigo
 
 Usar el codigo incluido como arsenal tecnico:

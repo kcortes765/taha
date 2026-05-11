@@ -509,6 +509,23 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 - Archivo rector:
   - `transfer/ws2-ed1-etabs21-context/WORKBENCH_CODIGO_WS2.md`
 
+# 2026-05-08 - Regla oficial anti-cierre ETABS/OAPI
+
+## Decision
+- Todo helper OAPI debe distinguir si la instancia ETABS fue creada por el script o ya estaba abierta.
+- Si el script se adjunta a una instancia existente, queda prohibido llamar `ApplicationExit`.
+- Si hay multiples instancias ETABS, se debe usar `GetObjectProcess` con PID confirmado o detenerse.
+- Ante errores COM/OAPI, primero se consulta documentacion oficial CSI/ETABS o la ayuda local ETABS 21.
+
+## Razon
+- La ayuda oficial CSI confirma que `ApplicationExit` cierra ETABS y que `ApplicationStart` inicia la aplicacion.
+- La ayuda oficial local ETABS 21 confirma `GetObjectProcess(typeName, pid)` para adjuntar por PID.
+- ETABS 21.2.0 depende de licencia Cloud/Network/Standalone; una segunda instancia puede competir por seat/licencia.
+
+## Implicancia
+- Los scripts incrementales deben registrar PID, modelo, build, `started_by_script`, fuente oficial consultada y politica de cierre.
+- Ver reporte `transfer/ws2-ed1-etabs21-context/reports/WS2_ETABS_OAPI_SESSION_SAFETY_20260508_2205.md`.
+
 # 2026-05-08 - WS2 queda autorizada para modo autonomo largo con investigacion documental
 
 ## Decision
@@ -526,3 +543,153 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
   - `transfer/ws2-ed1-etabs21-context/MODO_GOD_DOCUMENTACION_WS2.md`
   - `transfer/ws2-ed1-etabs21-context/MODO_AUTONOMO_WS2_HORAS.md`
 - Cada reporte final debe incluir fuentes usadas y criterio.
+
+# 2026-05-08 - WS2 trabaja en prog2 con copias fechadas por edificio
+
+## Decision
+- Crear y usar `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\Edif1` para Edificio 1.
+- Crear y usar `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\Edif2` para Edificio 2.
+- Copiar cada `.EDB` activo probable a `prog2` antes de cualquier modificacion por OAPI.
+- Mantener Edificio 1 como unico edificio activo hasta cerrar Parte 1; Edificio 2 queda en espera aunque tenga copia preparada.
+
+## Razon
+- El usuario pidio trabajar en una carpeta nueva `prog2` y crear una copia nueva para cada edificio.
+- Los `.EDB` vivos en `HECRAS2\prog\Edif1` y `HECRAS2\Edif2` no deben modificarse directamente.
+
+## Implicancia
+- Todo script incremental y exportacion operativa debe vivir bajo `prog2`.
+- Cada corrida debe registrar ruta origen, ruta copia, PID ETABS y si la instancia fue creada o adjuntada.
+- Rollback primario: descartar la copia de `prog2` y volver a copiar desde el `.EDB` vivo original.
+
+# 2026-05-08 - ETABS 21 importa espectros user-defined por tablas DB
+
+## Decision
+- Para Edificio 1 en ETABS 21.2.0, crear/actualizar el espectro NCh433:2026 mediante `DatabaseTables.SetTableForEditingArray` sobre la tabla oficial `Functions - Response Spectrum - User Defined`.
+- No usar `SapModel.Func.FuncRS.SetUser` ni `SetFromFile` en esta maquina.
+
+## Razon
+- La type library local de ETABS 21 no expone `SetUser` ni `SetFromFile` para `cFunctionRS`.
+- La ayuda instalada incluye `Table and Field Keys.xml`, donde la tabla `Functions - Response Spectrum - User Defined` define los campos `Name`, `Period`, `Value` y `DampRatio`.
+
+## Implicancia
+- Ante errores OAPI similares, se inspecciona primero documentacion oficial/local antes de parchear por intuicion.
+- Los scripts `prog2` deben conservar evidencia de la tabla importada y del retorno de `ApplyEditedTables`.
+
+# 2026-05-08 - Edificio 2 usa torsion accidental WS2 con nombres nuevos
+
+## Decision
+- En la copia `prog2` de Edificio 2, mantener intactos los patrones historicos `TEX/TEY` y crear los patrones oficiales ejecutados como `TEX_WS2/TEY_WS2`.
+- `EX/EY` se conservan como casos estaticos principales del pipeline WS2.
+
+## Razon
+- El modelo vivo de Edificio 2 traia `TEX/TEY` ya definidos y referenciados por casos/combos historicos.
+- Al reutilizar esos nombres, ETABS conservaba estado interno/oculto que producia momentos torsores y drifts irreales aunque las tablas de cargas nodales no lo mostraran.
+- Con `TEX_WS2/TEY_WS2`, la torsion aplicada por force-couple reproduce exactamente el objetivo de `1851.1517 tonf*m` y el verificador pasa.
+
+## Implicancia
+- En el informe se debe mapear `TEX_WS2/TEY_WS2` como torsion accidental estatica WS2 equivalente a `TEX/TEY` del curso.
+- No se borra evidencia historica del modelo; queda fuera de los casos corridos por WS2.
+
+# 2026-05-09 - Todo OAPI largo queda protegido por watchdog de modales ETABS
+
+## Decision
+- Antes de confiar en una corrida ETABS por OAPI, se debe vigilar la UI con un watchdog externo que detecte dialogos modales.
+- `File.OpenFile` y `Analyze.RunAnalysis` se consideran puntos criticos y deben producir evidencia `*_watchdog.json`.
+- Si el watchdog detecta un modal, el script debe fallar y el estado no se puede declarar cerrado.
+
+## Razon
+- ETABS puede quedar bloqueado con un dialogo modal aunque el proceso exista y responda.
+- El usuario observo `Error in recovering joint assembled mass` tras una corrida larga.
+- La documentacion CSI indica que los estados/warnings de analisis se revisan en `.LOG`/Last Analysis Run Log y que `DeleteResults(Name, All=True)` borra resultados de casos cuando corresponde.
+
+## Implicancia
+- No basta con `RunAnalysis ret=0`; cada cierre debe revisar:
+  - watchdog sin eventos;
+  - `.LOG/.OUT` sin errores;
+  - tablas/exportaciones esperadas;
+  - `Get-Process ETABS` antes/despues.
+- Si se inicia ETABS desde script para auditoria, se cierra con `close_if_started` al terminar.
+
+# 2026-05-09 - ED1 se considera valido solo desde corrida full limpia 0630
+
+## Decision
+- La corrida ED1 `20260509_0619` queda descartada para resultados porque produjo escalamiento Qmin no fisico.
+- La referencia valida de ED1 pasa a ser `ED1_PARTE1_PROG2_full_20260509_0630.md`.
+- Antes de cada corrida ED1 se deben borrar resultados ETABS con `Analyze.DeleteResults("", True)`.
+
+## Razon
+- ETABS puede conservar resultados/estado de casos al reconfigurar escalas; no basta con `SetRunCaseFlag`.
+- El resultado sano esperado de ED1 es `SEx/SEy` cercano a `Qmin*1.005`, no decenas de veces `Qmin`.
+
+## Implicancia
+- Cualquier automatizacion futura debe tratar `Qmin` como verificacion con rango superior, no solo `Q >= Qmin`.
+- Si `amp_x` o `amp_y` supera el limite de cordura, el script debe fallar y no guardar nuevos factores espectrales.
+
+# 2026-05-09 - ED1 Parte 1 se cierra por copias de escenario, no sobre un unico EDB monolitico
+
+## Decision
+- Mantener una base ED1 limpia y generar copias fechadas por familia de escenarios:
+  - metodo a: `*_METHOD_A_20260509_0958.EDB`;
+  - metodo b1/b2: `*_MATRIX_20260509_0943.EDB`.
+- No mezclar metodo a con b1/b2 dentro del mismo EDB final, para evitar duplicar torsion accidental.
+
+## Razon
+- La guia ED1 exige comparar 3 metodos x 2 condiciones de diafragma.
+- Cada metodo tiene supuestos incompatibles:
+  - metodo a desplaza masas y deja excentricidad espectral en cero;
+  - b1 usa torsion estatica por piso;
+  - b2 usa excentricidad de diafragma por piso.
+- Trabajar por copias permite auditar cada escenario y volver a la base limpia.
+
+## Implicancia
+- La entrega programatica ED1 debe referenciar las cuatro copias derivadas y sus reportes.
+- No se debe correr `run_all.py` ni scripts historicos ETABS 19 sobre estas copias.
+
+# 2026-05-09 - b2 ED1 se implementa por tablas oficiales ETABS 21
+
+## Decision
+- Para `SEx_b2` y `SEy_b2`, usar `DatabaseTables.SetTableForEditingArray` sobre `Load Case Definitions - Response Spectrum`.
+- Registrar 20 filas por caso, una por story, con:
+  - `OverStory=Story1..Story20`;
+  - `OverDiaph=D1`;
+  - `OverEccen=0.69105` para sismo X;
+  - `OverEccen=1.92525` para sismo Y.
+
+## Razon
+- La TLB local ETABS 21.2.0 expone `GetDiaphragmEccentricityOverride`, pero no `SetDiaphragmEccentricityOverride`.
+- La fuente oficial local `Table and Field Keys.xml` expone `OverStory`, `OverDiaph` y `OverEccen`.
+
+## Implicancia
+- Validar b2 por tabla/export y por `GetDiaphragmEccentricityOverride`, no por un metodo setter inexistente.
+
+# 2026-05-09 - ED2 no se acepta con corte basal por debajo del W oficial
+
+## Decision
+- El metodo estatico ED2 debe calibrar `EX/EY` con `W = PP + TERP + TERT + 0.25*SCP + 0.25*SCT`, no solo con la suma cruda de `Mass Summary by Story`.
+- Si la masa por historia ETABS difiere del W oficial por cargas gravitacionales, se puede usar su distribucion relativa, pero debe escalarse al W oficial.
+- `verify_ed2.py` debe fallar si `EX/EY` o `TEX/TEY` difieren mas de `0.5%` del objetivo.
+
+## Razon
+- La auditoria estricta encontro que el estado anterior aplicaba `EX/EY=779.555 tonf` mientras `Vd=790.633 tonf`.
+- El gap `1.4012%` estaba bajo la tolerancia antigua, pero no es aceptable para cierre matematico de Parte 1.
+
+## Implicancia
+- El cierre valido de ED2 pasa a ser el estado corregido con `EX=EY=790.6333 tonf`.
+- Los reportes anteriores con `EX/EY=779.555 tonf` quedan como historicos, no como cierre estricto final.
+
+# 2026-05-09 - Verificacion final ETABS sin guardado post-analisis
+
+## Decision
+- Para verificaciones finales sobre modelos ETABS 21 en WS2, reanalizar y exportar tablas sin guardar el `.EDB` despues del analisis.
+- ED1 usa `ed1_part1_prog2.py --phase run-export --no-final-save`.
+- ED2 usa `ws2_run_extract_ed2.py --no-final-save --close-if-started`.
+- El watchdog debe considerar dialogos `Warning/Error` con texto `miOpen` como bloqueo duro.
+
+## Razon
+- ETABS mostro `Warning - Error in performing miOpen` despues de un flujo que guardo resultados y luego reabrio ED1.
+- La evidencia numerica necesaria para la entrega queda en CSV/JSON/logs; no hace falta reescribir el EDB con resultados para validar Parte 1.
+
+## Implicancia
+- Los `.EDB` activos quedan como modelos base/cerrados y las tablas exportadas son la evidencia de resultados.
+- Si se necesita inspeccion UI, abrir el EDB, reanalizar desde ETABS y usar la visualizacion de resultados de esa sesion.
+- No cerrar ni abrir una segunda instancia: si un script creo ETABS, debe cerrarlo con `--close-if-started`.

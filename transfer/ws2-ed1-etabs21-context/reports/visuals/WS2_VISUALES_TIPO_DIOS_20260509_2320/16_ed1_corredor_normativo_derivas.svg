@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="#fbfaf7"/>
+<text x="70.00" y="78.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800" fill="#172026" text-anchor="start" opacity="1">ED1 - corredor normativo de deriva por piso</text>
+<text x="70.00" y="115.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="19" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">Envolvente X/Y de casos s&#237;smicos contra l&#237;mite NCh 0.002; todo el edificio queda dentro</text>
+<line x1="210.00" y1="890.00" x2="1370.00" y2="890.00" stroke="#334155" stroke-width="2"/>
+<line x1="210.00" y1="170.00" x2="210.00" y2="890.00" stroke="#334155" stroke-width="2"/>
+<rect x="210.00" y="170.00" width="1008.70" height="720.00" rx="0" fill="#e8f5ee" stroke="none" stroke-width="1" opacity="0.9"/>
+<rect x="1218.70" y="170.00" width="151.30" height="720.00" rx="0" fill="#fff3e6" stroke="none" stroke-width="1" opacity="0.9"/>
+<line x1="210.00" y1="170.00" x2="210.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="210.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.00</text>
+<line x1="442.00" y1="170.00" x2="442.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="442.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.23</text>
+<line x1="674.00" y1="170.00" x2="674.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="674.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.46</text>
+<line x1="906.00" y1="170.00" x2="906.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="906.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.69</text>
+<line x1="1138.00" y1="170.00" x2="1138.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="1138.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.92</text>
+<line x1="1370.00" y1="170.00" x2="1370.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="1370.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">1.15</text>
+<line x1="202.00" y1="890.00" x2="1370.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="895.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story1</text>
+<line x1="202.00" y1="852.11" x2="1370.00" y2="852.11" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="857.11" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story2</text>
+<line x1="202.00" y1="814.21" x2="1370.00" y2="814.21" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="819.21" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story3</text>
+<line x1="202.00" y1="776.32" x2="1370.00" y2="776.32" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="781.32" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story4</text>
+<line x1="202.00" y1="738.42" x2="1370.00" y2="738.42" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="743.42" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story5</text>
+<line x1="202.00" y1="700.53" x2="1370.00" y2="700.53" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="705.53" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story6</text>
+<line x1="202.00" y1="662.63" x2="1370.00" y2="662.63" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="667.63" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story7</text>
+<line x1="202.00" y1="624.74" x2="1370.00" y2="624.74" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="629.74" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story8</text>
+<line x1="202.00" y1="586.84" x2="1370.00" y2="586.84" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="591.84" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story9</text>
+<line x1="202.00" y1="548.95" x2="1370.00" y2="548.95" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="553.95" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story10</text>
+<line x1="202.00" y1="511.05" x2="1370.00" y2="511.05" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="516.05" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story11</text>
+<line x1="202.00" y1="473.16" x2="1370.00" y2="473.16" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="478.16" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story12</text>
+<line x1="202.00" y1="435.26" x2="1370.00" y2="435.26" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="440.26" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story13</text>
+<line x1="202.00" y1="397.37" x2="1370.00" y2="397.37" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="402.37" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story14</text>
+<line x1="202.00" y1="359.47" x2="1370.00" y2="359.47" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="364.47" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story15</text>
+<line x1="202.00" y1="321.58" x2="1370.00" y2="321.58" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="326.58" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story16</text>
+<line x1="202.00" y1="283.68" x2="1370.00" y2="283.68" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="288.68" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story17</text>
+<line x1="202.00" y1="245.79" x2="1370.00" y2="245.79" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="250.79" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story18</text>
+<line x1="202.00" y1="207.89" x2="1370.00" y2="207.89" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="212.89" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story19</text>
+<line x1="202.00" y1="170.00" x2="1370.00" y2="170.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="175.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story20</text>
+<line x1="1218.70" y1="170.00" x2="1218.70" y2="890.00" stroke="#b91c1c" stroke-width="3" stroke-dasharray="8 8"/>
+<text x="1228.70" y="194.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="850" fill="#b91c1c" text-anchor="start" opacity="1">l&#237;mite = 100%</text>
+<polyline points="289.18,890.00 383.50,852.11 450.07,814.21 507.06,776.32 554.97,738.42 594.82,700.53 627.60,662.63 653.83,624.74 674.50,586.84 690.64,548.95 701.74,511.05 709.30,473.16 713.34,435.26 714.35,397.37 712.33,359.47 707.79,321.58 701.74,283.68 694.17,245.79 686.61,207.89 679.04,170.00" fill="none" stroke="#2563eb" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="289.18" cy="890.00" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="383.50" cy="852.11" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="450.07" cy="814.21" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="507.06" cy="776.32" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="554.97" cy="738.42" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="594.82" cy="700.53" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="627.60" cy="662.63" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="653.83" cy="624.74" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="674.50" cy="586.84" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="690.64" cy="548.95" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="701.74" cy="511.05" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="709.30" cy="473.16" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="713.34" cy="435.26" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="714.35" cy="397.37" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="712.33" cy="359.47" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="707.79" cy="321.58" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="701.74" cy="283.68" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="694.17" cy="245.79" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="686.61" cy="207.89" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="679.04" cy="170.00" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<polyline points="293.22,890.00 401.65,852.11 480.83,814.21 551.44,776.32 612.97,738.42 667.44,700.53 714.35,662.63 754.70,624.74 789.50,586.84 818.24,548.95 841.44,511.05 860.10,473.16 874.23,435.26 883.81,397.37 889.86,359.47 892.38,321.58 892.38,283.68 889.36,245.79 885.83,207.89 881.29,170.00" fill="none" stroke="#0f766e" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="293.22" cy="890.00" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="401.65" cy="852.11" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="480.83" cy="814.21" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="551.44" cy="776.32" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="612.97" cy="738.42" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="667.44" cy="700.53" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="714.35" cy="662.63" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="754.70" cy="624.74" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="789.50" cy="586.84" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="818.24" cy="548.95" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="841.44" cy="511.05" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="860.10" cy="473.16" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="874.23" cy="435.26" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="883.81" cy="397.37" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="889.86" cy="359.47" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="892.38" cy="321.58" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="892.38" cy="283.68" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="889.36" cy="245.79" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="885.83" cy="207.89" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="881.29" cy="170.00" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<rect x="1045.00" y="205.00" width="310.00" height="90.00" rx="8" fill="#ffffff" stroke="#d8dee3" stroke-width="1" opacity="1"/>
+<text x="1068.00" y="238.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="21" font-weight="850" fill="#172026" text-anchor="start" opacity="1">M&#225;x. utilizaci&#243;n: 67.7%</text>
+<text x="1068.00" y="272.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="17" font-weight="800" fill="#15803d" text-anchor="start" opacity="1">Holgura m&#237;nima: 32.4%</text>
+<text x="210.00" y="956.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">Eje horizontal: deriva calculada / l&#237;mite normativo. Cumple si queda a la izquierda de la l&#237;nea roja.</text>
+<rect x="210.00" y="134.00" width="22.00" height="8.00" rx="3" fill="#2563eb" stroke="#2563eb" stroke-width="1" opacity="1"/>
+<text x="240.00" y="143.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">ED1 X / 0.002</text>
+<rect x="376.60" y="134.00" width="22.00" height="8.00" rx="3" fill="#0f766e" stroke="#0f766e" stroke-width="1" opacity="1"/>
+<text x="406.60" y="143.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">ED1 Y / 0.002</text>
+</svg>

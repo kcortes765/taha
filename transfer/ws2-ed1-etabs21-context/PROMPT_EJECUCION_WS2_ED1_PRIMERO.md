@@ -16,6 +16,8 @@ Get-Process ETABS -ErrorAction SilentlyContinue
 
 Si aparece una instancia, usa solo esa instancia o detente y reporta. No abras otra.
 
+Si el script se adjunta a una instancia existente, no debe llamar `ApplicationExit`. Solo puede cerrar ETABS por API si el script creo esa instancia y el cierre fue solicitado explicitamente. Si hay mas de una instancia, no usar `GetObject()` a ciegas: usar PID con `GetObjectProcess` o detenerse.
+
 ## Ruta real
 
 Raiz:
@@ -56,6 +58,8 @@ No uses `C:\Users\Civil\Documents\taha` para este flujo.
 El codigo incluido es base de trabajo, no pipeline final congelado.
 
 Debes revisarlo, aprovechar funciones/patrones OAPI y adaptarlo al estado real de WS2. Si el codigo historico no calza con el `.EDB` actual, crea scripts nuevos incrementales en una carpeta de workbench local y deja registro.
+
+Siempre que uses una llamada OAPI sensible o aparezca un error ETABS/COM/API, investiga primero documentacion oficial CSI/ETABS o ayuda local instalada de ETABS 21. No resuelvas errores solo por intuicion ni solo copiando codigo historico. Registra en el log la fuente oficial consultada, la firma/metodo confirmado y la decision aplicada.
 
 No te quedes solo en diagnostico: diagnostica primero por seguridad, luego modifica por bloques verificables hasta completar Edificio 1 Parte 1.
 

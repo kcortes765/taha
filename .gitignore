@@ -3,3 +3,4 @@
 node_modules/
 *.log
 .agente/contexto/sesion-*.md
+**/_edge_profile/

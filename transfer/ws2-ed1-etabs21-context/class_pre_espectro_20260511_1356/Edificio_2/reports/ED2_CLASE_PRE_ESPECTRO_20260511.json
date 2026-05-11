@@ -1,0 +1,29 @@
+{
+  "active_model_before_save": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\models\\Edificio2_parte1_oficial.EDB",
+  "target": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\models\\ED2_CLASE_PRE_ESPECTRO_20260511.EDB",
+  "save_ret": 0,
+  "load_patterns": [
+    "Dead",
+    "Live",
+    "PP",
+    "TERP",
+    "TERT",
+    "SCP",
+    "SCT",
+    "~LLRF"
+  ],
+  "load_cases": [
+    "Dead",
+    "Live",
+    "Modal",
+    "PP",
+    "TERP",
+    "TERT",
+    "SCP",
+    "SCT",
+    "~LLRF"
+  ],
+  "response_combos": [],
+  "forbidden_static_seismic_items_present": [],
+  "intended_stop": "después de masa/modal auxiliar y antes de EX/EY/TEX/TEY"
+}

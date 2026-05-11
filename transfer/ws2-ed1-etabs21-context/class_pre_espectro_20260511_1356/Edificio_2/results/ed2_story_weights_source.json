@@ -1,0 +1,5 @@
+{
+  "source": "etabs_table",
+  "table": "Mass Summary by Story",
+  "field": "UX,UY,UZ"
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="#fbfaf7"/>
+<text x="70.00" y="78.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800" fill="#172026" text-anchor="start" opacity="1">ED1 - centros de masa por piso</text>
+<text x="70.00" y="115.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="19" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">Plano envolvente 38.505 x 13.821 m; puntos XCM/YCM exportados desde ETABS</text>
+<rect x="250.00" y="210.00" width="1050.00" height="380.00" rx="2" fill="#f8fafc" stroke="#334155" stroke-width="2" opacity="1"/>
+<text x="250.00" y="624.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">X [m]</text>
+<text x="196.00" y="198.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">Y [m]</text>
+<polyline points="790.08,399.05 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.48,396.63 790.57,396.01" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="790.08" cy="399.05" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.48" cy="396.63" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<circle cx="790.57" cy="396.01" r="5.00" fill="#2563eb" stroke="white" stroke-width="2" opacity="0.75"/>
+<text x="70.00" y="720.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="21" font-weight="650" fill="#172026" text-anchor="start" opacity="1">Lectura: CM practicamente verticalizado por plantas tipo; XCM medio ~19.8 m, YCM medio ~7.0 m.</text>
+</svg>

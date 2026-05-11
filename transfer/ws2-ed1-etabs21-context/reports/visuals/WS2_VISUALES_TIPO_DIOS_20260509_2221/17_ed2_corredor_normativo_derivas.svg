@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="#fbfaf7"/>
+<text x="70.00" y="78.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800" fill="#172026" text-anchor="start" opacity="1">ED2 - corredor normativo de deriva por piso</text>
+<text x="70.00" y="115.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="19" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">CM X/Y contra limite 0.002 y exceso torsional contra limite 0.001</text>
+<line x1="210.00" y1="890.00" x2="1370.00" y2="890.00" stroke="#334155" stroke-width="2"/>
+<line x1="210.00" y1="170.00" x2="210.00" y2="890.00" stroke="#334155" stroke-width="2"/>
+<rect x="210.00" y="170.00" width="1008.70" height="720.00" rx="0" fill="#e8f5ee" stroke="none" stroke-width="1" opacity="0.9"/>
+<rect x="1218.70" y="170.00" width="151.30" height="720.00" rx="0" fill="#fff3e6" stroke="none" stroke-width="1" opacity="0.9"/>
+<line x1="210.00" y1="170.00" x2="210.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="210.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.00</text>
+<line x1="442.00" y1="170.00" x2="442.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="442.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.23</text>
+<line x1="674.00" y1="170.00" x2="674.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="674.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.46</text>
+<line x1="906.00" y1="170.00" x2="906.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="906.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.69</text>
+<line x1="1138.00" y1="170.00" x2="1138.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="1138.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">0.92</text>
+<line x1="1370.00" y1="170.00" x2="1370.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="1370.00" y="918.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="middle" opacity="1">1.15</text>
+<line x1="202.00" y1="890.00" x2="1370.00" y2="890.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="895.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story1</text>
+<line x1="202.00" y1="710.00" x2="1370.00" y2="710.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="715.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story2</text>
+<line x1="202.00" y1="530.00" x2="1370.00" y2="530.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="535.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story3</text>
+<line x1="202.00" y1="350.00" x2="1370.00" y2="350.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="355.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story4</text>
+<line x1="202.00" y1="170.00" x2="1370.00" y2="170.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="190.00" y="175.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">Story5</text>
+<line x1="1218.70" y1="170.00" x2="1218.70" y2="890.00" stroke="#b91c1c" stroke-width="3" stroke-dasharray="8 8"/>
+<text x="1228.70" y="194.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="850" fill="#b91c1c" text-anchor="start" opacity="1">limite = 100%</text>
+<polyline points="627.10,890.00 619.53,710.00 622.56,530.00 553.46,350.00 440.49,170.00" fill="none" stroke="#2563eb" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="627.10" cy="890.00" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="619.53" cy="710.00" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="622.56" cy="530.00" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="553.46" cy="350.00" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="440.49" cy="170.00" r="4.40" fill="#2563eb" stroke="white" stroke-width="2" opacity="1"/>
+<polyline points="604.40,890.00 595.83,710.00 596.83,530.00 530.77,350.00 424.85,170.00" fill="none" stroke="#0f766e" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="604.40" cy="890.00" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="595.83" cy="710.00" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="596.83" cy="530.00" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="530.77" cy="350.00" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<circle cx="424.85" cy="170.00" r="4.40" fill="#0f766e" stroke="white" stroke-width="2" opacity="1"/>
+<polyline points="436.96,890.00 447.04,710.00 466.21,530.00 433.93,350.00 365.34,170.00" fill="none" stroke="#d97706" stroke-width="4.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>
+<circle cx="436.96" cy="890.00" r="4.00" fill="#d97706" stroke="white" stroke-width="2" opacity="0.9"/>
+<circle cx="447.04" cy="710.00" r="4.00" fill="#d97706" stroke="white" stroke-width="2" opacity="0.9"/>
+<circle cx="466.21" cy="530.00" r="4.00" fill="#d97706" stroke="white" stroke-width="2" opacity="0.9"/>
+<circle cx="433.93" cy="350.00" r="4.00" fill="#d97706" stroke="white" stroke-width="2" opacity="0.9"/>
+<circle cx="365.34" cy="170.00" r="4.00" fill="#d97706" stroke="white" stroke-width="2" opacity="0.9"/>
+<rect x="1045.00" y="205.00" width="310.00" height="90.00" rx="8" fill="#ffffff" stroke="#d8dee3" stroke-width="1" opacity="1"/>
+<text x="1068.00" y="238.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="21" font-weight="850" fill="#172026" text-anchor="start" opacity="1">Max utilizacion: 41.4%</text>
+<text x="1068.00" y="272.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="17" font-weight="800" fill="#15803d" text-anchor="start" opacity="1">Holgura minima: 58.7%</text>
+<text x="210.00" y="956.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">Eje horizontal: deriva calculada / limite normativo. Cumple si queda a la izquierda de la linea roja.</text>
+<rect x="210.00" y="134.00" width="22.00" height="8.00" rx="3" fill="#2563eb" stroke="#2563eb" stroke-width="1" opacity="1"/>
+<text x="240.00" y="143.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">ED2 CM X / 0.002</text>
+<rect x="401.20" y="134.00" width="22.00" height="8.00" rx="3" fill="#0f766e" stroke="#0f766e" stroke-width="1" opacity="1"/>
+<text x="431.20" y="143.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">ED2 CM Y / 0.002</text>
+<rect x="592.40" y="134.00" width="22.00" height="8.00" rx="3" fill="#d97706" stroke="#d97706" stroke-width="1" opacity="1"/>
+<text x="622.40" y="143.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">Exceso torsional / limite 0.001</text>
+</svg>

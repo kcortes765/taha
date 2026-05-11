@@ -25,6 +25,23 @@ Get-Process ETABS -ErrorAction SilentlyContinue
 
 Una instancia ETABS 21. Un edificio activo. Un script a la vez.
 
+## Regla documental y anti-cierre OAPI
+
+Antes de adaptar una llamada OAPI sensible, y siempre que aparezca un error ETABS/COM/API, WS2 debe investigar primero documentacion oficial CSI/ETABS o ayuda local instalada de ETABS 21.
+
+Ademas, ningun helper OAPI debe cerrar ETABS por defecto:
+
+- si el script se adjunto a una instancia existente, no llamar `ApplicationExit`;
+- si el script creo la instancia, registrar `started_by_script=True`;
+- solo cerrar con `ApplicationExit(False)` si `started_by_script=True` y el cierre fue solicitado;
+- si hay multiples instancias, no usar `GetObject()` ambiguo: usar `GetObjectProcess` con PID confirmado o detenerse.
+
+Ver reporte:
+
+```text
+reports/WS2_ETABS_OAPI_SESSION_SAFETY_20260508_2205.md
+```
+
 ## Como usar el codigo Edificio 1
 
 Base:

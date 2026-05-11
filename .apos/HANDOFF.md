@@ -236,3 +236,288 @@ Canon importante:
 Siguiente accion concreta:
 
 - En WS2, sobre `HECRAS2\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`, crear backup/copia de trabajo, re-verificar una sola instancia ETABS y completar diafragma, cargas, mass source, casos, combos, analisis y tablas de Parte 1.
+# 2026-05-08 - Handoff WS2 prog2 despues de corrida autonoma
+
+- No abrir otra instancia ETABS. Ultima sesion uso PID 23284, ETABS 21.2.0.
+- Antes de cualquier OAPI/UI: `Get-Process ETABS -ErrorAction SilentlyContinue`.
+- Todo trabajo operativo quedo en `HECRAS2\prog2`.
+
+## Edificio 1
+- Modelo copia: `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB`.
+- Resultado usable: base dinamica rigida Parte 1, espectro NCh433:2026 via tablas DB, R*/Qmin aplicado.
+- Evidencia principal:
+  - `HECRAS2\prog2\Edif1\logs\ed1_run-adjust-export_20260508_2247.json`
+  - `HECRAS2\prog2\Edif1\reports\ED1_PARTE1_PROG2_run-adjust-export_20260508_2247.md`
+- No eliminar releases torsionales.
+- Si se exige cierre literal de seis variantes Ed.1, crear copias derivadas y correr variantes una a una.
+
+## Edificio 2
+- Modelo copia: `HECRAS2\prog2\Edif2\models\ED2_PARTE1_WS2_PROG2_20260508_2213.EDB`.
+- Pipeline usado: `HECRAS2\prog2\Edif2\workbench\ed2_pipeline_active`.
+- Wrapper robusto: `ws2_run_extract_ed2.py` porque ETABS expone algunas tablas de resultados solo si `RunAnalysis` y extraccion ocurren en la misma sesion COM.
+- Patrones torsionales WS2:
+  - `TEX_WS2`
+  - `TEY_WS2`
+- No reutilizar `TEX/TEY` historicos del modelo para WS2: arrastran estado interno que contamina resultados.
+- Verificador final:
+  - `HECRAS2\prog2\Edif2\logs\ed2_verify_final_20260508_233545.log`
+  - estado `PASS`
+
+# 2026-05-09 - Handoff post-modal ETABS
+
+- La instancia ETABS antigua PID 23284 fue cerrada por instruccion del usuario despues de detectar modal `Error in recovering joint assembled mass`.
+- No queda proceso `ETABS` vivo al final de la auditoria post-modal.
+- Se agrego mecanismo anti-bloqueo:
+  - `HECRAS2\prog2\_common\ws2_etabs_watchdog.py`
+  - `HECRAS2\prog2\_common\ws2_etabs_oapi.py`
+- Scripts/parches relevantes:
+  - `HECRAS2\prog2\Edif1\workbench\ed1_part1_prog2.py`
+  - `HECRAS2\prog2\Edif2\workbench\ed2_part1_prog2_audit.py`
+  - `HECRAS2\prog2\Edif2\workbench\ed2_pipeline_active\config_ed2.py`
+  - `HECRAS2\prog2\Edif2\workbench\ed2_pipeline_active\11_run_analysis_ed2.py`
+  - `HECRAS2\prog2\Edif2\workbench\ed2_pipeline_active\ws2_run_extract_ed2.py`
+- Auditorias post-modal:
+  - ED1: `HECRAS2\prog2\Edif1\reports\ED1_PARTE1_PROG2_audit_20260509_0612.md`
+  - ED2: `HECRAS2\prog2\Edif2\reports\ED2_PARTE1_PROG2_audit_20260509_0613.md`
+- Advertencia a conservar:
+  - ETABS imprimio `Cannot open file ... .Y_` al cerrar ambas auditorias. No hubo evento watchdog ni error en `.LOG/.OUT`, pero si vuelve como modal debe tratarse como bloqueo duro y no como ruido.
+
+# 2026-05-09 - Handoff correccion ED1/ED2
+
+- No usar como resultado ED1 la corrida `ed1_run-adjust-export_20260509_0619`: quedo contaminada por escalamiento Qmin absurdo.
+- Copia contaminada preservada en:
+  - `HECRAS2\prog2\Edif1\models\quarantine_20260509_0630_bad_qmin_scale`
+- Resultado ED1 valido:
+  - `HECRAS2\prog2\Edif1\reports\ED1_PARTE1_PROG2_full_20260509_0630.md`
+  - `HECRAS2\prog2\Edif1\logs\ed1_full_20260509_0630.json`
+  - `HECRAS2\prog2\Edif1\exports\ed1_Base_Reactions_20260509_0630.csv`
+- Guardas ED1 nuevas:
+  - `Analyze.DeleteResults("", True)` antes de cada analisis;
+  - rechazo de amplificaciones Qmin absurdas;
+  - rechazo de ratio final Qmin demasiado alto.
+- Resultado ED1 limpio:
+  - `Qmin=737.086 tonf`;
+  - `SEx=740.771 tonf`;
+  - `SEy=740.771 tonf`;
+  - ratio final `1.005`.
+- ED2:
+  - `verify_ed2.py` pasa sin configurar `ED2_RUNTIME_ROOT`.
+  - estado sigue `PASS`.
+
+# 2026-05-09 - Handoff cierre ampliado ED1/ED2
+
+- Regla operacional:
+  - mantener una sola instancia ETABS 21;
+  - antes de abrir/usar OAPI ejecutar `Get-Process ETABS -ErrorAction SilentlyContinue`;
+  - no correr dos scripts COM en paralelo.
+- ED1 base limpia:
+  - `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB`.
+- ED1 usar para entrega Parte 1:
+  - metodo a rigido: `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_RIGID_METHOD_A_20260509_0958.EDB`;
+  - metodo a semi-rigido: `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_SEMIRIGID_METHOD_A_20260509_0958.EDB`;
+  - b1/b2 rigido: `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_RIGID_MATRIX_20260509_0943.EDB`;
+  - b1/b2 semi-rigido: `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_SEMIRIGID_MATRIX_20260509_0943.EDB`.
+- ED1 reportes:
+  - `HECRAS2\prog2\Edif1\reports\ED1_METHOD_A_PROG2_20260509_0958.md`;
+  - `HECRAS2\prog2\Edif1\reports\ED1_TORSION_MATRIX_PROG2_20260509_0943.md`;
+  - `HECRAS2\prog2\Edif1\reports\ED1_PARTE1_PROG2_full_20260509_0630.md`.
+- ED2:
+  - modelo: `HECRAS2\prog2\Edif2\models\ED2_PARTE1_WS2_PROG2_20260508_2213.EDB`;
+  - verificador: `HECRAS2\prog2\Edif2\workbench\ed2_pipeline_active\verify_ed2.py`;
+  - estado: `PASS`, con warning CR real no expuesto.
+- Reporte consolidado:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_CIERRE_PARTE1_ED1_ED2_20260509_1013.md`.
+
+# 2026-05-09 - Handoff auditoria estricta resultados
+
+- Regla operacional:
+  - antes de cualquier OAPI/UI ejecutar `Get-Process ETABS -ErrorAction SilentlyContinue`;
+  - no abrir segunda instancia ETABS;
+  - al cierre de esta auditoria no queda proceso ETABS vivo.
+- ED2 fue corregido despues del reporte `WS2_CIERRE_PARTE1_ED1_ED2_20260509_1013.md`.
+- Usar como cierre numerico ED2:
+  - modelo: `HECRAS2\prog2\Edif2\models\ED2_PARTE1_WS2_PROG2_20260508_2213.EDB`;
+  - `W=5378.457675 tonf`;
+  - `EX=EY=790.633300 tonf`;
+  - `TEX_WS2=TEY_WS2=1877.459200 tonf*m`;
+  - `verify_ed2.py`: `PASS` con criterio estricto.
+- No usar como cierre final los valores anteriores `EX/EY=779.555 tonf`; quedan como historicos.
+- Reporte final de auditoria estricta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_AUDITORIA_RESULTADOS_ESTRICTA_20260509_1257.md`.
+- Observaciones:
+  - CR real no fue expuesto por ETABS; por simetria del modelo se conserva centro como referencia auditada.
+  - Si se requiere abrir resultados en UI, revisar que ETABS pueda regenerar/resultados en sesion; la evidencia numerica oficial esta exportada en CSV/JSON.
+
+# 2026-05-09 - Handoff auditoria tipo dios cerrada
+
+- Reporte final:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_AUDITORIA_TIPO_DIOS_20260509_1424.md`
+  - veredicto: `CERRADO`.
+- Regla ETABS vigente:
+  - ejecutar `Get-Process ETABS -ErrorAction SilentlyContinue` antes de cualquier OAPI/UI;
+  - no abrir segunda instancia;
+  - usar `--close-if-started` cuando un runner pueda crear ETABS.
+- ED1:
+  - modelo activo: `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB`;
+  - backup bueno para restaurar: `HECRAS2\prog2\Edif1\backups\ED1_PARTE1_WS2_PROG2_20260508_2213_pre_god_verify_20260509_135922.EDB`;
+  - exportaciones finales: `HECRAS2\prog2\Edif1\exports\*_20260509_1411.csv`;
+  - abrir/resultados: preferir reanalizar y exportar con `--no-final-save` para evitar fragilidad `.Y_`/`miOpen`.
+- ED2:
+  - modelo activo: `HECRAS2\prog2\Edif2\models\ED2_PARTE1_WS2_PROG2_20260508_2213.EDB`;
+  - resultados finales: `HECRAS2\prog2\Edif2\results\ed2_summary.json` y CSV asociados `20260509_1418`;
+  - usar `ws2_run_extract_ed2.py --no-final-save --close-if-started` para nueva verificacion.
+- Notas no bloqueantes:
+  - ED1 combos ULS tienen drift max `0.002089`; el chequeo NCh de drift se cerro con casos sismicos max `0.001353`;
+  - ED2 CR no fue expuesto por tabla ETABS, pero por simetria exacta se justifica `CM=CR=(16.25,16.25)`.
+
+# 2026-05-09 - Handoff visuales informe final
+
+- Usar como paquete visual principal:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_1718\README_VISUALES_INFORME.md`.
+- Excel editable:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_1718\WS2_graficos_editables_20260509_1718.xlsx`.
+- Figuras recomendadas para insertar en informe:
+  - `00_tablero_ejecutivo.svg`;
+  - `01_ed1_corte_basal_qmin.svg`;
+  - `04_ed1_drift_casos_sismicos.svg`;
+  - `08_ed2_corte_estatico.svg`;
+  - `09_ed2_distribucion_fuerzas.svg`;
+  - `11_ed2_drift_cm_exceso.svg`;
+  - `15_matriz_trazabilidad.svg`.
+- Script reproducible:
+  - `HECRAS2\prog2\_common\generate_report_visuals.py`.
+
+# 2026-05-09 - Handoff visuales pulidos finales
+
+- Usar como paquete visual principal:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_1756`.
+- Carpeta separada por uso:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_1756\por_categoria`.
+- Para pegar directo en informe:
+  - usar `png_2x`, resolucion `3200 x 2000 px`.
+- Para editar vectorialmente:
+  - usar los `.svg` del paquete o de cada carpeta `por_categoria\*\svg`.
+- Graficos nuevos recomendados por la observacion del profesor:
+  - `16_ed1_corredor_normativo_derivas`;
+  - `17_ed2_corredor_normativo_derivas`.
+- ZIPs:
+  - `WS2_VISUALES_TIPO_DIOS_20260509_1756_PNG_2X.zip`;
+  - `WS2_VISUALES_TIPO_DIOS_20260509_1756_POR_CATEGORIA.zip`.
+
+# 2026-05-09 - Handoff visuales sin solapamiento
+
+- Usar como paquete visual vigente:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2221`.
+- Motivo:
+  - reemplaza al paquete `1756` para insercion en informe porque corrige solapamientos visuales residuales.
+- Para pegar directo en informe:
+  - usar `png_2x`, todos `3200 x 2000 px`.
+- Para escoger por tipo de entrega:
+  - `por_categoria\01_obligatorios_directos`;
+  - `por_categoria\02_obligatorios_mejorados`;
+  - `por_categoria\03_modo_pro_complementarios`.
+- Para editar vectorialmente:
+  - usar los `.svg` ubicados en la raiz del paquete `2221`.
+- ZIPs:
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2221_PNG_2X.zip`;
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2221_POR_CATEGORIA.zip`.
+- Validacion visual:
+  - `00_tablero_ejecutivo` OK, notas dentro de tarjeta;
+  - `01_ed1_corte_basal_qmin` OK, `Qmin` en badge;
+  - `03_ed1_espectro_periodos` OK, `Tx/Ty` separado;
+  - `14_comparativo_utilizacion` OK, `limite/objetivo` en badge;
+  - hoja de contacto `contact_sheet_png.png` generada.
+
+# 2026-05-09 - Handoff visuales finales con Tx/Ty etiquetado
+
+- Usar como paquete visual vigente:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2255`.
+- Cambio clave:
+  - `03_ed1_espectro_periodos` identifica lineas por color:
+    - naranja: `Tx / modo X = 1.105 s`;
+    - verde: `Ty / modo Y = 1.094 s`.
+- Carpetas por categoria, con PNG y SVG:
+  - `por_categoria\01_obligatorios_directos`;
+  - `por_categoria\02_obligatorios_mejorados`;
+  - `por_categoria\03_modo_pro_complementarios`.
+- ZIP recomendado:
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2255_POR_CATEGORIA_PNG_SVG.zip`.
+
+# 2026-05-09 - Handoff visuales vigentes en prog2
+
+- Usar como paquete visual vigente:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\reportes\visuales_informe\WS2_VISUALES_TIPO_DIOS_20260509_2320`.
+- Motivo:
+  - reemplaza los paquetes anteriores ubicados bajo `codex_ws2_context`; el usuario pidió que la base ordenada quedara solo en `prog2`.
+- Texto:
+  - títulos, subtítulos, notas y README quedaron con acentos y ñ donde correspondía.
+- Para pegar directo en informe:
+  - usar `png_2x`, todos en `3200 x 2000 px`.
+- Para escoger por tipo de entrega:
+  - `por_categoria\01_obligatorios_directos`;
+  - `por_categoria\02_obligatorios_mejorados`;
+  - `por_categoria\03_modo_pro_complementarios`.
+- Para edición vectorial:
+  - usar los `.svg` ubicados en la raíz del paquete o dentro de cada carpeta por categoría.
+- ZIPs recomendados:
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2320_PNG_2X.zip`;
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2320_POR_CATEGORIA_PNG_SVG.zip`.
+- Validación visual:
+  - `00_tablero_ejecutivo` OK;
+  - `03_ed1_espectro_periodos` OK, con leyenda Tx/Ty explícita;
+  - `16_ed1_corredor_normativo_derivas` OK, con límite normativo y holgura legibles.
+- Nota:
+  - no se abrió ETABS ni se modificó ningún modelo `.EDB`.
+
+# 2026-05-11 - Handoff modelos clase pre-espectro
+
+- Carpeta de entrega:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356`.
+- Abrir para clase:
+  - ED1: `Edificio_1\models\ED1_CLASE_PRE_ESPECTRO_20260511.EDB`;
+  - ED2: `Edificio_2\models\ED2_CLASE_PRE_ESPECTRO_20260511.EDB`.
+- ED1 está justo antes de:
+  - definición de espectro;
+  - casos `SEx/SEy/SEx_b2/SEy_b2`;
+  - torsión;
+  - combinaciones dinámicas;
+  - análisis espectral.
+- ED2 está justo antes de:
+  - `EX/EY`;
+  - `TEX/TEY`;
+  - combinaciones;
+  - análisis sísmico final.
+- Nota operacional:
+  - usar una sola instancia ETABS 21;
+  - si la instancia actual sigue abierta, usarla o cerrarla manualmente antes de abrir otra.
+
+# 2026-05-11 - Handoff descarga desde laptop
+
+- Rama a descargar:
+  - `codex/ws2-ed1-etabs21-context`.
+- Paquete recomendado:
+  - `transfer\ws2-ed1-etabs21-context\CLASS_PRE_ESPECTRO_20260511_1356.zip`.
+- Carpeta equivalente sin comprimir:
+  - `transfer\ws2-ed1-etabs21-context\class_pre_espectro_20260511_1356`.
+- Modelos dentro del paquete:
+  - `Edificio_1\models\ED1_CLASE_PRE_ESPECTRO_20260511.EDB`;
+  - `Edificio_2\models\ED2_CLASE_PRE_ESPECTRO_20260511.EDB`.
+- Leer primero:
+  - `RESUMEN_MODELOS_CLASE_PRE_ESPECTRO_20260511.md`;
+  - `README_CLASE_PRE_ESPECTRO.md`.
+
+# 2026-05-11 - Handoff final Git/APOS
+
+- Para descargar desde laptop, usar rama:
+  - `codex/ws2-ed1-etabs21-context`.
+- Paquete principal de clase:
+  - `transfer\ws2-ed1-etabs21-context\CLASS_PRE_ESPECTRO_20260511_1356.zip`.
+- Carpeta equivalente:
+  - `transfer\ws2-ed1-etabs21-context\class_pre_espectro_20260511_1356`.
+- Visuales finales de informe:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2320`;
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2320_PNG_2X.zip`;
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2320_POR_CATEGORIA_PNG_SVG.zip`.
+- Validación local previa a push:
+  - `APOS lint: OK`;
+  - sin `_edge_profile` en staged.

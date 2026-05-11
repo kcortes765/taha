@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="#fbfaf7"/>
+<text x="70.00" y="78.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800" fill="#172026" text-anchor="start" opacity="1">ED1 - torsion accidental b1</text>
+<text x="70.00" y="115.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="19" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">Momento torsor objetivo vs reaccion basal ETABS; gap max &lt; 0.1%</text>
+<line x1="120.00" y1="840.00" x2="1440.00" y2="840.00" stroke="#334155" stroke-width="2"/>
+<line x1="120.00" y1="190.00" x2="120.00" y2="840.00" stroke="#334155" stroke-width="2"/>
+<line x1="120.00" y1="840.00" x2="1440.00" y2="840.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="845.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">0</text>
+<line x1="120.00" y1="710.00" x2="1440.00" y2="710.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="715.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">320</text>
+<line x1="120.00" y1="580.00" x2="1440.00" y2="580.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="585.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">640</text>
+<line x1="120.00" y1="450.00" x2="1440.00" y2="450.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="455.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">959</text>
+<line x1="120.00" y1="320.00" x2="1440.00" y2="320.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="325.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">1.28e+03</text>
+<line x1="120.00" y1="190.00" x2="1440.00" y2="190.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="195.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">1.6e+03</text>
+<rect x="156.30" y="631.88" width="92.40" height="208.12" rx="7" fill="#334155" stroke="#334155" stroke-width="1" opacity="1"/>
+<text x="202.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">rigid TorX target</text>
+<text x="202.50" y="617.88" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#334155" text-anchor="middle" opacity="1">511.910</text>
+<rect x="321.30" y="631.69" width="92.40" height="208.31" rx="7" fill="#2563eb" stroke="#2563eb" stroke-width="1" opacity="1"/>
+<text x="367.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">rigid TorX ETABS</text>
+<text x="367.50" y="617.69" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#2563eb" text-anchor="middle" opacity="1">512.383</text>
+<rect x="486.30" y="260.18" width="92.40" height="579.82" rx="7" fill="#334155" stroke="#334155" stroke-width="1" opacity="1"/>
+<text x="532.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">rigid TorY target</text>
+<text x="532.50" y="246.18" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#334155" text-anchor="middle" opacity="1">1426.169</text>
+<rect x="651.30" y="259.64" width="92.40" height="580.36" rx="7" fill="#0f766e" stroke="#0f766e" stroke-width="1" opacity="1"/>
+<text x="697.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">rigid TorY ETABS</text>
+<text x="697.50" y="245.64" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#0f766e" text-anchor="middle" opacity="1">1427.487</text>
+<rect x="816.30" y="632.19" width="92.40" height="207.81" rx="7" fill="#334155" stroke="#334155" stroke-width="1" opacity="1"/>
+<text x="862.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">semirigid TorX target</text>
+<text x="862.50" y="618.19" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#334155" text-anchor="middle" opacity="1">511.150</text>
+<rect x="981.30" y="632.00" width="92.40" height="208.00" rx="7" fill="#2563eb" stroke="#2563eb" stroke-width="1" opacity="1"/>
+<text x="1027.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">semirigid TorX ETABS</text>
+<text x="1027.50" y="618.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#2563eb" text-anchor="middle" opacity="1">511.622</text>
+<rect x="1146.30" y="262.75" width="92.40" height="577.25" rx="7" fill="#334155" stroke="#334155" stroke-width="1" opacity="1"/>
+<text x="1192.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">semirigid TorY target</text>
+<text x="1192.50" y="248.75" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#334155" text-anchor="middle" opacity="1">1419.845</text>
+<rect x="1311.30" y="262.22" width="92.40" height="577.78" rx="7" fill="#0f766e" stroke="#0f766e" stroke-width="1" opacity="1"/>
+<text x="1357.50" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">semirigid TorY ETABS</text>
+<text x="1357.50" y="248.22" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#0f766e" text-anchor="middle" opacity="1">1421.157</text>
+<text x="70.00" y="172.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">tonf*m</text>
+</svg>

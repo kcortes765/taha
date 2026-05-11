@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="#fbfaf7"/>
+<text x="70.00" y="78.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800" fill="#172026" text-anchor="start" opacity="1">ED2 - corte est&#225;tico Parte 1</text>
+<text x="70.00" y="115.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="19" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">C=0.147 por tope Cmax; Vd=CW y coincide con EX/EY ETABS</text>
+<line x1="120.00" y1="840.00" x2="1440.00" y2="840.00" stroke="#334155" stroke-width="2"/>
+<line x1="120.00" y1="190.00" x2="120.00" y2="840.00" stroke="#334155" stroke-width="2"/>
+<line x1="120.00" y1="840.00" x2="1440.00" y2="840.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="845.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">0</text>
+<line x1="120.00" y1="710.00" x2="1440.00" y2="710.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="715.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">177</text>
+<line x1="120.00" y1="580.00" x2="1440.00" y2="580.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="585.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">354</text>
+<line x1="120.00" y1="450.00" x2="1440.00" y2="450.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="455.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">531</text>
+<line x1="120.00" y1="320.00" x2="1440.00" y2="320.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="325.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">708</text>
+<line x1="120.00" y1="190.00" x2="1440.00" y2="190.00" stroke="#d8dee3" stroke-width="1"/>
+<text x="105.00" y="195.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#60707a" text-anchor="end" opacity="1">886</text>
+<rect x="216.80" y="259.64" width="246.40" height="580.36" rx="7" fill="#b91c1c" stroke="#b91c1c" stroke-width="1" opacity="1"/>
+<text x="340.00" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">Vd f&#243;rmula</text>
+<text x="340.00" y="245.64" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#b91c1c" text-anchor="middle" opacity="1">790.633</text>
+<rect x="656.80" y="259.64" width="246.40" height="580.36" rx="7" fill="#2563eb" stroke="#2563eb" stroke-width="1" opacity="1"/>
+<text x="780.00" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">EX ETABS</text>
+<text x="780.00" y="245.64" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#2563eb" text-anchor="middle" opacity="1">790.633</text>
+<rect x="1096.80" y="259.64" width="246.40" height="580.36" rx="7" fill="#0f766e" stroke="#0f766e" stroke-width="1" opacity="1"/>
+<text x="1220.00" y="876.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026" text-anchor="middle" opacity="1">EY ETABS</text>
+<text x="1220.00" y="245.64" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#0f766e" text-anchor="middle" opacity="1">790.633</text>
+<text x="70.00" y="172.00" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" fill="#60707a" text-anchor="start" opacity="1">tonf</text>
+</svg>

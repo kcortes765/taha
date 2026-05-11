@@ -345,6 +345,20 @@ apos_migrate_project.py
 - Siguiente paso:
   - WS2 debe leer el workbench y ejecutar Ed.1 por bloques verificables.
 
+## 2026-05-08 - Investigacion oficial anti-cierre ETABS/OAPI
+- Hicimos: se investigaron fuentes oficiales CSI web y ayuda local instalada ETABS 21 sobre ciclo de vida OAPI.
+- Hallazgo:
+  - `ApplicationExit` cierra ETABS;
+  - `ApplicationStart` inicia ETABS;
+  - `GetObject` puede ser ambiguo con multiples instancias;
+  - ETABS v20.2+ agrega `GetObjectProcess(typeName, pid)` y ETABS 21 lo trae en la ayuda local;
+  - ETABS 21.2.0 depende de licencia/seat y puerto 443 en Cloud license.
+- Cambio real:
+  - se agrego `reports/WS2_ETABS_OAPI_SESSION_SAFETY_20260508_2205.md`;
+  - se reforzaron `MODO_GOD_WS2.md`, `MODO_AUTONOMO_WS2_HORAS.md`, `WORKBENCH_CODIGO_WS2.md` y `PROMPT_EJECUCION_WS2_ED1_PRIMERO.md`.
+- Siguiente paso:
+  - todo script OAPI debe usar helper seguro con `started_by_script` y no llamar `ApplicationExit` al adjuntarse.
+
 ## 2026-05-08 - Modo GOD autonomo + documentacion para WS2
 - Hicimos: se agrego una instruccion explicita para dejar la otra IA trabajando por horas sin loop humano constante.
 - Cambio real:
@@ -353,3 +367,334 @@ apos_migrate_project.py
   - `MODO_AUTONOMO_WS2_HORAS.md` queda como complemento operativo.
 - Siguiente paso:
   - WS2 debe hacer `git pull` y leer esos modos antes de abrir ETABS.
+
+## 2026-05-08 - Arranque autonomo WS2/prog2 solicitado por usuario
+- Hicimos: se retoma el trabajo en WS2 con permiso explicito del usuario para avanzar mientras duerme.
+- Reglas activas:
+  - una sola instancia ETABS 21;
+  - un solo edificio activo;
+  - `Get-Process ETABS -ErrorAction SilentlyContinue` antes de todo uso UI/OAPI;
+  - no modificar `.EDB` vivo sin copia fechada;
+  - consultar documentacion oficial CSI/ETABS ante errores OAPI;
+  - actualizar APOS durante el avance.
+- Cambio operativo:
+  - se decide crear `HECRAS2\prog2\Edif1` y `HECRAS2\prog2\Edif2`;
+  - Edificio 1 se completa primero;
+  - Edificio 2 se prepara pero no se abre por OAPI hasta cerrar Edificio 1.
+- Siguiente paso:
+  - crear estructura `prog2`, copiar `.EDB` activos probables y levantar scripts incrementales de Edificio 1.
+
+## 2026-05-08 - Edificio 1 prog2 base dinamica ejecutada
+- Hicimos: se trabajo sobre la copia `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB`, no sobre el `.EDB` vivo original.
+- Resultado operativo:
+  - ETABS 21.2.0 quedo controlado por una unica instancia;
+  - se audito geometria, apoyos, diafragma y cargas;
+  - se asignaron cargas `TERP`, `TERT`, `SCP`, `SCT` con criterio de no aglomeracion;
+  - se importo espectro user-defined por tablas DB oficiales de ETABS 21;
+  - se ejecuto analisis modal/espectral con ajuste R* y Qmin;
+  - `SEx` y `SEy` quedaron escalados para cumplir `Qmin = 0.07 W` con margen cercano a 1.005.
+- Evidencia:
+  - `HECRAS2\prog2\Edif1\reports\ED1_PARTE1_PROG2_run-adjust-export_20260508_2247.md`
+  - `HECRAS2\prog2\Edif1\logs\ed1_run-adjust-export_20260508_2247.json`
+  - `HECRAS2\prog2\Edif1\exports\ed1_Base_Reactions_20260508_2247.csv`
+  - `HECRAS2\prog2\Edif1\exports\ed1_Story_Drifts_20260508_2247.csv`
+- Pendiente honesto:
+  - documentar si el profesor exigira como cierre formal las seis variantes completas de Edificio 1 o si basta la base rigida dinamica escalada junto a los casos torsionales ya creados.
+- Siguiente paso:
+  - auditar Edificio 2 en su copia `prog2` usando la misma instancia ETABS si permanece abierta.
+
+## 2026-05-08 - Edificio 2 Parte 1 completado en prog2 con verificador PASS
+- Hicimos: se trabajo sobre `HECRAS2\prog2\Edif2\models\ED2_PARTE1_WS2_PROG2_20260508_2213.EDB`, no sobre el `.EDB` vivo original.
+- Se audito el modelo real:
+  - 5 pisos, alturas 3.5 + 4x3.0 m;
+  - 130 areas `L17G25`;
+  - 480 frames: 180 columnas y 300 vigas;
+  - 36 apoyos base empotrados;
+  - diafragma `D1` asignado.
+- Se ejecuto el metodo estatico oficial de Parte 1:
+  - modal auxiliar: `Tx=0.408 s`, `Ty=0.408 s`, `Tz=0.359 s`;
+  - `W=5378.458 tonf`, `W/area=1.018406 tonf/m2`;
+  - `Cx=Cy=0.147`, `Cmin=0.070`, `Cmax=0.147`;
+  - `EX=EY=779.555 tonf` contra `Vd=790.633 tonf` (brecha aprox. 1.4%);
+  - torsion accidental por force-couple con `TEX_WS2/TEY_WS2`, `Mz real/target=1851.152/1851.152 tonf*m`;
+  - drift CM max `0.000816 < 0.002`;
+  - exceso torsional max `0.000250 < 0.001`.
+- Verificacion:
+  - `HECRAS2\prog2\Edif2\logs\ed2_verify_final_20260508_233545.log` termina en `PASS`.
+- Advertencia:
+  - ETABS no expuso CR real; se exporto CM real con placeholder CR explicito `etabs_cm_table_placeholder_cr_zero`.
+- Siguiente paso:
+  - generar reporte final WS2 y dejar claro que Ed.1 tiene base dinamica cerrada, pero puede requerir matriz formal completa de variantes si el profesor la exige literalmente.
+
+## 2026-05-09 - Auditoria post-modal ETABS y watchdog
+- Hicimos: el usuario reporto que ETABS quedo varias horas con el modal `Error in recovering joint assembled mass`; se cerro la instancia antigua PID 23284 antes de abrir otra.
+- Cambio tecnico:
+  - se agrego `HECRAS2\prog2\_common\ws2_etabs_watchdog.py`;
+  - se reforzo `HECRAS2\prog2\_common\ws2_etabs_oapi.py` para vigilar `File.OpenFile` y `Analyze.RunAnalysis`;
+  - se parchearon los wrappers ED1/ED2 para fallar con evidencia si aparece un dialogo modal ETABS.
+- Auditoria real ejecutada:
+  - Edificio 1: `HECRAS2\prog2\Edif1\reports\ED1_PARTE1_PROG2_audit_20260509_0612.md`;
+  - Edificio 2: `HECRAS2\prog2\Edif2\reports\ED2_PARTE1_PROG2_audit_20260509_0613.md`.
+- Resultado:
+  - ambas auditorias abrieron y cerraron una sola instancia ETABS cada una;
+  - watchdog sin eventos modales en post-connect/post-open;
+  - `Get-Process ETABS` queda sin procesos al final.
+- Advertencia:
+  - ETABS imprimio al cerrar `Cannot open file ... .Y_` en ambos modelos; no aparece en `.LOG/.OUT` ni bloqueo la auditoria, pero queda como senal a vigilar.
+
+## 2026-05-09 - Verificacion visual de vigas Edificio 1
+- Hicimos: ante duda del usuario por captura 3D donde no se veian vigas, se ejecuto probe OAPI read-only sobre ED1 en `prog2`.
+- Resultado:
+  - `320` frame objects totales;
+  - `320` vigas con seccion `VI20/60G30`;
+  - `320` frames horizontales;
+  - `16` vigas por cada una de las 20 elevaciones;
+  - Cardinal Point `2` en las `320`;
+  - `stiff_transform=False`, consistente con `Do not transform frame stiffness for offsets from centroid`;
+  - Auto offset `True`.
+- Evidencia:
+  - `HECRAS2\prog2\Edif1\reports\ED1_VIGAS_VISIBILIDAD_20260509_0625.md`
+  - `transfer/ws2-ed1-etabs21-context/reports/WS2_ED1_VIGAS_VISIBILIDAD_20260509_0625.md`
+- Interpretacion:
+  - el problema observado es de visualizacion/display, no de ausencia de vigas.
+
+## 2026-05-09 - Correccion ED1 post-rerun y cierre robusto
+- Hicimos: se detecto que el rerun ED1 `20260509_0619` no era confiable porque reaplico Qmin sobre un estado ya escalado y dejo `SEx/SEy` absurdamente altos (`~18815 tonf`).
+- Accion correctiva:
+  - se guardo la copia contaminada en `HECRAS2\prog2\Edif1\models\quarantine_20260509_0630_bad_qmin_scale`;
+  - se repuso el `.EDB` activo ED1 desde `HECRAS2\prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`;
+  - se parcheo `ed1_part1_prog2.py` para usar `Analyze.DeleteResults("", True)` antes de cada corrida;
+  - se agregaron guardas de Qmin para rechazar amplificaciones absurdas y ratios finales fuera de rango.
+- Resultado limpio:
+  - corrida `full` sobre ED1 limpio: `HECRAS2\prog2\Edif1\reports\ED1_PARTE1_PROG2_full_20260509_0630.md`;
+  - `Qmin=737.086 tonf`;
+  - antes de amplificar: `Qx=400.300`, `Qy=426.630`;
+  - despues de amplificar: `SEx=740.771`, `SEy=740.771`;
+  - ratio final `1.005` en X e Y;
+  - exportaciones completas OK.
+- ED2:
+  - se corrigio `config_ed2.py` para resolver por defecto `HECRAS2\prog2\Edif2` como runtime root;
+  - `verify_ed2.py` ahora pasa sin exigir variable `ED2_RUNTIME_ROOT`;
+  - verificador ED2 sigue en `PASS`.
+
+## 2026-05-09 - WS2 cierre ampliado ED1 6 escenarios y ED2 PASS
+- Se trabajo siempre con una sola instancia ETABS 21.2.0.
+- ED1:
+  - base limpia conservada en `HECRAS2\prog2\Edif1\models\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB`;
+  - metodo a ejecutado en copias separadas:
+    - `ED1_PARTE1_WS2_PROG2_RIGID_METHOD_A_20260509_0958.EDB`;
+    - `ED1_PARTE1_WS2_PROG2_SEMIRIGID_METHOD_A_20260509_0958.EDB`;
+  - metodo b forma 1 y b forma 2 ejecutados en copias separadas:
+    - `ED1_PARTE1_WS2_PROG2_RIGID_MATRIX_20260509_0943.EDB`;
+    - `ED1_PARTE1_WS2_PROG2_SEMIRIGID_MATRIX_20260509_0943.EDB`;
+  - metodo a creo `MasaXp`, `MasaXm`, `MasaYp`, `MasaYm`, casos no lineales auxiliares, modales propios y espectrales con `EccenRatio=0`;
+  - b2 quedo con `20` overrides por caso en `SEx_b2` y `SEy_b2`.
+- ED2:
+  - `verify_ed2.py` ejecutado nuevamente: `PASS`;
+  - valores clave: `W=5378.458 tonf`, `Tx=Ty=0.4080 s`, `EX=EY=779.555 tonf`, `TEX_WS2=TEY_WS2=1851.152 tonf*m`.
+- Reportes:
+  - `HECRAS2\prog2\Edif1\reports\ED1_METHOD_A_PROG2_20260509_0958.md`;
+  - `HECRAS2\prog2\Edif1\reports\ED1_TORSION_MATRIX_PROG2_20260509_0943.md`;
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_CIERRE_PARTE1_ED1_ED2_20260509_1013.md`.
+
+## 2026-05-09 - Auditoria estricta de resultados y correccion ED2
+- Hicimos: se endurecio el criterio de verificacion ED2 porque el `PASS` anterior aceptaba `EX/EY=779.555 tonf` frente a `Vd=790.633 tonf` (gap aprox. `1.4012%`).
+- Accion correctiva:
+  - backup previo: `HECRAS2\prog2\Edif2\backups\ED2_PARTE1_WS2_PROG2_20260508_2213_pre_strict_rescale_20260509_125259.EDB`;
+  - `09_torsion_ed2.py` ahora escala la distribucion estatica desde story weights ETABS al W oficial por cargas gravitacionales;
+  - `verify_ed2.py` ahora falla si corte/torsion difiere mas de `0.5%` y advierte sobre gaps > `0.1%`.
+- Resultado corregido ED2:
+  - `W=5378.457675 tonf`;
+  - factor story weights -> W oficial: `1.014211456`;
+  - `Vdx=Vdy=790.633278 tonf`;
+  - `EX=EY=790.633300 tonf`;
+  - `TEX_WS2=TEY_WS2=1877.459200 tonf*m`;
+  - drift CM max `0.000827 < 0.002`;
+  - exceso torsional max `0.000254 < 0.001`;
+  - verificador estricto: `PASS`.
+- Reporte:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_AUDITORIA_RESULTADOS_ESTRICTA_20260509_1257.md`.
+- Observaciones abiertas:
+  - ETABS no expuso CR real en tabla; se conserva centro por simetria/placeholder auditado.
+  - Algunos EDB no conservan archivos `.Y*` visibles; la evidencia numerica queda en CSV/JSON y logs.
+
+## 2026-05-09 - Auditoria tipo dios ED1/ED2 y robustez miOpen
+- Se ejecuto verificacion controlada en ETABS 21.2.0, una instancia a la vez.
+- Se detecto un bloqueo real `Warning - Error in performing miOpen` durante un intento de reabrir ED1 despues de guardar resultados.
+- Acciones:
+  - se preservo el EDB fallido en `HECRAS2\prog2\Edif1\backups\ED1_PARTE1_WS2_PROG2_20260508_2213_failed_miopen_after_save_20260509_141111.EDB`;
+  - se restauro ED1 desde backup bueno `pre_god_verify_20260509_135922.EDB`;
+  - se reforzo `ws2_etabs_watchdog.py` para capturar dialogos `Warning/Error` con texto `miOpen`;
+  - `ed1_part1_prog2.py` ahora permite `run-export`, `--no-final-save` y override `ED1_ETABS_MODEL_PATH`;
+  - `ws2_run_extract_ed2.py` ahora permite `--no-final-save` y `--close-if-started`.
+- ED1:
+  - corrida ETABS viva `20260509_1411` exporto `Base Reactions`, `Joint Drifts`, `Diaphragm Max Over Avg Drifts` y tablas principales;
+  - open-check sobre copia byte-a-byte `ED1_opencheck_20260509_141521.EDB` abrio y audito OK;
+  - drift normativo max en casos sismicos: `0.001353 < 0.002`;
+  - `ED1_DYN_YP/YN` tiene drift combo max `0.002089`, registrado como nota no bloqueante porque no es el caso base de chequeo NCh.
+- ED2:
+  - verificacion ETABS same-session sobre copia `ED2_opencheck_20260509_141648.EDB`;
+  - resultados corregidos se mantienen: `EX=EY=790.633300 tonf`, `TEX=TEY=1877.459200 tonf*m`, `drift CM=0.000827`.
+- Reporte final:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_AUDITORIA_TIPO_DIOS_20260509_1424.md`;
+  - veredicto `CERRADO`.
+
+## 2026-05-09 - Paquete visual pro para informe final
+- Se genero paquete visual basado en resultados finales ETABS/CSV/JSON:
+  - carpeta: `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_1718`;
+  - indice: `README_VISUALES_INFORME.md`;
+  - Excel editable: `WS2_graficos_editables_20260509_1718.xlsx`;
+  - 16 figuras SVG vectoriales para insertar en informe.
+- Figuras cubren:
+  - tablero ejecutivo;
+  - ED1 corte basal, masa modal, espectro, drift, Max/Avg, torsion b1, centros de masa;
+  - ED2 corte estatico, distribucion Fk/Vk, torsion, drift/exceso, modos, simetria CM/CR;
+  - comparativo ED1/ED2 y matriz de trazabilidad.
+- Validacion:
+  - 16 SVG parseados OK como XML;
+  - `.xlsx` validado como ZIP/XLSX integro;
+  - `generate_report_visuals.py` compila OK.
+
+## 2026-05-09 - Conversion visuales a PNG 2x
+- Se renderizaron los 16 SVG finales a PNG de alta resolucion:
+  - carpeta: `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_1718\png_2x`;
+  - resolucion: `3200 x 2000 px` cada figura;
+  - ZIP: `WS2_VISUALES_TIPO_DIOS_20260509_1718_PNG_2X.zip`.
+- Validacion:
+  - firma PNG OK;
+  - dimensiones OK;
+  - ZIP OK con 16 PNG.
+
+## 2026-05-09 - Visuales pulidos y clasificados por uso
+- Se regenero el paquete visual final con 18 figuras:
+  - carpeta: `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_1756`;
+  - PNG: `png_2x\*.png`, todos en `3200 x 2000 px`;
+  - SVG vectoriales y Excel editable `WS2_graficos_editables_20260509_1756.xlsx`.
+- Se agregaron los graficos pedidos por criterio docente:
+  - `16_ed1_corredor_normativo_derivas`: deriva piso a piso ED1 dentro del corredor NCh `0.002`;
+  - `17_ed2_corredor_normativo_derivas`: deriva CM ED2 `0.002` y exceso torsional `0.001`.
+- Se separaron las piezas en:
+  - `por_categoria\01_obligatorios_directos`;
+  - `por_categoria\02_obligatorios_mejorados`;
+  - `por_categoria\03_modo_pro_complementarios`.
+- Pulido aplicado:
+  - se eliminaron superposiciones de texto en `07_ed1_planta_centros_masa`;
+  - se limpiaron ejes de fuerza/torsion para evitar decimales innecesarios;
+  - se valido visualmente con hoja de contacto `contact_sheet_png.png`.
+- Validacion:
+  - 18 PNG con firma/dimensiones OK;
+  - ZIP PNG OK;
+  - ZIP por categoria OK;
+  - `generate_report_visuals.py` compila OK.
+
+## 2026-05-09 - Correccion final de solapamientos en visuales
+- Se revisaron los PNG a tamano real despues del aviso del usuario.
+- Hallazgos:
+  - `00_tablero_ejecutivo.png` tenia texto largo de notas fuera de tarjeta;
+  - `01_ed1_corte_basal_qmin.png` tenia la etiqueta `Qmin` demasiado cerca de valores de barras.
+- Cambios:
+  - se agrego `wrap_text` en `HECRAS2\prog2\_common\generate_report_visuals.py`;
+  - se redujo y envolvio el texto de notas;
+  - se movieron etiquetas de referencia de bar charts a badges blancos.
+- Paquete nuevo:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2221`;
+  - `png_2x` con 18 PNG;
+  - `por_categoria` con 18 PNG;
+  - ZIP PNG y ZIP por categoria generados.
+- Validacion:
+  - `00`, `01`, `03` y `14` abiertos a tamano real;
+  - hoja de contacto revisada;
+  - 18 PNG `3200 x 2000 px`;
+  - `py_compile` OK.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260509_2231_VISUALES_SOLAPAMIENTO_FIX.md`.
+
+## 2026-05-09 - Leyenda explicita Tx/Ty y separacion final por categorias
+- Se corrigio `03_ed1_espectro_periodos` para que las lineas verticales indiquen explicitamente:
+  - naranja: `Tx / modo X = 1.105 s`;
+  - verde: `Ty / modo Y = 1.094 s`.
+- Se genero paquete nuevo:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2255`.
+- Se separaron las figuras en tres carpetas, cada una con PNG y SVG:
+  - `01_obligatorios_directos`: 8 + 8;
+  - `02_obligatorios_mejorados`: 6 + 6;
+  - `03_modo_pro_complementarios`: 4 + 4.
+- Validacion:
+  - `03_ed1_espectro_periodos.png` abierto a tamano real;
+  - hoja de contacto revisada;
+  - 18 PNG `3200 x 2000 px`;
+  - `py_compile` OK.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260509_2255_VISUALES_LEYENDA_CATEGORIAS.md`.
+
+## 2026-05-09 - Visuales finales movidos a prog2 y texto acentuado
+- Se regeneró el paquete visual vigente dentro de `HECRAS2\prog2\reportes\visuales_informe`.
+- Paquete:
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2320`.
+- Se corrigieron textos visibles con acentos y ñ:
+  - cálculos, auditoría, código, sísmico, método, estático, torsión, límite, fórmula, período, participación, utilización, simetría y trazabilidad técnica.
+- Se mantuvo la leyenda explícita del espectro:
+  - naranja: `Tx / modo X = 1.105 s`;
+  - verde: `Ty / modo Y = 1.094 s`.
+- Se separaron las figuras dentro del paquete en tres carpetas:
+  - `01_obligatorios_directos`: 8 PNG + 8 SVG;
+  - `02_obligatorios_mejorados`: 6 PNG + 6 SVG;
+  - `03_modo_pro_complementarios`: 4 PNG + 4 SVG.
+- Validación:
+  - 18 PNG renderizados a `3200 x 2000 px`;
+  - tablero ejecutivo, espectro ED1 y corredor normativo ED1 revisados visualmente;
+  - `py_compile` OK.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260509_2320_VISUALES_PROG2_ACENTOS.md`.
+- Nota:
+  - no se abrió ETABS ni se tocó ningún `.EDB`.
+
+## 2026-05-11 - Modelos de clase previos al espectro
+- Se creó carpeta específica:
+  - `HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356`.
+- ED1:
+  - se copió desde `prog\Edif1\ED1_PARTE1_COMPLETA_TRABAJO.EDB`;
+  - se aplicó programáticamente el estado previo al espectro:
+    - diafragma `D1`;
+    - apoyos;
+    - cargas `PP/TERP/TERT/SCP/SCT`;
+    - fuente de masa;
+    - caso modal `MODAL`;
+  - se verificó que no existieran `SEx/SEy/SEx_b2/SEy_b2` ni combinaciones dinámicas.
+- ED2:
+  - se ejecutó pipeline pasos 1 a 8 en la carpeta de clase;
+  - quedó con geometría, materiales, secciones, elementos, diafragma, cargas, masa y modal auxiliar;
+  - se guardó copia limpia `ED2_CLASE_PRE_ESPECTRO_20260511.EDB`;
+  - se verificó que no existieran `EX/EY/TEX/TEY`.
+- Observación:
+  - el error visto fue `UnicodeEncodeError` de logging por caracteres especiales; el pipeline reportó `Succeeded: 8 | Failed: 0`.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1420_MODELOS_CLASE_PRE_ESPECTRO.md`.
+
+## 2026-05-11 - Guardar APOS y transferencia Git para laptop personal
+- Se consolidó lo necesario para descarga externa desde Git:
+  - `transfer\ws2-ed1-etabs21-context\class_pre_espectro_20260511_1356`;
+  - `transfer\ws2-ed1-etabs21-context\CLASS_PRE_ESPECTRO_20260511_1356.zip`.
+- Contenido:
+  - modelos `.EDB` limpios pre-espectro/pre-cargas sísmicas;
+  - reportes y JSON de preparación;
+  - scripts usados;
+  - resultados modales auxiliares ED2;
+  - manifiesto SHA256.
+- No se agregaron temporales pesados de análisis ETABS.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1424_GIT_TRANSFER_CLASE_PRE_ESPECTRO.md`.
+
+## 2026-05-11 - Guardar final APOS para transferencia Git
+- Se agregó a Git el paquete visual vigente de `prog2` con acentos y separación por categorías:
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2320`.
+- Se conservaron también los ZIP finales:
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2320_PNG_2X.zip`;
+  - `WS2_VISUALES_TIPO_DIOS_20260509_2320_POR_CATEGORIA_PNG_SVG.zip`.
+- Se limpió del índice Git la carpeta accidental `_edge_profile` y se agregó regla en `.gitignore`.
+- Validación:
+  - `APOS lint: OK`;
+  - staged sin `_edge_profile`;
+  - una sola instancia ETABS 21 visible y respondiendo.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1427_GUARDAR_FINAL_GIT.md`.

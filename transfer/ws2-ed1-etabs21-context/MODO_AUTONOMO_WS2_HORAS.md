@@ -45,6 +45,8 @@ Si hay una instancia abierta, no abrir otra. Identificar que modelo esta abierto
 
 Si hay riesgo de segunda instancia o licencia, detenerse y reportar. Ese es bloqueo duro.
 
+Regla adicional anti-cierre: si el script se adjunta a una instancia existente, queda prohibido llamar `ApplicationExit`. Solo se puede cerrar ETABS desde API cuando el script creo esa instancia y el cierre fue solicitado explicitamente. En caso de multiples instancias, usar PID via `GetObjectProcess` o detenerse.
+
 ## Loop autonomo recomendado
 
 Para cada bloque:

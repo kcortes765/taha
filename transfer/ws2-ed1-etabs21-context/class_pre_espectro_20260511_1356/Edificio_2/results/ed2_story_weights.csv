@@ -1,0 +1,6 @@
+story,elevation_m,weight_tonf,slab_weight_tonf,beam_weight_tonf,super_dead_tonf,live_seismic_tonf,column_contrib_tonf,source_table,source_field
+Story1,3.500,1124.209,0.000,0.000,0.000,0.000,0.000,Mass Summary by Story,"UX,UY,UZ"
+Story2,6.500,1104.064,0.000,0.000,0.000,0.000,0.000,Mass Summary by Story,"UX,UY,UZ"
+Story3,9.500,1066.852,0.000,0.000,0.000,0.000,0.000,Mass Summary by Story,"UX,UY,UZ"
+Story4,12.500,1066.852,0.000,0.000,0.000,0.000,0.000,Mass Summary by Story,"UX,UY,UZ"
+Story5,15.500,914.700,0.000,0.000,0.000,0.000,0.000,Mass Summary by Story,"UX,UY,UZ"
