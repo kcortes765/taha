@@ -698,3 +698,12 @@ apos_migrate_project.py
   - una sola instancia ETABS 21 visible y respondiendo.
 - Delta:
   - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1427_GUARDAR_FINAL_GIT.md`.
+
+## 2026-05-11 - Push Git confirmado
+- Se ejecutó `git push origin codex/ws2-ed1-etabs21-context`.
+- Git confirmó actualización remota:
+  - `c87628b..3e7d199`.
+- Commit principal:
+  - `3e7d199 Add WS2 class package and final APOS handoff`.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1429_PUSH_CONFIRMADO.md`.

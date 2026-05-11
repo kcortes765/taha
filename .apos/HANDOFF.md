@@ -521,3 +521,14 @@ Siguiente accion concreta:
 - Validación local previa a push:
   - `APOS lint: OK`;
   - sin `_edge_profile` en staged.
+
+# 2026-05-11 - Descarga desde laptop lista
+
+- Rama remota actualizada:
+  - `origin/codex/ws2-ed1-etabs21-context`.
+- Commit principal con el paquete:
+  - `3e7d199 Add WS2 class package and final APOS handoff`.
+- En laptop, descargar la rama y revisar:
+  - `transfer\ws2-ed1-etabs21-context\CLASS_PRE_ESPECTRO_20260511_1356.zip`;
+  - `transfer\ws2-ed1-etabs21-context\class_pre_espectro_20260511_1356`;
+  - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2320`.
