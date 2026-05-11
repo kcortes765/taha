@@ -1,0 +1,8 @@
+{
+  "phase": "run-export",
+  "model_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB",
+  "log_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\logs\\ed1_run-export_20260509_1408.log",
+  "json_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\logs\\ed1_run-export_20260509_1408.json",
+  "started": "2026-05-09 14:08:32",
+  "error": "RuntimeError('File.OpenFile(C:\\\\Users\\\\Civil\\\\Documents\\\\Rio mapocho (no borrar por favor)\\\\HECRAS2\\\\prog2\\\\Edif1\\\\models\\\\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB) failed with ret=1')"
+}

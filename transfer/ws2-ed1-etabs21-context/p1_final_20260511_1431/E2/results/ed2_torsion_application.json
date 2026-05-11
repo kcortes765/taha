@@ -1,0 +1,142 @@
+{
+  "Story1": {
+    "force_point_count": 4,
+    "torsion_point_count": 4,
+    "force_centroid_x_m": 16.25,
+    "force_centroid_y_m": 16.25,
+    "sum_fx_each_tonf": 104.383579,
+    "sum_fy_each_tonf": 104.383579,
+    "TEX": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 76.604078,
+      "achieved_mz_tonf_m": 76.604078,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    },
+    "TEY": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 76.604078,
+      "achieved_mz_tonf_m": 76.604078,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    }
+  },
+  "Story2": {
+    "force_point_count": 4,
+    "torsion_point_count": 4,
+    "force_centroid_x_m": 16.25,
+    "force_centroid_y_m": 16.25,
+    "sum_fx_each_tonf": 100.605425,
+    "sum_fy_each_tonf": 100.605425,
+    "TEX": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 137.115459,
+      "achieved_mz_tonf_m": 137.115459,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    },
+    "TEY": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 137.115459,
+      "achieved_mz_tonf_m": 137.115459,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    }
+  },
+  "Story3": {
+    "force_point_count": 4,
+    "torsion_point_count": 4,
+    "force_centroid_x_m": 16.25,
+    "force_centroid_y_m": 16.25,
+    "sum_fx_each_tonf": 115.314327,
+    "sum_fy_each_tonf": 115.314327,
+    "TEX": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 229.698701,
+      "achieved_mz_tonf_m": 229.698701,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    },
+    "TEY": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 229.698701,
+      "achieved_mz_tonf_m": 229.698701,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    }
+  },
+  "Story4": {
+    "force_point_count": 4,
+    "torsion_point_count": 4,
+    "force_centroid_x_m": 16.25,
+    "force_centroid_y_m": 16.25,
+    "sum_fx_each_tonf": 150.280557,
+    "sum_fy_each_tonf": 150.280557,
+    "TEX": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 393.880493,
+      "achieved_mz_tonf_m": 393.880493,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    },
+    "TEY": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 393.880493,
+      "achieved_mz_tonf_m": 393.880493,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    }
+  },
+  "Story5": {
+    "force_point_count": 4,
+    "torsion_point_count": 4,
+    "force_centroid_x_m": 16.25,
+    "force_centroid_y_m": 16.25,
+    "sum_fx_each_tonf": 320.049389,
+    "sum_fy_each_tonf": 320.049389,
+    "TEX": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 1040.160514,
+      "achieved_mz_tonf_m": 1040.160514,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    },
+    "TEY": {
+      "method": "force_couple",
+      "target_mz_tonf_m": 1040.160514,
+      "achieved_mz_tonf_m": 1040.160514,
+      "resultant_fx_tonf": 0.0,
+      "resultant_fy_tonf": 0.0,
+      "centroid_x_m": 16.25,
+      "centroid_y_m": 16.25,
+      "point_count": 4
+    }
+  }
+}

@@ -1,0 +1,3 @@
+direction,max_avg_drift,max_point_drift,max_excess_drift,governing_story,governing_combo,governing_label,governing_excess_story,governing_excess_combo,governing_excess_label,limit_cm,limit_excess,cm_source,excess_source
+X,0.00082700,0.00082700,0.00025400,Story1,DRIFT_XP_TP,31,Story3,DRIFT_XP_TP,31,0.002000,0.001000,nearest_cm_table,paired_combo_cm
+Y,0.00078200,0.00082700,0.00020300,Story1,DRIFT_YP_TP,36,Story3,DRIFT_YP_TP,36,0.002000,0.001000,nearest_cm_table,paired_combo_cm

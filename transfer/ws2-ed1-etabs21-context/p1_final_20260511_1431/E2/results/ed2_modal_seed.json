@@ -1,0 +1,20 @@
+{
+  "modal_case": "Modal",
+  "directional_periods": {
+    "X": {
+      "period": 0.408,
+      "mode": 2,
+      "participation": 0.8669
+    },
+    "Y": {
+      "period": 0.408,
+      "mode": 1,
+      "participation": 0.8669
+    },
+    "RZ": {
+      "period": 0.359,
+      "mode": 3,
+      "participation": 0.8681
+    }
+  }
+}

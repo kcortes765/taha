@@ -1,0 +1,6 @@
+story,xcm_m,ycm_m,xcr_m,ycr_m,ex_m,ey_m,source,cr_available
+Story1,16.250000,16.250000,16.250000,16.250000,0.000000,0.000000,etabs_cm_table_placeholder_cr_zero,0
+Story2,16.250000,16.250000,16.250000,16.250000,0.000000,0.000000,etabs_cm_table_placeholder_cr_zero,0
+Story3,16.250000,16.250000,16.250000,16.250000,0.000000,0.000000,etabs_cm_table_placeholder_cr_zero,0
+Story4,16.250000,16.250000,16.250000,16.250000,0.000000,0.000000,etabs_cm_table_placeholder_cr_zero,0
+Story5,16.250000,16.250000,16.250000,16.250000,0.000000,0.000000,etabs_cm_table_placeholder_cr_zero,0

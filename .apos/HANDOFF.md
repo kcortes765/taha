@@ -532,3 +532,13 @@ Siguiente accion concreta:
   - `transfer\ws2-ed1-etabs21-context\CLASS_PRE_ESPECTRO_20260511_1356.zip`;
   - `transfer\ws2-ed1-etabs21-context\class_pre_espectro_20260511_1356`;
   - `transfer\ws2-ed1-etabs21-context\reports\visuals\WS2_VISUALES_TIPO_DIOS_20260509_2320`.
+
+# 2026-05-11 - Handoff paquete final Parte 1
+
+- Además del paquete de clase, descargar para contexto completo:
+  - `transfer\ws2-ed1-etabs21-context\P1_FINAL_MODELOS_RESULTADOS_20260511_1431.zip`.
+- Carpeta equivalente:
+  - `transfer\ws2-ed1-etabs21-context\p1_final_20260511_1431`.
+- Modelos activos:
+  - ED1: `E1\models\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB`.
+  - ED2: `E2\models\ED2_PARTE1_WS2_PROG2_20260508_2213.EDB`.

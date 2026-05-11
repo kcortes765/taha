@@ -1,0 +1,187 @@
+{
+  "model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB",
+  "stamp": "20260509_0918",
+  "Load Case Definitions - Response Spectrum": {
+    "fields": [
+      "Name",
+      "MassSource",
+      "LoadName",
+      "Function",
+      "TransAccSF",
+      "CoordSys",
+      "Angle",
+      "ModalCase",
+      "ModalCombo",
+      "RigidResp",
+      "DirCombo",
+      "EccenRatio",
+      "DesignType",
+      "GUID",
+      "Notes"
+    ],
+    "rows": [
+      {
+        "Name": "SEx",
+        "MassSource": "Previous  (MsSrc1)",
+        "LoadName": "U1",
+        "Function": "Espectro_NCh433_2026_Z3_C",
+        "TransAccSF": "2.0473",
+        "CoordSys": "Global",
+        "Angle": "0",
+        "ModalCase": "MODAL",
+        "ModalCombo": "CQC",
+        "RigidResp": "No",
+        "DirCombo": "SRSS",
+        "EccenRatio": "0.05",
+        "DesignType": "Program Determined",
+        "GUID": "cb57043f-80ab-456c-b106-6e9c09b5cb34",
+        "Notes": "None"
+      },
+      {
+        "Name": "SEx_b2",
+        "MassSource": "Previous  (MsSrc1)",
+        "LoadName": "U1",
+        "Function": "Espectro_NCh433_2026_Z3_C",
+        "TransAccSF": "2.0473",
+        "CoordSys": "Global",
+        "Angle": "0",
+        "ModalCase": "MODAL",
+        "ModalCombo": "CQC",
+        "RigidResp": "No",
+        "DirCombo": "SRSS",
+        "EccenRatio": "0",
+        "DesignType": "Program Determined",
+        "GUID": "4be36c43-fa49-4aaf-adea-a8db21b45182",
+        "Notes": "None"
+      },
+      {
+        "Name": "SEy",
+        "MassSource": "Previous  (MsSrc1)",
+        "LoadName": "U2",
+        "Function": "Espectro_NCh433_2026_Z3_C",
+        "TransAccSF": "1.9258",
+        "CoordSys": "Global",
+        "Angle": "0",
+        "ModalCase": "MODAL",
+        "ModalCombo": "CQC",
+        "RigidResp": "No",
+        "DirCombo": "SRSS",
+        "EccenRatio": "0.05",
+        "DesignType": "Program Determined",
+        "GUID": "849d3cd5-e400-44fd-900d-273da7620d5d",
+        "Notes": "None"
+      },
+      {
+        "Name": "SEy_b2",
+        "MassSource": "Previous  (MsSrc1)",
+        "LoadName": "U2",
+        "Function": "Espectro_NCh433_2026_Z3_C",
+        "TransAccSF": "1.9258",
+        "CoordSys": "Global",
+        "Angle": "0",
+        "ModalCase": "MODAL",
+        "ModalCombo": "CQC",
+        "RigidResp": "No",
+        "DirCombo": "SRSS",
+        "EccenRatio": "0",
+        "DesignType": "Program Determined",
+        "GUID": "d0fcad6c-04de-49b0-8694-e43509557ee1",
+        "Notes": "None"
+      }
+    ],
+    "count": 4
+  },
+  "Diaphragm Definitions": {
+    "fields": [
+      "Name",
+      "Rigidity",
+      "GUID"
+    ],
+    "rows": [
+      {
+        "Name": "D1",
+        "Rigidity": "Rigid",
+        "GUID": "8711473a-67c0-4b5d-acd5-86d56c943895"
+      }
+    ],
+    "count": 1
+  },
+  "Mass Source Definition": {
+    "fields": [
+      "Name",
+      "IsDefault",
+      "IncLateral",
+      "IncVertical",
+      "LumpMass",
+      "SourceSelf",
+      "SourceAdded",
+      "SourceLoads",
+      "MoveMass",
+      "LoadPattern",
+      "Multiplier",
+      "GUID"
+    ],
+    "rows": [
+      {
+        "Name": "MsSrc1",
+        "IsDefault": "Yes",
+        "IncLateral": "Yes",
+        "IncVertical": "No",
+        "LumpMass": "Yes",
+        "SourceSelf": "Yes",
+        "SourceAdded": "No",
+        "SourceLoads": "Yes",
+        "MoveMass": "No",
+        "LoadPattern": "TERP",
+        "Multiplier": "1",
+        "GUID": "9494bba6-23af-4dc3-92ea-a72714113202"
+      },
+      {
+        "Name": "MsSrc1",
+        "IsDefault": "None",
+        "IncLateral": "None",
+        "IncVertical": "None",
+        "LumpMass": "None",
+        "SourceSelf": "None",
+        "SourceAdded": "None",
+        "SourceLoads": "None",
+        "MoveMass": "None",
+        "LoadPattern": "TERT",
+        "Multiplier": "1",
+        "GUID": "None"
+      },
+      {
+        "Name": "MsSrc1",
+        "IsDefault": "None",
+        "IncLateral": "None",
+        "IncVertical": "None",
+        "LumpMass": "None",
+        "SourceSelf": "None",
+        "SourceAdded": "None",
+        "SourceLoads": "None",
+        "MoveMass": "None",
+        "LoadPattern": "SCP",
+        "Multiplier": "0.25",
+        "GUID": "None"
+      },
+      {
+        "Name": "MsSrc1",
+        "IsDefault": "None",
+        "IncLateral": "None",
+        "IncVertical": "None",
+        "LumpMass": "None",
+        "SourceSelf": "None",
+        "SourceAdded": "None",
+        "SourceLoads": "None",
+        "MoveMass": "None",
+        "LoadPattern": "SCT",
+        "Multiplier": "0",
+        "GUID": "None"
+      }
+    ],
+    "count": 4
+  },
+  "Load Case Definitions - Nonlinear Static": {
+    "error": "RuntimeError('Could not read table Load Case Definitions - Nonlinear Static')"
+  }
+}

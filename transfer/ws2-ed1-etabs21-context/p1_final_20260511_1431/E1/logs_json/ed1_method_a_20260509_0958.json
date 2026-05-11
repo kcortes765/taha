@@ -1,0 +1,246 @@
+{
+  "stamp": "20260509_0958",
+  "base_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB",
+  "official_api_sources": [
+    "C:\\Program Files\\Computers and Structures\\ETABS 21\\CSiAPIv1.tlb",
+    "C:\\Program Files\\Computers and Structures\\ETABS 21\\Table and Field Keys.xml"
+  ],
+  "variants": [
+    {
+      "mode": "rigid",
+      "semi_rigid": false,
+      "variant_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_RIGID_METHOD_A_20260509_0958.EDB",
+      "mass_sources": {
+        "record_count": 20,
+        "SetTableForEditingArray_ret": "[1, ('Name', 'IsDefault', 'IncLateral', 'IncVertical', 'LumpMass', 'SourceSelf', 'SourceAdded', 'SourceLoads', 'MoveMass', 'RatioX', 'RatioY', 'LoadPattern', 'Multiplier', 'GUID'), ('MsSrc1', 'Yes', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'No', '', '', 'TERP', '1', '9494bba6-23af-4dc3-92ea-a72714113202', 'MsSrc1', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MsSrc1', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MsSrc1', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaXp', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '0.05000', '0.00000', 'TERP', '1', '', 'MasaXp', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaXp', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaXp', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaXm', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '-0.05000', '0.00000', 'TERP', '1', '', 'MasaXm', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaXm', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaXm', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaYp', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '0.00000', '0.05000', 'TERP', '1', '', 'MasaYp', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaYp', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaYp', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaYm', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '0.00000', '-0.05000', 'TERP', '1', '', 'MasaYm', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaYm', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaYm', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', ''), 0]",
+        "ApplyEditedTables_ret": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 9:59:07\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nMass Source Definition Table:  20 of 20 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nMass Source Definition Table:  20 of 20 records successfully read\\r\\n', 0]"
+      },
+      "static_nonlinear": {
+        "A_NL_MasaXp": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        },
+        "A_NL_MasaXm": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        },
+        "A_NL_MasaYp": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        },
+        "A_NL_MasaYm": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        }
+      },
+      "modal": {
+        "A_MODAL_MasaXp": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 9:59:10\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  2 of 2 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  2 of 2 records successfully read\\r\\n', 0]"
+        },
+        "A_MODAL_MasaXm": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 9:59:12\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  3 of 3 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  3 of 3 records successfully read\\r\\n', 0]"
+        },
+        "A_MODAL_MasaYp": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 9:59:15\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  4 of 4 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  4 of 4 records successfully read\\r\\n', 0]"
+        },
+        "A_MODAL_MasaYm": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 9:59:18\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  5 of 5 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  5 of 5 records successfully read\\r\\n', 0]"
+        }
+      },
+      "response_spectrum": {
+        "A_SEx_Yp": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U1',), ('Espectro_NCh433_2026_Z3_C',), (2.04727337442695,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        },
+        "A_SEx_Ym": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U1',), ('Espectro_NCh433_2026_Z3_C',), (2.04727337442695,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        },
+        "A_SEy_Xp": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U2',), ('Espectro_NCh433_2026_Z3_C',), (1.92580009900815,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        },
+        "A_SEy_Xm": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U2',), ('Espectro_NCh433_2026_Z3_C',), (1.92580009900815,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        }
+      },
+      "combos": {
+        "A_C1_1.4CP": true,
+        "A_C2_1.2CP_1.6L_0.5Lr": true,
+        "A_C3_1.2CP_L_1.6Lr": true,
+        "A_A_SEx_Yp_CP12": true,
+        "A_A_SEx_Yp_CP09_P": true,
+        "A_A_SEx_Yp_CP09_N": true,
+        "A_A_SEx_Ym_CP12": true,
+        "A_A_SEx_Ym_CP09_P": true,
+        "A_A_SEx_Ym_CP09_N": true,
+        "A_A_SEy_Xp_CP12": true,
+        "A_A_SEy_Xp_CP09_P": true,
+        "A_A_SEy_Xp_CP09_N": true,
+        "A_A_SEy_Xm_CP12": true,
+        "A_A_SEy_Xm_CP09_P": true,
+        "A_A_SEy_Xm_CP09_N": true
+      },
+      "run_ok": true,
+      "exports": {
+        "Mass Source Definition": true,
+        "Load Case Definitions - Summary": true,
+        "Modal Case Definitions - Eigen": true,
+        "Load Case Definitions - Response Spectrum": true,
+        "Load Case Definitions - Damping - Modal": true,
+        "Base Reactions": true,
+        "Story Forces": true,
+        "Story Drifts": true,
+        "Modal Participating Mass Ratios": true,
+        "Modal Periods And Frequencies": true,
+        "Diaphragm Center Of Mass Displacements": true
+      }
+    },
+    {
+      "mode": "semirigid",
+      "semi_rigid": true,
+      "variant_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_SEMIRIGID_METHOD_A_20260509_0958.EDB",
+      "mass_sources": {
+        "record_count": 20,
+        "SetTableForEditingArray_ret": "[1, ('Name', 'IsDefault', 'IncLateral', 'IncVertical', 'LumpMass', 'SourceSelf', 'SourceAdded', 'SourceLoads', 'MoveMass', 'RatioX', 'RatioY', 'LoadPattern', 'Multiplier', 'GUID'), ('MsSrc1', 'Yes', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'No', '', '', 'TERP', '1', '9494bba6-23af-4dc3-92ea-a72714113202', 'MsSrc1', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MsSrc1', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MsSrc1', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaXp', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '0.05000', '0.00000', 'TERP', '1', '', 'MasaXp', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaXp', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaXp', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaXm', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '-0.05000', '0.00000', 'TERP', '1', '', 'MasaXm', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaXm', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaXm', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaYp', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '0.00000', '0.05000', 'TERP', '1', '', 'MasaYp', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaYp', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaYp', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', '', 'MasaYm', 'No', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'Yes', '0.00000', '-0.05000', 'TERP', '1', '', 'MasaYm', '', '', '', '', '', '', '', '', '', '', 'TERT', '1', '', 'MasaYm', '', '', '', '', '', '', '', '', '', '', 'SCP', '0.25', '', 'MasaYm', '', '', '', '', '', '', '', '', '', '', 'SCT', '0', ''), 0]",
+        "ApplyEditedTables_ret": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 10:03:02\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nMass Source Definition Table:  20 of 20 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nMass Source Definition Table:  20 of 20 records successfully read\\r\\n', 0]"
+      },
+      "static_nonlinear": {
+        "A_NL_MasaXp": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        },
+        "A_NL_MasaXm": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        },
+        "A_NL_MasaYp": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        },
+        "A_NL_MasaYm": {
+          "SetCase": "0",
+          "SetMassSource": "0",
+          "SetLoads": "[(), (), (), 0]"
+        }
+      },
+      "modal": {
+        "A_MODAL_MasaXp": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 10:03:05\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  2 of 2 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  2 of 2 records successfully read\\r\\n', 0]"
+        },
+        "A_MODAL_MasaXm": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 10:03:08\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  3 of 3 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  3 of 3 records successfully read\\r\\n', 0]"
+        },
+        "A_MODAL_MasaYp": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 10:03:12\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  4 of 4 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  4 of 4 records successfully read\\r\\n', 0]"
+        },
+        "A_MODAL_MasaYm": {
+          "SetCase": "0",
+          "SetNumberModes": "0",
+          "SetInitialCase": "0",
+          "modal_table_apply": "[0, 0, 0, 0, '********** DATABASE IMPORT DEFINITION DATA **********\\r\\n\\r\\nETABS Version 21.2.0 Interactive Database Import\\r\\nImport Type and Options:  Interactive Database Editing\\r\\n     Elements Deleted from DB:  Delete object from model\\r\\n     Other Items Deleted from DB:  Delete item from model\\r\\n     Elements with Same Name in Model and DB:  Replace object in model\\r\\n     Other Items with Same Name in Model and DB:  Replace item in model\\r\\n     Elements (Except Links) in the Same Location:  Allow duplicates in the same location\\r\\n     Link Elements in the Same Location:  Allow duplicates in the same location\\r\\n     Items With Same Name in a DB Table:  Overwrite previous item\\r\\n     Import Control for Errors:  Abort import after 20 errors\\r\\n     Import Control for Warnings:  Abort import after 200 warnings\\r\\n\\r\\nImport started at \\r\\n\\r\\nImport completed at 10:03:15\\r\\nNumber of errors:  0\\r\\nNumber of warnings:  0\\r\\nNumber of informational messages:  0\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT SUMMARY LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  5 of 5 records successfully read\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n********** DATABASE IMPORT DETAILED LOG **********\\r\\n\\r\\nModal Case Definitions - Eigen Table:  5 of 5 records successfully read\\r\\n', 0]"
+        }
+      },
+      "response_spectrum": {
+        "A_SEx_Yp": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U1',), ('Espectro_NCh433_2026_Z3_C',), (2.04727337442695,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        },
+        "A_SEx_Ym": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U1',), ('Espectro_NCh433_2026_Z3_C',), (2.04727337442695,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        },
+        "A_SEy_Xp": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U2',), ('Espectro_NCh433_2026_Z3_C',), (1.92580009900815,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        },
+        "A_SEy_Xm": {
+          "SetCase": "0",
+          "SetModalCase": "0",
+          "SetLoads": "[('U2',), ('Espectro_NCh433_2026_Z3_C',), (1.92580009900815,), ('Global',), (0.0,), 0]",
+          "SetEccentricity0": "0"
+        }
+      },
+      "combos": {
+        "A_C1_1.4CP": true,
+        "A_C2_1.2CP_1.6L_0.5Lr": true,
+        "A_C3_1.2CP_L_1.6Lr": true,
+        "A_A_SEx_Yp_CP12": true,
+        "A_A_SEx_Yp_CP09_P": true,
+        "A_A_SEx_Yp_CP09_N": true,
+        "A_A_SEx_Ym_CP12": true,
+        "A_A_SEx_Ym_CP09_P": true,
+        "A_A_SEx_Ym_CP09_N": true,
+        "A_A_SEy_Xp_CP12": true,
+        "A_A_SEy_Xp_CP09_P": true,
+        "A_A_SEy_Xp_CP09_N": true,
+        "A_A_SEy_Xm_CP12": true,
+        "A_A_SEy_Xm_CP09_P": true,
+        "A_A_SEy_Xm_CP09_N": true
+      },
+      "run_ok": true,
+      "exports": {
+        "Mass Source Definition": true,
+        "Load Case Definitions - Summary": true,
+        "Modal Case Definitions - Eigen": true,
+        "Load Case Definitions - Response Spectrum": true,
+        "Load Case Definitions - Damping - Modal": true,
+        "Base Reactions": true,
+        "Story Forces": true,
+        "Story Drifts": true,
+        "Modal Participating Mass Ratios": true,
+        "Modal Periods And Frequencies": true,
+        "Diaphragm Center Of Mass Displacements": true
+      }
+    }
+  ],
+  "etabs": {
+    "pid": 16356,
+    "started_by_script": false,
+    "attach_method": "GetObjectProcess",
+    "version": "21.2.0"
+  }
+}

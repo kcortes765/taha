@@ -707,3 +707,11 @@ apos_migrate_project.py
   - `3e7d199 Add WS2 class package and final APOS handoff`.
 - Delta:
   - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1429_PUSH_CONFIRMADO.md`.
+
+## 2026-05-11 - Paquete Parte 1 final agregado para Git
+- Se detectó que los modelos finales Parte 1 de `prog2\Edif1` y `prog2\Edif2` aún no estaban incluidos en el paquete de clase, porque ese paquete era pre-espectro.
+- Se creó paquete curado:
+  - `transfer\ws2-ed1-etabs21-context\p1_final_20260511_1431`.
+- Se incluyeron modelos activos, opencheck, backups, exportaciones/resultados y reportes estructurados.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1431_P1_FINAL_GIT.md`.

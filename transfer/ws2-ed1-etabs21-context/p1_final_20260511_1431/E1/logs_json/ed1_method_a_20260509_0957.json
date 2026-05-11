@@ -1,0 +1,16 @@
+{
+  "stamp": "20260509_0957",
+  "base_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB",
+  "official_api_sources": [
+    "C:\\Program Files\\Computers and Structures\\ETABS 21\\CSiAPIv1.tlb",
+    "C:\\Program Files\\Computers and Structures\\ETABS 21\\Table and Field Keys.xml"
+  ],
+  "variants": [],
+  "etabs": {
+    "pid": 16356,
+    "started_by_script": false,
+    "attach_method": "GetObjectProcess",
+    "version": "21.2.0"
+  },
+  "error": "KeyError('MassSource')"
+}

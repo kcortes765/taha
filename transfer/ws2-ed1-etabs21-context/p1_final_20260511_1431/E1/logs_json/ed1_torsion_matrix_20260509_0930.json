@@ -1,0 +1,2293 @@
+{
+  "stamp": "20260509_0930",
+  "base_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB",
+  "log_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\logs\\ed1_torsion_matrix_20260509_0930.log",
+  "json_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\logs\\ed1_torsion_matrix_20260509_0930.json",
+  "official_api_sources": [
+    "C:\\Program Files\\Computers and Structures\\ETABS 21\\CSI API ETABS v1.chm",
+    "C:\\Program Files\\Computers and Structures\\ETABS 21\\CSiAPIv1.tlb",
+    "C:\\Program Files\\Computers and Structures\\ETABS 21\\Table and Field Keys.xml"
+  ],
+  "variants": [
+    {
+      "mode": "rigid",
+      "semi_rigid": false,
+      "variant_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_RIGID_MATRIX_20260509_0930.EDB",
+      "story_count": 20,
+      "base_run_ok": true,
+      "final_run_ok": true,
+      "b1_floor_torsion_csv": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\exports\\torsion_matrix_20260509_0930\\rigid\\ed1_rigid_b1_floor_torsion_20260509_0930.csv",
+      "b1": {
+        "stories": {
+          "Story1": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 3.718470944999998,
+              "achieved_mz_tonf_m": 3.7184709449999978,
+              "resultant_fx_tonf": 7.047314121155779e-19,
+              "resultant_fy_tonf": 1.951563910473908e-18,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -3.718470944999998,
+              "achieved_mz_tonf_m": -3.7184709449999978,
+              "resultant_fx_tonf": -7.047314121155779e-19,
+              "resultant_fy_tonf": -1.951563910473908e-18,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 9.70345252499988,
+              "achieved_mz_tonf_m": 9.703452524999879,
+              "resultant_fx_tonf": -4.662069341687669e-18,
+              "resultant_fy_tonf": -1.0842021724855044e-18,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -9.70345252499988,
+              "achieved_mz_tonf_m": -9.703452524999879,
+              "resultant_fx_tonf": 4.662069341687669e-18,
+              "resultant_fy_tonf": 1.0842021724855044e-18,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            }
+          },
+          "Story2": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 7.439222354999973,
+              "achieved_mz_tonf_m": 7.439222354999974,
+              "resultant_fx_tonf": 5.9631119486702744e-18,
+              "resultant_fy_tonf": -4.228388472693467e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -7.439222354999973,
+              "achieved_mz_tonf_m": -7.439222354999974,
+              "resultant_fx_tonf": -5.9631119486702744e-18,
+              "resultant_fy_tonf": 4.228388472693467e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 19.880709075000116,
+              "achieved_mz_tonf_m": 19.880709075000112,
+              "resultant_fx_tonf": -1.1709383462843448e-17,
+              "resultant_fy_tonf": -2.693158196453993e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -19.880709075000116,
+              "achieved_mz_tonf_m": -19.880709075000112,
+              "resultant_fx_tonf": 1.1709383462843448e-17,
+              "resultant_fy_tonf": 2.693158196453993e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story3": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 11.699960235000002,
+              "achieved_mz_tonf_m": 11.699960234999999,
+              "resultant_fx_tonf": -9.432558900623889e-18,
+              "resultant_fy_tonf": -7.947201924318748e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -11.699960235000002,
+              "achieved_mz_tonf_m": -11.699960234999999,
+              "resultant_fx_tonf": 9.432558900623889e-18,
+              "resultant_fy_tonf": 7.947201924318748e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 31.62338639999984,
+              "achieved_mz_tonf_m": 31.62338639999983,
+              "resultant_fx_tonf": -3.686287386450715e-17,
+              "resultant_fy_tonf": -1.7477339020466331e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -31.62338639999984,
+              "achieved_mz_tonf_m": -31.62338639999983,
+              "resultant_fx_tonf": 3.686287386450715e-17,
+              "resultant_fy_tonf": 1.7477339020466331e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story4": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 15.685383795000003,
+              "achieved_mz_tonf_m": 15.685383794999995,
+              "resultant_fx_tonf": -1.5178830414797062e-18,
+              "resultant_fy_tonf": -1.0928757898653885e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -15.685383795000003,
+              "achieved_mz_tonf_m": -15.685383794999995,
+              "resultant_fx_tonf": 1.5178830414797062e-18,
+              "resultant_fy_tonf": 1.0928757898653885e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 42.74305282500011,
+              "achieved_mz_tonf_m": 42.74305282500011,
+              "resultant_fx_tonf": -3.122502256758253e-17,
+              "resultant_fy_tonf": -4.3324718812520757e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -42.74305282500011,
+              "achieved_mz_tonf_m": -42.74305282500011,
+              "resultant_fx_tonf": 3.122502256758253e-17,
+              "resultant_fy_tonf": 4.3324718812520757e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story5": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 18.937534199999998,
+              "achieved_mz_tonf_m": 18.937534199999998,
+              "resultant_fx_tonf": 2.3418766925686896e-17,
+              "resultant_fy_tonf": -1.1102230246251565e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -18.937534199999998,
+              "achieved_mz_tonf_m": -18.937534199999998,
+              "resultant_fx_tonf": -2.3418766925686896e-17,
+              "resultant_fy_tonf": 1.1102230246251565e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 52.00273522499998,
+              "achieved_mz_tonf_m": 52.00273522499999,
+              "resultant_fx_tonf": -4.7704895589362195e-17,
+              "resultant_fy_tonf": -5.143455106271233e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -52.00273522499998,
+              "achieved_mz_tonf_m": -52.00273522499999,
+              "resultant_fx_tonf": 4.7704895589362195e-17,
+              "resultant_fy_tonf": 5.143455106271233e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story6": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 21.13970323499998,
+              "achieved_mz_tonf_m": 21.139703234999974,
+              "resultant_fx_tonf": -9.75781955236954e-18,
+              "resultant_fy_tonf": -2.94469310047063e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -21.13970323499998,
+              "achieved_mz_tonf_m": -21.139703234999974,
+              "resultant_fx_tonf": 9.75781955236954e-18,
+              "resultant_fy_tonf": 2.94469310047063e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 58.5095026499999,
+              "achieved_mz_tonf_m": 58.5095026499999,
+              "resultant_fx_tonf": 2.6020852139652106e-17,
+              "resultant_fy_tonf": -5.984795992119984e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -58.5095026499999,
+              "achieved_mz_tonf_m": -58.5095026499999,
+              "resultant_fx_tonf": -2.6020852139652106e-17,
+              "resultant_fy_tonf": 5.984795992119984e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story7": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 22.137026595000012,
+              "achieved_mz_tonf_m": 22.137026595000012,
+              "resultant_fx_tonf": -4.0332320816460765e-17,
+              "resultant_fy_tonf": -1.8344700758454735e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -22.137026595000012,
+              "achieved_mz_tonf_m": -22.137026595000012,
+              "resultant_fx_tonf": 4.0332320816460765e-17,
+              "resultant_fy_tonf": 1.8344700758454735e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 61.78088745000016,
+              "achieved_mz_tonf_m": 61.78088745000015,
+              "resultant_fx_tonf": -3.5561831257524545e-17,
+              "resultant_fy_tonf": -4.779163176316104e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -61.78088745000016,
+              "achieved_mz_tonf_m": -61.78088745000015,
+              "resultant_fx_tonf": 3.5561831257524545e-17,
+              "resultant_fy_tonf": 4.779163176316104e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story8": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 21.962190945000064,
+              "achieved_mz_tonf_m": 21.96219094500007,
+              "resultant_fx_tonf": -1.452830911130576e-17,
+              "resultant_fy_tonf": -1.3465790982269965e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -21.962190945000064,
+              "achieved_mz_tonf_m": -21.96219094500007,
+              "resultant_fx_tonf": 1.452830911130576e-17,
+              "resultant_fy_tonf": 1.3465790982269965e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 61.831136475000015,
+              "achieved_mz_tonf_m": 61.831136475000015,
+              "resultant_fx_tonf": 1.3791051634015616e-16,
+              "resultant_fy_tonf": -4.735795089416683e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -61.831136475000015,
+              "achieved_mz_tonf_m": -61.831136475000015,
+              "resultant_fx_tonf": -1.3791051634015616e-16,
+              "resultant_fy_tonf": 4.735795089416683e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story9": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 20.861486504999977,
+              "achieved_mz_tonf_m": 20.861486504999974,
+              "resultant_fx_tonf": -2.8406096919120216e-17,
+              "resultant_fy_tonf": -1.441988889405721e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -20.861486504999977,
+              "achieved_mz_tonf_m": -20.861486504999974,
+              "resultant_fx_tonf": 2.8406096919120216e-17,
+              "resultant_fy_tonf": 1.441988889405721e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 59.25072389999988,
+              "achieved_mz_tonf_m": 59.25072389999987,
+              "resultant_fx_tonf": -1.0755285551056204e-16,
+              "resultant_fy_tonf": -3.95516952522712e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -59.25072389999988,
+              "achieved_mz_tonf_m": -59.25072389999987,
+              "resultant_fx_tonf": 1.0755285551056204e-16,
+              "resultant_fy_tonf": 3.95516952522712e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story10": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 19.299506189999995,
+              "achieved_mz_tonf_m": 19.299506189999992,
+              "resultant_fx_tonf": 2.688821387764051e-17,
+              "resultant_fy_tonf": -1.4137996329210978e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -19.299506189999995,
+              "achieved_mz_tonf_m": -19.299506189999992,
+              "resultant_fx_tonf": -2.688821387764051e-17,
+              "resultant_fy_tonf": 1.4137996329210978e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 55.231379475000026,
+              "achieved_mz_tonf_m": 55.23137947500003,
+              "resultant_fx_tonf": -1.214306433183765e-17,
+              "resultant_fy_tonf": -5.412337245047638e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -55.231379475000026,
+              "achieved_mz_tonf_m": -55.23137947500003,
+              "resultant_fx_tonf": 1.214306433183765e-17,
+              "resultant_fy_tonf": 5.412337245047638e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story11": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 17.90959732499999,
+              "achieved_mz_tonf_m": 17.909597324999993,
+              "resultant_fx_tonf": -1.0408340855860843e-17,
+              "resultant_fy_tonf": -1.5937771935536915e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -17.90959732499999,
+              "achieved_mz_tonf_m": -17.909597324999993,
+              "resultant_fx_tonf": 1.0408340855860843e-17,
+              "resultant_fy_tonf": 1.5937771935536915e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 51.462125024999985,
+              "achieved_mz_tonf_m": 51.46212502499997,
+              "resultant_fx_tonf": -2.992397996059992e-17,
+              "resultant_fy_tonf": -1.6132928326584306e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -51.462125024999985,
+              "achieved_mz_tonf_m": -51.46212502499997,
+              "resultant_fx_tonf": 2.992397996059992e-17,
+              "resultant_fy_tonf": 1.6132928326584306e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story12": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 17.384261114999994,
+              "achieved_mz_tonf_m": 17.384261114999983,
+              "resultant_fx_tonf": -4.618701254788249e-17,
+              "resultant_fy_tonf": 6.938893903907228e-18,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -17.384261114999994,
+              "achieved_mz_tonf_m": -17.384261114999983,
+              "resultant_fx_tonf": 4.618701254788249e-17,
+              "resultant_fy_tonf": -6.938893903907228e-18,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 49.86185722500005,
+              "achieved_mz_tonf_m": 49.86185722500002,
+              "resultant_fx_tonf": -5.334274688628682e-17,
+              "resultant_fy_tonf": -5.9761223747401e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -49.86185722500005,
+              "achieved_mz_tonf_m": -49.86185722500002,
+              "resultant_fx_tonf": 5.334274688628682e-17,
+              "resultant_fy_tonf": 5.9761223747401e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story13": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 18.33936132000002,
+              "achieved_mz_tonf_m": 18.339361320000016,
+              "resultant_fx_tonf": 6.7220534694101275e-18,
+              "resultant_fy_tonf": -7.719519468096792e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -18.33936132000002,
+              "achieved_mz_tonf_m": -18.339361320000016,
+              "resultant_fx_tonf": -6.7220534694101275e-18,
+              "resultant_fy_tonf": 7.719519468096792e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 52.20084344999994,
+              "achieved_mz_tonf_m": 52.20084344999992,
+              "resultant_fx_tonf": -3.2959746043559335e-17,
+              "resultant_fy_tonf": -1.5916087892087205e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -52.20084344999994,
+              "achieved_mz_tonf_m": -52.20084344999992,
+              "resultant_fx_tonf": 3.2959746043559335e-17,
+              "resultant_fy_tonf": 1.5916087892087205e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story14": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 21.202174155000012,
+              "achieved_mz_tonf_m": 21.20217415500002,
+              "resultant_fx_tonf": 1.8648277366750676e-17,
+              "resultant_fy_tonf": -2.1120258320017626e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -21.202174155000012,
+              "achieved_mz_tonf_m": -21.20217415500002,
+              "resultant_fx_tonf": -1.8648277366750676e-17,
+              "resultant_fy_tonf": 2.1120258320017626e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 59.76495817500005,
+              "achieved_mz_tonf_m": 59.764958175000025,
+              "resultant_fx_tonf": -1.3530843112619095e-16,
+              "resultant_fy_tonf": -6.513886652292911e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -59.76495817500005,
+              "achieved_mz_tonf_m": -59.764958175000025,
+              "resultant_fx_tonf": 1.3530843112619095e-16,
+              "resultant_fy_tonf": 6.513886652292911e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story15": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 26.168612294999978,
+              "achieved_mz_tonf_m": 26.168612294999992,
+              "resultant_fx_tonf": 5.204170427930421e-18,
+              "resultant_fy_tonf": -3.1094918306884267e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -26.168612294999978,
+              "achieved_mz_tonf_m": -26.168612294999992,
+              "resultant_fx_tonf": -5.204170427930421e-18,
+              "resultant_fy_tonf": 3.1094918306884267e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 73.18914885,
+              "achieved_mz_tonf_m": 73.18914884999998,
+              "resultant_fx_tonf": -1.2750217548429532e-16,
+              "resultant_fy_tonf": -9.011888457699513e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -73.18914885,
+              "achieved_mz_tonf_m": -73.18914884999998,
+              "resultant_fx_tonf": 1.2750217548429532e-16,
+              "resultant_fy_tonf": 9.011888457699513e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story16": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 33.23287092000003,
+              "achieved_mz_tonf_m": 33.232870920000025,
+              "resultant_fx_tonf": 2.5153490401663703e-17,
+              "resultant_fy_tonf": -3.0270924655795284e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -33.23287092000003,
+              "achieved_mz_tonf_m": -33.232870920000025,
+              "resultant_fx_tonf": -2.5153490401663703e-17,
+              "resultant_fy_tonf": 3.0270924655795284e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 92.50056149999998,
+              "achieved_mz_tonf_m": 92.50056149999998,
+              "resultant_fx_tonf": 3.469446951953614e-17,
+              "resultant_fy_tonf": -1.3530843112619095e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -92.50056149999998,
+              "achieved_mz_tonf_m": -92.50056149999998,
+              "resultant_fx_tonf": -3.469446951953614e-17,
+              "resultant_fy_tonf": 1.3530843112619095e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story17": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 42.26475620999999,
+              "achieved_mz_tonf_m": 42.264756209999966,
+              "resultant_fx_tonf": -1.8648277366750676e-17,
+              "resultant_fy_tonf": -2.3028454143592114e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -42.26475620999999,
+              "achieved_mz_tonf_m": -42.264756209999966,
+              "resultant_fx_tonf": 1.8648277366750676e-17,
+              "resultant_fy_tonf": 2.3028454143592114e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 117.30047684999995,
+              "achieved_mz_tonf_m": 117.30047684999997,
+              "resultant_fx_tonf": 1.491862189340054e-16,
+              "resultant_fy_tonf": -1.2021633688519273e-15,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -117.30047684999995,
+              "achieved_mz_tonf_m": -117.30047684999997,
+              "resultant_fx_tonf": -1.491862189340054e-16,
+              "resultant_fy_tonf": 1.2021633688519273e-15,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story18": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 53.08190007,
+              "achieved_mz_tonf_m": 53.08190007000001,
+              "resultant_fx_tonf": 5.767955557622884e-17,
+              "resultant_fy_tonf": -3.5908775952719907e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -53.08190007,
+              "achieved_mz_tonf_m": -53.08190007000001,
+              "resultant_fx_tonf": -5.767955557622884e-17,
+              "resultant_fy_tonf": 3.5908775952719907e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 147.02364150000002,
+              "achieved_mz_tonf_m": 147.02364150000005,
+              "resultant_fx_tonf": 5.898059818321144e-17,
+              "resultant_fy_tonf": -6.765421556309548e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -147.02364150000002,
+              "achieved_mz_tonf_m": -147.02364150000005,
+              "resultant_fx_tonf": -5.898059818321144e-17,
+              "resultant_fy_tonf": 6.765421556309548e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story19": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 65.49315807,
+              "achieved_mz_tonf_m": 65.49315806999999,
+              "resultant_fx_tonf": 3.469446951953614e-18,
+              "resultant_fy_tonf": -4.180683577104105e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -65.49315807,
+              "achieved_mz_tonf_m": -65.49315806999999,
+              "resultant_fx_tonf": -3.469446951953614e-18,
+              "resultant_fy_tonf": 4.180683577104105e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 181.1521632,
+              "achieved_mz_tonf_m": 181.1521631999999,
+              "resultant_fx_tonf": -3.642919299551295e-17,
+              "resultant_fy_tonf": -2.8848451405494302e-15,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -181.1521632,
+              "achieved_mz_tonf_m": -181.1521631999999,
+              "resultant_fx_tonf": 3.642919299551295e-17,
+              "resultant_fy_tonf": 2.8848451405494302e-15,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story20": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 53.95255396500001,
+              "achieved_mz_tonf_m": 53.95255396500001,
+              "resultant_fx_tonf": 1.3183898417423734e-16,
+              "resultant_fy_tonf": 5.421010862427522e-16,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -53.95255396500001,
+              "achieved_mz_tonf_m": -53.95255396500001,
+              "resultant_fx_tonf": -1.3183898417423734e-16,
+              "resultant_fy_tonf": -5.421010862427522e-16,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 149.156625975,
+              "achieved_mz_tonf_m": 149.15662597500003,
+              "resultant_fx_tonf": 3.0704605524789486e-16,
+              "resultant_fy_tonf": 2.230854390106174e-15,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -149.156625975,
+              "achieved_mz_tonf_m": -149.15662597500003,
+              "resultant_fx_tonf": -3.0704605524789486e-16,
+              "resultant_fy_tonf": -2.230854390106174e-15,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            }
+          }
+        },
+        "totals": {
+          "TorX": 511.90973044500004,
+          "TorY": 1426.1693677499998
+        }
+      },
+      "b2": {
+        "SEx_b2_set_ratio_0": 0,
+        "SEx_b2_diaph_override_error": "AttributeError('SetDiaphragmEccentricityOverride')",
+        "SEy_b2_set_ratio_0": 0,
+        "SEy_b2_diaph_override_error": "AttributeError('SetDiaphragmEccentricityOverride')"
+      },
+      "combos": {
+        "ED1_MAT_C1_1.4CP": true,
+        "ED1_MAT_C2_1.2CP_1.6L_0.5Lr": true,
+        "ED1_MAT_C3_1.2CP_L_1.6Lr": true,
+        "ED1_B1_X_TP_CP12": true,
+        "ED1_B1_X_TM_CP12": true,
+        "ED1_B1_Y_TP_CP12": true,
+        "ED1_B1_Y_TM_CP12": true,
+        "ED1_B1_X_TP_CP09": true,
+        "ED1_B1_X_TM_CP09": true,
+        "ED1_B1_Y_TP_CP09": true,
+        "ED1_B1_Y_TM_CP09": true,
+        "ED1_B2_X_CP12": true,
+        "ED1_B2_Y_CP12": true,
+        "ED1_B2_X_CP09": true,
+        "ED1_B2_Y_CP09": true
+      },
+      "exports": {
+        "Diaphragm Definitions": true,
+        "Load Case Definitions - Response Spectrum": true,
+        "Mass Source Definition": true,
+        "Base Reactions": true,
+        "Story Forces": true,
+        "Story Drifts": true,
+        "Modal Participating Mass Ratios": true,
+        "Modal Periods And Frequencies": true,
+        "Diaphragm Center Of Mass Displacements": true
+      },
+      "base_reactions": {
+        "Dead": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "Live": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "MODAL": {
+          "fx": 0.2051,
+          "fy": 0.0104,
+          "mz": 0.9383
+        },
+        "PP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "TERP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "TERT": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "SCP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "SCT": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "SEx": {
+          "fx": 740.7709,
+          "fy": 45.1295,
+          "mz": 7640.3131
+        },
+        "SEy": {
+          "fx": 42.4518,
+          "fy": 740.771,
+          "mz": 15895.5273
+        },
+        "SEx_b2": {
+          "fx": 740.7709,
+          "fy": 45.1295,
+          "mz": 7128.4034
+        },
+        "SEy_b2": {
+          "fx": 42.4518,
+          "fy": 740.771,
+          "mz": 14469.3579
+        },
+        "TorX+": {
+          "fx": 0.0344,
+          "fy": 0.0361,
+          "mz": 512.3828
+        },
+        "TorX-": {
+          "fx": 0.0344,
+          "fy": 0.0361,
+          "mz": 512.3828
+        },
+        "TorY+": {
+          "fx": 0.0959,
+          "fy": 0.1005,
+          "mz": 1427.4873
+        },
+        "TorY-": {
+          "fx": 0.0959,
+          "fy": 0.1005,
+          "mz": 1427.4873
+        },
+        "ED1_C1_1.4CP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_C2_1.2CP_1.6L_0.5Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_C3_1.2CP_L_1.6Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_DYN_XP": {
+          "fx": 1037.0793,
+          "fy": 63.1813,
+          "mz": 10696.4384
+        },
+        "ED1_DYN_XN": {
+          "fx": 1037.0793,
+          "fy": 63.1813,
+          "mz": 10696.4384
+        },
+        "ED1_DYN_YP": {
+          "fx": 59.4325,
+          "fy": 1037.0795,
+          "mz": 22253.7382
+        },
+        "ED1_DYN_YN": {
+          "fx": 59.4325,
+          "fy": 1037.0795,
+          "mz": 22253.7382
+        },
+        "ED1_DYN_09_XP": {
+          "fx": 1037.0793,
+          "fy": 63.1813,
+          "mz": 10696.4384
+        },
+        "ED1_DYN_09_XN": {
+          "fx": 1037.0793,
+          "fy": 63.1813,
+          "mz": 10696.4384
+        },
+        "ED1_DYN_09_YP": {
+          "fx": 59.4325,
+          "fy": 1037.0795,
+          "mz": 22253.7382
+        },
+        "ED1_DYN_09_YN": {
+          "fx": 59.4325,
+          "fy": 1037.0795,
+          "mz": 22253.7382
+        },
+        "ED1_MAT_C1_1.4CP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_MAT_C2_1.2CP_1.6L_0.5Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_MAT_C3_1.2CP_L_1.6Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_B1_X_TP_CP12": {
+          "fx": 1037.0311,
+          "fy": 63.1308,
+          "mz": 9262.4288
+        },
+        "ED1_B1_X_TM_CP12": {
+          "fx": 1037.1275,
+          "fy": 63.2318,
+          "mz": 10697.1007
+        },
+        "ED1_B1_Y_TP_CP12": {
+          "fx": 59.2982,
+          "fy": 1036.9388,
+          "mz": 18258.6188
+        },
+        "ED1_B1_Y_TM_CP12": {
+          "fx": 59.5667,
+          "fy": 1037.2202,
+          "mz": 22255.5832
+        },
+        "ED1_B1_X_TP_CP09": {
+          "fx": 1037.0311,
+          "fy": 63.1308,
+          "mz": 9262.4288
+        },
+        "ED1_B1_X_TM_CP09": {
+          "fx": 1037.1275,
+          "fy": 63.2318,
+          "mz": 10697.1007
+        },
+        "ED1_B1_Y_TP_CP09": {
+          "fx": 59.2982,
+          "fy": 1036.9388,
+          "mz": 18258.6188
+        },
+        "ED1_B1_Y_TM_CP09": {
+          "fx": 59.5667,
+          "fy": 1037.2202,
+          "mz": 22255.5832
+        },
+        "ED1_B2_X_CP12": {
+          "fx": 1037.0793,
+          "fy": 63.1813,
+          "mz": 9979.7647
+        },
+        "ED1_B2_Y_CP12": {
+          "fx": 59.4325,
+          "fy": 1037.0795,
+          "mz": 20257.101
+        },
+        "ED1_B2_X_CP09": {
+          "fx": 1037.0793,
+          "fy": 63.1813,
+          "mz": 9979.7647
+        },
+        "ED1_B2_Y_CP09": {
+          "fx": 59.4325,
+          "fy": 1037.0795,
+          "mz": 20257.101
+        }
+      },
+      "verification": {
+        "TorX_target_total_mz_tonf_m": 511.90973044500004,
+        "TorY_target_total_mz_tonf_m": 1426.1693677499998,
+        "TorX_plus_base_mz_tonf_m": 512.3828,
+        "TorX_minus_base_mz_tonf_m": 512.3828,
+        "TorY_plus_base_mz_tonf_m": 1427.4873,
+        "TorY_minus_base_mz_tonf_m": 1427.4873,
+        "SEx_b2_fx_tonf": 740.7709,
+        "SEy_b2_fy_tonf": 740.771,
+        "TorX_plus_gap": 0.0009241269053211817,
+        "TorX_minus_gap": 0.0009241269053211817,
+        "TorY_plus_gap": 0.0009241064068564869,
+        "TorY_minus_gap": 0.0009241064068564869
+      }
+    },
+    {
+      "mode": "semirigid",
+      "semi_rigid": true,
+      "variant_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_SEMIRIGID_MATRIX_20260509_0930.EDB",
+      "story_count": 20,
+      "base_run_ok": true,
+      "final_run_ok": true,
+      "b1_floor_torsion_csv": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\exports\\torsion_matrix_20260509_0930\\semirigid\\ed1_semirigid_b1_floor_torsion_20260509_0930.csv",
+      "b1": {
+        "stories": {
+          "Story1": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 3.713080754999937,
+              "achieved_mz_tonf_m": 3.713080754999939,
+              "resultant_fx_tonf": -4.553649124439119e-18,
+              "resultant_fy_tonf": -2.6020852139652106e-17,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -3.713080754999937,
+              "achieved_mz_tonf_m": -3.713080754999939,
+              "resultant_fx_tonf": 4.553649124439119e-18,
+              "resultant_fy_tonf": 2.6020852139652106e-17,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 9.569070074999907,
+              "achieved_mz_tonf_m": 9.569070074999905,
+              "resultant_fx_tonf": -7.914675859144182e-18,
+              "resultant_fy_tonf": 2.8189256484623115e-18,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -9.569070074999907,
+              "achieved_mz_tonf_m": -9.569070074999905,
+              "resultant_fx_tonf": 7.914675859144182e-18,
+              "resultant_fy_tonf": -2.8189256484623115e-18,
+              "centroid_x_m": 20.45540344745475,
+              "centroid_y_m": 6.416813436988271,
+              "point_count": 66
+            }
+          },
+          "Story2": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 7.459401015000015,
+              "achieved_mz_tonf_m": 7.459401015000011,
+              "resultant_fx_tonf": -4.9873299934333204e-18,
+              "resultant_fy_tonf": -1.2728533504979822e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -7.459401015000015,
+              "achieved_mz_tonf_m": -7.459401015000011,
+              "resultant_fx_tonf": 4.9873299934333204e-18,
+              "resultant_fy_tonf": 1.2728533504979822e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 20.001229725000066,
+              "achieved_mz_tonf_m": 20.001229725000062,
+              "resultant_fx_tonf": 2.5153490401663703e-17,
+              "resultant_fy_tonf": -1.1492543028346347e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -20.001229725000066,
+              "achieved_mz_tonf_m": -20.001229725000062,
+              "resultant_fx_tonf": -2.5153490401663703e-17,
+              "resultant_fy_tonf": 1.1492543028346347e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story3": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 11.75227271999999,
+              "achieved_mz_tonf_m": 11.75227271999999,
+              "resultant_fx_tonf": 1.0299920638612292e-17,
+              "resultant_fy_tonf": -8.261620554339544e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -11.75227271999999,
+              "achieved_mz_tonf_m": -11.75227271999999,
+              "resultant_fx_tonf": -1.0299920638612292e-17,
+              "resultant_fy_tonf": 8.261620554339544e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 31.857304275,
+              "achieved_mz_tonf_m": 31.857304274999997,
+              "resultant_fx_tonf": -5.681219383824043e-17,
+              "resultant_fy_tonf": -2.2681509448396753e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -31.857304275,
+              "achieved_mz_tonf_m": -31.857304274999997,
+              "resultant_fx_tonf": 5.681219383824043e-17,
+              "resultant_fy_tonf": 2.2681509448396753e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story4": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 15.757667625000007,
+              "achieved_mz_tonf_m": 15.75766762500001,
+              "resultant_fx_tonf": 2.6454533008646308e-17,
+              "resultant_fy_tonf": -1.3270634591222574e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -15.757667625000007,
+              "achieved_mz_tonf_m": -15.75766762500001,
+              "resultant_fx_tonf": -2.6454533008646308e-17,
+              "resultant_fy_tonf": 1.3270634591222574e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 43.11712889999989,
+              "achieved_mz_tonf_m": 43.117128899999884,
+              "resultant_fx_tonf": 1.1709383462843448e-17,
+              "resultant_fy_tonf": -1.5005358067199381e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -43.11712889999989,
+              "achieved_mz_tonf_m": -43.117128899999884,
+              "resultant_fx_tonf": -1.1709383462843448e-17,
+              "resultant_fy_tonf": 1.5005358067199381e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story5": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 19.015830165000065,
+              "achieved_mz_tonf_m": 19.01583016500006,
+              "resultant_fx_tonf": -1.3660947373317356e-17,
+              "resultant_fy_tonf": -1.6740081543176188e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -19.015830165000065,
+              "achieved_mz_tonf_m": -19.01583016500006,
+              "resultant_fx_tonf": 1.3660947373317356e-17,
+              "resultant_fy_tonf": 1.6740081543176188e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 52.416471450000095,
+              "achieved_mz_tonf_m": 52.4164714500001,
+              "resultant_fx_tonf": 4.336808689942018e-18,
+              "resultant_fy_tonf": -2.2768245622195593e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -52.416471450000095,
+              "achieved_mz_tonf_m": -52.4164714500001,
+              "resultant_fx_tonf": -4.336808689942018e-18,
+              "resultant_fy_tonf": 2.2768245622195593e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story6": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 21.20970659999993,
+              "achieved_mz_tonf_m": 21.20970659999993,
+              "resultant_fx_tonf": -4.553649124439119e-18,
+              "resultant_fy_tonf": -9.996344030316351e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -21.20970659999993,
+              "achieved_mz_tonf_m": -21.20970659999993,
+              "resultant_fx_tonf": 4.553649124439119e-18,
+              "resultant_fy_tonf": 9.996344030316351e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 58.872604800000026,
+              "achieved_mz_tonf_m": 58.87260480000001,
+              "resultant_fx_tonf": 4.2500725161431774e-17,
+              "resultant_fy_tonf": -5.88938620094126e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -58.872604800000026,
+              "achieved_mz_tonf_m": -58.87260480000001,
+              "resultant_fx_tonf": -4.2500725161431774e-17,
+              "resultant_fy_tonf": 5.88938620094126e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story7": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 22.185330990000065,
+              "achieved_mz_tonf_m": 22.185330990000068,
+              "resultant_fx_tonf": 1.1275702593849246e-17,
+              "resultant_fy_tonf": -2.682316174729138e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -22.185330990000065,
+              "achieved_mz_tonf_m": -22.185330990000068,
+              "resultant_fx_tonf": -1.1275702593849246e-17,
+              "resultant_fy_tonf": 2.682316174729138e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 62.05850849999985,
+              "achieved_mz_tonf_m": 62.058508499999824,
+              "resultant_fx_tonf": 7.37257477290143e-17,
+              "resultant_fy_tonf": -1.6479873021779667e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -62.05850849999985,
+              "achieved_mz_tonf_m": -62.058508499999824,
+              "resultant_fx_tonf": -7.37257477290143e-17,
+              "resultant_fy_tonf": 1.6479873021779667e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story8": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 21.97829240999995,
+              "achieved_mz_tonf_m": 21.97829240999993,
+              "resultant_fx_tonf": 3.447762908503904e-17,
+              "resultant_fy_tonf": -2.0903417885520525e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -21.97829240999995,
+              "achieved_mz_tonf_m": -21.97829240999993,
+              "resultant_fx_tonf": -3.447762908503904e-17,
+              "resultant_fy_tonf": 2.0903417885520525e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 61.94511127500008,
+              "achieved_mz_tonf_m": 61.9451112750001,
+              "resultant_fx_tonf": 1.214306433183765e-17,
+              "resultant_fy_tonf": -7.042977312465837e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -61.94511127500008,
+              "achieved_mz_tonf_m": -61.9451112750001,
+              "resultant_fx_tonf": -1.214306433183765e-17,
+              "resultant_fy_tonf": 7.042977312465837e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story9": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 20.83833633000005,
+              "achieved_mz_tonf_m": 20.838336330000047,
+              "resultant_fx_tonf": -1.951563910473908e-18,
+              "resultant_fy_tonf": -8.174884380540703e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -20.83833633000005,
+              "achieved_mz_tonf_m": -20.838336330000047,
+              "resultant_fx_tonf": 1.951563910473908e-18,
+              "resultant_fy_tonf": 8.174884380540703e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 59.143872525,
+              "achieved_mz_tonf_m": 59.14387252499999,
+              "resultant_fx_tonf": 1.5439038936193583e-16,
+              "resultant_fy_tonf": -5.160802341031001e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -59.143872525,
+              "achieved_mz_tonf_m": -59.14387252499999,
+              "resultant_fx_tonf": -1.5439038936193583e-16,
+              "resultant_fy_tonf": 5.160802341031001e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story10": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 19.232405234999987,
+              "achieved_mz_tonf_m": 19.232405234999984,
+              "resultant_fx_tonf": -1.214306433183765e-17,
+              "resultant_fy_tonf": -1.9905951886833861e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -19.232405234999987,
+              "achieved_mz_tonf_m": -19.232405234999984,
+              "resultant_fx_tonf": 1.214306433183765e-17,
+              "resultant_fy_tonf": 1.9905951886833861e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 54.89061022499998,
+              "achieved_mz_tonf_m": 54.89061022499997,
+              "resultant_fx_tonf": -5.5077470362263625e-17,
+              "resultant_fy_tonf": -4.0158848468863084e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -54.89061022499998,
+              "achieved_mz_tonf_m": -54.89061022499997,
+              "resultant_fx_tonf": 5.5077470362263625e-17,
+              "resultant_fy_tonf": 4.0158848468863084e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story11": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 17.79923664,
+              "achieved_mz_tonf_m": 17.799236639999997,
+              "resultant_fx_tonf": 1.0408340855860843e-17,
+              "resultant_fy_tonf": -9.302454639925628e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -17.79923664,
+              "achieved_mz_tonf_m": -17.799236639999997,
+              "resultant_fx_tonf": -1.0408340855860843e-17,
+              "resultant_fy_tonf": 9.302454639925628e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 50.87453872499996,
+              "achieved_mz_tonf_m": 50.87453872499994,
+              "resultant_fx_tonf": 1.6046192152785466e-17,
+              "resultant_fy_tonf": -5.590146401335261e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -50.87453872499996,
+              "achieved_mz_tonf_m": -50.87453872499994,
+              "resultant_fx_tonf": -1.6046192152785466e-17,
+              "resultant_fy_tonf": 5.590146401335261e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story12": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 17.242250339999973,
+              "achieved_mz_tonf_m": 17.242250339999973,
+              "resultant_fx_tonf": -1.8431436932253575e-17,
+              "resultant_fy_tonf": -8.413408858487514e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -17.242250339999973,
+              "achieved_mz_tonf_m": -17.242250339999973,
+              "resultant_fx_tonf": 1.8431436932253575e-17,
+              "resultant_fy_tonf": 8.413408858487514e-17,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 49.053444750000075,
+              "achieved_mz_tonf_m": 49.05344475000006,
+              "resultant_fx_tonf": -1.1709383462843448e-17,
+              "resultant_fy_tonf": -2.3375398838787476e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -49.053444750000075,
+              "achieved_mz_tonf_m": -49.05344475000006,
+              "resultant_fx_tonf": 1.1709383462843448e-17,
+              "resultant_fy_tonf": 2.3375398838787476e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story13": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 18.18145639500002,
+              "achieved_mz_tonf_m": 18.181456395000026,
+              "resultant_fx_tonf": -1.9081958235744878e-17,
+              "resultant_fy_tonf": -1.728218262941894e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -18.18145639500002,
+              "achieved_mz_tonf_m": -18.181456395000026,
+              "resultant_fx_tonf": 1.9081958235744878e-17,
+              "resultant_fy_tonf": 1.728218262941894e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 51.243609150000005,
+              "achieved_mz_tonf_m": 51.243609150000005,
+              "resultant_fx_tonf": 1.491862189340054e-16,
+              "resultant_fy_tonf": -4.657732532997727e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -51.243609150000005,
+              "achieved_mz_tonf_m": -51.243609150000005,
+              "resultant_fx_tonf": -1.491862189340054e-16,
+              "resultant_fy_tonf": 4.657732532997727e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story14": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 21.037289625,
+              "achieved_mz_tonf_m": 21.037289625,
+              "resultant_fx_tonf": 6.505213034913027e-19,
+              "resultant_fy_tonf": -1.9081958235744878e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -21.037289625,
+              "achieved_mz_tonf_m": -21.037289625,
+              "resultant_fx_tonf": -6.505213034913027e-19,
+              "resultant_fy_tonf": 1.9081958235744878e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 58.70472299999992,
+              "achieved_mz_tonf_m": 58.70472299999996,
+              "resultant_fx_tonf": -7.112366251504909e-17,
+              "resultant_fy_tonf": -6.635317295611287e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -58.70472299999992,
+              "achieved_mz_tonf_m": -58.70472299999996,
+              "resultant_fx_tonf": 7.112366251504909e-17,
+              "resultant_fy_tonf": 6.635317295611287e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story15": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 26.007666749999995,
+              "achieved_mz_tonf_m": 26.007666749999995,
+              "resultant_fx_tonf": -6.635317295611287e-17,
+              "resultant_fy_tonf": -3.0032400177848473e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -26.007666749999995,
+              "achieved_mz_tonf_m": -26.007666749999995,
+              "resultant_fx_tonf": 6.635317295611287e-17,
+              "resultant_fy_tonf": 3.0032400177848473e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 72.08058990000008,
+              "achieved_mz_tonf_m": 72.08058990000005,
+              "resultant_fx_tonf": 1.240327285323417e-16,
+              "resultant_fy_tonf": -7.337880303381894e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -72.08058990000008,
+              "achieved_mz_tonf_m": -72.08058990000005,
+              "resultant_fx_tonf": -1.240327285323417e-16,
+              "resultant_fy_tonf": 7.337880303381894e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story16": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 33.101225895000006,
+              "achieved_mz_tonf_m": 33.10122589500001,
+              "resultant_fx_tonf": 5.117434254131581e-17,
+              "resultant_fy_tonf": -1.3617579286417936e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -33.101225895000006,
+              "achieved_mz_tonf_m": -33.10122589500001,
+              "resultant_fx_tonf": -5.117434254131581e-17,
+              "resultant_fy_tonf": 1.3617579286417936e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 91.5286953,
+              "achieved_mz_tonf_m": 91.5286953,
+              "resultant_fx_tonf": 8.933825901280557e-17,
+              "resultant_fy_tonf": -9.324138683375338e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -91.5286953,
+              "achieved_mz_tonf_m": -91.5286953,
+              "resultant_fx_tonf": -8.933825901280557e-17,
+              "resultant_fy_tonf": 9.324138683375338e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story17": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 42.18120826500002,
+              "achieved_mz_tonf_m": 42.18120826500001,
+              "resultant_fx_tonf": 6.461844948013606e-17,
+              "resultant_fy_tonf": -2.6107588313450947e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -42.18120826500002,
+              "achieved_mz_tonf_m": -42.18120826500001,
+              "resultant_fx_tonf": -6.461844948013606e-17,
+              "resultant_fy_tonf": 2.6107588313450947e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 116.75409089999992,
+              "achieved_mz_tonf_m": 116.75409089999994,
+              "resultant_fx_tonf": 3.0010716134398763e-16,
+              "resultant_fy_tonf": -3.0531133177191805e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -116.75409089999992,
+              "achieved_mz_tonf_m": -116.75409089999994,
+              "resultant_fx_tonf": -3.0010716134398763e-16,
+              "resultant_fy_tonf": 3.0531133177191805e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story18": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 53.079896025,
+              "achieved_mz_tonf_m": 53.07989602499999,
+              "resultant_fx_tonf": -1.7477339020466331e-16,
+              "resultant_fy_tonf": -2.463307335887066e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -53.079896025,
+              "achieved_mz_tonf_m": -53.07989602499999,
+              "resultant_fx_tonf": 1.7477339020466331e-16,
+              "resultant_fy_tonf": 2.463307335887066e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 146.96472885000003,
+              "achieved_mz_tonf_m": 146.96472884999997,
+              "resultant_fx_tonf": -1.0581813203458523e-16,
+              "resultant_fy_tonf": -9.731798700229888e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -146.96472885000003,
+              "achieved_mz_tonf_m": -146.96472884999997,
+              "resultant_fx_tonf": 1.0581813203458523e-16,
+              "resultant_fy_tonf": 9.731798700229888e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story19": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 65.561226495,
+              "achieved_mz_tonf_m": 65.56122649499999,
+              "resultant_fx_tonf": -1.491862189340054e-16,
+              "resultant_fy_tonf": -9.211381657436846e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -65.561226495,
+              "achieved_mz_tonf_m": -65.56122649499999,
+              "resultant_fx_tonf": 1.491862189340054e-16,
+              "resultant_fy_tonf": 9.211381657436846e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 180.88070294999997,
+              "achieved_mz_tonf_m": 180.88070294999997,
+              "resultant_fx_tonf": 3.903127820947816e-16,
+              "resultant_fy_tonf": -4.388850394221322e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -180.88070294999997,
+              "achieved_mz_tonf_m": -180.88070294999997,
+              "resultant_fx_tonf": -3.903127820947816e-16,
+              "resultant_fy_tonf": 4.388850394221322e-16,
+              "centroid_x_m": 20.455348997733854,
+              "centroid_y_m": 6.416470531330184,
+              "point_count": 66
+            }
+          },
+          "Story20": {
+            "point_count": 66,
+            "TorX+": {
+              "pattern": "TorX+",
+              "target_mz_tonf_m": 53.81579517,
+              "achieved_mz_tonf_m": 53.81579517000001,
+              "resultant_fx_tonf": -8.239936510889834e-18,
+              "resultant_fy_tonf": 4.393187202911264e-16,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            },
+            "TorX-": {
+              "pattern": "TorX-",
+              "target_mz_tonf_m": -53.81579517,
+              "achieved_mz_tonf_m": -53.81579517000001,
+              "resultant_fx_tonf": 8.239936510889834e-18,
+              "resultant_fy_tonf": -4.393187202911264e-16,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            },
+            "TorY+": {
+              "pattern": "TorY+",
+              "target_mz_tonf_m": 147.88807874999998,
+              "achieved_mz_tonf_m": 147.88807875000003,
+              "resultant_fx_tonf": 2.740863092043355e-16,
+              "resultant_fy_tonf": 1.6774776012695725e-15,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            },
+            "TorY-": {
+              "pattern": "TorY-",
+              "target_mz_tonf_m": -147.88807874999998,
+              "achieved_mz_tonf_m": -147.88807875000003,
+              "resultant_fx_tonf": -2.740863092043355e-16,
+              "resultant_fy_tonf": -1.6774776012695725e-15,
+              "centroid_x_m": 20.455129653108862,
+              "centroid_y_m": 6.415136694656255,
+              "point_count": 66
+            }
+          }
+        },
+        "totals": {
+          "TorX": 511.149575445,
+          "TorY": 1419.8451140249997
+        }
+      },
+      "b2": {
+        "SEx_b2_set_ratio_0": 0,
+        "SEx_b2_diaph_override_error": "AttributeError('SetDiaphragmEccentricityOverride')",
+        "SEy_b2_set_ratio_0": 0,
+        "SEy_b2_diaph_override_error": "AttributeError('SetDiaphragmEccentricityOverride')"
+      },
+      "combos": {
+        "ED1_MAT_C1_1.4CP": true,
+        "ED1_MAT_C2_1.2CP_1.6L_0.5Lr": true,
+        "ED1_MAT_C3_1.2CP_L_1.6Lr": true,
+        "ED1_B1_X_TP_CP12": true,
+        "ED1_B1_X_TM_CP12": true,
+        "ED1_B1_Y_TP_CP12": true,
+        "ED1_B1_Y_TM_CP12": true,
+        "ED1_B1_X_TP_CP09": true,
+        "ED1_B1_X_TM_CP09": true,
+        "ED1_B1_Y_TP_CP09": true,
+        "ED1_B1_Y_TM_CP09": true,
+        "ED1_B2_X_CP12": true,
+        "ED1_B2_Y_CP12": true,
+        "ED1_B2_X_CP09": true,
+        "ED1_B2_Y_CP09": true
+      },
+      "exports": {
+        "Diaphragm Definitions": true,
+        "Load Case Definitions - Response Spectrum": true,
+        "Mass Source Definition": true,
+        "Base Reactions": true,
+        "Story Forces": true,
+        "Story Drifts": true,
+        "Modal Participating Mass Ratios": true,
+        "Modal Periods And Frequencies": true,
+        "Diaphragm Center Of Mass Displacements": true
+      },
+      "base_reactions": {
+        "Dead": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "Live": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "MODAL": {
+          "fx": 0.2008,
+          "fy": 0.0047,
+          "mz": 0.8756
+        },
+        "PP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "TERP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "TERT": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "SCP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "SCT": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "SEx": {
+          "fx": 739.6709,
+          "fy": 46.0778,
+          "mz": 7667.7045
+        },
+        "SEy": {
+          "fx": 43.3438,
+          "fy": 737.4861,
+          "mz": 15817.6253
+        },
+        "SEx_b2": {
+          "fx": 739.6709,
+          "fy": 46.0778,
+          "mz": 7156.5549
+        },
+        "SEy_b2": {
+          "fx": 43.3438,
+          "fy": 737.4861,
+          "mz": 14397.7802
+        },
+        "TorX+": {
+          "fx": 0.0344,
+          "fy": 0.036,
+          "mz": 511.622
+        },
+        "TorX-": {
+          "fx": 0.0344,
+          "fy": 0.036,
+          "mz": 511.622
+        },
+        "TorY+": {
+          "fx": 0.0955,
+          "fy": 0.1,
+          "mz": 1421.1571
+        },
+        "TorY-": {
+          "fx": 0.0955,
+          "fy": 0.1,
+          "mz": 1421.1571
+        },
+        "ED1_C1_1.4CP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_C2_1.2CP_1.6L_0.5Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_C3_1.2CP_L_1.6Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_DYN_XP": {
+          "fx": 1035.5393,
+          "fy": 64.5089,
+          "mz": 10734.7863
+        },
+        "ED1_DYN_XN": {
+          "fx": 1035.5393,
+          "fy": 64.5089,
+          "mz": 10734.7863
+        },
+        "ED1_DYN_YP": {
+          "fx": 60.6813,
+          "fy": 1032.4805,
+          "mz": 22144.6754
+        },
+        "ED1_DYN_YN": {
+          "fx": 60.6813,
+          "fy": 1032.4805,
+          "mz": 22144.6754
+        },
+        "ED1_DYN_09_XP": {
+          "fx": 1035.5393,
+          "fy": 64.5089,
+          "mz": 10734.7863
+        },
+        "ED1_DYN_09_XN": {
+          "fx": 1035.5393,
+          "fy": 64.5089,
+          "mz": 10734.7863
+        },
+        "ED1_DYN_09_YP": {
+          "fx": 60.6813,
+          "fy": 1032.4805,
+          "mz": 22144.6754
+        },
+        "ED1_DYN_09_YN": {
+          "fx": 60.6813,
+          "fy": 1032.4805,
+          "mz": 22144.6754
+        },
+        "ED1_MAT_C1_1.4CP": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_MAT_C2_1.2CP_1.6L_0.5Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_MAT_C3_1.2CP_L_1.6Lr": {
+          "fx": 0.0,
+          "fy": 0.0,
+          "mz": 0.0
+        },
+        "ED1_B1_X_TP_CP12": {
+          "fx": 1035.4912,
+          "fy": 64.4585,
+          "mz": 9302.9061
+        },
+        "ED1_B1_X_TM_CP12": {
+          "fx": 1035.5874,
+          "fy": 64.5593,
+          "mz": 10735.4476
+        },
+        "ED1_B1_Y_TP_CP12": {
+          "fx": 60.5477,
+          "fy": 1032.3404,
+          "mz": 18167.2723
+        },
+        "ED1_B1_Y_TM_CP12": {
+          "fx": 60.815,
+          "fy": 1032.6206,
+          "mz": 22146.5122
+        },
+        "ED1_B1_X_TP_CP09": {
+          "fx": 1035.4912,
+          "fy": 64.4585,
+          "mz": 9302.9061
+        },
+        "ED1_B1_X_TM_CP09": {
+          "fx": 1035.5874,
+          "fy": 64.5593,
+          "mz": 10735.4476
+        },
+        "ED1_B1_Y_TP_CP09": {
+          "fx": 60.5477,
+          "fy": 1032.3404,
+          "mz": 18167.2723
+        },
+        "ED1_B1_Y_TM_CP09": {
+          "fx": 60.815,
+          "fy": 1032.6206,
+          "mz": 22146.5122
+        },
+        "ED1_B2_X_CP12": {
+          "fx": 1035.5393,
+          "fy": 64.5089,
+          "mz": 10019.1769
+        },
+        "ED1_B2_Y_CP12": {
+          "fx": 60.6813,
+          "fy": 1032.4805,
+          "mz": 20156.8923
+        },
+        "ED1_B2_X_CP09": {
+          "fx": 1035.5393,
+          "fy": 64.5089,
+          "mz": 10019.1769
+        },
+        "ED1_B2_Y_CP09": {
+          "fx": 60.6813,
+          "fy": 1032.4805,
+          "mz": 20156.8923
+        }
+      },
+      "verification": {
+        "TorX_target_total_mz_tonf_m": 511.149575445,
+        "TorY_target_total_mz_tonf_m": 1419.8451140249997,
+        "TorX_plus_base_mz_tonf_m": 511.622,
+        "TorX_minus_base_mz_tonf_m": 511.622,
+        "TorY_plus_base_mz_tonf_m": 1421.1571,
+        "TorY_minus_base_mz_tonf_m": 1421.1571,
+        "SEx_b2_fx_tonf": 739.6709,
+        "SEy_b2_fy_tonf": 737.4861,
+        "TorX_plus_gap": 0.0009242393571172301,
+        "TorX_minus_gap": 0.0009242393571172301,
+        "TorY_plus_gap": 0.0009240345739409272,
+        "TorY_minus_gap": 0.0009240345739409272
+      }
+    }
+  ],
+  "etabs": {
+    "pid": 16356,
+    "started_by_script": false,
+    "attach_method": "GetObjectProcess",
+    "version": "21.2.0"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "directional_periods": {
+    "X": {
+      "period": 0.408,
+      "mode": 2,
+      "participation": 0.8669
+    },
+    "Y": {
+      "period": 0.408,
+      "mode": 1,
+      "participation": 0.8669
+    },
+    "RZ": {
+      "period": 0.359,
+      "mode": 3,
+      "participation": 0.8681
+    }
+  },
+  "story_weight_source": {
+    "source": "etabs_table",
+    "table": "Mass Summary by Story",
+    "field": "UX,UY,UZ",
+    "scale_to_gravity_weight": true,
+    "raw_W_total_tonf": 5303.093000000001,
+    "target_W_total_tonf": 5378.457675,
+    "scale_factor": 1.0142114564085523,
+    "scale_source": "gravity_base_reactions"
+  },
+  "story_weight_file": "ed2_story_weights.csv",
+  "summary": {
+    "W_total_tonf": 5378.457675,
+    "Cx": 0.147,
+    "Cy": 0.147,
+    "Cmin": 0.07,
+    "Cmax": 0.147,
+    "Vdx_tonf": 790.6332782249999,
+    "Vdy_tonf": 790.6332782249999
+  },
+  "raw_W_total_tonf": 5303.093000000001,
+  "weight_scale_factor": 1.0142114564085523,
+  "weight_scale_source": "gravity_base_reactions"
+}

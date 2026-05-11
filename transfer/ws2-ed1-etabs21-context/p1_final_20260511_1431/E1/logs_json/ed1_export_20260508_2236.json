@@ -1,0 +1,14 @@
+{
+  "phase": "export",
+  "model_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\models\\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB",
+  "log_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\logs\\ed1_export_20260508_2236.log",
+  "json_path": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif1\\logs\\ed1_export_20260508_2236.json",
+  "started": "2026-05-08 22:36:02",
+  "etabs": {
+    "pid": 23284,
+    "started_by_script": false,
+    "attach_method": "GetObjectProcess",
+    "version": "21.2.0"
+  },
+  "error": "OSError(22, 'Invalid argument')"
+}

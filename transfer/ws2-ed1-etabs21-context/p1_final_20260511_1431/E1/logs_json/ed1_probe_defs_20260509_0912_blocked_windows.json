@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-05-09 09:13:35",
+  "pid": 18456,
+  "windows": [
+    {
+      "hwnd": 15795822,
+      "pid": 18456,
+      "class": "WindowsForms10.Window.8.app.0.141b42a_r6_ad1",
+      "title": "ETABS  [ACADEMIC LICENSE - NOT FOR COMMERCIAL USE]",
+      "children": [
+        "Draw",
+        "Select",
+        "Snap",
+        "Assign Joint",
+        "Assign Frame",
+        "Assign Shell",
+        "Edit",
+        "View",
+        "Define",
+        "Standard",
+        "Design",
+        "MenuBar",
+        "Ready",
+        "Start Page",
+        "ElementHost1",
+        "ElementHost1"
+      ],
+      "text": "ETABS  [ACADEMIC LICENSE - NOT FOR COMMERCIAL USE] Draw Select Snap Assign Joint Assign Frame Assign Shell Edit View Define Standard Design MenuBar Ready Start Page ElementHost1 ElementHost1"
+    }
+  ],
+  "blocking_dialogs": []
+}

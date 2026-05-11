@@ -688,3 +688,15 @@ Ultima actualizacion: 2026-05-08
   - `c87628b..3e7d199`.
 - Delta:
   - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1429_PUSH_CONFIRMADO.md`.
+
+# 2026-05-11 - Paquete Parte 1 final agregado para Git
+
+- Se agregó paquete curado de modelos finales y resultados:
+  - `transfer\ws2-ed1-etabs21-context\p1_final_20260511_1431`.
+- Se preparó ZIP descargable:
+  - `transfer\ws2-ed1-etabs21-context\P1_FINAL_MODELOS_RESULTADOS_20260511_1431.zip`.
+- Modelos activos dentro del paquete:
+  - ED1: `E1\models\ED1_PARTE1_WS2_PROG2_20260508_2213.EDB`.
+  - ED2: `E2\models\ED2_PARTE1_WS2_PROG2_20260508_2213.EDB`.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1431_P1_FINAL_GIT.md`.

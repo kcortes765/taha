@@ -1,0 +1,133 @@
+{
+  "model_file": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\Edif2\\verification_opencheck\\ED2_opencheck_20260509_141648.EDB",
+  "analysis_return_code": 0,
+  "etabs_runtime": {
+    "expected_major": 21,
+    "detected_major": 21,
+    "detected_version": "21.2.0",
+    "strict_ret_mode": true
+  },
+  "cases": {
+    "PP": {
+      "case": "PP",
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 4311.6437,
+      "mx": 70064.2109,
+      "my": 70064.2109,
+      "mz": 0.0,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "TERP": {
+      "case": "TERP",
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 591.5009,
+      "mx": 9611.8968,
+      "my": 9611.9031,
+      "mz": 0.0,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "TERT": {
+      "case": "TERT",
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 105.6251,
+      "mx": 1716.4094,
+      "my": 1716.4103,
+      "mz": 0.0,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "SCP": {
+      "case": "SCP",
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 1267.5019,
+      "mx": 20596.9217,
+      "my": 20596.9353,
+      "mz": 0.0,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "SCT": {
+      "case": "SCT",
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 211.25,
+      "mx": 3432.8125,
+      "my": 3432.8125,
+      "mz": 0.0,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "Modal": {
+      "case": "Modal",
+      "fx": 0.0001,
+      "fy": 0.0017,
+      "fz": 0.0,
+      "mx": 0.0082,
+      "my": 0.0003,
+      "mz": 149.5758,
+      "step_type": "Mode",
+      "step_num": 12.0,
+      "source": "base_reactions_table"
+    },
+    "EX": {
+      "case": "EX",
+      "fx": 790.6333,
+      "fy": 0.0,
+      "fz": 0.0,
+      "mx": 0.0,
+      "my": 8954.0364,
+      "mz": 12847.7908,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "EY": {
+      "case": "EY",
+      "fx": 0.0,
+      "fy": 790.6333,
+      "fz": 0.0,
+      "mx": 8954.0364,
+      "my": 0.0,
+      "mz": 12847.7908,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "TEX_WS2": {
+      "case": "TEX_WS2",
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 0.0,
+      "mx": 0.0,
+      "my": 0.0,
+      "mz": 1877.4592,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    },
+    "TEY_WS2": {
+      "case": "TEY_WS2",
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 0.0,
+      "mx": 0.0,
+      "my": 0.0,
+      "mz": 1877.4592,
+      "step_type": "None",
+      "step_num": 0.0,
+      "source": "base_reactions_table"
+    }
+  },
+  "ws2_same_session_extract": true
+}
