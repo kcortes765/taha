@@ -1,6 +1,10 @@
-# Corrección ED2 método estático y Excel
+# Nota histórica: variante ED2 con cachos solo en vigas
 
 Fecha de cierre local: `2026-05-12 16:36`.
+
+**Actualización importante 2026-05-12 17:05:** este paquete no debe leerse como recomendación final del modelo del curso. Corresponde a una variante de sensibilidad que quitó cachos rígidos de columnas para explicar por qué el período sube hacia `0.46 s`. El enunciado actualizado exige cachos rígidos automáticos `0.75` en encuentros de vigas y columnas. La versión alineada a ese criterio está documentada en:
+
+`README_DIAGNOSTICO_PERIODO_ED2_AMBOS_RZ_20260512.md`
 
 ## Estado corregido
 
@@ -10,7 +14,7 @@ Fecha de cierre local: `2026-05-12 16:36`.
 - CSV modal: `Edificio_2/results/modal_participating_mass_ratios_instancia_recuperada_20260512_163634.csv`.
 - CSV distribución estática: `Edificio_2/results/ed2_static_distribution_instancia_recuperada_20260512_163634.csv`.
 
-## Correcciones aplicadas
+## Cambios aplicados en esta variante
 
 - Cachos rígidos `Rigid-zone factor = 0.75` solo en vigas `V50x70G25` y `V45x70G25`.
 - Cachos rígidos removidos de columnas `C70x70G25` y `C65x65G25`.
@@ -18,7 +22,7 @@ Fecha de cierre local: `2026-05-12 16:36`.
 - `SCT` sigue existiendo como carga gravitacional; no entra en la matriz de masa para el método estático según la clase `sismo 14`.
 - El modelo fue guardado después de recuperar resultados para resolver el aviso de compatibilidad de ETABS.
 
-## Resultados base para Excel
+## Resultados de esta variante
 
 - `Tx* = 0.461202 s`, modo 2.
 - `Ty* = 0.461221 s`, modo 1.

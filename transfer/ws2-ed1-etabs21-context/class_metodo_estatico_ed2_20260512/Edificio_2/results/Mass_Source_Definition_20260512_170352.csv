@@ -1,0 +1,6 @@
+Name,IsDefault,IncLateral,IncVertical,LumpMass,SourceSelf,SourceAdded,SourceLoads,MoveMass,LoadPattern,Multiplier,GUID
+MsSrc1,Yes,Yes,No,Yes,No,No,Yes,No,PP,1,9b943f26-f812-424d-9a79-504815d89479
+MsSrc1,None,None,None,None,None,None,None,None,TERP,1,None
+MsSrc1,None,None,None,None,None,None,None,None,TERT,1,None
+MsSrc1,None,None,None,None,None,None,None,None,SCP,0.25,None
+MsSrc1,None,None,None,None,None,None,None,None,SCT,0,None

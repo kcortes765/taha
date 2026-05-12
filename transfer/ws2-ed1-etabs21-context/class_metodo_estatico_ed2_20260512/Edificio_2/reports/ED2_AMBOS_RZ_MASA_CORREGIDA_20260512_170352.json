@@ -1,0 +1,362 @@
+{
+  "stamp": "20260512_170352",
+  "base_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\models\\ED2_CLASE_METODO_ESTATICO_EXCEL_20260512.EDB",
+  "base_backup": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\backups\\ED2_CLASE_METODO_ESTATICO_EXCEL_20260512_BACKUP_ANTES_AMBOS_RZ_MASA_20260512_170352.EDB",
+  "etabs": {
+    "pid": 7468,
+    "attach_method": "StartProcessWithModel+GetObjectProcess",
+    "active_model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\models\\ED2_CLASE_METODO_ESTATICO_AMBOS_RZ_MASA_CORREGIDA_20260512_170352.EDB"
+  },
+  "frame_offset_edit": {
+    "total_frames": 480,
+    "beams_rz_075": 300,
+    "columns_rz_075": 180,
+    "other_skipped": 0,
+    "failed": []
+  },
+  "mass_source_edit": {
+    "patterns": [
+      "PP",
+      "TERP",
+      "TERT",
+      "SCP",
+      "SCT"
+    ],
+    "factors": [
+      1.0,
+      1.0,
+      1.0,
+      0.25,
+      0.0
+    ],
+    "include_element_self_mass": false
+  },
+  "model": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\models\\ED2_CLASE_METODO_ESTATICO_AMBOS_RZ_MASA_CORREGIDA_20260512_170352.EDB",
+  "excel": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\excel\\ED2_METODO_ESTATICO_MANUAL_EXCEL_AMBOS_RZ_MASA_CORREGIDA_20260512.xlsx",
+  "downloads_excel_copy": "C:\\Users\\Civil\\Downloads\\ED2_METODO_ESTATICO_MANUAL_EXCEL_AMBOS_RZ_MASA_CORREGIDA_WS2_20260512.xlsx",
+  "modal_rows": [
+    {
+      "mode": 1,
+      "period": 0.4004919309478988,
+      "UX": 0.000175246637484604,
+      "UY": 0.8681969448535544,
+      "RZ": 3.7264700939516204e-07,
+      "SumUX": 0.000175246637484604,
+      "SumUY": 0.8681969448535544,
+      "SumRZ": 3.7264700939516204e-07
+    },
+    {
+      "mode": 2,
+      "period": 0.40046705174052905,
+      "UX": 0.8682041106812098,
+      "UY": 0.00017525019253503192,
+      "RZ": 2.5384021031658647e-09,
+      "SumUX": 0.8683793573186944,
+      "SumUY": 0.8683721950460894,
+      "SumRZ": 3.751854114983279e-07
+    },
+    {
+      "mode": 3,
+      "period": 0.3542973982644696,
+      "UX": 3.5553334733185964e-09,
+      "UY": 3.825918120731248e-07,
+      "RZ": 0.8693464210991892,
+      "SumUX": 0.8683793608740279,
+      "SumUY": 0.8683725776379015,
+      "SumRZ": 0.8693467962846008
+    },
+    {
+      "mode": 4,
+      "period": 0.13574109906990703,
+      "UX": 3.427848730832501e-05,
+      "UY": 0.09941816187324186,
+      "RZ": 3.293633675008863e-08,
+      "SumUX": 0.8684136393613362,
+      "SumUY": 0.9677907395111434,
+      "SumRZ": 0.8693468292209375
+    },
+    {
+      "mode": 5,
+      "period": 0.13573440337879772,
+      "UX": 0.09941469003287394,
+      "UY": 3.427671743657147e-05,
+      "RZ": 2.3447470465556803e-10,
+      "SumUX": 0.9678283293942102,
+      "SumUY": 0.96782501622858,
+      "SumRZ": 0.8693468294554122
+    },
+    {
+      "mode": 6,
+      "period": 0.12044364077412142,
+      "UX": 3.3848628638308334e-10,
+      "UY": 2.8489164915679843e-08,
+      "RZ": 0.09853145895945979,
+      "SumUX": 0.9678283297326964,
+      "SumUY": 0.9678250447177449,
+      "SumRZ": 0.967878288414872
+    },
+    {
+      "mode": 7,
+      "period": 0.07832710927974955,
+      "UX": 8.722420000615528e-06,
+      "UY": 0.02212971012012608,
+      "RZ": 5.3073285319443575e-09,
+      "SumUX": 0.967837052152697,
+      "SumUY": 0.989954754837871,
+      "SumRZ": 0.9678782937222006
+    },
+    {
+      "mode": 8,
+      "period": 0.07832440053755756,
+      "UX": 0.022127535437775462,
+      "UY": 8.721936081896402e-06,
+      "RZ": 5.128203537263327e-11,
+      "SumUX": 0.9899645875904725,
+      "SumUY": 0.9899634767739529,
+      "SumRZ": 0.9678782937734827
+    },
+    {
+      "mode": 9,
+      "period": 0.06965936362383802,
+      "UX": 4.569323585661566e-11,
+      "UY": 2.8443085111173252e-09,
+      "RZ": 0.022123945316491745,
+      "SumUX": 0.9899645876361657,
+      "SumUY": 0.9899634796182615,
+      "SumRZ": 0.9900022390899744
+    },
+    {
+      "mode": 10,
+      "period": 0.05436821401310155,
+      "UX": 3.153903525939664e-06,
+      "UY": 0.007308755527425613,
+      "RZ": 8.604140435179719e-10,
+      "SumUX": 0.9899677415396916,
+      "SumUY": 0.9972722351456871,
+      "SumRZ": 0.9900022399503885
+    },
+    {
+      "mode": 11,
+      "period": 0.05436714500446692,
+      "UX": 0.0073078519441966226,
+      "UY": 3.1535654183516956e-06,
+      "RZ": 9.944697680343218e-12,
+      "SumUX": 0.9972755934838882,
+      "SumUY": 0.9972753887111054,
+      "SumRZ": 0.9900022399603332
+    },
+    {
+      "mode": 12,
+      "period": 0.04837126939911537,
+      "UX": 4.489169054850436e-12,
+      "UY": 2.03668842155107e-10,
+      "RZ": 0.007331495133000935,
+      "SumUX": 0.9972755934883774,
+      "SumUY": 0.9972753889147743,
+      "SumRZ": 0.9973337350933341
+    },
+    {
+      "mode": 13,
+      "period": 0.04425725357164786,
+      "UX": 1.5057966888806471e-06,
+      "UY": 0.002723105381347609,
+      "RZ": 5.0711916293681707e-11,
+      "SumUX": 0.9972770992850662,
+      "SumUY": 0.9999984942961219,
+      "SumRZ": 0.997333735144046
+    },
+    {
+      "mode": 14,
+      "period": 0.04425696514014664,
+      "UX": 0.0027229007148228106,
+      "UY": 1.5057006411719845e-06,
+      "RZ": 8.810789410381793e-13,
+      "SumUX": 0.9999999999998891,
+      "SumUY": 0.999999999996763,
+      "SumRZ": 0.9973337351449271
+    },
+    {
+      "mode": 15,
+      "period": 0.03938230689514574,
+      "UX": 1.1086925128676181e-13,
+      "UY": 3.2368726854038097e-12,
+      "RZ": 0.0026662648550730603,
+      "SumUX": 1.0,
+      "SumUY": 0.9999999999999999,
+      "SumRZ": 1.0000000000000002
+    }
+  ],
+  "story_rows": [
+    {
+      "story": "Story1",
+      "elevation_m": 3.5,
+      "weight_tonf": 1123.825
+    },
+    {
+      "story": "Story2",
+      "elevation_m": 6.5,
+      "weight_tonf": 1103.688
+    },
+    {
+      "story": "Story3",
+      "elevation_m": 9.5,
+      "weight_tonf": 1066.488
+    },
+    {
+      "story": "Story4",
+      "elevation_m": 12.5,
+      "weight_tonf": 1066.488
+    },
+    {
+      "story": "Story5",
+      "elevation_m": 15.5,
+      "weight_tonf": 887.981644
+    }
+  ],
+  "calc": {
+    "tx_mode": {
+      "mode": 2,
+      "period": 0.40046705174052905,
+      "UX": 0.8682041106812098,
+      "UY": 0.00017525019253503192,
+      "RZ": 2.5384021031658647e-09,
+      "SumUX": 0.8683793573186944,
+      "SumUY": 0.8683721950460894,
+      "SumRZ": 3.751854114983279e-07
+    },
+    "ty_mode": {
+      "mode": 1,
+      "period": 0.4004919309478988,
+      "UX": 0.000175246637484604,
+      "UY": 0.8681969448535544,
+      "RZ": 3.7264700939516204e-07,
+      "SumUX": 0.000175246637484604,
+      "SumUY": 0.8681969448535544,
+      "SumRZ": 3.7264700939516204e-07
+    },
+    "tz_mode": {
+      "mode": 3,
+      "period": 0.3542973982644696,
+      "UX": 3.5553334733185964e-09,
+      "UY": 3.825918120731248e-07,
+      "RZ": 0.8693464210991892,
+      "SumUX": 0.8683793608740279,
+      "SumUY": 0.8683725776379015,
+      "SumRZ": 0.8693467962846008
+    },
+    "p_total": 5248.470644,
+    "c_min": 0.07,
+    "c_max": 0.147,
+    "cx_raw": 0.19426204525037982,
+    "cy_raw": 0.19424515043827462,
+    "cx": 0.147,
+    "cy": 0.147,
+    "qx": 771.525184668,
+    "qy": 771.525184668,
+    "dist": [
+      {
+        "story": "Story1",
+        "elevation_m": 3.5,
+        "weight_tonf": 1123.825,
+        "z_prev": 0.0,
+        "Ak": 0.1201173098718803,
+        "AkPk": 134.99083576676588,
+        "Fx": 104.22928954768956,
+        "Fy": 104.22928954768956,
+        "eX": 0.7338709677419355,
+        "eY": 0.7338709677419355,
+        "MtX": 76.49084958741734,
+        "MtY": 76.49084958741734,
+        "Vx": 771.5251846680001,
+        "Vy": 771.5251846680001
+      },
+      {
+        "story": "Story2",
+        "elevation_m": 6.5,
+        "weight_tonf": 1103.688,
+        "z_prev": 3.5,
+        "Ak": 0.11788192812697673,
+        "AkPk": 130.10486949060672,
+        "Fx": 100.45673127863839,
+        "Fy": 100.45673127863839,
+        "eX": 1.3629032258064515,
+        "eY": 1.3629032258064515,
+        "MtX": 136.91280311362812,
+        "MtY": 136.91280311362812,
+        "Vx": 667.2958951203104,
+        "Vy": 667.2958951203104
+      },
+      {
+        "story": "Story3",
+        "elevation_m": 9.5,
+        "weight_tonf": 1066.488,
+        "z_prev": 6.5,
+        "Ak": 0.13982974516288782,
+        "AkPk": 149.12674525927793,
+        "Fx": 115.14392530904328,
+        "Fy": 115.14392530904328,
+        "eX": 1.9919354838709677,
+        "eY": 1.9919354838709677,
+        "MtX": 229.3592705752717,
+        "MtY": 229.3592705752717,
+        "Vx": 566.8391638416721,
+        "Vy": 566.8391638416721
+      },
+      {
+        "story": "Story4",
+        "elevation_m": 12.5,
+        "weight_tonf": 1066.488,
+        "z_prev": 9.5,
+        "Ak": 0.18222967177419525,
+        "AkPk": 194.34575819111794,
+        "Fx": 150.05848499127785,
+        "Fy": 150.05848499127785,
+        "eX": 2.620967741935484,
+        "eY": 2.620967741935484,
+        "MtX": 393.29844856584924,
+        "MtY": 393.29844856584924,
+        "Vx": 451.6952385326288,
+        "Vy": 451.6952385326288
+      },
+      {
+        "story": "Story5",
+        "elevation_m": 15.5,
+        "weight_tonf": 887.981644,
+        "z_prev": 12.5,
+        "Ak": 0.4399413450640599,
+        "AkPk": 390.6598388535552,
+        "Fx": 301.63675354135097,
+        "Fy": 301.63675354135097,
+        "eX": 3.25,
+        "eY": 3.25,
+        "MtX": 980.3194490093906,
+        "MtY": 980.3194490093906,
+        "Vx": 301.63675354135097,
+        "Vy": 301.63675354135097
+      }
+    ],
+    "sum_fx_error": 1.1368683772161603e-13,
+    "sum_fy_error": 1.1368683772161603e-13
+  },
+  "modal_csv": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\results\\modal_participating_mass_ratios_ambos_rz_masa_corregida_20260512_170352.csv",
+  "story_csv": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\results\\story_weights_ambos_rz_masa_corregida_20260512_170352.csv",
+  "dist_csv": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\results\\ed2_static_distribution_ambos_rz_masa_corregida_20260512_170352.csv",
+  "exports_dir": "C:\\Users\\Civil\\Documents\\Rio mapocho (no borrar por favor)\\HECRAS2\\prog2\\CLASE_PRE_ESPECTRO_20260511_1356\\Edificio_2\\results\\ambos_rz_masa_corregida_20260512_170352",
+  "et_export_verification": {
+    "rz_counts": {
+      "C70x70G25": 72,
+      "V50x70G25": 120,
+      "C65x65G25": 108,
+      "V45x70G25": 180
+    },
+    "mass_source_lines": [
+      "MASSSOURCE  \"MsSrc1\"    INCLUDEELEMENTS \"No\"    INCLUDEADDEDMASS \"No\"    INCLUDELOADS \"Yes\"    INCLUDEMOVE \"No\"    INCLUDELATERALMASS \"Yes\"    INCLUDEVERTICALMASS \"No\"    LUMPATSTORIES \"Yes\"    ISDEFAULT \"Yes\"",
+      "MASSSOURCELOAD  \"MsSrc1\"  \"PP\"  1",
+      "MASSSOURCELOAD  \"MsSrc1\"  \"TERP\"  1",
+      "MASSSOURCELOAD  \"MsSrc1\"  \"TERT\"  1",
+      "MASSSOURCELOAD  \"MsSrc1\"  \"SCP\"  0.25"
+    ],
+    "diaphragm_areaassign_count": 0,
+    "areaassign_count": 130
+  }
+}
