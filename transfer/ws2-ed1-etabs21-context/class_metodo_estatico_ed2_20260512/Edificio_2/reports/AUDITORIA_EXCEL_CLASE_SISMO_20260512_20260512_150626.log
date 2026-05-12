@@ -1,0 +1,13 @@
+[2026-05-12 15:06:26] No hay ETABS abierto; se abrirá una única instancia ETABS 21 para leer resultados modales.
+[2026-05-12 15:06:27] Get-Process ETABS found 0 process(es): []
+[2026-05-12 15:06:27] No ETABS process found. Starting ETABS 21 from C:\Program Files\Computers and Structures\ETABS 21\ETABS.exe
+[2026-05-12 15:06:27] ETABS watchdog started label=application_start pid=None state=C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356\Edificio_2\reports\AUDITORIA_EXCEL_CLASE_SISMO_20260512_20260512_150626_application_start_watchdog.json
+[2026-05-12 15:07:08] ETABS started. PID=12564; processes=[{'Id': 12564, 'ProcessName': 'ETABS', 'StartTime': '/Date(1778612787445)/', 'MainWindowTitle': 'ETABS  [ACADEMIC LICENSE - NOT FOR COMMERCIAL USE]'}]
+[2026-05-12 15:07:08] ETABS version/build reported by OAPI: 21.2.0
+[2026-05-12 15:07:08] ETABS watchdog started label=initialize_new_model pid=12564 state=C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356\Edificio_2\reports\AUDITORIA_EXCEL_CLASE_SISMO_20260512_20260512_150626_initialize_new_model_watchdog.json
+[2026-05-12 15:07:09] Opening model copy: C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356\Edificio_2\models\ED2_CLASE_METODO_ESTATICO_EXCEL_20260512.EDB
+[2026-05-12 15:07:09] ETABS watchdog started label=open_file_attempt_1 pid=12564 state=C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356\Edificio_2\reports\AUDITORIA_EXCEL_CLASE_SISMO_20260512_20260512_150626_open_file_attempt_1_watchdog.json
+[2026-05-12 15:07:16] Active model after OpenFile: C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356\Edificio_2\models\ED2_CLASE_METODO_ESTATICO_EXCEL_20260512.EDB
+[2026-05-12 15:07:16] Modelo activo para auditoría Excel: C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356\Edificio_2\models\ED2_CLASE_METODO_ESTATICO_EXCEL_20260512.EDB
+[2026-05-12 15:07:19] Se cerró la instancia ETABS iniciada por este auditor.
+[2026-05-12 15:07:19] Excel verificado y regenerado: C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog2\CLASE_PRE_ESPECTRO_20260511_1356\Edificio_2\excel\ED2_METODO_ESTATICO_MANUAL_EXCEL_20260512.xlsx

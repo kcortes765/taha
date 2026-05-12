@@ -1,0 +1,120 @@
+
+
+ ETABS Ultimate 64-bit 21.2.0 Build 3353 (Analysis Build 9953/64)
+ File: C:\Users\Civil\Document...ls\ED2_CLASE_METODO_ESTATICO_EXCEL_20260512.LOG
+
+
+
+
+ B E G I N   A N A L Y S I S                                2026/05/12  14:53:06
+
+
+ RUNNING ANALYSIS AS A SEPARATE PROCESS
+ USING THE ADVANCED SOLVER (PROVIDES LIMITED INSTABILITY INFORMATION)
+
+ NUMBER OF JOINTS                          =        4921
+    WITH RESTRAINTS                        =          41
+    WITH MASS                              =          41
+ NUMBER OF FRAME/TENDON ELEMENTS           =        1995
+ NUMBER OF SHELL ELEMENTS                  =        4625
+ NUMBER OF CONSTRAINTS/WELDS               =           5
+ NUMBER OF LOAD PATTERNS                   =          14
+ NUMBER OF ACCELERATION LOADS              =          12
+ NUMBER OF LOAD CASES                      =           2
+ NUMBER OF MASS SOURCES                    =           1
+
+ UNITS (FORCE, LENGTH, TEMPERATURE, TIME)  = N, mm, °C, sec
+ GRAVITATIONAL ACCELERATION                =    9806.650
+
+ ADDRESSABLE PHYSICAL MEMORY (RAM)         =      15.814 GB
+
+ PARALLELIZATION OF ANALYSIS OPERATIONS:
+  (Env. variable SAPFIRE_NUM_THREADS not set)
+ NUMBER OF THREADS: STATE (AUTOMATIC)      =           6
+ NUMBER OF THREADS: STIFFNESS (AUTOMATIC)  =           6
+ NUMBER OF THREADS: EVENT (AUTOMATIC)      =           6
+ NUMBER OF THREADS: MOVE (AUTOMATIC)       =           6
+ NUMBER OF THREADS: RESPONSE (AUTOMATIC)   =           6
+ NUMBER OF THREADS: SOLVE (AUTOMATIC)      =           6
+ NUMBER OF THREADS: FORM (AUTOMATIC)       =           6
+
+
+ E L E M E N T   F O R M A T I O N                                      14:53:06
+
+
+ NUMBER OF COUPLED CONSTRAINT EQUATIONS    =           0
+
+
+ L I N E A R   E Q U A T I O N   S O L U T I O N                        14:53:06
+
+ FORMING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ TOTAL NUMBER OF EQUILIBRIUM EQUATIONS     =       14655
+ NUMBER OF NON-ZERO STIFFNESS TERMS        =      244059
+
+ ---------------------------------
+ BASIC STABILITY CHECK FOR LINEAR LOAD CASES:
+    NUMBER OF NEGATIVE STIFFNESS EIGENVALUES SHOULD BE ZERO FOR STABILITY.
+    (NOTE: FURTHER CHECKS SHOULD BE CONSIDERED AS DEEMED NECESSARY,
+     SUCH AS REVIEWING EIGEN MODES FOR MECHANISMS AND RIGID-BODY MOTION)
+
+    NUMBER OF NEGATIVE EIGENVALUES         =           0,  OK.
+ ---------------------------------
+
+
+ L I N E A R   S T A T I C   C A S E S                                  14:53:07
+
+ USING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ TOTAL NUMBER OF CASES TO SOLVE            =           1
+ NUMBER OF CASES TO SOLVE PER BLOCK        =           1
+
+ LINEAR STATIC CASES TO BE SOLVED:
+
+ CASE: ~LLRF
+
+
+ E I G E N   M O D A L   A N A L Y S I S                                14:53:07
+
+ CASE: MODAL
+
+ USING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ NUMBER OF STIFFNESS DEGREES OF FREEDOM    =       14655
+ NUMBER OF MASS DEGREES OF FREEDOM         =          15
+ MAXIMUM NUMBER OF EIGEN MODES SOUGHT      =          15
+ MINIMUM NUMBER OF EIGEN MODES SOUGHT      =           1
+ NUMBER OF RESIDUAL-MASS MODES SOUGHT      =           0
+ NUMBER OF SUBSPACE VECTORS USED           =          15
+ RELATIVE CONVERGENCE TOLERANCE            =    1.00E-09
+
+ FREQUENCY SHIFT  (CENTER) (CYC/TIME)      =     .000000
+ FREQUENCY CUTOFF (RADIUS) (CYC/TIME)      =  -INFINITY-
+ ALLOW AUTOMATIC FREQUENCY SHIFTING        =         YES
+
+
+ Original stiffness at shift : EV= 0.0000000E+00, f=     .000000, T=  -INFINITY-
+ Number of eigenvalues below shift =      0
+
+ Found mode      1 of     15:  EV= 2.4149065E+02, f=    2.473263, T=    0.404324
+ Found mode      2 of     15:  EV= 2.4152072E+02, f=    2.473417, T=    0.404299
+ Found mode      3 of     15:  EV= 3.0915290E+02, f=    2.798381, T=    0.357350
+ Found mode      4 of     15:  EV= 2.1070567E+03, f=    7.305640, T=    0.136881
+ Found mode      5 of     15:  EV= 2.1072650E+03, f=    7.306001, T=    0.136874
+ Found mode      6 of     15:  EV= 2.6803537E+03, f=    8.239791, T=    0.121362
+ Found mode      7 of     15:  EV= 6.3464306E+03, f=   12.678997, T=    0.078871
+ Found mode      8 of     15:  EV= 6.3468679E+03, f=   12.679434, T=    0.078868
+ Found mode      9 of     15:  EV= 8.0329227E+03, f=   14.264512, T=    0.070104
+ Found mode     10 of     15:  EV= 1.3263974E+04, f=   18.329768, T=    0.054556
+ Found mode     11 of     15:  EV= 1.3264493E+04, f=   18.330127, T=    0.054555
+ Found mode     12 of     15:  EV= 1.6765221E+04, f=   20.607474, T=    0.048526
+ Found mode     13 of     15:  EV= 2.0129584E+04, f=   22.580707, T=    0.044286
+ Found mode     14 of     15:  EV= 2.0129846E+04, f=   22.580854, T=    0.044285
+ Found mode     15 of     15:  EV= 2.5423109E+04, f=   25.376660, T=    0.039406
+
+ NUMBER OF EIGEN MODES FOUND               =          15
+ NUMBER OF ITERATIONS PERFORMED            =           1
+ NUMBER OF STIFFNESS SHIFTS                =           0
+
+
+ A N A L Y S I S   C O M P L E T E                          2026/05/12  14:53:08
