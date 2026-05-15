@@ -693,3 +693,23 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 - Los `.EDB` activos quedan como modelos base/cerrados y las tablas exportadas son la evidencia de resultados.
 - Si se necesita inspeccion UI, abrir el EDB, reanalizar desde ETABS y usar la visualizacion de resultados de esa sesion.
 - No cerrar ni abrir una segunda instancia: si un script creo ETABS, debe cerrarlo con `--close-if-started`.
+ 
+# 2026-05-14 - Goal ED1 PROG4 Parte 1 dinámico/espectral oficial
+
+## Decisión
+- Se crea el goal largo `GOAL_ED1_PROG4_PARTE1_DINAMICO_ESPECTRAL_OFICIAL_20260514_2332`.
+- El checkpoint base vigente de Edificio 1 es:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\01_modelos\ED1_PROG4_CIERRE_MODAL_20260512_2306.EDB`
+- Edificio 1 no se declara cerrado Parte 1 todavía; se considera base física/modal para cerrar el flujo dinámico/modal espectral.
+- Las decisiones de ingeniería se tomarán solo desde enunciado, apuntes del curso, Material Apoyo Taller 2026, NCh433:2026 usada por el curso, NCh3171/NCh1537 cuando el curso las use, y transcripciones.
+- La documentación oficial CSI/ETABS se permite para API/OAPI, errores, sesión, tablas y extracción; no reemplaza criterios del curso.
+
+## Razón
+- Hubo mezcla previa entre estados históricos WS2/prog, prog2 y PROG4.
+- El usuario exigió no basarse en supuestos ni material destilado como verdad final.
+- ED1 es el caso irregular de muros y requiere cerrar metodología y resultados con trazabilidad más fuerte que ED2.
+
+## Implicancia
+- Antes de tocar ETABS se debe revisar proceso con `Get-Process ETABS -ErrorAction SilentlyContinue`.
+- Todo script debe ser incremental, con backup, log, watchdog y exportación verificable.
+- Los checks pueden escalar a cientos o miles de aserciones, pero las corridas ETABS deben ser útiles y trazables, no repetición ciega.

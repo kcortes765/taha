@@ -715,3 +715,13 @@ apos_migrate_project.py
 - Se incluyeron modelos activos, opencheck, backups, exportaciones/resultados y reportes estructurados.
 - Delta:
   - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260511_1431_P1_FINAL_GIT.md`.
+
+## 2026-05-14 - Goal largo ED1 PROG4
+- Se crea plan maestro para cerrar Edificio 1 Parte 1 en PROG4 sin mezclar estados históricos.
+- Archivo principal:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\00_goal_y_plan\GOAL_ED1_PROG4_PARTE1_DINAMICO_ESPECTRAL_OFICIAL_20260514_2332.md`
+- Checkpoint base:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\01_modelos\ED1_PROG4_CIERRE_MODAL_20260512_2306.EDB`
+- Se registra que ED1 aún no está cerrado como Parte 1 final. Está listo como base física/modal para el cierre dinámico/modal espectral.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260514_2332_GOAL_ED1_PROG4.md`.

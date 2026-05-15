@@ -71,3 +71,24 @@ Notas: fuente local creada antes de migrar proyectos.
   - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\ED1_01_Grilla_v01.EDB`
 - Ruta backup pre-correcciones reportada:
   - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS\prog\Edif1\backups\ED1_01_Grilla_v01_pre_correcciones_20260502_193648.EDB`
+
+# 2026-05-14 - Fuentes de verdad para ED1 PROG4
+
+Fuentes autorizadas para decisiones de ingeniería ED1:
+
+- Enunciado actualizado del taller.
+- Apuntes del curso 2026-05-08.
+- Material Apoyo Taller 2026.
+- NCh433:2026 usada por el curso.
+- NCh3171 y NCh1537 cuando el curso las invoque para combinaciones/cargas.
+- Transcripciones de clase disponibles en `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\00_fuentes_de_verdad\05_transcripciones_clase`, incluyendo `taller sismo 8_transcripcion.txt`.
+
+Fuente operacional API permitida:
+
+- Documentación oficial CSI/ETABS, solo para OAPI/API, errores, sesión, tablas, guardado, análisis y extracción de resultados.
+
+No son autoridad final:
+
+- MD destilados antiguos.
+- Guías genéricas de internet.
+- Suposiciones de memoria.
