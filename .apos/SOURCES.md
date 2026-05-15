@@ -92,3 +92,20 @@ No son autoridad final:
 - MD destilados antiguos.
 - Guías genéricas de internet.
 - Suposiciones de memoria.
+
+# 2026-05-15 - Evidencia específica ED1 Método A/B y deformaciones
+
+Fuentes locales revisadas:
+
+- `prog4/00_fuentes_de_verdad/01_enunciado/01_Enunciado_Taller_actualizado_2026-05-04.pdf`, p.11.
+- `prog4/00_fuentes_de_verdad/02_apuntes/00_Apuntes_del_Curso_2026-05-08_actualizado.pdf`, p.117-p.124.
+- `prog4/00_fuentes_de_verdad/03_material_apoyo/02_Material_Apoyo_Taller_2026.pdf`, p.29-p.45.
+- `prog4/00_fuentes_de_verdad/04_normativa/05_NCh433_2026_para_Curso.pdf`, p.34.
+- `prog4/00_fuentes_de_verdad/05_transcripciones_clase/taller sismo 8_transcripcion.txt`, líneas 105-119, 1139-1141, 1243-1245, 1317-1321, 1665-1669, 1785-1793, 2023-2025, 2233-2235, 2695-2699.
+- `prog4/00_fuentes_de_verdad/05_transcripciones_clase/sismo 13_transcripcion.txt`, líneas 11-19 y 125-185.
+
+Uso:
+
+- Definir que los 6 casos del enunciado se ejecutan como 14 checkpoints/EDB para ED1 PROG4.
+- Separar combinaciones de resistencia de verificación de deformaciones `CP + SC ± Sismo`.
+- Exigir comparación B1/B2 y trazabilidad de Método A con 5 estados por diafragma.

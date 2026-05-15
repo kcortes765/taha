@@ -740,3 +740,31 @@ apos_migrate_project.py
 - Se actualizó el goal principal.
 - Delta:
   - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260515_0016_ED1_TORSION_CONFIRMADA.md`.
+
+## 2026-05-15 - ED1 PROG4 plan literal 14 checkpoints
+- Se corrigió la interpretación operacional de ED1 PROG4:
+  - 6 casos siguen siendo los casos oficiales del enunciado;
+  - Método A se debe materializar como 5 estados por diafragma;
+  - B forma 1 y B forma 2 se guardan separados por diafragma.
+- Se creó investigación profunda:
+  - `transfer\ws2-ed1-etabs21-context\reports\ED1_PROG4_INVESTIGACION_PROFUNDA_FUENTES_20260515_0101.md`.
+- Se creó plan literal:
+  - `transfer\ws2-ed1-etabs21-context\reports\ED1_PROG4_PLAN_LITERAL_14_CHECKPOINTS_20260515_0101.md`.
+- Se actualizó el objetivo local de ejecución:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\06_parte1_completa_20260515_0016\00_OBJETIVO_EJECUCION_ED1_PROG4.md`.
+
+## 2026-05-15 - ED1 PROG4 Parte 1 cierre final literal 14
+- Se completó Edificio 1 Parte 1 en PROG4 con la ejecución literal de 14 checkpoints/EDB:
+  - 5 estados Método A con diafragma rígido;
+  - 5 estados Método A con diafragma semirrígido;
+  - B forma 1 y B forma 2 para rígido;
+  - B forma 1 y B forma 2 para semirrígido.
+- Se completaron los checkpoints faltantes sin abrir más de una instancia de ETABS a la vez y cerrando ETABS al terminar cada bloque.
+- Auditoría consolidada final:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\06_parte1_completa_20260515_0016\04_auditorias\ED1_PROG4_CIERRE_FINAL_LITERAL_14_20260515_0525.md`.
+  - Resultado: `539 OK / 0 FAIL`.
+  - Máximo drift auditado: `0.001842 < 0.002`.
+  - Participación modal acumulada UX/UY cumple umbral automático `>= 0.90`.
+- Paquete final para informe/traslado:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\06_parte1_completa_20260515_0016\07_paquete\ED1_PROG4_PARTE1_COMPLETA_OFICIAL_LITERAL_14`.
+- ETABS quedó cerrado al finalizar.

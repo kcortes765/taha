@@ -37,3 +37,21 @@ Resultado:
 Evidencia:
 
 - `MATRIZ_FUENTES_ED1_PROG4_TORSION_Y_METODOLOGIA_20260515_0015.md`.
+
+## 2026-05-15 - Investigación profunda ED1: 6 casos vs 14 checkpoints
+
+Pregunta:
+
+- ¿El cierre programático de ED1 puede quedar en 4 EDB compactos o debe materializar los 5 estados de Método A que aparecen en apuntes/transcripciones?
+
+Resultado:
+
+- El enunciado p.11 exige 6 casos conceptuales para el informe.
+- Apuntes p.117 exige para Método A `5 modelos y 6 análisis`.
+- `taller sismo 8_transcripcion.txt` confirma 5 casos/modelos, cinco espectros y separación entre B forma 1, B forma 2 y Método A.
+- Por defensa técnica, ED1 PROG4 debe generar 14 checkpoints/EDB principales.
+
+Evidencia:
+
+- `transfer/ws2-ed1-etabs21-context/reports/ED1_PROG4_INVESTIGACION_PROFUNDA_FUENTES_20260515_0101.md`.
+- `transfer/ws2-ed1-etabs21-context/reports/ED1_PROG4_PLAN_LITERAL_14_CHECKPOINTS_20260515_0101.md`.

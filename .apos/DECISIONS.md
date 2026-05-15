@@ -729,3 +729,45 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 ## Implicancia
 - La torsión accidental ya no queda como pregunta abierta del goal.
 - Cualquier implementación ED1 que no cubra los 6 casos queda incompleta.
+
+# 2026-05-15 - ED1 PROG4 se ejecuta con 14 checkpoints literales
+
+## Decisión
+- El informe final de Edificio 1 mantiene los 6 casos conceptuales exigidos por el enunciado.
+- La ejecución ETABS de PROG4 se hará con 14 checkpoints/EDB principales:
+  - 5 EDB para Método A con diafragma rígido;
+  - 5 EDB para Método A con diafragma semirrígido;
+  - 1 EDB para B forma 1 rígido;
+  - 1 EDB para B forma 2 rígido;
+  - 1 EDB para B forma 1 semirrígido;
+  - 1 EDB para B forma 2 semirrígido.
+- Los scripts compactos que agrupan Método A en dos EDB quedan como prototipo técnico, no como forma principal de entrega.
+
+## Razón
+- Apuntes p.117 dice que el Método A implica `5 modelos y 6 análisis`.
+- `taller sismo 8_transcripcion.txt` confirma los 5 casos/modelos y cinco espectros para Método A.
+- El profesor separa B forma 1, B forma 2 y Método A como modelos/procedimientos distintos.
+
+## Implicancia
+- No se declara ED1 PROG4 cerrado si Método A queda sólo como dos EDB compactos.
+- Se deben guardar estados explícitos con centro de masa original y desplazamientos ± para cada dirección.
+- B1 y B2 deben compararse y dejar evidencia de que representan el mismo método b) por dos vías de ETABS.
+
+# 2026-05-15 - ED1 PROG4 queda cerrado como Parte 1 literal 14
+
+## Decisión
+- Edificio 1 PROG4 Parte 1 se considera cerrado para pasar a informe con 14 checkpoints/EDB literales.
+- El paquete final oficial queda en:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\06_parte1_completa_20260515_0016\07_paquete\ED1_PROG4_PARTE1_COMPLETA_OFICIAL_LITERAL_14`.
+- El reporte de cierre técnico queda en:
+  - `C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\06_parte1_completa_20260515_0016\04_auditorias\ED1_PROG4_CIERRE_FINAL_LITERAL_14_20260515_0525.md`.
+
+## Razón
+- La auditoría consolidada reportó `539 OK / 0 FAIL`.
+- Los 14 EDB oficiales existen y tienen exportaciones tabulares.
+- Los checks automáticos verifican rigidez de diafragma esperada, torsión A/B1/B2, mass source, participación modal, drift y reacciones basales.
+
+## Implicancia
+- Para Edificio 1 ya no falta modelación Parte 1; falta armar el informe con evidencia, tablas, gráficos y explicación.
+- Cualquier ajuste posterior debe hacerse sobre una copia fechada del paquete final y volver a correr auditoría.
+- ETABS debe quedar cerrado después de cada revisión.
