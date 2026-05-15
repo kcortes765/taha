@@ -725,3 +725,18 @@ apos_migrate_project.py
 - Se registra que ED1 aún no está cerrado como Parte 1 final. Está listo como base física/modal para el cierre dinámico/modal espectral.
 - Delta:
   - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260514_2332_GOAL_ED1_PROG4.md`.
+
+## 2026-05-15 - ED1 torsión confirmada y goal corregido
+- Se revisaron enunciado, apuntes, Material Apoyo, NCh433:2026 y transcripciones.
+- Se confirmó que ED1 debe implementar 6 casos:
+  - rígido + torsión a);
+  - rígido + torsión b) forma 1;
+  - rígido + torsión b) forma 2;
+  - semirrígido + torsión a);
+  - semirrígido + torsión b) forma 1;
+  - semirrígido + torsión b) forma 2.
+- Se creó matriz de fuentes:
+  - `transfer\ws2-ed1-etabs21-context\reports\MATRIZ_FUENTES_ED1_PROG4_TORSION_Y_METODOLOGIA_20260515_0015.md`.
+- Se actualizó el goal principal.
+- Delta:
+  - `transfer\ws2-ed1-etabs21-context\reports\WS2_APOS_DELTA_20260515_0016_ED1_TORSION_CONFIRMADA.md`.

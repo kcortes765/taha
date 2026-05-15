@@ -52,6 +52,36 @@ Pendiente real:
 - Cerrar metodología dinámica/modal espectral según fuentes del curso.
 - Resolver y documentar los casos exigidos, torsión, diafragma, espectro, escalamiento, combinaciones/verificaciones, resultados y auditoría final.
 
+## Metodología oficial confirmada 2026-05-15
+
+Se corrige el plan: Edificio 1 **sí incluye torsión accidental** y no queda como duda abierta. La matriz de fuente queda en:
+
+`C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\00_goal_y_plan\MATRIZ_FUENTES_ED1_PROG4_TORSION_Y_METODOLOGIA_20260515_0015.md`
+
+Evidencia visual de páginas:
+
+`C:\Users\Civil\Documents\Rio mapocho (no borrar por favor)\HECRAS2\prog4\Edificio_1\00_goal_y_plan\evidencia_fuentes_20260515_0015`
+
+Casos obligatorios según enunciado:
+
+| Caso | Diafragma | Torsión accidental |
+|---:|---|---|
+| 1 | Rígido | Caso a) |
+| 2 | Rígido | Caso b) forma 1 |
+| 3 | Rígido | Caso b) forma 2 |
+| 4 | Semirrígido | Caso a) |
+| 5 | Semirrígido | Caso b) forma 1 |
+| 6 | Semirrígido | Caso b) forma 2 |
+
+Implementación confirmada:
+
+- Método a): desplazar centros de masa en ±0.05 de la dimensión perpendicular, generar matrices/casos modales asociados y usar espectros consistentes para cada análisis.
+- Método b) forma 1: correr espectral sin torsión, extraer cortes CQC por piso, calcular `Mk=(Qk-Qk+1)ek`, aplicar momentos de torsión por piso y combinar con SDX/SDY.
+- Método b) forma 2: ingresar excentricidades por diafragma/piso en el caso espectral y contrastar contra forma 1.
+- Verificación de deformaciones: `CP + SC ± Sismo`, con sismo con y sin torsión accidental; revisar centro de masa y puntos extremos de planta.
+- Límite de drift para hormigón armado: `0.002 h` en centro de masa, más control en cualquier punto de la planta según NCh433.
+- Modos: cumplir al menos 90% de masa equivalente acumulada en X/Y según NCh433; reportar también criterio de taller 95% cuando aplique.
+
 ## Reglas de sesión ETABS
 
 Antes de abrir ETABS o usar OAPI:
@@ -130,11 +160,15 @@ Cada ítem debe quedar como `OK`, `pendiente`, `no aplica` o `bloqueado`, con ev
 
 Antes de crear casos:
 
-1. Confirmar desde fuentes oficiales si ED1 exige análisis modal espectral.
-2. Confirmar si se requieren 6 casos: diafragma rígido/semirrígido por métodos de torsión A, B1 y B2.
-3. Confirmar cómo se define espectro, amortiguamiento, combinatoria modal, dirección, excentricidad accidental y escalamiento.
-4. Confirmar combinaciones y verificaciones de desplazamiento/drift desde apuntes/material.
-5. Registrar toda ambigüedad como pregunta abierta antes de decidir.
+1. Usar como obligatorio el análisis dinámico/modal espectral para ED1.
+2. Implementar los 6 casos del enunciado: diafragma rígido/semirrígido por torsión a), b) forma 1 y b) forma 2.
+3. Definir espectro, amortiguamiento, CQC, direcciones, excentricidad accidental, escalamiento y límites desde NCh433/apuntes/material.
+4. Usar las combinaciones oficiales del curso:
+   - método a): 15 combinaciones ETABS;
+   - método b) forma 1: 11 combinaciones ETABS;
+   - método b) forma 2: 7 combinaciones ETABS / total 19 casos según tabla del curso.
+5. Para deformaciones, usar `CP + SC ± Sismo`, con sismo con y sin torsión accidental.
+6. Registrar toda ambigüedad real como pregunta abierta antes de decidir; no volver a dejar como ambigua una exigencia ya explícita del enunciado.
 
 ### Fase 5 - Implementación incremental
 
@@ -223,4 +257,3 @@ El trabajo queda aceptable solo si existe:
 - registro APOS;
 - paquete transferible;
 - indicación clara de lo que es oficial, auxiliar, histórico o pendiente.
-

@@ -713,3 +713,19 @@ La continuidad entre chats requiere memoria austera, trazable y compatible con C
 - Antes de tocar ETABS se debe revisar proceso con `Get-Process ETABS -ErrorAction SilentlyContinue`.
 - Todo script debe ser incremental, con backup, log, watchdog y exportación verificable.
 - Los checks pueden escalar a cientos o miles de aserciones, pero las corridas ETABS deben ser útiles y trazables, no repetición ciega.
+
+# 2026-05-15 - ED1 torsión accidental confirmada por fuentes oficiales
+
+## Decisión
+- ED1 debe incluir torsión accidental.
+- El cierre de ED1 Parte 1 debe implementar 6 casos: rígido/semirrígido cruzado con torsión caso a), caso b) forma 1 y caso b) forma 2.
+- La verificación de deformaciones se hará con `CP + SC ± Sismo`, con sismo con y sin torsión accidental.
+
+## Razón
+- El enunciado p.11 lista explícitamente los 6 casos.
+- NCh433:2026 p.34 define la torsión accidental para análisis modal espectral por forma a) o b).
+- Apuntes y Material Apoyo detallan método a), b forma 1 y b forma 2.
+
+## Implicancia
+- La torsión accidental ya no queda como pregunta abierta del goal.
+- Cualquier implementación ED1 que no cubra los 6 casos queda incompleta.

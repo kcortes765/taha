@@ -22,3 +22,18 @@ Estrategia:
 - Para texto en imágenes, generar evidencia visual/OCR puntual.
 - Registrar contradicciones antes de implementar.
 - No convertir guías MD ni respuestas previas en verdad final.
+
+## 2026-05-15 - Resultado investigación torsión ED1
+
+Resultado:
+
+- ED1 requiere torsión accidental en los 6 casos del enunciado.
+- La forma a) desplaza centros de masa y exige espectros/casos modales consistentes.
+- La forma b) se implementa en dos formas operativas en ETABS:
+  - forma 1: momentos estáticos por piso calculados desde cortes CQC;
+  - forma 2: excentricidades por diafragma/piso en el caso espectral.
+- Forma 1 y forma 2 deben contrastarse; el curso indica que son dos maneras de ingresar el método b).
+
+Evidencia:
+
+- `MATRIZ_FUENTES_ED1_PROG4_TORSION_Y_METODOLOGIA_20260515_0015.md`.
